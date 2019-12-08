@@ -1,24 +1,35 @@
 cmake_minimum_required (VERSION 3.0)
 project (glua C)
 
+# third party dependencies
 find_package(Lua REQUIRED)
+find_package(OpenGL REQUIRED)
 
+# include directories
 include_directories (
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${LUA_INCLUDE_DIR}
+    ${OPENGL_INCLUDE_DIRS}
 )
 
+# all sources to compile
 set (SOURCES
-    glua.c
+    glex.c
+    glex.h
+    glutil.c
+    glutil.h
+    main.c
+    window.h
 )
 
 # get the name of the resulting dll and remove the lib from the name
 set (LIB_NAME lib${PROJECT_NAME}.dll)
 string (REPLACE lib "" LIB_NAME_SHORT ${LIB_NAME})
 
-add_library (${PROJECT_NAME} SHARED ${SOURCES} ${LUA_LIBRARIES})
-target_link_libraries (${PROJECT_NAME} ${LUA_LIBRARIES})
+# add all sources to the shared library and link third party libraries
+add_library (${PROJECT_NAME} SHARED ${SOURCES})
+target_link_libraries (${PROJECT_NAME} ${LUA_LIBRARIES} ${OPENGL_LIBRARIES})
 
 # copy dll after successful build to the lua include directory
 # so that the module can be found be lua's require statement

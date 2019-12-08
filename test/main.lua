@@ -1,15 +1,30 @@
-local gl = require 'glua'
+local glua = require 'glua'
 
-gl.set_window_resize_callback(function(w, h)
-    print("Window resize: " .. tostring(w) .. "," .. tostring(h))
+glua.create_window("GL test", 400, 400)
+
+glua.render(function()
+    glua.gl_begin()
+    glua.gl_color3f(1,0,0)
+    glua.gl_vertex3f(-1,-1,0)
+    glua.gl_color3f(0,1,0)
+    glua.gl_vertex3f(1,-1,0)
+    glua.gl_color3f(0,0,1)
+    glua.gl_vertex3f(0,1,0)
+    glua.gl_end()
+    glua.swap()
 end)
 
-gl.set_mouse_btn_callback(function(mouseBtn)
-    print("Mouse btn " .. tostring(mouseBtn) .. " pressed")
+glua.set_window_resize_callback(function(w, h)
+    glua.gl_viewport(0,0,w,h)
+    glua.redraw()
 end)
 
-gl.set_mouse_move_callback(function(x,y)
-    print(tostring(x) .. "," .. tostring(y))
+glua.set_mouse_btn_callback(function(mouseBtn)
+    --print("Mouse btn " .. tostring(mouseBtn) .. " pressed")
 end)
 
-gl.create_window("GL test", 400, 400)
+glua.set_mouse_move_callback(function(x,y)
+    --print(tostring(x) .. "," .. tostring(y))
+end)
+
+glua.show_window()

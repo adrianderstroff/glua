@@ -1,51 +1,92 @@
+#ifndef GLUA_WINDOW_H
+#define GLUA_WINDOW_H
+
 #include <windows.h>
-
-// -------------------------------------------------------------------------------- //
-// window related global variables                                                  //
-// -------------------------------------------------------------------------------- //
-
-const char g_szClassName[] = "LUAGL_WINDOW";
+#include "glex.h"
 
 
-// -------------------------------------------------------------------------------- //
-// callback related global variables                                                //
-// -------------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// window related global variables                                            //
+// -------------------------------------------------------------------------- //
+
+const char gWindowClassName[] = "GLUA_WINDOW";
+HWND gWindowHandle = NULL;
+int gWindowDisplayMode = -1;
+
+
+// -------------------------------------------------------------------------- //
+// gl related global variables                                                //
+// -------------------------------------------------------------------------- //
+
+HDC gWindowsDeviceContext = NULL;
+HGLRC gGlRenderingContext = NULL;
+
+
+// -------------------------------------------------------------------------- //
+// callback related global variables                                          //
+// -------------------------------------------------------------------------- //
 
 static lua_State *gL = NULL;
-static int windowResizeCallback = -1;
-static int mouseBtnCallback = -1;
-static int mouseMoveCallback = -1;
+static int gRenderCallback       = -1;
+static int gWindowResizeCallback = -1;
+static int gMouseBtnCallback     = -1;
+static int gMouseMoveCallback    = -1;
 
 
-// -------------------------------------------------------------------------------- //
-// register callbacks from lua                                                      //
-// -------------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// register callbacks from lua                                                //
+// -------------------------------------------------------------------------- //
 
-static int setWindowResizeCallback(lua_State *L) {
-    windowResizeCallback = luaL_ref(L, LUA_REGISTRYINDEX);
+// registers a new render callback.
+int SetRenderCallback(lua_State *L) {
+    gRenderCallback = luaL_ref(L, LUA_REGISTRYINDEX);
     return 0;
 }
 
-static int setMouseBtnCallback(lua_State *L) {
-    mouseBtnCallback = luaL_ref(L, LUA_REGISTRYINDEX);
+// registers a new window resize callback.
+int SetWindowResizeCallback(lua_State *L) {
+    gWindowResizeCallback = luaL_ref(L, LUA_REGISTRYINDEX);
     return 0;
 }
 
-static int setMouseMoveCallback(lua_State *L) {
-    mouseMoveCallback = luaL_ref(L, LUA_REGISTRYINDEX);
+// registers a new mouse button callback.
+int SetMouseBtnCallback(lua_State *L) {
+    gMouseBtnCallback = luaL_ref(L, LUA_REGISTRYINDEX);
+    return 0;
+}
+
+// registers a new mouse cursor callback.
+int SetMouseMoveCallback(lua_State *L) {
+    gMouseMoveCallback = luaL_ref(L, LUA_REGISTRYINDEX);
     return 0;
 }
 
 
-// -------------------------------------------------------------------------------- //
-// pass callbacks to lua                                                            //
-// -------------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// pass callbacks to lua                                                      //
+// -------------------------------------------------------------------------- //
 
-static void emitWindowResizeCallback(int width, int height) {
-    if (gL == NULL) return;
+// trigger a render callback.
+void EmitRenderCallback() {
+    if (gL == NULL || gRenderCallback == -1) return;
 
     // push the callback onto the stack
-    lua_rawgeti(gL, LUA_REGISTRYINDEX, windowResizeCallback);
+    lua_rawgeti(gL, LUA_REGISTRYINDEX, gRenderCallback);
+
+    // call the callback
+    if (0 != lua_pcall(gL, 0, 0, 0)) {
+        printf("Failed to call the callback!\n %s\n", lua_tostring(gL, -1) );
+        return;
+    }
+}
+
+// triggers a registered window resize callback with the new width and height
+// of the window.
+void EmitWindowResizeCallback(int width, int height) {
+    if (gL == NULL || gWindowResizeCallback == -1) return;
+
+    // push the callback onto the stack
+    lua_rawgeti(gL, LUA_REGISTRYINDEX, gWindowResizeCallback);
     lua_pushnumber(gL, width);
     lua_pushnumber(gL, height);
 
@@ -56,11 +97,12 @@ static void emitWindowResizeCallback(int width, int height) {
     }
 }
 
-static void emitMouseBtnCallback(int mouseBtn) {
-    if (gL == NULL) return;
+// triggers a registered mouse button callback with the pressed mouse button.
+void EmitMouseBtnCallback(int mouseBtn) {
+    if (gL == NULL || gMouseBtnCallback == -1) return;
 
     // push the callback onto the stack
-    lua_rawgeti(gL, LUA_REGISTRYINDEX, mouseBtnCallback);
+    lua_rawgeti(gL, LUA_REGISTRYINDEX, gMouseBtnCallback);
     lua_pushnumber(gL, mouseBtn);
 
     // call the callback
@@ -70,11 +112,13 @@ static void emitMouseBtnCallback(int mouseBtn) {
     }
 }
 
-static void emitMouseMoveCallback(int x, int y) {
-    if (gL == NULL) return;
+// triggers a registered mouse cursor callback with the new x- and y-position
+// of the mouse cursor.
+void EmitMouseMoveCallback(int x, int y) {
+    if (gL == NULL || gMouseMoveCallback == -1) return;
 
     // push the callback onto the stack
-    lua_rawgeti(gL, LUA_REGISTRYINDEX, mouseMoveCallback);
+    lua_rawgeti(gL, LUA_REGISTRYINDEX, gMouseMoveCallback);
     lua_pushnumber(gL, x);
     lua_pushnumber(gL, y);
 
@@ -86,47 +130,139 @@ static void emitMouseMoveCallback(int x, int y) {
 }
 
 
-// -------------------------------------------------------------------------------- //
-// windows related functions                                                        //
-// -------------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// opengl related functions                                                   //
+// -------------------------------------------------------------------------- //
+
+void CreateContext(HWND windowHandle) {
+    // create pixel format
+    PIXELFORMATDESCRIPTOR pfd = {
+        sizeof(PIXELFORMATDESCRIPTOR),
+        1,
+        PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,    //Flags
+        PFD_TYPE_RGBA,        // The kind of framebuffer. RGBA or palette.
+        32,                   // Colordepth of the framebuffer.
+        0, 0, 0, 0, 0, 0,
+        0,
+        0,
+        0,
+        0, 0, 0, 0,
+        24,                   // Number of bits for the depthbuffer
+        8,                    // Number of bits for the stencilbuffer
+        0,                    // Number of Aux buffers in the framebuffer.
+        PFD_MAIN_PLANE,
+        0,
+        0, 0, 0
+    };
+
+    // get windows device context handle
+    gWindowsDeviceContext = GetDC(windowHandle);
+
+    // let windows determine a suitable pixel format from the above
+    // defined pixel format description
+    int  pixelFormat = ChoosePixelFormat(gWindowsDeviceContext, &pfd); 
+    SetPixelFormat(gWindowsDeviceContext, pixelFormat, &pfd);
+
+    // create OpenGL rendering context and make it current
+    gGlRenderingContext = wglCreateContext(gWindowsDeviceContext);
+    wglMakeCurrent (gWindowsDeviceContext, gGlRenderingContext);
+
+    // load opengl function pointers
+    if(!init_gl()) { 
+        printf("Failed to initialize GL!\n");
+        PostQuitMessage(0);
+        return;
+    }
+}
+
+void DestroyContext() {
+    if(gGlRenderingContext == NULL) return;
+
+    wglDeleteContext(gGlRenderingContext);
+    gGlRenderingContext = NULL;
+}
+
+int GLuaSwapBuffers(lua_State *L) {
+    SwapBuffers(gWindowsDeviceContext);
+    return 0;
+}
+
+void Draw(HWND windowHandle) {
+    printf("draw\n");
+    PAINTSTRUCT paintStruct;
+    BeginPaint(windowHandle, &paintStruct);
+    
+    if (gGlRenderingContext)
+        EmitRenderCallback();
+
+    EndPaint(windowHandle, &paintStruct);
+}
+
+int Redraw(lua_State *L) {
+    printf("redraw\n");
+    UpdateWindow(gWindowHandle);
+
+    return 0;
+}
+
+
+// -------------------------------------------------------------------------- //
+// windows related functions                                                  //
+// -------------------------------------------------------------------------- //
+
+// helper method that grabs the new width and height of the resized window and
+// passes them to the window resize callback.
+void Resize(LPARAM lParam) {
+    int width  = LOWORD(lParam); 
+    int height = HIWORD(lParam);
+    EmitWindowResizeCallback(width, height);
+}
+
+// helper method that grabs the x- and y-pos of the mouse cursor and passes it
+// to the mouse move callback.
+void MouseMoveEvent(LPARAM lParam) {
+    int xPos = LOWORD(lParam); 
+    int yPos = HIWORD(lParam);
+    EmitMouseMoveCallback(xPos, yPos);
+}
 
 // the window event system processing
-LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-    switch(msg) {
+LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, 
+                         LPARAM lParam) {
+    switch(message) {
+        case WM_CREATE:
+            CreateContext(windowHandle);
+            break;
         case WM_CLOSE:
-            DestroyWindow(hwnd);
+            DestroyContext();
+            DestroyWindow(windowHandle);
             break;
         case WM_DESTROY:
             PostQuitMessage(0);
             break;
         case WM_SIZE:
-        {
-            int width  = LOWORD(lParam); 
-            int height = HIWORD(lParam);
-            emitWindowResizeCallback(width, height);
-        }
+            Resize(lParam);
+            break;
+        case WM_PAINT:
+            Draw(windowHandle);
             break;
         case WM_LBUTTONDOWN:
-            emitMouseBtnCallback(0);
+            EmitMouseBtnCallback(0);
             break;
         case WM_RBUTTONDOWN:
-            emitMouseBtnCallback(1);
+            EmitMouseBtnCallback(1);
             break;
         case WM_MOUSEMOVE:
-        {
-            int xPos = LOWORD(lParam); 
-            int yPos = HIWORD(lParam);
-            emitMouseMoveCallback(xPos, yPos);
-        }
+            MouseMoveEvent(lParam);
             break;
         default:
-            return DefWindowProc(hwnd, msg, wParam, lParam);
+            return DefWindowProc(windowHandle, message, wParam, lParam);
     }
     return 0;
 }
 
-// helper method for getting the instance handle of the
-// dll that created the window
+// helper method for getting the instance handle of the dll that created the 
+// window.
 HMODULE GetCurrentModule() {
     MEMORY_BASIC_INFORMATION mbi;
     static int dummy;
@@ -135,7 +271,8 @@ HMODULE GetCurrentModule() {
     return (HMODULE)mbi.AllocationBase;
 }
 
-int create_window(lua_State *L) {
+// create a window
+int GLuaCreateWindow(lua_State *L) {
     // save lua state for later retrival
     gL = L;
 
@@ -153,13 +290,10 @@ int create_window(lua_State *L) {
     // minimized or maximized mode.
     STARTUPINFO si;
     GetStartupInfo(&si);  
-    int nCmdShow = si.wShowWindow;
+    gWindowDisplayMode = si.wShowWindow;
 
+    // register the window class
     WNDCLASSEX wc;
-    HWND hwnd;
-    MSG Msg;
-
-    //Step 1: Registering the Window Class
     wc.cbSize        = sizeof(WNDCLASSEX);
     wc.style         = 0;
     wc.lpfnWndProc   = WndProc;
@@ -170,39 +304,49 @@ int create_window(lua_State *L) {
     wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
     wc.lpszMenuName  = NULL;
-    wc.lpszClassName = g_szClassName;
+    wc.lpszClassName = gWindowClassName;
     wc.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
+    wc.style         = CS_OWNDC;
 
     if (!RegisterClassEx(&wc)) {
-        MessageBox(NULL, "Window Registration Failed!", "Error!",
-            MB_ICONEXCLAMATION | MB_OK);
-        return 0;
+        printf("Window Registration Failed!");
+        lua_pushboolean(gL, false);
+        return 1;
     }
 
-    // Step 2: Creating the Window
-    hwnd = CreateWindowEx(
+    // create the window
+    gWindowHandle = CreateWindowEx(
         WS_EX_CLIENTEDGE,
-        g_szClassName,
+        gWindowClassName,
         title,
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, width, height,
         NULL, NULL, hInstance, NULL);
 
-    if (hwnd == NULL) {
-        MessageBox(NULL, "Window Creation Failed!", "Error!",
-            MB_ICONEXCLAMATION | MB_OK);
-        return 0;
+    if (gWindowHandle == NULL) {
+        printf("Window Creation Failed!");
+        lua_pushboolean(gL, false);
+        return 1;
     }
 
-    ShowWindow(hwnd, nCmdShow);
-    UpdateWindow(hwnd);
+    // window creation successful
+    lua_pushboolean(gL, true);
+    return 1;
+}
 
-    // Step 3: The Message Loop
-    while (GetMessage(&Msg, NULL, 0, 0) > 0) {
-        TranslateMessage(&Msg);
-        DispatchMessage(&Msg);
+int GLuaShowWindow() {
+    // show and update the window
+    ShowWindow(gWindowHandle, gWindowDisplayMode);
+    UpdateWindow(gWindowHandle);
+
+    // run the message loop
+    MSG message;
+    while (GetMessage(&message, NULL, 0, 0) > 0) {
+        TranslateMessage(&message);
+        DispatchMessage(&message);
     }
 
-    // the function returns no results to lua
     return 0;
 }
+
+#endif//GLUA_WINDOW_H
