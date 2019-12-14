@@ -25,10 +25,12 @@ int GlVertex3f(lua_State *L) {
 
 int GlBegin(lua_State *L) {
     glBegin(GL_TRIANGLES);
+    return 0;
 }
 
 int GlEnd(lua_State *L) {
     glEnd();
+    return 0;
 }
 
 int GlViewport(lua_State *L) {
