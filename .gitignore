@@ -6,6 +6,9 @@ luac.out
 *.zip
 *.tar.gz
 
+# generated gl files
+glex.h
+
 # Object files
 *.o
 *.os
