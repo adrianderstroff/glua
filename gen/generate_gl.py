@@ -3,13 +3,15 @@ import os
 def main():
     write_header()
     write_source()
+    write_lua_header()
+    write_lua_source()
 
 def write_header():
     path = os.path.realpath(__file__+"/../../glex.h")
     print(path)
     file = open(path, "w+")
 
-    guard_start(file)
+    guard_start(file, "GLUA_GLEX_H")
     empty_line(file)
 
     windows_includes(file)
@@ -30,7 +32,7 @@ def write_header():
     write_line(file, "bool InitGl();")
     empty_line(file)
 
-    guard_end(file)
+    guard_end(file, "GLUA_GLEX_H")
     file.close()
 
 def write_source():
@@ -48,6 +50,40 @@ def write_source():
 
     write_init_gl_implementation(file)
     empty_line(file)
+
+    file.close()
+
+def write_lua_header():
+    path = os.path.realpath(__file__+"/../../glutil.h")
+    print(path)
+    file = open(path, "w+")
+
+    guard_start(file, "GLUTIL_H")
+    empty_line(file)
+
+    write_line(file, '#include "glex.h"')
+    write_line(file, '#include "lua.h"')
+    write_line(file, '#include "lualib.h"')
+    write_line(file, '#include "lauxlib.h"')
+    empty_line(file)
+
+    # write file definitions
+    write_lua_definition(file)
+    empty_line(file)
+
+    guard_end(file, "GLUTIL_H")
+    
+    file.close()
+
+def write_lua_source():
+    path = os.path.realpath(__file__+"/../../glutil.c")
+    print(path)
+    file = open(path, "w+")
+
+    write_line(file, '#include "glutil.h"')
+    empty_line(file)
+
+    write_lua_implementation(file)
 
     file.close()
 
@@ -195,6 +231,44 @@ def load_gl_function(pair):
         return false;
     }}'''
 
+def write_lua_definition(file):
+    for pair in GL_WIN32_LIST:
+        write_line(file, generate_lua_definition(pair))
+    for pair in GL_LIST:
+        write_line(file, generate_lua_definition(pair))
+
+def generate_lua_definition(pair):
+    name  = "Gl"+pair[1]
+    return f"int {name}(lua_State *L);"
+
+def write_lua_implementation(file):
+    for pair in GL_WIN32_LIST:
+        write_line(file, generate_lua_implementation(pair))
+    for pair in GL_LIST:
+        write_line(file, generate_lua_implementation(pair))
+
+def generate_lua_implementation(pair):
+    name  = "Gl"+pair[1]
+    numOfParams = max(len(pair) - 2, 0)
+    getParams = ""
+    nl = "\n"
+    for i in range(numOfParams):
+        getParams += f"    int param{i} = luaL_checknumber(L, {i+1});{nl}"
+    callParams = ""
+    for i in range(numOfParams):
+        if (i == 0): callParams += f"param{i}"
+        else: callParams += f", param{i}"
+    return f'''int {name}(lua_State *L) {{
+{getParams}
+    gl{name}({callParams});
+    return 0;
+}}
+'''
+
+################################################################################
+# helper functions
+################################################################################
+
 def concat_parameters(pair):
     params = ""
     if len(pair) > 2:
@@ -210,12 +284,12 @@ def determine_longest_word(glList, accessor):
         maxLength = max(maxLength, len(word))
     return maxLength
 
-def guard_start(file):
-    write_line(file, "#ifndef GLUA_GLEX_H")
-    write_line(file, "#define GLUA_GLEX_H")
+def guard_start(file, name):
+    write_line(file, f"#ifndef {name}")
+    write_line(file, f"#define {name}")
 
-def guard_end(file):
-    file.write("#endif//GLUA_GLEX_H")
+def guard_end(file, name):
+    file.write(f"#endif//{name}")
 
 def write_line(file, text):
     file.write(text + "\n")
@@ -229,6 +303,10 @@ def pad(word, size):
         return word + (" " * delta)
     else:
         return word
+
+################################################################################
+# main entrypoint
+################################################################################
 
 if __name__ == "__main__":
     main()
