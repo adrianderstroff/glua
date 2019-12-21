@@ -1,9 +1,14 @@
 import os
 
 def main():
+    write_header()
+    write_source()
+
+def write_header():
     path = os.path.realpath(__file__+"/../../glex.h")
     print(path)
     file = open(path, "w+")
+
     guard_start(file)
     empty_line(file)
 
@@ -11,6 +16,9 @@ def main():
     empty_line(file)
 
     glext_defines(file)
+    empty_line(file)
+
+    gl_includes(file)
     empty_line(file)
 
     gl_types(file)
@@ -25,10 +33,32 @@ def main():
     guard_end(file)
     file.close()
 
+def write_source():
+    path = os.path.realpath(__file__+"/../../glex.c")
+    print(path)
+    file = open(path, "w+")
+
+    write_line(file, '#include "glex.h"')
+    empty_line(file)
+    write_line(file, '#include <stdio.h>')
+    empty_line(file)
+
+    generate_implementations(file)
+    empty_line(file)
+
+    write_init_gl_implementation(file)
+    empty_line(file)
+
+    file.close()
+
 def windows_includes(file):
     write_line(file, "#include <windows.h>")
     write_line(file, "#include <stdbool.h>")
     write_line(file, "#define GLDECL WINAPI")
+
+def gl_includes(file):
+    write_line(file, "#include <GL/gl.h>")
+    write_line(file, "#include <GL/glcorearb.h>")
 
 GLEXT_DEFINES_LIST = [
     ("GL_ARRAY_BUFFER", "0x8892"),
@@ -119,6 +149,51 @@ def format_gl_function(pair, retLen, nameLen, paramsLen):
     name       = "gl"+pair[1]
     definition = "extern " + returnType + " " + name + ";" 
     return typedef + definition
+
+def generate_implementations(file):
+    # determine lengths for nice formating
+    nameLen   = determine_longest_word(GL_LIST, lambda pair : pair[1])
+    for glFunc in GL_WIN32_LIST:
+        write_line(file, format_gl_implementation(glFunc, nameLen))
+    for glFunc in GL_LIST:
+        write_line(file, format_gl_implementation(glFunc, nameLen))
+
+def format_gl_implementation(pair, nameLen):
+    name = pair[1]
+    funcType = pad(name+"proc", nameLen+4)
+    return f"{funcType} *gl{name};"
+
+def write_init_gl_implementation(file):
+    write_line(file,
+    '''bool InitGl() {
+    // get the function pointer of wglGetProcAddress
+    HINSTANCE dll = LoadLibraryA("opengl32.dll");
+    typedef PROC WINAPI wglGetProcAddressproc(LPCSTR lpszProc);
+    if (!dll) {
+        printf("opengl32.dll not found.\\n");
+        return false;
+    }
+    wglGetProcAddressproc* wglGetProcAddress =
+    (wglGetProcAddressproc*)GetProcAddress(dll, "wglGetProcAddress");''')
+
+    for pair in GL_WIN32_LIST:
+        write_line(file, load_gl_function(pair))
+    for pair in GL_LIST:
+        write_line(file, load_gl_function(pair))
+
+    empty_line(file)
+    write_line(file, "    return true;")
+    write_line(file, "}")
+
+def load_gl_function(pair):
+    name = pair[1]
+    nl = "\\n"
+    return f'''
+    gl{name} = ({name}proc *)wglGetProcAddress("gl{name}");
+    if (!gl{name}) {{
+        printf("Function gl{name} couldn't be loaded from opengl32.dll{nl}");
+        return false;
+    }}'''
 
 def concat_parameters(pair):
     params = ""

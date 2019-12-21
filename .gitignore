@@ -8,6 +8,7 @@ luac.out
 
 # generated gl files
 glex.h
+glex.c
 
 # Object files
 *.o
