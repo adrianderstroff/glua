@@ -1,13 +1,19 @@
 import os
 
+OUT_DIR = __file__ + "/../"
+
 def main():
     write_header()
     write_source()
     write_lua_header()
     write_lua_source()
 
+################################################################################
+# write files
+################################################################################
+
 def write_header():
-    path = os.path.realpath(__file__+"/../../glex.h")
+    path = os.path.realpath(OUT_DIR + "glex.h")
     print(path)
     file = open(path, "w+")
 
@@ -36,7 +42,7 @@ def write_header():
     file.close()
 
 def write_source():
-    path = os.path.realpath(__file__+"/../../glex.c")
+    path = os.path.realpath(OUT_DIR + "glex.c")
     print(path)
     file = open(path, "w+")
 
@@ -54,7 +60,7 @@ def write_source():
     file.close()
 
 def write_lua_header():
-    path = os.path.realpath(__file__+"/../../glutil.h")
+    path = os.path.realpath(OUT_DIR + "glutil.h")
     print(path)
     file = open(path, "w+")
 
@@ -76,7 +82,7 @@ def write_lua_header():
     file.close()
 
 def write_lua_source():
-    path = os.path.realpath(__file__+"/../../glutil.c")
+    path = os.path.realpath(OUT_DIR + "glutil.c")
     print(path)
     file = open(path, "w+")
 
@@ -86,6 +92,10 @@ def write_lua_source():
     write_lua_implementation(file)
 
     file.close()
+
+################################################################################
+# helper functions
+################################################################################
 
 def windows_includes(file):
     write_line(file, "#include <windows.h>")
@@ -162,7 +172,7 @@ GL_LIST = [
     ("void", "Uniform4f", "GLint location", "GLfloat v0", "GLfloat v1", "GLfloat v2", "GLfloat v3"),
     ("void", "UniformMatrix4fv", "GLint location", "GLsizei count", "GLboolean transpose", "const GLfloat *value"),
     ("void", "UseProgram", "GLuint program"),
-    ("void", "VertexAttribPointer", "GLuint index", "GLint size", "GLenum type", "GLboolean normalized", "GLsizei stride", "const GLvoid * pointer"),
+    ("void", "VertexAttribPointer", "GLuint index", "GLint size", "GLenum type", "GLboolean normalized", "GLsizei stride", "const GLvoid * pointer")
 ]
 
 def generate_functions(file):
@@ -250,24 +260,73 @@ def write_lua_implementation(file):
 def generate_lua_implementation(pair):
     name  = "Gl"+pair[1]
     numOfParams = max(len(pair) - 2, 0)
-    getParams = ""
+    if numOfParams == 1 and determine_return_type(pair[2])[2] == 0:
+        numOfParams = 0
     nl = "\n"
+    # grab all parameter names
+    paramNames = []
     for i in range(numOfParams):
-        getParams += f"    int param{i} = luaL_checknumber(L, {i+1});{nl}"
+        tokens = pair[i+2].split()
+        paramName = tokens[len(tokens)-1]
+        paramNames.append(paramName)
+    # find length of longest parameter name
+    paramNameLen = determine_longest_word(paramNames, lambda x : x)
+    # grab all parameter types
+    paramTypes = []
+    for i in range(numOfParams):
+        paramTypes.append(determine_return_type(pair[i+2]))
+    # find length of longest parameter type name
+    paramTypeLen = determine_longest_word(paramTypes, lambda x : x[0])
+    # retrieve all parameters from lua
+    getParams = ""
+    for i in range(numOfParams):
+        paramName = pad(paramNames[i], paramNameLen)
+        paramType = pad(paramTypes[i][0], paramTypeLen)
+        luaCheckType = paramTypes[i][1]
+        udataParam = ', "' + paramTypes[i][0] + '"' if "udata" in luaCheckType else ""
+        getParams += f"    {paramType} {paramName} = ({paramType})luaL_check{luaCheckType}(L, {i+1}{udataParam});{nl}"
+    # assemble all parameters for functions call
     callParams = ""
     for i in range(numOfParams):
-        if (i == 0): callParams += f"param{i}"
-        else: callParams += f", param{i}"
+        paramName = paramNames[i]
+        if (i == 0): callParams += paramName
+        else: callParams += f", {paramName}"
     return f'''int {name}(lua_State *L) {{
 {getParams}
-    gl{name}({callParams});
+    gl{pair[1]}({callParams});
     return 0;
 }}
 '''
 
 ################################################################################
-# helper functions
+# shared functions
 ################################################################################
+
+GL_TYPES = [
+    ["GLenum","integer",1],
+    ["GLchar *","string",1],
+    ["GLchar","integer",1],
+    ["GLboolean","integer",1],
+    ["GLintptr","integer",1],
+    ["GLint *","udata",1],
+    ["GLint","integer",1],
+    ["GLuint *","udata",1],
+    ["GLuint","integer",1],
+    ["GLfloat *","udata",1],
+    ["GLfloat","number",1],
+    ["GLsizeiptr","integer",1],
+    ["GLsizei *","udata",1],
+    ["GLsizei","integer",1],
+    ["GLvoid *","udata",1],
+    ["GLvoid","",1],
+    ["void", "", 0]
+]
+
+def determine_return_type(param):
+    for glType in GL_TYPES:
+        if glType[0] in param:
+            return glType
+    return ""
 
 def concat_parameters(pair):
     params = ""
