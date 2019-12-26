@@ -34,7 +34,8 @@ static const struct luaL_Reg lualib[] = {
 // entrance point of the require statement in lua. the name has to be 
 // luaopen_<LIBRARY_NAME>
 int luaopen_glua (lua_State *L) {
-    luaL_newlib(L, lualib);
+    luaL_register(L, "glua", lualib);
+    LUA_C_CONSTANTS
     return 1;
 }
 

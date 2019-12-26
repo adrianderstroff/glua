@@ -77,6 +77,14 @@ def write_lua_header():
     write_lua_definition(file)
     empty_line(file)
 
+    # write lua c mapping
+    write_lua_c_mapping(file)
+    empty_line(file)
+
+    # write lua c constants
+    write_lua_c_constants(file)
+    empty_line(file)
+
     guard_end(file, "GLUTIL_H")
     
     file.close()
@@ -94,17 +102,8 @@ def write_lua_source():
     file.close()
 
 ################################################################################
-# helper functions
+# lists
 ################################################################################
-
-def windows_includes(file):
-    write_line(file, "#include <windows.h>")
-    write_line(file, "#include <stdbool.h>")
-    write_line(file, "#define GLDECL WINAPI")
-
-def gl_includes(file):
-    write_line(file, "#include <GL/gl.h>")
-    write_line(file, "#include <GL/glcorearb.h>")
 
 GLEXT_DEFINES_LIST = [
     ("GL_ARRAY_BUFFER", "0x8892"),
@@ -127,17 +126,6 @@ GLEXT_DEFINES_LIST = [
     ("GL_TEXTURE0", "0x84C0"),
     ("GL_VERTEX_SHADER", "0x8B31")
 ]
-
-def glext_defines(file):
-    write_line(file, "// https://www.opengl.org/registry/api/GL/glext.h")                
-    for pair in GLEXT_DEFINES_LIST:
-        write_line(file, "#define " + pad(pair[0],32) + " " + pair[1])
-
-def gl_types(file):
-    write_line(file, "typedef char      GLchar;")
-    write_line(file, "typedef ptrdiff_t GLintptr;")
-    write_line(file, "typedef ptrdiff_t GLsizeiptr;")
-
 GL_WIN32_LIST = [
     ("void", "BlendEquation", "GLenum mode"),
     ("void", "ActiveTexture", "GLenum texture")
@@ -174,6 +162,29 @@ GL_LIST = [
     ("void", "UseProgram", "GLuint program"),
     ("void", "VertexAttribPointer", "GLuint index", "GLint size", "GLenum type", "GLboolean normalized", "GLsizei stride", "const GLvoid * pointer")
 ]
+
+################################################################################
+# helper functions
+################################################################################
+
+def windows_includes(file):
+    write_line(file, "#include <windows.h>")
+    write_line(file, "#include <stdbool.h>")
+    write_line(file, "#define GLDECL WINAPI")
+
+def gl_includes(file):
+    write_line(file, "#include <GL/gl.h>")
+    write_line(file, "#include <GL/glcorearb.h>")
+
+def glext_defines(file):
+    write_line(file, "// https://www.opengl.org/registry/api/GL/glext.h")                
+    for pair in GLEXT_DEFINES_LIST:
+        write_line(file, "#define " + pad(pair[0],32) + " " + pair[1])
+
+def gl_types(file):
+    write_line(file, "typedef char      GLchar;")
+    write_line(file, "typedef ptrdiff_t GLintptr;")
+    write_line(file, "typedef ptrdiff_t GLsizeiptr;")
 
 def generate_functions(file):
     # determine lengths for nice formating
@@ -250,6 +261,33 @@ def write_lua_definition(file):
 def generate_lua_definition(pair):
     name  = "Gl"+pair[1]
     return f"int {name}(lua_State *L);"
+
+def write_lua_c_mapping(file):
+    write_line(file, '#define LUA_C_MAPPING \\')
+    for pair in GL_WIN32_LIST:
+        write_line(file, generate_lua_c_mapping(pair))
+    for pair in GL_LIST:
+        write_line(file, generate_lua_c_mapping(pair))
+    write_line(file, '    /* end */')
+
+def generate_lua_c_mapping(pair):
+    name = pair[1]
+    # format lua function
+    luaName = name[0].lower()
+    for c in name[1:]:
+        luaName += c.lower() if c.islower() else "_" + c.lower()
+    return f'    {{"{luaName}", gl{name}}}, \\'
+
+def write_lua_c_constants(file):
+    write_line(file, '#define LUA_C_CONSTANTS \\')
+    for pair in GLEXT_DEFINES_LIST:
+        write_line(file, generate_lua_c_constant(pair))
+    write_line(file, '    /* end */')
+
+def generate_lua_c_constant(pair):
+    name = pair[0]
+    return f'''    lua_pushnumber(L, {name});\\
+    lua_setfield(L, -2, "{name[3:]}");\\'''
 
 def write_lua_implementation(file):
     for pair in GL_WIN32_LIST:

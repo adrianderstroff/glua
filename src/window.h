@@ -334,6 +334,7 @@ int GLuaCreateWindow(lua_State *L) {
     return 1;
 }
 
+// displays the window and runs the message loop
 int GLuaShowWindow() {
     // show and update the window
     ShowWindow(gWindowHandle, gWindowDisplayMode);
