@@ -1,22 +1,29 @@
 import os
+import re
 
-OUT_DIR = __file__ + "/../"
+SCRIPT_DIR = __file__ + "/../"
+OUT_DIR = __file__ + "/../../src/"
 
 def main():
-    write_header()
-    write_source()
-    write_lua_header()
-    write_lua_source()
+    path = os.path.realpath(OUT_DIR + "gl.h")
+    print(path)
+    file = open(path, "w+")
+
+    retrieve_defines()
+    retrieve_functions()
+
+    write_header(file)
+    write_source(file)
+    write_lua_header(file)
+    write_lua_source(file)
+
+    file.close()
 
 ################################################################################
 # write files
 ################################################################################
 
-def write_header():
-    path = os.path.realpath(OUT_DIR + "glex.h")
-    print(path)
-    file = open(path, "w+")
-
+def write_header(file):
     guard_start(file, "GLUA_GLEX_H")
     empty_line(file)
 
@@ -39,15 +46,9 @@ def write_header():
     empty_line(file)
 
     guard_end(file, "GLUA_GLEX_H")
-    file.close()
-
-def write_source():
-    path = os.path.realpath(OUT_DIR + "glex.c")
-    print(path)
-    file = open(path, "w+")
-
-    write_line(file, '#include "glex.h"')
     empty_line(file)
+
+def write_source(file):
     write_line(file, '#include <stdio.h>')
     empty_line(file)
 
@@ -57,17 +58,10 @@ def write_source():
     write_init_gl_implementation(file)
     empty_line(file)
 
-    file.close()
-
-def write_lua_header():
-    path = os.path.realpath(OUT_DIR + "glutil.h")
-    print(path)
-    file = open(path, "w+")
-
+def write_lua_header(file):
     guard_start(file, "GLUTIL_H")
     empty_line(file)
 
-    write_line(file, '#include "glex.h"')
     write_line(file, '#include "lua.h"')
     write_line(file, '#include "lualib.h"')
     write_line(file, '#include "lauxlib.h"')
@@ -86,86 +80,61 @@ def write_lua_header():
     empty_line(file)
 
     guard_end(file, "GLUTIL_H")
-    
-    file.close()
-
-def write_lua_source():
-    path = os.path.realpath(OUT_DIR + "glutil.c")
-    print(path)
-    file = open(path, "w+")
-
-    write_line(file, '#include "glutil.h"')
     empty_line(file)
 
+def write_lua_source(file):
     write_lua_implementation(file)
-
-    file.close()
 
 ################################################################################
 # lists
 ################################################################################
 
-GLEXT_DEFINES_LIST = [
-    ("GL_ARRAY_BUFFER", "0x8892"),
-    ("GL_ARRAY_BUFFER_BINDING", "0x8894"),
-    ("GL_COLOR_ATTACHMENT0", "0x8CE0"),
-    ("GL_COMPILE_STATUS", "0x8B81"),
-    ("GL_CURRENT_PROGRAM", "0x8B8D"),
-    ("GL_DYNAMIC_DRAW", "0x88E8"),
-    ("GL_ELEMENT_ARRAY_BUFFER", "0x8893"),
-    ("GL_ELEMENT_ARRAY_BUFFER_BINDING", "0x8895"),
-    ("GL_FRAGMENT_SHADER", "0x8B30"),
-    ("GL_FRAMEBUFFER", "0x8D40"),
-    ("GL_FRAMEBUFFER_COMPLETE", "0x8CD5"),
-    ("GL_FUNC_ADD", "0x8006"),
-    ("GL_INVALID_FRAMEBUFFER_OPERATION", "0x0506"),
-    ("GL_MAJOR_VERSION", "0x821B"),
-    ("GL_MINOR_VERSION", "0x821C"),
-    ("GL_STATIC_DRAW", "0x88E4"),
-    ("GL_STREAM_DRAW", "0x88E0"),
-    ("GL_TEXTURE0", "0x84C0"),
-    ("GL_VERTEX_SHADER", "0x8B31")
+GL_TYPES_LIST = [
+    (["GLchar*", "GLchar *"], "string", 1),
+    (["*"]                  , "udata" , 1),
+    (["GLfloat", "GLdouble"], "number", 1),
+    (["void"]               , ""      , 0)
 ]
-GL_WIN32_LIST = [
-    ("void", "BlendEquation", "GLenum mode"),
-    ("void", "ActiveTexture", "GLenum texture")
-]
-GL_LIST = [
-    ("void", "AttachShader", "GLuint program", "GLuint shader"),
-    ("void", "BindBuffer", "GLenum target", "GLuint buffer"),
-    ("void", "BindFramebuffer", "GLenum target", "GLuint framebuffer"),
-    ("void", "BufferData", "GLenum target", "GLsizeiptr size", "const GLvoid *data", "GLenum usage"),
-    ("void", "BufferSubData", "GLenum target", "GLintptr offset", "GLsizeiptr size", "const GLvoid * data"),
-    ("GLenum", "CheckFramebufferStatus", "GLenum target"),
-    ("void", "ClearBufferfv", "GLenum buffer", "GLint drawbuffer", "const GLfloat * value"),
-    ("void", "CompileShader", "GLuint shader"),
-    ("GLuint", "CreateProgram", "void"),
-    ("GLuint", "CreateShader", "GLenum type"),
-    ("void", "DeleteBuffers", "GLsizei n", "const GLuint *buffers"),
-    ("void", "DeleteFramebuffers", "GLsizei n", "const GLuint *framebuffers"),
-    ("void", "EnableVertexAttribArray", "GLuint index"),
-    ("void", "DrawBuffers", "GLsizei n", "const GLenum *bufs"),
-    ("void", "FramebufferTexture2D", "GLenum target", "GLenum attachment", "GLenum textarget", "GLuint texture", "GLint level"),
-    ("void", "GenBuffers", "GLsizei n", "GLuint *buffers"),
-    ("void", "GenFramebuffers", "GLsizei n", "GLuint * framebuffers"),
-    ("GLint", "GetAttribLocation", "GLuint program", "const GLchar *name"),
-    ("void", "GetShaderInfoLog", "GLuint shader", "GLsizei bufSize", "GLsizei *length", "GLchar *infoLog"),
-    ("void", "GetShaderiv", "GLuint shader", "GLenum pname", "GLint *params"),
-    ("GLint", "GetUniformLocation", "GLuint program", "const GLchar *name"),
-    ("void", "LinkProgram", "GLuint program"),
-    ("void", "ShaderSource", "GLuint shader", "GLsizei count", "const GLchar* const *string", "const GLint *length"),
-    ("void", "Uniform1i", "GLint location", "GLint v0"),
-    ("void", "Uniform1f", "GLint location", "GLfloat v0"),
-    ("void", "Uniform2f", "GLint location", "GLfloat v0", "GLfloat v1"),
-    ("void", "Uniform4f", "GLint location", "GLfloat v0", "GLfloat v1", "GLfloat v2", "GLfloat v3"),
-    ("void", "UniformMatrix4fv", "GLint location", "GLsizei count", "GLboolean transpose", "const GLfloat *value"),
-    ("void", "UseProgram", "GLuint program"),
-    ("void", "VertexAttribPointer", "GLuint index", "GLint size", "GLenum type", "GLboolean normalized", "GLsizei stride", "const GLvoid * pointer")
-]
+GL_DEFINES_LIST   = []
+GL_FUNCTIONS_LIST = []
 
 ################################################################################
 # helper functions
 ################################################################################
+
+def retrieve_defines():
+    with open(SCRIPT_DIR + "gl_defines.h", 'r') as fp:
+        line = fp.readline()
+        while line:
+            pair = line.split()
+            if len(pair) == 3:
+                defineTuple = (pair[1], pair[2]) 
+                GL_DEFINES_LIST.append(defineTuple)
+            line = fp.readline()
+
+def retrieve_functions():
+    with open(SCRIPT_DIR + "gl_functions.h", 'r') as fp:
+        line = fp.readline()
+        while line:
+            # grab everything before the parameters
+            retValFnName = re.match("[^(]*", line)
+            line = line[retValFnName.end()+1:-2]
+
+            # extract return value and function name
+            tokens = retValFnName.group().split()
+            fnName = tokens[len(tokens)-1]
+            retVal = tokens[0]
+            for token in tokens[1:len(tokens)-1]:
+                retVal += " " + token
+            fnTuple = [retVal, fnName]
+
+            # collect all function arguments
+            for fnArg in re.finditer("[^(),]+", line):
+                fnTuple.append(fnArg.group().strip())
+
+            # add to list and advance to next line
+            GL_FUNCTIONS_LIST.append(fnTuple)
+            line = fp.readline()
 
 def windows_includes(file):
     write_line(file, "#include <windows.h>")
@@ -177,9 +146,12 @@ def gl_includes(file):
     write_line(file, "#include <GL/glcorearb.h>")
 
 def glext_defines(file):
-    write_line(file, "// https://www.opengl.org/registry/api/GL/glext.h")                
-    for pair in GLEXT_DEFINES_LIST:
-        write_line(file, "#define " + pad(pair[0],32) + " " + pair[1])
+    # get length of longest parameter name
+    definesLen = determine_longest_word(GL_DEFINES_LIST, lambda pair : pair[0])
+
+    # write all defines to file
+    for pair in GL_DEFINES_LIST:
+        write_line(file, "#define " + pad(pair[0], definesLen) + " " + pair[1])
 
 def gl_types(file):
     write_line(file, "typedef char      GLchar;")
@@ -188,12 +160,10 @@ def gl_types(file):
 
 def generate_functions(file):
     # determine lengths for nice formating
-    retLen    = determine_longest_word(GL_LIST, lambda pair : pair[0])
-    nameLen   = determine_longest_word(GL_LIST, lambda pair : pair[1])
-    paramsLen = determine_longest_word(GL_LIST, lambda pair : concat_parameters(pair))
-    for glFunc in GL_WIN32_LIST:
-        write_line(file, format_gl_function(glFunc, retLen, nameLen, paramsLen))
-    for glFunc in GL_LIST:
+    retLen    = determine_longest_word(GL_FUNCTIONS_LIST, lambda pair : pair[0])
+    nameLen   = determine_longest_word(GL_FUNCTIONS_LIST, lambda pair : pair[1])
+    paramsLen = determine_longest_word(GL_FUNCTIONS_LIST, lambda pair : concat_parameters(pair))
+    for glFunc in GL_FUNCTIONS_LIST:
         write_line(file, format_gl_function(glFunc, retLen, nameLen, paramsLen))
 
 def format_gl_function(pair, retLen, nameLen, paramsLen):
@@ -209,10 +179,8 @@ def format_gl_function(pair, retLen, nameLen, paramsLen):
 
 def generate_implementations(file):
     # determine lengths for nice formating
-    nameLen   = determine_longest_word(GL_LIST, lambda pair : pair[1])
-    for glFunc in GL_WIN32_LIST:
-        write_line(file, format_gl_implementation(glFunc, nameLen))
-    for glFunc in GL_LIST:
+    nameLen   = determine_longest_word(GL_FUNCTIONS_LIST, lambda pair : pair[1])
+    for glFunc in GL_FUNCTIONS_LIST:
         write_line(file, format_gl_implementation(glFunc, nameLen))
 
 def format_gl_implementation(pair, nameLen):
@@ -233,9 +201,7 @@ def write_init_gl_implementation(file):
     wglGetProcAddressproc* wglGetProcAddress =
     (wglGetProcAddressproc*)GetProcAddress(dll, "wglGetProcAddress");''')
 
-    for pair in GL_WIN32_LIST:
-        write_line(file, load_gl_function(pair))
-    for pair in GL_LIST:
+    for pair in GL_FUNCTIONS_LIST:
         write_line(file, load_gl_function(pair))
 
     empty_line(file)
@@ -243,7 +209,7 @@ def write_init_gl_implementation(file):
     write_line(file, "}")
 
 def load_gl_function(pair):
-    name = pair[1]
+    name = pair[1].strip()
     nl = "\\n"
     return f'''
     gl{name} = ({name}proc *)wglGetProcAddress("gl{name}");
@@ -253,34 +219,39 @@ def load_gl_function(pair):
     }}'''
 
 def write_lua_definition(file):
-    for pair in GL_WIN32_LIST:
-        write_line(file, generate_lua_definition(pair))
-    for pair in GL_LIST:
+    for pair in GL_FUNCTIONS_LIST:
         write_line(file, generate_lua_definition(pair))
 
 def generate_lua_definition(pair):
-    name  = "Gl"+pair[1]
+    name  = "Gl"+pair[1].strip()
     return f"int {name}(lua_State *L);"
 
 def write_lua_c_mapping(file):
-    write_line(file, '#define LUA_C_MAPPING \\')
-    for pair in GL_WIN32_LIST:
-        write_line(file, generate_lua_c_mapping(pair))
-    for pair in GL_LIST:
-        write_line(file, generate_lua_c_mapping(pair))
+    luaFnNameList = generate_lua_function_names()
+    fnLuaLen = determine_longest_word(luaFnNameList, lambda x : x)
+    fnCLen   = determine_longest_word(GL_FUNCTIONS_LIST, lambda p : p[1])
+    write_line(file, "#define EXPOSED_GL_FUNCTIONS \\")
+    for i in range(len(GL_FUNCTIONS_LIST)):
+        luaFnName = pad(f'"{luaFnNameList[i]}"', fnLuaLen+2)
+        cFnName   = pad("Gl"+GL_FUNCTIONS_LIST[i][1], fnCLen+2)
+        write_line(file, f'    {{{luaFnName}, {cFnName}}}, \\')
     write_line(file, '    /* end */')
 
-def generate_lua_c_mapping(pair):
-    name = pair[1]
-    # format lua function
-    luaName = name[0].lower()
-    for c in name[1:]:
-        luaName += c.lower() if c.islower() else "_" + c.lower()
-    return f'    {{"{luaName}", gl{name}}}, \\'
+def generate_lua_function_names():
+    luaFnNameList = []
+    for pair in GL_FUNCTIONS_LIST:
+        # grab c function name
+        name = pair[1]
+        # turn it into lua naming convention
+        luaName = name[0].lower()
+        for c in name[1:]:
+            luaName += c.lower() if c.islower() else "_" + c.lower()
+        luaFnNameList.append(luaName)
+    return luaFnNameList
 
 def write_lua_c_constants(file):
-    write_line(file, '#define LUA_C_CONSTANTS \\')
-    for pair in GLEXT_DEFINES_LIST:
+    write_line(file, '#define EXPOSED_GL_CONSTANTS \\')
+    for pair in GL_DEFINES_LIST:
         write_line(file, generate_lua_c_constant(pair))
     write_line(file, '    /* end */')
 
@@ -290,31 +261,36 @@ def generate_lua_c_constant(pair):
     lua_setfield(L, -2, "{name[3:]}");\\'''
 
 def write_lua_implementation(file):
-    for pair in GL_WIN32_LIST:
-        write_line(file, generate_lua_implementation(pair))
-    for pair in GL_LIST:
+    for pair in GL_FUNCTIONS_LIST:
         write_line(file, generate_lua_implementation(pair))
 
 def generate_lua_implementation(pair):
     name  = "Gl"+pair[1]
+    nl = "\n"
+    
+    # determine number of parameters
     numOfParams = max(len(pair) - 2, 0)
     if numOfParams == 1 and determine_return_type(pair[2])[2] == 0:
         numOfParams = 0
-    nl = "\n"
+
     # grab all parameter names
     paramNames = []
     for i in range(numOfParams):
         tokens = pair[i+2].split()
         paramName = tokens[len(tokens)-1]
         paramNames.append(paramName)
+
     # find length of longest parameter name
     paramNameLen = determine_longest_word(paramNames, lambda x : x)
+
     # grab all parameter types
     paramTypes = []
     for i in range(numOfParams):
         paramTypes.append(determine_return_type(pair[i+2]))
+
     # find length of longest parameter type name
     paramTypeLen = determine_longest_word(paramTypes, lambda x : x[0])
+
     # retrieve all parameters from lua
     getParams = ""
     for i in range(numOfParams):
@@ -323,6 +299,7 @@ def generate_lua_implementation(pair):
         luaCheckType = paramTypes[i][1]
         udataParam = ', "' + paramTypes[i][0] + '"' if "udata" in luaCheckType else ""
         getParams += f"    {paramType} {paramName} = ({paramType})luaL_check{luaCheckType}(L, {i+1}{udataParam});{nl}"
+    
     # assemble all parameters for functions call
     callParams = ""
     for i in range(numOfParams):
@@ -340,31 +317,20 @@ def generate_lua_implementation(pair):
 # shared functions
 ################################################################################
 
-GL_TYPES = [
-    ["GLenum","integer",1],
-    ["GLchar *","string",1],
-    ["GLchar","integer",1],
-    ["GLboolean","integer",1],
-    ["GLintptr","integer",1],
-    ["GLint *","udata",1],
-    ["GLint","integer",1],
-    ["GLuint *","udata",1],
-    ["GLuint","integer",1],
-    ["GLfloat *","udata",1],
-    ["GLfloat","number",1],
-    ["GLsizeiptr","integer",1],
-    ["GLsizei *","udata",1],
-    ["GLsizei","integer",1],
-    ["GLvoid *","udata",1],
-    ["GLvoid","",1],
-    ["void", "", 0]
-]
-
 def determine_return_type(param):
-    for glType in GL_TYPES:
-        if glType[0] in param:
-            return glType
-    return ""
+    returnType = extract_return_type(param)
+    for glTypeRank in GL_TYPES_LIST:
+        for glType in glTypeRank[0]:
+            if glType in returnType:
+                return (returnType, glTypeRank[1], glTypeRank[2])
+    return (returnType, "integer", 1)
+
+def extract_return_type(param):
+    tokens = param.split()
+    returnType = tokens[0]
+    for i in range(1,len(tokens)-1):
+        returnType += " " + tokens[i]
+    return returnType
 
 def concat_parameters(pair):
     params = ""
@@ -386,7 +352,7 @@ def guard_start(file, name):
     write_line(file, f"#define {name}")
 
 def guard_end(file, name):
-    file.write(f"#endif//{name}")
+    write_line(file, f"#endif//{name}")
 
 def write_line(file, text):
     file.write(text + "\n")

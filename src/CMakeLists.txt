@@ -15,10 +15,7 @@ include_directories (
 
 # all sources to compile
 set (SOURCES
-    glex.c
-    glex.h
-    glutil.c
-    glutil.h
+    gl.h
     main.c
     window.h
 )

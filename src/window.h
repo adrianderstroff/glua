@@ -2,7 +2,7 @@
 #define GLUA_WINDOW_H
 
 #include <windows.h>
-#include "glex.h"
+#include "gl.h"
 
 
 // -------------------------------------------------------------------------- //
@@ -168,7 +168,7 @@ void CreateContext(HWND windowHandle) {
     wglMakeCurrent (gWindowsDeviceContext, gGlRenderingContext);
 
     // load opengl function pointers
-    if(!init_gl()) { 
+    if(!InitGl()) { 
         printf("Failed to initialize GL!\n");
         PostQuitMessage(0);
         return;

@@ -9,11 +9,10 @@
 // project includes                                                           //
 // -------------------------------------------------------------------------- //
 #include "window.h"
-#include "glutil.h"
-
 
 // mapping between the name of the lua callable function and the actual c function
 static const struct luaL_Reg lualib[] = {
+    /* window functions */
     {"create_window", GLuaCreateWindow},
     {"show_window", GLuaShowWindow},
     {"render", SetRenderCallback},
@@ -22,20 +21,15 @@ static const struct luaL_Reg lualib[] = {
     {"set_window_resize_callback", SetWindowResizeCallback},
     {"set_mouse_btn_callback", SetMouseBtnCallback},
     {"set_mouse_move_callback", SetMouseMoveCallback},
-    {"gl_clear", GlClear},
-    {"gl_color3f", GlColor3f},
-    {"gl_vertex3f", GlVertex3f},
-    {"gl_begin", GlBegin},
-    {"gl_end", GlEnd},
-    {"gl_viewport", GlViewport},
+    EXPOSED_GL_FUNCTIONS
     {NULL, NULL}
 };
 
 // entrance point of the require statement in lua. the name has to be 
 // luaopen_<LIBRARY_NAME>
 int luaopen_glua (lua_State *L) {
-    luaL_register(L, "glua", lualib);
-    LUA_C_CONSTANTS
+    luaL_newlib(L, lualib);
+    EXPOSED_GL_CONSTANTS
     return 1;
 }
 
