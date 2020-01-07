@@ -1,2 +1,2 @@
-lua ./test/main.lua
+lua ./examples/main.lua
 pause

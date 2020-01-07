@@ -24,6 +24,9 @@ def main():
 ################################################################################
 
 def write_header(file):
+    c_file_start(file, "glex.h")
+    empty_line(file)
+
     guard_start(file, "GLUA_GLEX_H")
     empty_line(file)
 
@@ -49,6 +52,9 @@ def write_header(file):
     empty_line(file)
 
 def write_source(file):
+    c_file_start(file, "glex.c")
+    empty_line(file)
+
     write_line(file, '#include <stdio.h>')
     empty_line(file)
 
@@ -59,6 +65,9 @@ def write_source(file):
     empty_line(file)
 
 def write_lua_header(file):
+    c_file_start(file, "glutil.h")
+    empty_line(file)
+
     guard_start(file, "GLUTIL_H")
     empty_line(file)
 
@@ -83,6 +92,9 @@ def write_lua_header(file):
     empty_line(file)
 
 def write_lua_source(file):
+    c_file_start(file, "glutil.c")
+    empty_line(file)
+
     write_lua_implementation(file)
 
 ################################################################################
@@ -97,6 +109,7 @@ GL_TYPES_LIST = [
 ]
 GL_DEFINES_LIST   = []
 GL_FUNCTIONS_LIST = []
+GL_FUNCTIONS_DIFF_LIST = []
 
 ################################################################################
 # helper functions
@@ -116,6 +129,8 @@ def retrieve_functions():
     with open(SCRIPT_DIR + "gl_functions.h", 'r') as fp:
         line = fp.readline()
         while line:
+            line = line.strip()
+
             # grab everything before the parameters
             retValFnName = re.match("[^(]*", line)
             line = line[retValFnName.end()+1:-2]
@@ -134,6 +149,31 @@ def retrieve_functions():
 
             # add to list and advance to next line
             GL_FUNCTIONS_LIST.append(fnTuple)
+            line = fp.readline()
+
+    with open(SCRIPT_DIR + "gl_functions_diff.h", 'r') as fp:
+        line = fp.readline()
+        while line:
+            line = line.strip()
+
+            # grab everything before the parameters
+            retValFnName = re.match("[^(]*", line)
+            line = line[retValFnName.end()+1:-2]
+
+            # extract return value and function name
+            tokens = retValFnName.group().split()
+            fnName = tokens[len(tokens)-1]
+            retVal = tokens[0]
+            for token in tokens[1:len(tokens)-1]:
+                retVal += " " + token
+            fnTuple = [retVal, fnName]
+
+            # collect all function arguments
+            for fnArg in re.finditer("[^(),]+", line):
+                fnTuple.append(fnArg.group().strip())
+
+            # add to list and advance to next line
+            GL_FUNCTIONS_DIFF_LIST.append(fnTuple)
             line = fp.readline()
 
 def windows_includes(file):
@@ -177,6 +217,8 @@ def format_gl_function(pair, retLen, nameLen, paramsLen):
     definition = "extern " + returnType + " " + name + ";" 
     return typedef + definition
 
+################################################################################
+
 def generate_implementations(file):
     # determine lengths for nice formating
     nameLen   = determine_longest_word(GL_FUNCTIONS_LIST, lambda pair : pair[1])
@@ -218,8 +260,11 @@ def load_gl_function(pair):
         return false;
     }}'''
 
+################################################################################
+
 def write_lua_definition(file):
-    for pair in GL_FUNCTIONS_LIST:
+    allFnList = GL_FUNCTIONS_DIFF_LIST + GL_FUNCTIONS_LIST
+    for pair in allFnList:
         write_line(file, generate_lua_definition(pair))
 
 def generate_lua_definition(pair):
@@ -227,26 +272,30 @@ def generate_lua_definition(pair):
     return f"int {name}(lua_State *L);"
 
 def write_lua_c_mapping(file):
+    allFnList = GL_FUNCTIONS_DIFF_LIST + GL_FUNCTIONS_LIST
+
     luaFnNameList = generate_lua_function_names()
     fnLuaLen = determine_longest_word(luaFnNameList, lambda x : x)
-    fnCLen   = determine_longest_word(GL_FUNCTIONS_LIST, lambda p : p[1])
+    fnCLen   = determine_longest_word(allFnList, lambda p : p[1])
     write_line(file, "#define EXPOSED_GL_FUNCTIONS \\")
-    for i in range(len(GL_FUNCTIONS_LIST)):
+    for i in range(len(allFnList)):
         luaFnName = pad(f'"{luaFnNameList[i]}"', fnLuaLen+2)
-        cFnName   = pad("Gl"+GL_FUNCTIONS_LIST[i][1], fnCLen+2)
+        cFnName   = pad("Gl"+allFnList[i][1], fnCLen+2)
         write_line(file, f'    {{{luaFnName}, {cFnName}}}, \\')
     write_line(file, '    /* end */')
 
 def generate_lua_function_names():
+    allFnList = GL_FUNCTIONS_DIFF_LIST + GL_FUNCTIONS_LIST
     luaFnNameList = []
-    for pair in GL_FUNCTIONS_LIST:
+    for pair in allFnList:
         # grab c function name
         name = pair[1]
         # turn it into lua naming convention
         luaName = name[0].lower()
         for c in name[1:]:
-            luaName += c.lower() if c.islower() else "_" + c.lower()
-        luaFnNameList.append(luaName)
+            isLower = c.islower() or c.isdigit()
+            luaName += c.lower() if isLower else "_" + c.lower()
+        luaFnNameList.append("gl_" + luaName)
     return luaFnNameList
 
 def write_lua_c_constants(file):
@@ -260,8 +309,12 @@ def generate_lua_c_constant(pair):
     return f'''    lua_pushnumber(L, {name});\\
     lua_setfield(L, -2, "{name[3:]}");\\'''
 
+################################################################################
+
 def write_lua_implementation(file):
     for pair in GL_FUNCTIONS_LIST:
+        write_line(file, generate_lua_implementation(pair))
+    for pair in GL_FUNCTIONS_DIFF_LIST:
         write_line(file, generate_lua_implementation(pair))
 
 def generate_lua_implementation(pair):
@@ -346,6 +399,15 @@ def determine_longest_word(glList, accessor):
         word = accessor(element)
         maxLength = max(maxLength, len(word))
     return maxLength
+
+def c_file_start(file, fileName):
+    headDiff = 120 - 4
+    lineDiff = 120 - len(fileName) - 5
+    write_line(file, "/*" + (headDiff * "*") + "*/")
+    write_line(file, "/*" + (headDiff * " ") + "*/")
+    write_line(file, "/* " + fileName + (lineDiff * " ") + "*/")
+    write_line(file, "/*" + (headDiff * " ") + "*/")
+    write_line(file, "/*" + (headDiff * "*") + "*/")
 
 def guard_start(file, name):
     write_line(file, f"#ifndef {name}")

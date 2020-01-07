@@ -3,7 +3,7 @@ local glua = require 'glua'
 glua.create_window("GL test", 400, 400)
 
 glua.render(function()
-    glua.gl_begin()
+    glua.gl_begin(glua.TRIANGLES)
     glua.gl_color3f(1,0,0)
     glua.gl_vertex3f(-1,-1,0)
     glua.gl_color3f(0,1,0)

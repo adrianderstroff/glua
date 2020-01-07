@@ -1,3 +1,9 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* glex.h                                                                                                             */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+
 #ifndef GLUA_GLEX_H
 #define GLUA_GLEX_H
 
@@ -1760,342 +1766,6 @@ typedef char      GLchar;
 typedef ptrdiff_t GLintptr;
 typedef ptrdiff_t GLsizeiptr;
 
-typedef void            GLDECL Accumproc(GLenum op, GLfloat value);                                                                                                                                                                                                                                            extern Accumproc*                                       glAccum;
-typedef void            GLDECL AlphaFuncproc(GLenum func, GLfloat ref);                                                                                                                                                                                                                                        extern AlphaFuncproc*                                   glAlphaFunc;
-typedef void            GLDECL Beginproc(GLenum mode);                                                                                                                                                                                                                                                         extern Beginproc*                                       glBegin;
-typedef void            GLDECL Bitmapproc(GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte * bitmap);                                                                                                                                                  extern Bitmapproc*                                      glBitmap;
-typedef void            GLDECL BlendFuncproc(GLenum sfactor, GLenum dfactor);                                                                                                                                                                                                                                  extern BlendFuncproc*                                   glBlendFunc;
-typedef void            GLDECL CallListproc(GLuint list);                                                                                                                                                                                                                                                      extern CallListproc*                                    glCallList;
-typedef void            GLDECL CallListsproc(GLsizei n, GLenum type, const void * lists);                                                                                                                                                                                                                      extern CallListsproc*                                   glCallLists;
-typedef void            GLDECL Clearproc(GLbitfield mask);                                                                                                                                                                                                                                                     extern Clearproc*                                       glClear;
-typedef void            GLDECL ClearAccumproc(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);                                                                                                                                                                                                        extern ClearAccumproc*                                  glClearAccum;
-typedef void            GLDECL ClearColorproc(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);                                                                                                                                                                                                        extern ClearColorproc*                                  glClearColor;
-typedef void            GLDECL ClearDepthproc(GLdouble depth);                                                                                                                                                                                                                                                 extern ClearDepthproc*                                  glClearDepth;
-typedef void            GLDECL ClearIndexproc(GLfloat c);                                                                                                                                                                                                                                                      extern ClearIndexproc*                                  glClearIndex;
-typedef void            GLDECL ClearStencilproc(GLint s);                                                                                                                                                                                                                                                      extern ClearStencilproc*                                glClearStencil;
-typedef void            GLDECL ClipPlaneproc(GLenum plane, const GLdouble * equation);                                                                                                                                                                                                                         extern ClipPlaneproc*                                   glClipPlane;
-typedef void            GLDECL Color3bproc(GLbyte red, GLbyte green, GLbyte blue);                                                                                                                                                                                                                             extern Color3bproc*                                     glColor3b;
-typedef void            GLDECL Color3bvproc(const GLbyte * v);                                                                                                                                                                                                                                                 extern Color3bvproc*                                    glColor3bv;
-typedef void            GLDECL Color3dproc(GLdouble red, GLdouble green, GLdouble blue);                                                                                                                                                                                                                       extern Color3dproc*                                     glColor3d;
-typedef void            GLDECL Color3dvproc(const GLdouble * v);                                                                                                                                                                                                                                               extern Color3dvproc*                                    glColor3dv;
-typedef void            GLDECL Color3fproc(GLfloat red, GLfloat green, GLfloat blue);                                                                                                                                                                                                                          extern Color3fproc*                                     glColor3f;
-typedef void            GLDECL Color3fvproc(const GLfloat * v);                                                                                                                                                                                                                                                extern Color3fvproc*                                    glColor3fv;
-typedef void            GLDECL Color3iproc(GLint red, GLint green, GLint blue);                                                                                                                                                                                                                                extern Color3iproc*                                     glColor3i;
-typedef void            GLDECL Color3ivproc(const GLint * v);                                                                                                                                                                                                                                                  extern Color3ivproc*                                    glColor3iv;
-typedef void            GLDECL Color3sproc(GLshort red, GLshort green, GLshort blue);                                                                                                                                                                                                                          extern Color3sproc*                                     glColor3s;
-typedef void            GLDECL Color3svproc(const GLshort * v);                                                                                                                                                                                                                                                extern Color3svproc*                                    glColor3sv;
-typedef void            GLDECL Color3ubproc(GLubyte red, GLubyte green, GLubyte blue);                                                                                                                                                                                                                         extern Color3ubproc*                                    glColor3ub;
-typedef void            GLDECL Color3ubvproc(const GLubyte * v);                                                                                                                                                                                                                                               extern Color3ubvproc*                                   glColor3ubv;
-typedef void            GLDECL Color3uiproc(GLuint red, GLuint green, GLuint blue);                                                                                                                                                                                                                            extern Color3uiproc*                                    glColor3ui;
-typedef void            GLDECL Color3uivproc(const GLuint * v);                                                                                                                                                                                                                                                extern Color3uivproc*                                   glColor3uiv;
-typedef void            GLDECL Color3usproc(GLushort red, GLushort green, GLushort blue);                                                                                                                                                                                                                      extern Color3usproc*                                    glColor3us;
-typedef void            GLDECL Color3usvproc(const GLushort * v);                                                                                                                                                                                                                                              extern Color3usvproc*                                   glColor3usv;
-typedef void            GLDECL Color4bproc(GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha);                                                                                                                                                                                                               extern Color4bproc*                                     glColor4b;
-typedef void            GLDECL Color4bvproc(const GLbyte * v);                                                                                                                                                                                                                                                 extern Color4bvproc*                                    glColor4bv;
-typedef void            GLDECL Color4dproc(GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha);                                                                                                                                                                                                       extern Color4dproc*                                     glColor4d;
-typedef void            GLDECL Color4dvproc(const GLdouble * v);                                                                                                                                                                                                                                               extern Color4dvproc*                                    glColor4dv;
-typedef void            GLDECL Color4fproc(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);                                                                                                                                                                                                           extern Color4fproc*                                     glColor4f;
-typedef void            GLDECL Color4fvproc(const GLfloat * v);                                                                                                                                                                                                                                                extern Color4fvproc*                                    glColor4fv;
-typedef void            GLDECL Color4iproc(GLint red, GLint green, GLint blue, GLint alpha);                                                                                                                                                                                                                   extern Color4iproc*                                     glColor4i;
-typedef void            GLDECL Color4ivproc(const GLint * v);                                                                                                                                                                                                                                                  extern Color4ivproc*                                    glColor4iv;
-typedef void            GLDECL Color4sproc(GLshort red, GLshort green, GLshort blue, GLshort alpha);                                                                                                                                                                                                           extern Color4sproc*                                     glColor4s;
-typedef void            GLDECL Color4svproc(const GLshort * v);                                                                                                                                                                                                                                                extern Color4svproc*                                    glColor4sv;
-typedef void            GLDECL Color4ubproc(GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha);                                                                                                                                                                                                          extern Color4ubproc*                                    glColor4ub;
-typedef void            GLDECL Color4ubvproc(const GLubyte * v);                                                                                                                                                                                                                                               extern Color4ubvproc*                                   glColor4ubv;
-typedef void            GLDECL Color4uiproc(GLuint red, GLuint green, GLuint blue, GLuint alpha);                                                                                                                                                                                                              extern Color4uiproc*                                    glColor4ui;
-typedef void            GLDECL Color4uivproc(const GLuint * v);                                                                                                                                                                                                                                                extern Color4uivproc*                                   glColor4uiv;
-typedef void            GLDECL Color4usproc(GLushort red, GLushort green, GLushort blue, GLushort alpha);                                                                                                                                                                                                      extern Color4usproc*                                    glColor4us;
-typedef void            GLDECL Color4usvproc(const GLushort * v);                                                                                                                                                                                                                                              extern Color4usvproc*                                   glColor4usv;
-typedef void            GLDECL ColorMaskproc(GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);                                                                                                                                                                                                 extern ColorMaskproc*                                   glColorMask;
-typedef void            GLDECL ColorMaterialproc(GLenum face, GLenum mode);                                                                                                                                                                                                                                    extern ColorMaterialproc*                               glColorMaterial;
-typedef void            GLDECL CopyPixelsproc(GLint x, GLint y, GLsizei width, GLsizei height, GLenum type);                                                                                                                                                                                                   extern CopyPixelsproc*                                  glCopyPixels;
-typedef void            GLDECL CullFaceproc(GLenum mode);                                                                                                                                                                                                                                                      extern CullFaceproc*                                    glCullFace;
-typedef void            GLDECL DeleteListsproc(GLuint list, GLsizei range);                                                                                                                                                                                                                                    extern DeleteListsproc*                                 glDeleteLists;
-typedef void            GLDECL DepthFuncproc(GLenum func);                                                                                                                                                                                                                                                     extern DepthFuncproc*                                   glDepthFunc;
-typedef void            GLDECL DepthMaskproc(GLboolean flag);                                                                                                                                                                                                                                                  extern DepthMaskproc*                                   glDepthMask;
-typedef void            GLDECL DepthRangeproc(GLdouble ren_near, GLdouble ren_far);                                                                                                                                                                                                                            extern DepthRangeproc*                                  glDepthRange;
-typedef void            GLDECL Disableproc(GLenum cap);                                                                                                                                                                                                                                                        extern Disableproc*                                     glDisable;
-typedef void            GLDECL DrawBufferproc(GLenum buf);                                                                                                                                                                                                                                                     extern DrawBufferproc*                                  glDrawBuffer;
-typedef void            GLDECL DrawPixelsproc(GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);                                                                                                                                                                                 extern DrawPixelsproc*                                  glDrawPixels;
-typedef void            GLDECL EdgeFlagproc(GLboolean flag);                                                                                                                                                                                                                                                   extern EdgeFlagproc*                                    glEdgeFlag;
-typedef void            GLDECL EdgeFlagvproc(const GLboolean * flag);                                                                                                                                                                                                                                          extern EdgeFlagvproc*                                   glEdgeFlagv;
-typedef void            GLDECL Enableproc(GLenum cap);                                                                                                                                                                                                                                                         extern Enableproc*                                      glEnable;
-typedef void            GLDECL Endproc(void);                                                                                                                                                                                                                                                                  extern Endproc*                                         glEnd;
-typedef void            GLDECL EndListproc(void);                                                                                                                                                                                                                                                              extern EndListproc*                                     glEndList;
-typedef void            GLDECL EvalCoord1dproc(GLdouble u);                                                                                                                                                                                                                                                    extern EvalCoord1dproc*                                 glEvalCoord1d;
-typedef void            GLDECL EvalCoord1dvproc(const GLdouble * u);                                                                                                                                                                                                                                           extern EvalCoord1dvproc*                                glEvalCoord1dv;
-typedef void            GLDECL EvalCoord1fproc(GLfloat u);                                                                                                                                                                                                                                                     extern EvalCoord1fproc*                                 glEvalCoord1f;
-typedef void            GLDECL EvalCoord1fvproc(const GLfloat * u);                                                                                                                                                                                                                                            extern EvalCoord1fvproc*                                glEvalCoord1fv;
-typedef void            GLDECL EvalCoord2dproc(GLdouble u, GLdouble v);                                                                                                                                                                                                                                        extern EvalCoord2dproc*                                 glEvalCoord2d;
-typedef void            GLDECL EvalCoord2dvproc(const GLdouble * u);                                                                                                                                                                                                                                           extern EvalCoord2dvproc*                                glEvalCoord2dv;
-typedef void            GLDECL EvalCoord2fproc(GLfloat u, GLfloat v);                                                                                                                                                                                                                                          extern EvalCoord2fproc*                                 glEvalCoord2f;
-typedef void            GLDECL EvalCoord2fvproc(const GLfloat * u);                                                                                                                                                                                                                                            extern EvalCoord2fvproc*                                glEvalCoord2fv;
-typedef void            GLDECL EvalMesh1proc(GLenum mode, GLint i1, GLint i2);                                                                                                                                                                                                                                 extern EvalMesh1proc*                                   glEvalMesh1;
-typedef void            GLDECL EvalMesh2proc(GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2);                                                                                                                                                                                                             extern EvalMesh2proc*                                   glEvalMesh2;
-typedef void            GLDECL EvalPoint1proc(GLint i);                                                                                                                                                                                                                                                        extern EvalPoint1proc*                                  glEvalPoint1;
-typedef void            GLDECL EvalPoint2proc(GLint i, GLint j);                                                                                                                                                                                                                                               extern EvalPoint2proc*                                  glEvalPoint2;
-typedef void            GLDECL FeedbackBufferproc(GLsizei size, GLenum type, GLfloat * buffer);                                                                                                                                                                                                                extern FeedbackBufferproc*                              glFeedbackBuffer;
-typedef void            GLDECL Finishproc(void);                                                                                                                                                                                                                                                               extern Finishproc*                                      glFinish;
-typedef void            GLDECL Flushproc(void);                                                                                                                                                                                                                                                                extern Flushproc*                                       glFlush;
-typedef void            GLDECL Fogfproc(GLenum pname, GLfloat param);                                                                                                                                                                                                                                          extern Fogfproc*                                        glFogf;
-typedef void            GLDECL Fogfvproc(GLenum pname, const GLfloat * params);                                                                                                                                                                                                                                extern Fogfvproc*                                       glFogfv;
-typedef void            GLDECL Fogiproc(GLenum pname, GLint param);                                                                                                                                                                                                                                            extern Fogiproc*                                        glFogi;
-typedef void            GLDECL Fogivproc(GLenum pname, const GLint * params);                                                                                                                                                                                                                                  extern Fogivproc*                                       glFogiv;
-typedef void            GLDECL FrontFaceproc(GLenum mode);                                                                                                                                                                                                                                                     extern FrontFaceproc*                                   glFrontFace;
-typedef void            GLDECL Frustumproc(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);                                                                                                                                                                       extern Frustumproc*                                     glFrustum;
-typedef GLuint          GLDECL GenListsproc(GLsizei range);                                                                                                                                                                                                                                                    extern GenListsproc*                                    glGenLists;
-typedef void            GLDECL GetBooleanvproc(GLenum pname, GLboolean * data);                                                                                                                                                                                                                                extern GetBooleanvproc*                                 glGetBooleanv;
-typedef void            GLDECL GetClipPlaneproc(GLenum plane, GLdouble * equation);                                                                                                                                                                                                                            extern GetClipPlaneproc*                                glGetClipPlane;
-typedef void            GLDECL GetDoublevproc(GLenum pname, GLdouble * data);                                                                                                                                                                                                                                  extern GetDoublevproc*                                  glGetDoublev;
-typedef GLenum          GLDECL GetErrorproc(void);                                                                                                                                                                                                                                                             extern GetErrorproc*                                    glGetError;
-typedef void            GLDECL GetFloatvproc(GLenum pname, GLfloat * data);                                                                                                                                                                                                                                    extern GetFloatvproc*                                   glGetFloatv;
-typedef void            GLDECL GetIntegervproc(GLenum pname, GLint * data);                                                                                                                                                                                                                                    extern GetIntegervproc*                                 glGetIntegerv;
-typedef void            GLDECL GetLightfvproc(GLenum light, GLenum pname, GLfloat * params);                                                                                                                                                                                                                   extern GetLightfvproc*                                  glGetLightfv;
-typedef void            GLDECL GetLightivproc(GLenum light, GLenum pname, GLint * params);                                                                                                                                                                                                                     extern GetLightivproc*                                  glGetLightiv;
-typedef void            GLDECL GetMapdvproc(GLenum target, GLenum query, GLdouble * v);                                                                                                                                                                                                                        extern GetMapdvproc*                                    glGetMapdv;
-typedef void            GLDECL GetMapfvproc(GLenum target, GLenum query, GLfloat * v);                                                                                                                                                                                                                         extern GetMapfvproc*                                    glGetMapfv;
-typedef void            GLDECL GetMapivproc(GLenum target, GLenum query, GLint * v);                                                                                                                                                                                                                           extern GetMapivproc*                                    glGetMapiv;
-typedef void            GLDECL GetMaterialfvproc(GLenum face, GLenum pname, GLfloat * params);                                                                                                                                                                                                                 extern GetMaterialfvproc*                               glGetMaterialfv;
-typedef void            GLDECL GetMaterialivproc(GLenum face, GLenum pname, GLint * params);                                                                                                                                                                                                                   extern GetMaterialivproc*                               glGetMaterialiv;
-typedef void            GLDECL GetPixelMapfvproc(GLenum map, GLfloat * values);                                                                                                                                                                                                                                extern GetPixelMapfvproc*                               glGetPixelMapfv;
-typedef void            GLDECL GetPixelMapuivproc(GLenum map, GLuint * values);                                                                                                                                                                                                                                extern GetPixelMapuivproc*                              glGetPixelMapuiv;
-typedef void            GLDECL GetPixelMapusvproc(GLenum map, GLushort * values);                                                                                                                                                                                                                              extern GetPixelMapusvproc*                              glGetPixelMapusv;
-typedef void            GLDECL GetPolygonStippleproc(GLubyte * mask);                                                                                                                                                                                                                                          extern GetPolygonStippleproc*                           glGetPolygonStipple;
-typedef const GLubyte * GLDECL GetStringproc(GLenum name);                                                                                                                                                                                                                                                     extern GetStringproc*                                   glGetString;
-typedef void            GLDECL GetTexEnvfvproc(GLenum target, GLenum pname, GLfloat * params);                                                                                                                                                                                                                 extern GetTexEnvfvproc*                                 glGetTexEnvfv;
-typedef void            GLDECL GetTexEnvivproc(GLenum target, GLenum pname, GLint * params);                                                                                                                                                                                                                   extern GetTexEnvivproc*                                 glGetTexEnviv;
-typedef void            GLDECL GetTexGendvproc(GLenum coord, GLenum pname, GLdouble * params);                                                                                                                                                                                                                 extern GetTexGendvproc*                                 glGetTexGendv;
-typedef void            GLDECL GetTexGenfvproc(GLenum coord, GLenum pname, GLfloat * params);                                                                                                                                                                                                                  extern GetTexGenfvproc*                                 glGetTexGenfv;
-typedef void            GLDECL GetTexGenivproc(GLenum coord, GLenum pname, GLint * params);                                                                                                                                                                                                                    extern GetTexGenivproc*                                 glGetTexGeniv;
-typedef void            GLDECL GetTexImageproc(GLenum target, GLint level, GLenum format, GLenum type, void * pixels);                                                                                                                                                                                         extern GetTexImageproc*                                 glGetTexImage;
-typedef void            GLDECL GetTexLevelParameterfvproc(GLenum target, GLint level, GLenum pname, GLfloat * params);                                                                                                                                                                                         extern GetTexLevelParameterfvproc*                      glGetTexLevelParameterfv;
-typedef void            GLDECL GetTexLevelParameterivproc(GLenum target, GLint level, GLenum pname, GLint * params);                                                                                                                                                                                           extern GetTexLevelParameterivproc*                      glGetTexLevelParameteriv;
-typedef void            GLDECL GetTexParameterfvproc(GLenum target, GLenum pname, GLfloat * params);                                                                                                                                                                                                           extern GetTexParameterfvproc*                           glGetTexParameterfv;
-typedef void            GLDECL GetTexParameterivproc(GLenum target, GLenum pname, GLint * params);                                                                                                                                                                                                             extern GetTexParameterivproc*                           glGetTexParameteriv;
-typedef void            GLDECL Hintproc(GLenum target, GLenum mode);                                                                                                                                                                                                                                           extern Hintproc*                                        glHint;
-typedef void            GLDECL IndexMaskproc(GLuint mask);                                                                                                                                                                                                                                                     extern IndexMaskproc*                                   glIndexMask;
-typedef void            GLDECL Indexdproc(GLdouble c);                                                                                                                                                                                                                                                         extern Indexdproc*                                      glIndexd;
-typedef void            GLDECL Indexdvproc(const GLdouble * c);                                                                                                                                                                                                                                                extern Indexdvproc*                                     glIndexdv;
-typedef void            GLDECL Indexfproc(GLfloat c);                                                                                                                                                                                                                                                          extern Indexfproc*                                      glIndexf;
-typedef void            GLDECL Indexfvproc(const GLfloat * c);                                                                                                                                                                                                                                                 extern Indexfvproc*                                     glIndexfv;
-typedef void            GLDECL Indexiproc(GLint c);                                                                                                                                                                                                                                                            extern Indexiproc*                                      glIndexi;
-typedef void            GLDECL Indexivproc(const GLint * c);                                                                                                                                                                                                                                                   extern Indexivproc*                                     glIndexiv;
-typedef void            GLDECL Indexsproc(GLshort c);                                                                                                                                                                                                                                                          extern Indexsproc*                                      glIndexs;
-typedef void            GLDECL Indexsvproc(const GLshort * c);                                                                                                                                                                                                                                                 extern Indexsvproc*                                     glIndexsv;
-typedef void            GLDECL InitNamesproc(void);                                                                                                                                                                                                                                                            extern InitNamesproc*                                   glInitNames;
-typedef GLboolean       GLDECL IsEnabledproc(GLenum cap);                                                                                                                                                                                                                                                      extern IsEnabledproc*                                   glIsEnabled;
-typedef GLboolean       GLDECL IsListproc(GLuint list);                                                                                                                                                                                                                                                        extern IsListproc*                                      glIsList;
-typedef void            GLDECL LightModelfproc(GLenum pname, GLfloat param);                                                                                                                                                                                                                                   extern LightModelfproc*                                 glLightModelf;
-typedef void            GLDECL LightModelfvproc(GLenum pname, const GLfloat * params);                                                                                                                                                                                                                         extern LightModelfvproc*                                glLightModelfv;
-typedef void            GLDECL LightModeliproc(GLenum pname, GLint param);                                                                                                                                                                                                                                     extern LightModeliproc*                                 glLightModeli;
-typedef void            GLDECL LightModelivproc(GLenum pname, const GLint * params);                                                                                                                                                                                                                           extern LightModelivproc*                                glLightModeliv;
-typedef void            GLDECL Lightfproc(GLenum light, GLenum pname, GLfloat param);                                                                                                                                                                                                                          extern Lightfproc*                                      glLightf;
-typedef void            GLDECL Lightfvproc(GLenum light, GLenum pname, const GLfloat * params);                                                                                                                                                                                                                extern Lightfvproc*                                     glLightfv;
-typedef void            GLDECL Lightiproc(GLenum light, GLenum pname, GLint param);                                                                                                                                                                                                                            extern Lightiproc*                                      glLighti;
-typedef void            GLDECL Lightivproc(GLenum light, GLenum pname, const GLint * params);                                                                                                                                                                                                                  extern Lightivproc*                                     glLightiv;
-typedef void            GLDECL LineStippleproc(GLint factor, GLushort pattern);                                                                                                                                                                                                                                extern LineStippleproc*                                 glLineStipple;
-typedef void            GLDECL LineWidthproc(GLfloat width);                                                                                                                                                                                                                                                   extern LineWidthproc*                                   glLineWidth;
-typedef void            GLDECL ListBaseproc(GLuint base);                                                                                                                                                                                                                                                      extern ListBaseproc*                                    glListBase;
-typedef void            GLDECL LoadIdentityproc(void);                                                                                                                                                                                                                                                         extern LoadIdentityproc*                                glLoadIdentity;
-typedef void            GLDECL LoadMatrixdproc(const GLdouble * m);                                                                                                                                                                                                                                            extern LoadMatrixdproc*                                 glLoadMatrixd;
-typedef void            GLDECL LoadMatrixfproc(const GLfloat * m);                                                                                                                                                                                                                                             extern LoadMatrixfproc*                                 glLoadMatrixf;
-typedef void            GLDECL LoadNameproc(GLuint name);                                                                                                                                                                                                                                                      extern LoadNameproc*                                    glLoadName;
-typedef void            GLDECL LogicOpproc(GLenum opcode);                                                                                                                                                                                                                                                     extern LogicOpproc*                                     glLogicOp;
-typedef void            GLDECL Map1dproc(GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order, const GLdouble * points);                                                                                                                                                                         extern Map1dproc*                                       glMap1d;
-typedef void            GLDECL Map1fproc(GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, const GLfloat * points);                                                                                                                                                                            extern Map1fproc*                                       glMap1f;
-typedef void            GLDECL Map2dproc(GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, const GLdouble * points);                                                                                                                extern Map2dproc*                                       glMap2d;
-typedef void            GLDECL Map2fproc(GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, const GLfloat * points);                                                                                                                     extern Map2fproc*                                       glMap2f;
-typedef void            GLDECL MapGrid1dproc(GLint un, GLdouble u1, GLdouble u2);                                                                                                                                                                                                                              extern MapGrid1dproc*                                   glMapGrid1d;
-typedef void            GLDECL MapGrid1fproc(GLint un, GLfloat u1, GLfloat u2);                                                                                                                                                                                                                                extern MapGrid1fproc*                                   glMapGrid1f;
-typedef void            GLDECL MapGrid2dproc(GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLdouble v2);                                                                                                                                                                                          extern MapGrid2dproc*                                   glMapGrid2d;
-typedef void            GLDECL MapGrid2fproc(GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloat v2);                                                                                                                                                                                              extern MapGrid2fproc*                                   glMapGrid2f;
-typedef void            GLDECL Materialfproc(GLenum face, GLenum pname, GLfloat param);                                                                                                                                                                                                                        extern Materialfproc*                                   glMaterialf;
-typedef void            GLDECL Materialfvproc(GLenum face, GLenum pname, const GLfloat * params);                                                                                                                                                                                                              extern Materialfvproc*                                  glMaterialfv;
-typedef void            GLDECL Materialiproc(GLenum face, GLenum pname, GLint param);                                                                                                                                                                                                                          extern Materialiproc*                                   glMateriali;
-typedef void            GLDECL Materialivproc(GLenum face, GLenum pname, const GLint * params);                                                                                                                                                                                                                extern Materialivproc*                                  glMaterialiv;
-typedef void            GLDECL MatrixModeproc(GLenum mode);                                                                                                                                                                                                                                                    extern MatrixModeproc*                                  glMatrixMode;
-typedef void            GLDECL MultMatrixdproc(const GLdouble * m);                                                                                                                                                                                                                                            extern MultMatrixdproc*                                 glMultMatrixd;
-typedef void            GLDECL MultMatrixfproc(const GLfloat * m);                                                                                                                                                                                                                                             extern MultMatrixfproc*                                 glMultMatrixf;
-typedef void            GLDECL NewListproc(GLuint list, GLenum mode);                                                                                                                                                                                                                                          extern NewListproc*                                     glNewList;
-typedef void            GLDECL Normal3bproc(GLbyte nx, GLbyte ny, GLbyte nz);                                                                                                                                                                                                                                  extern Normal3bproc*                                    glNormal3b;
-typedef void            GLDECL Normal3bvproc(const GLbyte * v);                                                                                                                                                                                                                                                extern Normal3bvproc*                                   glNormal3bv;
-typedef void            GLDECL Normal3dproc(GLdouble nx, GLdouble ny, GLdouble nz);                                                                                                                                                                                                                            extern Normal3dproc*                                    glNormal3d;
-typedef void            GLDECL Normal3dvproc(const GLdouble * v);                                                                                                                                                                                                                                              extern Normal3dvproc*                                   glNormal3dv;
-typedef void            GLDECL Normal3fproc(GLfloat nx, GLfloat ny, GLfloat nz);                                                                                                                                                                                                                               extern Normal3fproc*                                    glNormal3f;
-typedef void            GLDECL Normal3fvproc(const GLfloat * v);                                                                                                                                                                                                                                               extern Normal3fvproc*                                   glNormal3fv;
-typedef void            GLDECL Normal3iproc(GLint nx, GLint ny, GLint nz);                                                                                                                                                                                                                                     extern Normal3iproc*                                    glNormal3i;
-typedef void            GLDECL Normal3ivproc(const GLint * v);                                                                                                                                                                                                                                                 extern Normal3ivproc*                                   glNormal3iv;
-typedef void            GLDECL Normal3sproc(GLshort nx, GLshort ny, GLshort nz);                                                                                                                                                                                                                               extern Normal3sproc*                                    glNormal3s;
-typedef void            GLDECL Normal3svproc(const GLshort * v);                                                                                                                                                                                                                                               extern Normal3svproc*                                   glNormal3sv;
-typedef void            GLDECL Orthoproc(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);                                                                                                                                                                         extern Orthoproc*                                       glOrtho;
-typedef void            GLDECL PassThroughproc(GLfloat token);                                                                                                                                                                                                                                                 extern PassThroughproc*                                 glPassThrough;
-typedef void            GLDECL PixelMapfvproc(GLenum map, GLsizei mapsize, const GLfloat * values);                                                                                                                                                                                                            extern PixelMapfvproc*                                  glPixelMapfv;
-typedef void            GLDECL PixelMapuivproc(GLenum map, GLsizei mapsize, const GLuint * values);                                                                                                                                                                                                            extern PixelMapuivproc*                                 glPixelMapuiv;
-typedef void            GLDECL PixelMapusvproc(GLenum map, GLsizei mapsize, const GLushort * values);                                                                                                                                                                                                          extern PixelMapusvproc*                                 glPixelMapusv;
-typedef void            GLDECL PixelStorefproc(GLenum pname, GLfloat param);                                                                                                                                                                                                                                   extern PixelStorefproc*                                 glPixelStoref;
-typedef void            GLDECL PixelStoreiproc(GLenum pname, GLint param);                                                                                                                                                                                                                                     extern PixelStoreiproc*                                 glPixelStorei;
-typedef void            GLDECL PixelTransferfproc(GLenum pname, GLfloat param);                                                                                                                                                                                                                                extern PixelTransferfproc*                              glPixelTransferf;
-typedef void            GLDECL PixelTransferiproc(GLenum pname, GLint param);                                                                                                                                                                                                                                  extern PixelTransferiproc*                              glPixelTransferi;
-typedef void            GLDECL PixelZoomproc(GLfloat xfactor, GLfloat yfactor);                                                                                                                                                                                                                                extern PixelZoomproc*                                   glPixelZoom;
-typedef void            GLDECL PointSizeproc(GLfloat size);                                                                                                                                                                                                                                                    extern PointSizeproc*                                   glPointSize;
-typedef void            GLDECL PolygonModeproc(GLenum face, GLenum mode);                                                                                                                                                                                                                                      extern PolygonModeproc*                                 glPolygonMode;
-typedef void            GLDECL PolygonStippleproc(const GLubyte * mask);                                                                                                                                                                                                                                       extern PolygonStippleproc*                              glPolygonStipple;
-typedef void            GLDECL PopAttribproc(void);                                                                                                                                                                                                                                                            extern PopAttribproc*                                   glPopAttrib;
-typedef void            GLDECL PopMatrixproc(void);                                                                                                                                                                                                                                                            extern PopMatrixproc*                                   glPopMatrix;
-typedef void            GLDECL PopNameproc(void);                                                                                                                                                                                                                                                              extern PopNameproc*                                     glPopName;
-typedef void            GLDECL PushAttribproc(GLbitfield mask);                                                                                                                                                                                                                                                extern PushAttribproc*                                  glPushAttrib;
-typedef void            GLDECL PushMatrixproc(void);                                                                                                                                                                                                                                                           extern PushMatrixproc*                                  glPushMatrix;
-typedef void            GLDECL PushNameproc(GLuint name);                                                                                                                                                                                                                                                      extern PushNameproc*                                    glPushName;
-typedef void            GLDECL RasterPos2dproc(GLdouble x, GLdouble y);                                                                                                                                                                                                                                        extern RasterPos2dproc*                                 glRasterPos2d;
-typedef void            GLDECL RasterPos2dvproc(const GLdouble * v);                                                                                                                                                                                                                                           extern RasterPos2dvproc*                                glRasterPos2dv;
-typedef void            GLDECL RasterPos2fproc(GLfloat x, GLfloat y);                                                                                                                                                                                                                                          extern RasterPos2fproc*                                 glRasterPos2f;
-typedef void            GLDECL RasterPos2fvproc(const GLfloat * v);                                                                                                                                                                                                                                            extern RasterPos2fvproc*                                glRasterPos2fv;
-typedef void            GLDECL RasterPos2iproc(GLint x, GLint y);                                                                                                                                                                                                                                              extern RasterPos2iproc*                                 glRasterPos2i;
-typedef void            GLDECL RasterPos2ivproc(const GLint * v);                                                                                                                                                                                                                                              extern RasterPos2ivproc*                                glRasterPos2iv;
-typedef void            GLDECL RasterPos2sproc(GLshort x, GLshort y);                                                                                                                                                                                                                                          extern RasterPos2sproc*                                 glRasterPos2s;
-typedef void            GLDECL RasterPos2svproc(const GLshort * v);                                                                                                                                                                                                                                            extern RasterPos2svproc*                                glRasterPos2sv;
-typedef void            GLDECL RasterPos3dproc(GLdouble x, GLdouble y, GLdouble z);                                                                                                                                                                                                                            extern RasterPos3dproc*                                 glRasterPos3d;
-typedef void            GLDECL RasterPos3dvproc(const GLdouble * v);                                                                                                                                                                                                                                           extern RasterPos3dvproc*                                glRasterPos3dv;
-typedef void            GLDECL RasterPos3fproc(GLfloat x, GLfloat y, GLfloat z);                                                                                                                                                                                                                               extern RasterPos3fproc*                                 glRasterPos3f;
-typedef void            GLDECL RasterPos3fvproc(const GLfloat * v);                                                                                                                                                                                                                                            extern RasterPos3fvproc*                                glRasterPos3fv;
-typedef void            GLDECL RasterPos3iproc(GLint x, GLint y, GLint z);                                                                                                                                                                                                                                     extern RasterPos3iproc*                                 glRasterPos3i;
-typedef void            GLDECL RasterPos3ivproc(const GLint * v);                                                                                                                                                                                                                                              extern RasterPos3ivproc*                                glRasterPos3iv;
-typedef void            GLDECL RasterPos3sproc(GLshort x, GLshort y, GLshort z);                                                                                                                                                                                                                               extern RasterPos3sproc*                                 glRasterPos3s;
-typedef void            GLDECL RasterPos3svproc(const GLshort * v);                                                                                                                                                                                                                                            extern RasterPos3svproc*                                glRasterPos3sv;
-typedef void            GLDECL RasterPos4dproc(GLdouble x, GLdouble y, GLdouble z, GLdouble w);                                                                                                                                                                                                                extern RasterPos4dproc*                                 glRasterPos4d;
-typedef void            GLDECL RasterPos4dvproc(const GLdouble * v);                                                                                                                                                                                                                                           extern RasterPos4dvproc*                                glRasterPos4dv;
-typedef void            GLDECL RasterPos4fproc(GLfloat x, GLfloat y, GLfloat z, GLfloat w);                                                                                                                                                                                                                    extern RasterPos4fproc*                                 glRasterPos4f;
-typedef void            GLDECL RasterPos4fvproc(const GLfloat * v);                                                                                                                                                                                                                                            extern RasterPos4fvproc*                                glRasterPos4fv;
-typedef void            GLDECL RasterPos4iproc(GLint x, GLint y, GLint z, GLint w);                                                                                                                                                                                                                            extern RasterPos4iproc*                                 glRasterPos4i;
-typedef void            GLDECL RasterPos4ivproc(const GLint * v);                                                                                                                                                                                                                                              extern RasterPos4ivproc*                                glRasterPos4iv;
-typedef void            GLDECL RasterPos4sproc(GLshort x, GLshort y, GLshort z, GLshort w);                                                                                                                                                                                                                    extern RasterPos4sproc*                                 glRasterPos4s;
-typedef void            GLDECL RasterPos4svproc(const GLshort * v);                                                                                                                                                                                                                                            extern RasterPos4svproc*                                glRasterPos4sv;
-typedef void            GLDECL ReadBufferproc(GLenum src);                                                                                                                                                                                                                                                     extern ReadBufferproc*                                  glReadBuffer;
-typedef void            GLDECL ReadPixelsproc(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels);                                                                                                                                                                     extern ReadPixelsproc*                                  glReadPixels;
-typedef void            GLDECL Rectdproc(GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2);                                                                                                                                                                                                                  extern Rectdproc*                                       glRectd;
-typedef void            GLDECL Rectdvproc(const GLdouble * v1, const GLdouble * v2);                                                                                                                                                                                                                           extern Rectdvproc*                                      glRectdv;
-typedef void            GLDECL Rectfproc(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2);                                                                                                                                                                                                                      extern Rectfproc*                                       glRectf;
-typedef void            GLDECL Rectfvproc(const GLfloat * v1, const GLfloat * v2);                                                                                                                                                                                                                             extern Rectfvproc*                                      glRectfv;
-typedef void            GLDECL Rectiproc(GLint x1, GLint y1, GLint x2, GLint y2);                                                                                                                                                                                                                              extern Rectiproc*                                       glRecti;
-typedef void            GLDECL Rectivproc(const GLint * v1, const GLint * v2);                                                                                                                                                                                                                                 extern Rectivproc*                                      glRectiv;
-typedef void            GLDECL Rectsproc(GLshort x1, GLshort y1, GLshort x2, GLshort y2);                                                                                                                                                                                                                      extern Rectsproc*                                       glRects;
-typedef void            GLDECL Rectsvproc(const GLshort * v1, const GLshort * v2);                                                                                                                                                                                                                             extern Rectsvproc*                                      glRectsv;
-typedef GLint           GLDECL RenderModeproc(GLenum mode);                                                                                                                                                                                                                                                    extern RenderModeproc*                                  glRenderMode;
-typedef void            GLDECL Rotatedproc(GLdouble angle, GLdouble x, GLdouble y, GLdouble z);                                                                                                                                                                                                                extern Rotatedproc*                                     glRotated;
-typedef void            GLDECL Rotatefproc(GLfloat angle, GLfloat x, GLfloat y, GLfloat z);                                                                                                                                                                                                                    extern Rotatefproc*                                     glRotatef;
-typedef void            GLDECL Scaledproc(GLdouble x, GLdouble y, GLdouble z);                                                                                                                                                                                                                                 extern Scaledproc*                                      glScaled;
-typedef void            GLDECL Scalefproc(GLfloat x, GLfloat y, GLfloat z);                                                                                                                                                                                                                                    extern Scalefproc*                                      glScalef;
-typedef void            GLDECL Scissorproc(GLint x, GLint y, GLsizei width, GLsizei height);                                                                                                                                                                                                                   extern Scissorproc*                                     glScissor;
-typedef void            GLDECL SelectBufferproc(GLsizei size, GLuint * buffer);                                                                                                                                                                                                                                extern SelectBufferproc*                                glSelectBuffer;
-typedef void            GLDECL ShadeModelproc(GLenum mode);                                                                                                                                                                                                                                                    extern ShadeModelproc*                                  glShadeModel;
-typedef void            GLDECL StencilFuncproc(GLenum func, GLint ref, GLuint mask);                                                                                                                                                                                                                           extern StencilFuncproc*                                 glStencilFunc;
-typedef void            GLDECL StencilMaskproc(GLuint mask);                                                                                                                                                                                                                                                   extern StencilMaskproc*                                 glStencilMask;
-typedef void            GLDECL StencilOpproc(GLenum fail, GLenum zfail, GLenum zpass);                                                                                                                                                                                                                         extern StencilOpproc*                                   glStencilOp;
-typedef void            GLDECL TexCoord1dproc(GLdouble s);                                                                                                                                                                                                                                                     extern TexCoord1dproc*                                  glTexCoord1d;
-typedef void            GLDECL TexCoord1dvproc(const GLdouble * v);                                                                                                                                                                                                                                            extern TexCoord1dvproc*                                 glTexCoord1dv;
-typedef void            GLDECL TexCoord1fproc(GLfloat s);                                                                                                                                                                                                                                                      extern TexCoord1fproc*                                  glTexCoord1f;
-typedef void            GLDECL TexCoord1fvproc(const GLfloat * v);                                                                                                                                                                                                                                             extern TexCoord1fvproc*                                 glTexCoord1fv;
-typedef void            GLDECL TexCoord1iproc(GLint s);                                                                                                                                                                                                                                                        extern TexCoord1iproc*                                  glTexCoord1i;
-typedef void            GLDECL TexCoord1ivproc(const GLint * v);                                                                                                                                                                                                                                               extern TexCoord1ivproc*                                 glTexCoord1iv;
-typedef void            GLDECL TexCoord1sproc(GLshort s);                                                                                                                                                                                                                                                      extern TexCoord1sproc*                                  glTexCoord1s;
-typedef void            GLDECL TexCoord1svproc(const GLshort * v);                                                                                                                                                                                                                                             extern TexCoord1svproc*                                 glTexCoord1sv;
-typedef void            GLDECL TexCoord2dproc(GLdouble s, GLdouble t);                                                                                                                                                                                                                                         extern TexCoord2dproc*                                  glTexCoord2d;
-typedef void            GLDECL TexCoord2dvproc(const GLdouble * v);                                                                                                                                                                                                                                            extern TexCoord2dvproc*                                 glTexCoord2dv;
-typedef void            GLDECL TexCoord2fproc(GLfloat s, GLfloat t);                                                                                                                                                                                                                                           extern TexCoord2fproc*                                  glTexCoord2f;
-typedef void            GLDECL TexCoord2fvproc(const GLfloat * v);                                                                                                                                                                                                                                             extern TexCoord2fvproc*                                 glTexCoord2fv;
-typedef void            GLDECL TexCoord2iproc(GLint s, GLint t);                                                                                                                                                                                                                                               extern TexCoord2iproc*                                  glTexCoord2i;
-typedef void            GLDECL TexCoord2ivproc(const GLint * v);                                                                                                                                                                                                                                               extern TexCoord2ivproc*                                 glTexCoord2iv;
-typedef void            GLDECL TexCoord2sproc(GLshort s, GLshort t);                                                                                                                                                                                                                                           extern TexCoord2sproc*                                  glTexCoord2s;
-typedef void            GLDECL TexCoord2svproc(const GLshort * v);                                                                                                                                                                                                                                             extern TexCoord2svproc*                                 glTexCoord2sv;
-typedef void            GLDECL TexCoord3dproc(GLdouble s, GLdouble t, GLdouble r);                                                                                                                                                                                                                             extern TexCoord3dproc*                                  glTexCoord3d;
-typedef void            GLDECL TexCoord3dvproc(const GLdouble * v);                                                                                                                                                                                                                                            extern TexCoord3dvproc*                                 glTexCoord3dv;
-typedef void            GLDECL TexCoord3fproc(GLfloat s, GLfloat t, GLfloat r);                                                                                                                                                                                                                                extern TexCoord3fproc*                                  glTexCoord3f;
-typedef void            GLDECL TexCoord3fvproc(const GLfloat * v);                                                                                                                                                                                                                                             extern TexCoord3fvproc*                                 glTexCoord3fv;
-typedef void            GLDECL TexCoord3iproc(GLint s, GLint t, GLint r);                                                                                                                                                                                                                                      extern TexCoord3iproc*                                  glTexCoord3i;
-typedef void            GLDECL TexCoord3ivproc(const GLint * v);                                                                                                                                                                                                                                               extern TexCoord3ivproc*                                 glTexCoord3iv;
-typedef void            GLDECL TexCoord3sproc(GLshort s, GLshort t, GLshort r);                                                                                                                                                                                                                                extern TexCoord3sproc*                                  glTexCoord3s;
-typedef void            GLDECL TexCoord3svproc(const GLshort * v);                                                                                                                                                                                                                                             extern TexCoord3svproc*                                 glTexCoord3sv;
-typedef void            GLDECL TexCoord4dproc(GLdouble s, GLdouble t, GLdouble r, GLdouble q);                                                                                                                                                                                                                 extern TexCoord4dproc*                                  glTexCoord4d;
-typedef void            GLDECL TexCoord4dvproc(const GLdouble * v);                                                                                                                                                                                                                                            extern TexCoord4dvproc*                                 glTexCoord4dv;
-typedef void            GLDECL TexCoord4fproc(GLfloat s, GLfloat t, GLfloat r, GLfloat q);                                                                                                                                                                                                                     extern TexCoord4fproc*                                  glTexCoord4f;
-typedef void            GLDECL TexCoord4fvproc(const GLfloat * v);                                                                                                                                                                                                                                             extern TexCoord4fvproc*                                 glTexCoord4fv;
-typedef void            GLDECL TexCoord4iproc(GLint s, GLint t, GLint r, GLint q);                                                                                                                                                                                                                             extern TexCoord4iproc*                                  glTexCoord4i;
-typedef void            GLDECL TexCoord4ivproc(const GLint * v);                                                                                                                                                                                                                                               extern TexCoord4ivproc*                                 glTexCoord4iv;
-typedef void            GLDECL TexCoord4sproc(GLshort s, GLshort t, GLshort r, GLshort q);                                                                                                                                                                                                                     extern TexCoord4sproc*                                  glTexCoord4s;
-typedef void            GLDECL TexCoord4svproc(const GLshort * v);                                                                                                                                                                                                                                             extern TexCoord4svproc*                                 glTexCoord4sv;
-typedef void            GLDECL TexEnvfproc(GLenum target, GLenum pname, GLfloat param);                                                                                                                                                                                                                        extern TexEnvfproc*                                     glTexEnvf;
-typedef void            GLDECL TexEnvfvproc(GLenum target, GLenum pname, const GLfloat * params);                                                                                                                                                                                                              extern TexEnvfvproc*                                    glTexEnvfv;
-typedef void            GLDECL TexEnviproc(GLenum target, GLenum pname, GLint param);                                                                                                                                                                                                                          extern TexEnviproc*                                     glTexEnvi;
-typedef void            GLDECL TexEnvivproc(GLenum target, GLenum pname, const GLint * params);                                                                                                                                                                                                                extern TexEnvivproc*                                    glTexEnviv;
-typedef void            GLDECL TexGendproc(GLenum coord, GLenum pname, GLdouble param);                                                                                                                                                                                                                        extern TexGendproc*                                     glTexGend;
-typedef void            GLDECL TexGendvproc(GLenum coord, GLenum pname, const GLdouble * params);                                                                                                                                                                                                              extern TexGendvproc*                                    glTexGendv;
-typedef void            GLDECL TexGenfproc(GLenum coord, GLenum pname, GLfloat param);                                                                                                                                                                                                                         extern TexGenfproc*                                     glTexGenf;
-typedef void            GLDECL TexGenfvproc(GLenum coord, GLenum pname, const GLfloat * params);                                                                                                                                                                                                               extern TexGenfvproc*                                    glTexGenfv;
-typedef void            GLDECL TexGeniproc(GLenum coord, GLenum pname, GLint param);                                                                                                                                                                                                                           extern TexGeniproc*                                     glTexGeni;
-typedef void            GLDECL TexGenivproc(GLenum coord, GLenum pname, const GLint * params);                                                                                                                                                                                                                 extern TexGenivproc*                                    glTexGeniv;
-typedef void            GLDECL TexImage1Dproc(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, const void * pixels);                                                                                                                                 extern TexImage1Dproc*                                  glTexImage1D;
-typedef void            GLDECL TexImage2Dproc(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void * pixels);                                                                                                                 extern TexImage2Dproc*                                  glTexImage2D;
-typedef void            GLDECL TexParameterfproc(GLenum target, GLenum pname, GLfloat param);                                                                                                                                                                                                                  extern TexParameterfproc*                               glTexParameterf;
-typedef void            GLDECL TexParameterfvproc(GLenum target, GLenum pname, const GLfloat * params);                                                                                                                                                                                                        extern TexParameterfvproc*                              glTexParameterfv;
-typedef void            GLDECL TexParameteriproc(GLenum target, GLenum pname, GLint param);                                                                                                                                                                                                                    extern TexParameteriproc*                               glTexParameteri;
-typedef void            GLDECL TexParameterivproc(GLenum target, GLenum pname, const GLint * params);                                                                                                                                                                                                          extern TexParameterivproc*                              glTexParameteriv;
-typedef void            GLDECL Translatedproc(GLdouble x, GLdouble y, GLdouble z);                                                                                                                                                                                                                             extern Translatedproc*                                  glTranslated;
-typedef void            GLDECL Translatefproc(GLfloat x, GLfloat y, GLfloat z);                                                                                                                                                                                                                                extern Translatefproc*                                  glTranslatef;
-typedef void            GLDECL Vertex2dproc(GLdouble x, GLdouble y);                                                                                                                                                                                                                                           extern Vertex2dproc*                                    glVertex2d;
-typedef void            GLDECL Vertex2dvproc(const GLdouble * v);                                                                                                                                                                                                                                              extern Vertex2dvproc*                                   glVertex2dv;
-typedef void            GLDECL Vertex2fproc(GLfloat x, GLfloat y);                                                                                                                                                                                                                                             extern Vertex2fproc*                                    glVertex2f;
-typedef void            GLDECL Vertex2fvproc(const GLfloat * v);                                                                                                                                                                                                                                               extern Vertex2fvproc*                                   glVertex2fv;
-typedef void            GLDECL Vertex2iproc(GLint x, GLint y);                                                                                                                                                                                                                                                 extern Vertex2iproc*                                    glVertex2i;
-typedef void            GLDECL Vertex2ivproc(const GLint * v);                                                                                                                                                                                                                                                 extern Vertex2ivproc*                                   glVertex2iv;
-typedef void            GLDECL Vertex2sproc(GLshort x, GLshort y);                                                                                                                                                                                                                                             extern Vertex2sproc*                                    glVertex2s;
-typedef void            GLDECL Vertex2svproc(const GLshort * v);                                                                                                                                                                                                                                               extern Vertex2svproc*                                   glVertex2sv;
-typedef void            GLDECL Vertex3dproc(GLdouble x, GLdouble y, GLdouble z);                                                                                                                                                                                                                               extern Vertex3dproc*                                    glVertex3d;
-typedef void            GLDECL Vertex3dvproc(const GLdouble * v);                                                                                                                                                                                                                                              extern Vertex3dvproc*                                   glVertex3dv;
-typedef void            GLDECL Vertex3fproc(GLfloat x, GLfloat y, GLfloat z);                                                                                                                                                                                                                                  extern Vertex3fproc*                                    glVertex3f;
-typedef void            GLDECL Vertex3fvproc(const GLfloat * v);                                                                                                                                                                                                                                               extern Vertex3fvproc*                                   glVertex3fv;
-typedef void            GLDECL Vertex3iproc(GLint x, GLint y, GLint z);                                                                                                                                                                                                                                        extern Vertex3iproc*                                    glVertex3i;
-typedef void            GLDECL Vertex3ivproc(const GLint * v);                                                                                                                                                                                                                                                 extern Vertex3ivproc*                                   glVertex3iv;
-typedef void            GLDECL Vertex3sproc(GLshort x, GLshort y, GLshort z);                                                                                                                                                                                                                                  extern Vertex3sproc*                                    glVertex3s;
-typedef void            GLDECL Vertex3svproc(const GLshort * v);                                                                                                                                                                                                                                               extern Vertex3svproc*                                   glVertex3sv;
-typedef void            GLDECL Vertex4dproc(GLdouble x, GLdouble y, GLdouble z, GLdouble w);                                                                                                                                                                                                                   extern Vertex4dproc*                                    glVertex4d;
-typedef void            GLDECL Vertex4dvproc(const GLdouble * v);                                                                                                                                                                                                                                              extern Vertex4dvproc*                                   glVertex4dv;
-typedef void            GLDECL Vertex4fproc(GLfloat x, GLfloat y, GLfloat z, GLfloat w);                                                                                                                                                                                                                       extern Vertex4fproc*                                    glVertex4f;
-typedef void            GLDECL Vertex4fvproc(const GLfloat * v);                                                                                                                                                                                                                                               extern Vertex4fvproc*                                   glVertex4fv;
-typedef void            GLDECL Vertex4iproc(GLint x, GLint y, GLint z, GLint w);                                                                                                                                                                                                                               extern Vertex4iproc*                                    glVertex4i;
-typedef void            GLDECL Vertex4ivproc(const GLint * v);                                                                                                                                                                                                                                                 extern Vertex4ivproc*                                   glVertex4iv;
-typedef void            GLDECL Vertex4sproc(GLshort x, GLshort y, GLshort z, GLshort w);                                                                                                                                                                                                                       extern Vertex4sproc*                                    glVertex4s;
-typedef void            GLDECL Vertex4svproc(const GLshort * v);                                                                                                                                                                                                                                               extern Vertex4svproc*                                   glVertex4sv;
-typedef void            GLDECL Viewportproc(GLint x, GLint y, GLsizei width, GLsizei height);                                                                                                                                                                                                                  extern Viewportproc*                                    glViewport;
-typedef GLboolean       GLDECL AreTexturesResidentproc(GLsizei n, const GLuint * textures, GLboolean * residences);                                                                                                                                                                                            extern AreTexturesResidentproc*                         glAreTexturesResident;
-typedef void            GLDECL ArrayElementproc(GLint i);                                                                                                                                                                                                                                                      extern ArrayElementproc*                                glArrayElement;
-typedef void            GLDECL BindTextureproc(GLenum target, GLuint texture);                                                                                                                                                                                                                                 extern BindTextureproc*                                 glBindTexture;
-typedef void            GLDECL ColorPointerproc(GLint size, GLenum type, GLsizei stride, const void * pointer);                                                                                                                                                                                                extern ColorPointerproc*                                glColorPointer;
-typedef void            GLDECL CopyTexImage1Dproc(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);                                                                                                                                                           extern CopyTexImage1Dproc*                              glCopyTexImage1D;
-typedef void            GLDECL CopyTexImage2Dproc(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);                                                                                                                                           extern CopyTexImage2Dproc*                              glCopyTexImage2D;
-typedef void            GLDECL CopyTexSubImage1Dproc(GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);                                                                                                                                                                              extern CopyTexSubImage1Dproc*                           glCopyTexSubImage1D;
-typedef void            GLDECL CopyTexSubImage2Dproc(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);                                                                                                                                               extern CopyTexSubImage2Dproc*                           glCopyTexSubImage2D;
-typedef void            GLDECL DeleteTexturesproc(GLsizei n, const GLuint * textures);                                                                                                                                                                                                                         extern DeleteTexturesproc*                              glDeleteTextures;
-typedef void            GLDECL DisableClientStateproc(GLenum ren_array);                                                                                                                                                                                                                                       extern DisableClientStateproc*                          glDisableClientState;
-typedef void            GLDECL DrawArraysproc(GLenum mode, GLint first, GLsizei count);                                                                                                                                                                                                                        extern DrawArraysproc*                                  glDrawArrays;
-typedef void            GLDECL DrawElementsproc(GLenum mode, GLsizei count, GLenum type, const void * indices);                                                                                                                                                                                                extern DrawElementsproc*                                glDrawElements;
-typedef void            GLDECL EdgeFlagPointerproc(GLsizei stride, const void * pointer);                                                                                                                                                                                                                      extern EdgeFlagPointerproc*                             glEdgeFlagPointer;
-typedef void            GLDECL EnableClientStateproc(GLenum ren_array);                                                                                                                                                                                                                                        extern EnableClientStateproc*                           glEnableClientState;
-typedef void            GLDECL GenTexturesproc(GLsizei n, GLuint * textures);                                                                                                                                                                                                                                  extern GenTexturesproc*                                 glGenTextures;
-typedef void            GLDECL GetPointervproc(GLenum pname, void ** params);                                                                                                                                                                                                                                  extern GetPointervproc*                                 glGetPointerv;
-typedef void            GLDECL IndexPointerproc(GLenum type, GLsizei stride, const void * pointer);                                                                                                                                                                                                            extern IndexPointerproc*                                glIndexPointer;
-typedef void            GLDECL Indexubproc(GLubyte c);                                                                                                                                                                                                                                                         extern Indexubproc*                                     glIndexub;
-typedef void            GLDECL Indexubvproc(const GLubyte * c);                                                                                                                                                                                                                                                extern Indexubvproc*                                    glIndexubv;
-typedef void            GLDECL InterleavedArraysproc(GLenum format, GLsizei stride, const void * pointer);                                                                                                                                                                                                     extern InterleavedArraysproc*                           glInterleavedArrays;
-typedef GLboolean       GLDECL IsTextureproc(GLuint texture);                                                                                                                                                                                                                                                  extern IsTextureproc*                                   glIsTexture;
-typedef void            GLDECL NormalPointerproc(GLenum type, GLsizei stride, const void * pointer);                                                                                                                                                                                                           extern NormalPointerproc*                               glNormalPointer;
-typedef void            GLDECL PolygonOffsetproc(GLfloat factor, GLfloat units);                                                                                                                                                                                                                               extern PolygonOffsetproc*                               glPolygonOffset;
-typedef void            GLDECL PopClientAttribproc(void);                                                                                                                                                                                                                                                      extern PopClientAttribproc*                             glPopClientAttrib;
-typedef void            GLDECL PrioritizeTexturesproc(GLsizei n, const GLuint * textures, const GLfloat * priorities);                                                                                                                                                                                         extern PrioritizeTexturesproc*                          glPrioritizeTextures;
-typedef void            GLDECL PushClientAttribproc(GLbitfield mask);                                                                                                                                                                                                                                          extern PushClientAttribproc*                            glPushClientAttrib;
-typedef void            GLDECL TexCoordPointerproc(GLint size, GLenum type, GLsizei stride, const void * pointer);                                                                                                                                                                                             extern TexCoordPointerproc*                             glTexCoordPointer;
-typedef void            GLDECL TexSubImage1Dproc(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);                                                                                                                                                   extern TexSubImage1Dproc*                               glTexSubImage1D;
-typedef void            GLDECL TexSubImage2Dproc(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);                                                                                                                    extern TexSubImage2Dproc*                               glTexSubImage2D;
-typedef void            GLDECL VertexPointerproc(GLint size, GLenum type, GLsizei stride, const void * pointer);                                                                                                                                                                                               extern VertexPointerproc*                               glVertexPointer;
 typedef void            GLDECL CopyTexSubImage3Dproc(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);                                                                                                                                extern CopyTexSubImage3Dproc*                           glCopyTexSubImage3D;
 typedef void            GLDECL DrawRangeElementsproc(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices);                                                                                                                                                                 extern DrawRangeElementsproc*                           glDrawRangeElements;
 typedef void            GLDECL TexImage3Dproc(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);                                                                                                  extern TexImage3Dproc*                                  glTexImage3D;
@@ -2657,344 +2327,14 @@ bool InitGl();
 
 #endif//GLUA_GLEX_H
 
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* glex.c                                                                                                             */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+
 #include <stdio.h>
 
-Accumproc                                       *glAccum;
-AlphaFuncproc                                   *glAlphaFunc;
-Beginproc                                       *glBegin;
-Bitmapproc                                      *glBitmap;
-BlendFuncproc                                   *glBlendFunc;
-CallListproc                                    *glCallList;
-CallListsproc                                   *glCallLists;
-Clearproc                                       *glClear;
-ClearAccumproc                                  *glClearAccum;
-ClearColorproc                                  *glClearColor;
-ClearDepthproc                                  *glClearDepth;
-ClearIndexproc                                  *glClearIndex;
-ClearStencilproc                                *glClearStencil;
-ClipPlaneproc                                   *glClipPlane;
-Color3bproc                                     *glColor3b;
-Color3bvproc                                    *glColor3bv;
-Color3dproc                                     *glColor3d;
-Color3dvproc                                    *glColor3dv;
-Color3fproc                                     *glColor3f;
-Color3fvproc                                    *glColor3fv;
-Color3iproc                                     *glColor3i;
-Color3ivproc                                    *glColor3iv;
-Color3sproc                                     *glColor3s;
-Color3svproc                                    *glColor3sv;
-Color3ubproc                                    *glColor3ub;
-Color3ubvproc                                   *glColor3ubv;
-Color3uiproc                                    *glColor3ui;
-Color3uivproc                                   *glColor3uiv;
-Color3usproc                                    *glColor3us;
-Color3usvproc                                   *glColor3usv;
-Color4bproc                                     *glColor4b;
-Color4bvproc                                    *glColor4bv;
-Color4dproc                                     *glColor4d;
-Color4dvproc                                    *glColor4dv;
-Color4fproc                                     *glColor4f;
-Color4fvproc                                    *glColor4fv;
-Color4iproc                                     *glColor4i;
-Color4ivproc                                    *glColor4iv;
-Color4sproc                                     *glColor4s;
-Color4svproc                                    *glColor4sv;
-Color4ubproc                                    *glColor4ub;
-Color4ubvproc                                   *glColor4ubv;
-Color4uiproc                                    *glColor4ui;
-Color4uivproc                                   *glColor4uiv;
-Color4usproc                                    *glColor4us;
-Color4usvproc                                   *glColor4usv;
-ColorMaskproc                                   *glColorMask;
-ColorMaterialproc                               *glColorMaterial;
-CopyPixelsproc                                  *glCopyPixels;
-CullFaceproc                                    *glCullFace;
-DeleteListsproc                                 *glDeleteLists;
-DepthFuncproc                                   *glDepthFunc;
-DepthMaskproc                                   *glDepthMask;
-DepthRangeproc                                  *glDepthRange;
-Disableproc                                     *glDisable;
-DrawBufferproc                                  *glDrawBuffer;
-DrawPixelsproc                                  *glDrawPixels;
-EdgeFlagproc                                    *glEdgeFlag;
-EdgeFlagvproc                                   *glEdgeFlagv;
-Enableproc                                      *glEnable;
-Endproc                                         *glEnd;
-EndListproc                                     *glEndList;
-EvalCoord1dproc                                 *glEvalCoord1d;
-EvalCoord1dvproc                                *glEvalCoord1dv;
-EvalCoord1fproc                                 *glEvalCoord1f;
-EvalCoord1fvproc                                *glEvalCoord1fv;
-EvalCoord2dproc                                 *glEvalCoord2d;
-EvalCoord2dvproc                                *glEvalCoord2dv;
-EvalCoord2fproc                                 *glEvalCoord2f;
-EvalCoord2fvproc                                *glEvalCoord2fv;
-EvalMesh1proc                                   *glEvalMesh1;
-EvalMesh2proc                                   *glEvalMesh2;
-EvalPoint1proc                                  *glEvalPoint1;
-EvalPoint2proc                                  *glEvalPoint2;
-FeedbackBufferproc                              *glFeedbackBuffer;
-Finishproc                                      *glFinish;
-Flushproc                                       *glFlush;
-Fogfproc                                        *glFogf;
-Fogfvproc                                       *glFogfv;
-Fogiproc                                        *glFogi;
-Fogivproc                                       *glFogiv;
-FrontFaceproc                                   *glFrontFace;
-Frustumproc                                     *glFrustum;
-GenListsproc                                    *glGenLists;
-GetBooleanvproc                                 *glGetBooleanv;
-GetClipPlaneproc                                *glGetClipPlane;
-GetDoublevproc                                  *glGetDoublev;
-GetErrorproc                                    *glGetError;
-GetFloatvproc                                   *glGetFloatv;
-GetIntegervproc                                 *glGetIntegerv;
-GetLightfvproc                                  *glGetLightfv;
-GetLightivproc                                  *glGetLightiv;
-GetMapdvproc                                    *glGetMapdv;
-GetMapfvproc                                    *glGetMapfv;
-GetMapivproc                                    *glGetMapiv;
-GetMaterialfvproc                               *glGetMaterialfv;
-GetMaterialivproc                               *glGetMaterialiv;
-GetPixelMapfvproc                               *glGetPixelMapfv;
-GetPixelMapuivproc                              *glGetPixelMapuiv;
-GetPixelMapusvproc                              *glGetPixelMapusv;
-GetPolygonStippleproc                           *glGetPolygonStipple;
-GetStringproc                                   *glGetString;
-GetTexEnvfvproc                                 *glGetTexEnvfv;
-GetTexEnvivproc                                 *glGetTexEnviv;
-GetTexGendvproc                                 *glGetTexGendv;
-GetTexGenfvproc                                 *glGetTexGenfv;
-GetTexGenivproc                                 *glGetTexGeniv;
-GetTexImageproc                                 *glGetTexImage;
-GetTexLevelParameterfvproc                      *glGetTexLevelParameterfv;
-GetTexLevelParameterivproc                      *glGetTexLevelParameteriv;
-GetTexParameterfvproc                           *glGetTexParameterfv;
-GetTexParameterivproc                           *glGetTexParameteriv;
-Hintproc                                        *glHint;
-IndexMaskproc                                   *glIndexMask;
-Indexdproc                                      *glIndexd;
-Indexdvproc                                     *glIndexdv;
-Indexfproc                                      *glIndexf;
-Indexfvproc                                     *glIndexfv;
-Indexiproc                                      *glIndexi;
-Indexivproc                                     *glIndexiv;
-Indexsproc                                      *glIndexs;
-Indexsvproc                                     *glIndexsv;
-InitNamesproc                                   *glInitNames;
-IsEnabledproc                                   *glIsEnabled;
-IsListproc                                      *glIsList;
-LightModelfproc                                 *glLightModelf;
-LightModelfvproc                                *glLightModelfv;
-LightModeliproc                                 *glLightModeli;
-LightModelivproc                                *glLightModeliv;
-Lightfproc                                      *glLightf;
-Lightfvproc                                     *glLightfv;
-Lightiproc                                      *glLighti;
-Lightivproc                                     *glLightiv;
-LineStippleproc                                 *glLineStipple;
-LineWidthproc                                   *glLineWidth;
-ListBaseproc                                    *glListBase;
-LoadIdentityproc                                *glLoadIdentity;
-LoadMatrixdproc                                 *glLoadMatrixd;
-LoadMatrixfproc                                 *glLoadMatrixf;
-LoadNameproc                                    *glLoadName;
-LogicOpproc                                     *glLogicOp;
-Map1dproc                                       *glMap1d;
-Map1fproc                                       *glMap1f;
-Map2dproc                                       *glMap2d;
-Map2fproc                                       *glMap2f;
-MapGrid1dproc                                   *glMapGrid1d;
-MapGrid1fproc                                   *glMapGrid1f;
-MapGrid2dproc                                   *glMapGrid2d;
-MapGrid2fproc                                   *glMapGrid2f;
-Materialfproc                                   *glMaterialf;
-Materialfvproc                                  *glMaterialfv;
-Materialiproc                                   *glMateriali;
-Materialivproc                                  *glMaterialiv;
-MatrixModeproc                                  *glMatrixMode;
-MultMatrixdproc                                 *glMultMatrixd;
-MultMatrixfproc                                 *glMultMatrixf;
-NewListproc                                     *glNewList;
-Normal3bproc                                    *glNormal3b;
-Normal3bvproc                                   *glNormal3bv;
-Normal3dproc                                    *glNormal3d;
-Normal3dvproc                                   *glNormal3dv;
-Normal3fproc                                    *glNormal3f;
-Normal3fvproc                                   *glNormal3fv;
-Normal3iproc                                    *glNormal3i;
-Normal3ivproc                                   *glNormal3iv;
-Normal3sproc                                    *glNormal3s;
-Normal3svproc                                   *glNormal3sv;
-Orthoproc                                       *glOrtho;
-PassThroughproc                                 *glPassThrough;
-PixelMapfvproc                                  *glPixelMapfv;
-PixelMapuivproc                                 *glPixelMapuiv;
-PixelMapusvproc                                 *glPixelMapusv;
-PixelStorefproc                                 *glPixelStoref;
-PixelStoreiproc                                 *glPixelStorei;
-PixelTransferfproc                              *glPixelTransferf;
-PixelTransferiproc                              *glPixelTransferi;
-PixelZoomproc                                   *glPixelZoom;
-PointSizeproc                                   *glPointSize;
-PolygonModeproc                                 *glPolygonMode;
-PolygonStippleproc                              *glPolygonStipple;
-PopAttribproc                                   *glPopAttrib;
-PopMatrixproc                                   *glPopMatrix;
-PopNameproc                                     *glPopName;
-PushAttribproc                                  *glPushAttrib;
-PushMatrixproc                                  *glPushMatrix;
-PushNameproc                                    *glPushName;
-RasterPos2dproc                                 *glRasterPos2d;
-RasterPos2dvproc                                *glRasterPos2dv;
-RasterPos2fproc                                 *glRasterPos2f;
-RasterPos2fvproc                                *glRasterPos2fv;
-RasterPos2iproc                                 *glRasterPos2i;
-RasterPos2ivproc                                *glRasterPos2iv;
-RasterPos2sproc                                 *glRasterPos2s;
-RasterPos2svproc                                *glRasterPos2sv;
-RasterPos3dproc                                 *glRasterPos3d;
-RasterPos3dvproc                                *glRasterPos3dv;
-RasterPos3fproc                                 *glRasterPos3f;
-RasterPos3fvproc                                *glRasterPos3fv;
-RasterPos3iproc                                 *glRasterPos3i;
-RasterPos3ivproc                                *glRasterPos3iv;
-RasterPos3sproc                                 *glRasterPos3s;
-RasterPos3svproc                                *glRasterPos3sv;
-RasterPos4dproc                                 *glRasterPos4d;
-RasterPos4dvproc                                *glRasterPos4dv;
-RasterPos4fproc                                 *glRasterPos4f;
-RasterPos4fvproc                                *glRasterPos4fv;
-RasterPos4iproc                                 *glRasterPos4i;
-RasterPos4ivproc                                *glRasterPos4iv;
-RasterPos4sproc                                 *glRasterPos4s;
-RasterPos4svproc                                *glRasterPos4sv;
-ReadBufferproc                                  *glReadBuffer;
-ReadPixelsproc                                  *glReadPixels;
-Rectdproc                                       *glRectd;
-Rectdvproc                                      *glRectdv;
-Rectfproc                                       *glRectf;
-Rectfvproc                                      *glRectfv;
-Rectiproc                                       *glRecti;
-Rectivproc                                      *glRectiv;
-Rectsproc                                       *glRects;
-Rectsvproc                                      *glRectsv;
-RenderModeproc                                  *glRenderMode;
-Rotatedproc                                     *glRotated;
-Rotatefproc                                     *glRotatef;
-Scaledproc                                      *glScaled;
-Scalefproc                                      *glScalef;
-Scissorproc                                     *glScissor;
-SelectBufferproc                                *glSelectBuffer;
-ShadeModelproc                                  *glShadeModel;
-StencilFuncproc                                 *glStencilFunc;
-StencilMaskproc                                 *glStencilMask;
-StencilOpproc                                   *glStencilOp;
-TexCoord1dproc                                  *glTexCoord1d;
-TexCoord1dvproc                                 *glTexCoord1dv;
-TexCoord1fproc                                  *glTexCoord1f;
-TexCoord1fvproc                                 *glTexCoord1fv;
-TexCoord1iproc                                  *glTexCoord1i;
-TexCoord1ivproc                                 *glTexCoord1iv;
-TexCoord1sproc                                  *glTexCoord1s;
-TexCoord1svproc                                 *glTexCoord1sv;
-TexCoord2dproc                                  *glTexCoord2d;
-TexCoord2dvproc                                 *glTexCoord2dv;
-TexCoord2fproc                                  *glTexCoord2f;
-TexCoord2fvproc                                 *glTexCoord2fv;
-TexCoord2iproc                                  *glTexCoord2i;
-TexCoord2ivproc                                 *glTexCoord2iv;
-TexCoord2sproc                                  *glTexCoord2s;
-TexCoord2svproc                                 *glTexCoord2sv;
-TexCoord3dproc                                  *glTexCoord3d;
-TexCoord3dvproc                                 *glTexCoord3dv;
-TexCoord3fproc                                  *glTexCoord3f;
-TexCoord3fvproc                                 *glTexCoord3fv;
-TexCoord3iproc                                  *glTexCoord3i;
-TexCoord3ivproc                                 *glTexCoord3iv;
-TexCoord3sproc                                  *glTexCoord3s;
-TexCoord3svproc                                 *glTexCoord3sv;
-TexCoord4dproc                                  *glTexCoord4d;
-TexCoord4dvproc                                 *glTexCoord4dv;
-TexCoord4fproc                                  *glTexCoord4f;
-TexCoord4fvproc                                 *glTexCoord4fv;
-TexCoord4iproc                                  *glTexCoord4i;
-TexCoord4ivproc                                 *glTexCoord4iv;
-TexCoord4sproc                                  *glTexCoord4s;
-TexCoord4svproc                                 *glTexCoord4sv;
-TexEnvfproc                                     *glTexEnvf;
-TexEnvfvproc                                    *glTexEnvfv;
-TexEnviproc                                     *glTexEnvi;
-TexEnvivproc                                    *glTexEnviv;
-TexGendproc                                     *glTexGend;
-TexGendvproc                                    *glTexGendv;
-TexGenfproc                                     *glTexGenf;
-TexGenfvproc                                    *glTexGenfv;
-TexGeniproc                                     *glTexGeni;
-TexGenivproc                                    *glTexGeniv;
-TexImage1Dproc                                  *glTexImage1D;
-TexImage2Dproc                                  *glTexImage2D;
-TexParameterfproc                               *glTexParameterf;
-TexParameterfvproc                              *glTexParameterfv;
-TexParameteriproc                               *glTexParameteri;
-TexParameterivproc                              *glTexParameteriv;
-Translatedproc                                  *glTranslated;
-Translatefproc                                  *glTranslatef;
-Vertex2dproc                                    *glVertex2d;
-Vertex2dvproc                                   *glVertex2dv;
-Vertex2fproc                                    *glVertex2f;
-Vertex2fvproc                                   *glVertex2fv;
-Vertex2iproc                                    *glVertex2i;
-Vertex2ivproc                                   *glVertex2iv;
-Vertex2sproc                                    *glVertex2s;
-Vertex2svproc                                   *glVertex2sv;
-Vertex3dproc                                    *glVertex3d;
-Vertex3dvproc                                   *glVertex3dv;
-Vertex3fproc                                    *glVertex3f;
-Vertex3fvproc                                   *glVertex3fv;
-Vertex3iproc                                    *glVertex3i;
-Vertex3ivproc                                   *glVertex3iv;
-Vertex3sproc                                    *glVertex3s;
-Vertex3svproc                                   *glVertex3sv;
-Vertex4dproc                                    *glVertex4d;
-Vertex4dvproc                                   *glVertex4dv;
-Vertex4fproc                                    *glVertex4f;
-Vertex4fvproc                                   *glVertex4fv;
-Vertex4iproc                                    *glVertex4i;
-Vertex4ivproc                                   *glVertex4iv;
-Vertex4sproc                                    *glVertex4s;
-Vertex4svproc                                   *glVertex4sv;
-Viewportproc                                    *glViewport;
-AreTexturesResidentproc                         *glAreTexturesResident;
-ArrayElementproc                                *glArrayElement;
-BindTextureproc                                 *glBindTexture;
-ColorPointerproc                                *glColorPointer;
-CopyTexImage1Dproc                              *glCopyTexImage1D;
-CopyTexImage2Dproc                              *glCopyTexImage2D;
-CopyTexSubImage1Dproc                           *glCopyTexSubImage1D;
-CopyTexSubImage2Dproc                           *glCopyTexSubImage2D;
-DeleteTexturesproc                              *glDeleteTextures;
-DisableClientStateproc                          *glDisableClientState;
-DrawArraysproc                                  *glDrawArrays;
-DrawElementsproc                                *glDrawElements;
-EdgeFlagPointerproc                             *glEdgeFlagPointer;
-EnableClientStateproc                           *glEnableClientState;
-GenTexturesproc                                 *glGenTextures;
-GetPointervproc                                 *glGetPointerv;
-IndexPointerproc                                *glIndexPointer;
-Indexubproc                                     *glIndexub;
-Indexubvproc                                    *glIndexubv;
-InterleavedArraysproc                           *glInterleavedArrays;
-IsTextureproc                                   *glIsTexture;
-NormalPointerproc                               *glNormalPointer;
-PolygonOffsetproc                               *glPolygonOffset;
-PopClientAttribproc                             *glPopClientAttrib;
-PrioritizeTexturesproc                          *glPrioritizeTextures;
-PushClientAttribproc                            *glPushClientAttrib;
-TexCoordPointerproc                             *glTexCoordPointer;
-TexSubImage1Dproc                               *glTexSubImage1D;
-TexSubImage2Dproc                               *glTexSubImage2D;
-VertexPointerproc                               *glVertexPointer;
 CopyTexSubImage3Dproc                           *glCopyTexSubImage3D;
 DrawRangeElementsproc                           *glDrawRangeElements;
 TexImage3Dproc                                  *glTexImage3D;
@@ -3562,2022 +2902,6 @@ bool InitGl() {
     }
     wglGetProcAddressproc* wglGetProcAddress =
     (wglGetProcAddressproc*)GetProcAddress(dll, "wglGetProcAddress");
-
-    glAccum = (Accumproc *)wglGetProcAddress("glAccum");
-    if (!glAccum) {
-        printf("Function glAccum couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glAlphaFunc = (AlphaFuncproc *)wglGetProcAddress("glAlphaFunc");
-    if (!glAlphaFunc) {
-        printf("Function glAlphaFunc couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glBegin = (Beginproc *)wglGetProcAddress("glBegin");
-    if (!glBegin) {
-        printf("Function glBegin couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glBitmap = (Bitmapproc *)wglGetProcAddress("glBitmap");
-    if (!glBitmap) {
-        printf("Function glBitmap couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glBlendFunc = (BlendFuncproc *)wglGetProcAddress("glBlendFunc");
-    if (!glBlendFunc) {
-        printf("Function glBlendFunc couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCallList = (CallListproc *)wglGetProcAddress("glCallList");
-    if (!glCallList) {
-        printf("Function glCallList couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCallLists = (CallListsproc *)wglGetProcAddress("glCallLists");
-    if (!glCallLists) {
-        printf("Function glCallLists couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClear = (Clearproc *)wglGetProcAddress("glClear");
-    if (!glClear) {
-        printf("Function glClear couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClearAccum = (ClearAccumproc *)wglGetProcAddress("glClearAccum");
-    if (!glClearAccum) {
-        printf("Function glClearAccum couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClearColor = (ClearColorproc *)wglGetProcAddress("glClearColor");
-    if (!glClearColor) {
-        printf("Function glClearColor couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClearDepth = (ClearDepthproc *)wglGetProcAddress("glClearDepth");
-    if (!glClearDepth) {
-        printf("Function glClearDepth couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClearIndex = (ClearIndexproc *)wglGetProcAddress("glClearIndex");
-    if (!glClearIndex) {
-        printf("Function glClearIndex couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClearStencil = (ClearStencilproc *)wglGetProcAddress("glClearStencil");
-    if (!glClearStencil) {
-        printf("Function glClearStencil couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glClipPlane = (ClipPlaneproc *)wglGetProcAddress("glClipPlane");
-    if (!glClipPlane) {
-        printf("Function glClipPlane couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3b = (Color3bproc *)wglGetProcAddress("glColor3b");
-    if (!glColor3b) {
-        printf("Function glColor3b couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3bv = (Color3bvproc *)wglGetProcAddress("glColor3bv");
-    if (!glColor3bv) {
-        printf("Function glColor3bv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3d = (Color3dproc *)wglGetProcAddress("glColor3d");
-    if (!glColor3d) {
-        printf("Function glColor3d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3dv = (Color3dvproc *)wglGetProcAddress("glColor3dv");
-    if (!glColor3dv) {
-        printf("Function glColor3dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3f = (Color3fproc *)wglGetProcAddress("glColor3f");
-    if (!glColor3f) {
-        printf("Function glColor3f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3fv = (Color3fvproc *)wglGetProcAddress("glColor3fv");
-    if (!glColor3fv) {
-        printf("Function glColor3fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3i = (Color3iproc *)wglGetProcAddress("glColor3i");
-    if (!glColor3i) {
-        printf("Function glColor3i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3iv = (Color3ivproc *)wglGetProcAddress("glColor3iv");
-    if (!glColor3iv) {
-        printf("Function glColor3iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3s = (Color3sproc *)wglGetProcAddress("glColor3s");
-    if (!glColor3s) {
-        printf("Function glColor3s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3sv = (Color3svproc *)wglGetProcAddress("glColor3sv");
-    if (!glColor3sv) {
-        printf("Function glColor3sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3ub = (Color3ubproc *)wglGetProcAddress("glColor3ub");
-    if (!glColor3ub) {
-        printf("Function glColor3ub couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3ubv = (Color3ubvproc *)wglGetProcAddress("glColor3ubv");
-    if (!glColor3ubv) {
-        printf("Function glColor3ubv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3ui = (Color3uiproc *)wglGetProcAddress("glColor3ui");
-    if (!glColor3ui) {
-        printf("Function glColor3ui couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3uiv = (Color3uivproc *)wglGetProcAddress("glColor3uiv");
-    if (!glColor3uiv) {
-        printf("Function glColor3uiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3us = (Color3usproc *)wglGetProcAddress("glColor3us");
-    if (!glColor3us) {
-        printf("Function glColor3us couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor3usv = (Color3usvproc *)wglGetProcAddress("glColor3usv");
-    if (!glColor3usv) {
-        printf("Function glColor3usv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4b = (Color4bproc *)wglGetProcAddress("glColor4b");
-    if (!glColor4b) {
-        printf("Function glColor4b couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4bv = (Color4bvproc *)wglGetProcAddress("glColor4bv");
-    if (!glColor4bv) {
-        printf("Function glColor4bv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4d = (Color4dproc *)wglGetProcAddress("glColor4d");
-    if (!glColor4d) {
-        printf("Function glColor4d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4dv = (Color4dvproc *)wglGetProcAddress("glColor4dv");
-    if (!glColor4dv) {
-        printf("Function glColor4dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4f = (Color4fproc *)wglGetProcAddress("glColor4f");
-    if (!glColor4f) {
-        printf("Function glColor4f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4fv = (Color4fvproc *)wglGetProcAddress("glColor4fv");
-    if (!glColor4fv) {
-        printf("Function glColor4fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4i = (Color4iproc *)wglGetProcAddress("glColor4i");
-    if (!glColor4i) {
-        printf("Function glColor4i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4iv = (Color4ivproc *)wglGetProcAddress("glColor4iv");
-    if (!glColor4iv) {
-        printf("Function glColor4iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4s = (Color4sproc *)wglGetProcAddress("glColor4s");
-    if (!glColor4s) {
-        printf("Function glColor4s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4sv = (Color4svproc *)wglGetProcAddress("glColor4sv");
-    if (!glColor4sv) {
-        printf("Function glColor4sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4ub = (Color4ubproc *)wglGetProcAddress("glColor4ub");
-    if (!glColor4ub) {
-        printf("Function glColor4ub couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4ubv = (Color4ubvproc *)wglGetProcAddress("glColor4ubv");
-    if (!glColor4ubv) {
-        printf("Function glColor4ubv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4ui = (Color4uiproc *)wglGetProcAddress("glColor4ui");
-    if (!glColor4ui) {
-        printf("Function glColor4ui couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4uiv = (Color4uivproc *)wglGetProcAddress("glColor4uiv");
-    if (!glColor4uiv) {
-        printf("Function glColor4uiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4us = (Color4usproc *)wglGetProcAddress("glColor4us");
-    if (!glColor4us) {
-        printf("Function glColor4us couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColor4usv = (Color4usvproc *)wglGetProcAddress("glColor4usv");
-    if (!glColor4usv) {
-        printf("Function glColor4usv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColorMask = (ColorMaskproc *)wglGetProcAddress("glColorMask");
-    if (!glColorMask) {
-        printf("Function glColorMask couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColorMaterial = (ColorMaterialproc *)wglGetProcAddress("glColorMaterial");
-    if (!glColorMaterial) {
-        printf("Function glColorMaterial couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCopyPixels = (CopyPixelsproc *)wglGetProcAddress("glCopyPixels");
-    if (!glCopyPixels) {
-        printf("Function glCopyPixels couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCullFace = (CullFaceproc *)wglGetProcAddress("glCullFace");
-    if (!glCullFace) {
-        printf("Function glCullFace couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDeleteLists = (DeleteListsproc *)wglGetProcAddress("glDeleteLists");
-    if (!glDeleteLists) {
-        printf("Function glDeleteLists couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDepthFunc = (DepthFuncproc *)wglGetProcAddress("glDepthFunc");
-    if (!glDepthFunc) {
-        printf("Function glDepthFunc couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDepthMask = (DepthMaskproc *)wglGetProcAddress("glDepthMask");
-    if (!glDepthMask) {
-        printf("Function glDepthMask couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDepthRange = (DepthRangeproc *)wglGetProcAddress("glDepthRange");
-    if (!glDepthRange) {
-        printf("Function glDepthRange couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDisable = (Disableproc *)wglGetProcAddress("glDisable");
-    if (!glDisable) {
-        printf("Function glDisable couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDrawBuffer = (DrawBufferproc *)wglGetProcAddress("glDrawBuffer");
-    if (!glDrawBuffer) {
-        printf("Function glDrawBuffer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDrawPixels = (DrawPixelsproc *)wglGetProcAddress("glDrawPixels");
-    if (!glDrawPixels) {
-        printf("Function glDrawPixels couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEdgeFlag = (EdgeFlagproc *)wglGetProcAddress("glEdgeFlag");
-    if (!glEdgeFlag) {
-        printf("Function glEdgeFlag couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEdgeFlagv = (EdgeFlagvproc *)wglGetProcAddress("glEdgeFlagv");
-    if (!glEdgeFlagv) {
-        printf("Function glEdgeFlagv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEnable = (Enableproc *)wglGetProcAddress("glEnable");
-    if (!glEnable) {
-        printf("Function glEnable couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEnd = (Endproc *)wglGetProcAddress("glEnd");
-    if (!glEnd) {
-        printf("Function glEnd couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEndList = (EndListproc *)wglGetProcAddress("glEndList");
-    if (!glEndList) {
-        printf("Function glEndList couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord1d = (EvalCoord1dproc *)wglGetProcAddress("glEvalCoord1d");
-    if (!glEvalCoord1d) {
-        printf("Function glEvalCoord1d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord1dv = (EvalCoord1dvproc *)wglGetProcAddress("glEvalCoord1dv");
-    if (!glEvalCoord1dv) {
-        printf("Function glEvalCoord1dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord1f = (EvalCoord1fproc *)wglGetProcAddress("glEvalCoord1f");
-    if (!glEvalCoord1f) {
-        printf("Function glEvalCoord1f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord1fv = (EvalCoord1fvproc *)wglGetProcAddress("glEvalCoord1fv");
-    if (!glEvalCoord1fv) {
-        printf("Function glEvalCoord1fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord2d = (EvalCoord2dproc *)wglGetProcAddress("glEvalCoord2d");
-    if (!glEvalCoord2d) {
-        printf("Function glEvalCoord2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord2dv = (EvalCoord2dvproc *)wglGetProcAddress("glEvalCoord2dv");
-    if (!glEvalCoord2dv) {
-        printf("Function glEvalCoord2dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord2f = (EvalCoord2fproc *)wglGetProcAddress("glEvalCoord2f");
-    if (!glEvalCoord2f) {
-        printf("Function glEvalCoord2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalCoord2fv = (EvalCoord2fvproc *)wglGetProcAddress("glEvalCoord2fv");
-    if (!glEvalCoord2fv) {
-        printf("Function glEvalCoord2fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalMesh1 = (EvalMesh1proc *)wglGetProcAddress("glEvalMesh1");
-    if (!glEvalMesh1) {
-        printf("Function glEvalMesh1 couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalMesh2 = (EvalMesh2proc *)wglGetProcAddress("glEvalMesh2");
-    if (!glEvalMesh2) {
-        printf("Function glEvalMesh2 couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalPoint1 = (EvalPoint1proc *)wglGetProcAddress("glEvalPoint1");
-    if (!glEvalPoint1) {
-        printf("Function glEvalPoint1 couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEvalPoint2 = (EvalPoint2proc *)wglGetProcAddress("glEvalPoint2");
-    if (!glEvalPoint2) {
-        printf("Function glEvalPoint2 couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFeedbackBuffer = (FeedbackBufferproc *)wglGetProcAddress("glFeedbackBuffer");
-    if (!glFeedbackBuffer) {
-        printf("Function glFeedbackBuffer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFinish = (Finishproc *)wglGetProcAddress("glFinish");
-    if (!glFinish) {
-        printf("Function glFinish couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFlush = (Flushproc *)wglGetProcAddress("glFlush");
-    if (!glFlush) {
-        printf("Function glFlush couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFogf = (Fogfproc *)wglGetProcAddress("glFogf");
-    if (!glFogf) {
-        printf("Function glFogf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFogfv = (Fogfvproc *)wglGetProcAddress("glFogfv");
-    if (!glFogfv) {
-        printf("Function glFogfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFogi = (Fogiproc *)wglGetProcAddress("glFogi");
-    if (!glFogi) {
-        printf("Function glFogi couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFogiv = (Fogivproc *)wglGetProcAddress("glFogiv");
-    if (!glFogiv) {
-        printf("Function glFogiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFrontFace = (FrontFaceproc *)wglGetProcAddress("glFrontFace");
-    if (!glFrontFace) {
-        printf("Function glFrontFace couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glFrustum = (Frustumproc *)wglGetProcAddress("glFrustum");
-    if (!glFrustum) {
-        printf("Function glFrustum couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGenLists = (GenListsproc *)wglGetProcAddress("glGenLists");
-    if (!glGenLists) {
-        printf("Function glGenLists couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetBooleanv = (GetBooleanvproc *)wglGetProcAddress("glGetBooleanv");
-    if (!glGetBooleanv) {
-        printf("Function glGetBooleanv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetClipPlane = (GetClipPlaneproc *)wglGetProcAddress("glGetClipPlane");
-    if (!glGetClipPlane) {
-        printf("Function glGetClipPlane couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetDoublev = (GetDoublevproc *)wglGetProcAddress("glGetDoublev");
-    if (!glGetDoublev) {
-        printf("Function glGetDoublev couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetError = (GetErrorproc *)wglGetProcAddress("glGetError");
-    if (!glGetError) {
-        printf("Function glGetError couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetFloatv = (GetFloatvproc *)wglGetProcAddress("glGetFloatv");
-    if (!glGetFloatv) {
-        printf("Function glGetFloatv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetIntegerv = (GetIntegervproc *)wglGetProcAddress("glGetIntegerv");
-    if (!glGetIntegerv) {
-        printf("Function glGetIntegerv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetLightfv = (GetLightfvproc *)wglGetProcAddress("glGetLightfv");
-    if (!glGetLightfv) {
-        printf("Function glGetLightfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetLightiv = (GetLightivproc *)wglGetProcAddress("glGetLightiv");
-    if (!glGetLightiv) {
-        printf("Function glGetLightiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetMapdv = (GetMapdvproc *)wglGetProcAddress("glGetMapdv");
-    if (!glGetMapdv) {
-        printf("Function glGetMapdv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetMapfv = (GetMapfvproc *)wglGetProcAddress("glGetMapfv");
-    if (!glGetMapfv) {
-        printf("Function glGetMapfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetMapiv = (GetMapivproc *)wglGetProcAddress("glGetMapiv");
-    if (!glGetMapiv) {
-        printf("Function glGetMapiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetMaterialfv = (GetMaterialfvproc *)wglGetProcAddress("glGetMaterialfv");
-    if (!glGetMaterialfv) {
-        printf("Function glGetMaterialfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetMaterialiv = (GetMaterialivproc *)wglGetProcAddress("glGetMaterialiv");
-    if (!glGetMaterialiv) {
-        printf("Function glGetMaterialiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetPixelMapfv = (GetPixelMapfvproc *)wglGetProcAddress("glGetPixelMapfv");
-    if (!glGetPixelMapfv) {
-        printf("Function glGetPixelMapfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetPixelMapuiv = (GetPixelMapuivproc *)wglGetProcAddress("glGetPixelMapuiv");
-    if (!glGetPixelMapuiv) {
-        printf("Function glGetPixelMapuiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetPixelMapusv = (GetPixelMapusvproc *)wglGetProcAddress("glGetPixelMapusv");
-    if (!glGetPixelMapusv) {
-        printf("Function glGetPixelMapusv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetPolygonStipple = (GetPolygonStippleproc *)wglGetProcAddress("glGetPolygonStipple");
-    if (!glGetPolygonStipple) {
-        printf("Function glGetPolygonStipple couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetString = (GetStringproc *)wglGetProcAddress("glGetString");
-    if (!glGetString) {
-        printf("Function glGetString couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexEnvfv = (GetTexEnvfvproc *)wglGetProcAddress("glGetTexEnvfv");
-    if (!glGetTexEnvfv) {
-        printf("Function glGetTexEnvfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexEnviv = (GetTexEnvivproc *)wglGetProcAddress("glGetTexEnviv");
-    if (!glGetTexEnviv) {
-        printf("Function glGetTexEnviv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexGendv = (GetTexGendvproc *)wglGetProcAddress("glGetTexGendv");
-    if (!glGetTexGendv) {
-        printf("Function glGetTexGendv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexGenfv = (GetTexGenfvproc *)wglGetProcAddress("glGetTexGenfv");
-    if (!glGetTexGenfv) {
-        printf("Function glGetTexGenfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexGeniv = (GetTexGenivproc *)wglGetProcAddress("glGetTexGeniv");
-    if (!glGetTexGeniv) {
-        printf("Function glGetTexGeniv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexImage = (GetTexImageproc *)wglGetProcAddress("glGetTexImage");
-    if (!glGetTexImage) {
-        printf("Function glGetTexImage couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexLevelParameterfv = (GetTexLevelParameterfvproc *)wglGetProcAddress("glGetTexLevelParameterfv");
-    if (!glGetTexLevelParameterfv) {
-        printf("Function glGetTexLevelParameterfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexLevelParameteriv = (GetTexLevelParameterivproc *)wglGetProcAddress("glGetTexLevelParameteriv");
-    if (!glGetTexLevelParameteriv) {
-        printf("Function glGetTexLevelParameteriv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexParameterfv = (GetTexParameterfvproc *)wglGetProcAddress("glGetTexParameterfv");
-    if (!glGetTexParameterfv) {
-        printf("Function glGetTexParameterfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetTexParameteriv = (GetTexParameterivproc *)wglGetProcAddress("glGetTexParameteriv");
-    if (!glGetTexParameteriv) {
-        printf("Function glGetTexParameteriv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glHint = (Hintproc *)wglGetProcAddress("glHint");
-    if (!glHint) {
-        printf("Function glHint couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexMask = (IndexMaskproc *)wglGetProcAddress("glIndexMask");
-    if (!glIndexMask) {
-        printf("Function glIndexMask couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexd = (Indexdproc *)wglGetProcAddress("glIndexd");
-    if (!glIndexd) {
-        printf("Function glIndexd couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexdv = (Indexdvproc *)wglGetProcAddress("glIndexdv");
-    if (!glIndexdv) {
-        printf("Function glIndexdv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexf = (Indexfproc *)wglGetProcAddress("glIndexf");
-    if (!glIndexf) {
-        printf("Function glIndexf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexfv = (Indexfvproc *)wglGetProcAddress("glIndexfv");
-    if (!glIndexfv) {
-        printf("Function glIndexfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexi = (Indexiproc *)wglGetProcAddress("glIndexi");
-    if (!glIndexi) {
-        printf("Function glIndexi couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexiv = (Indexivproc *)wglGetProcAddress("glIndexiv");
-    if (!glIndexiv) {
-        printf("Function glIndexiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexs = (Indexsproc *)wglGetProcAddress("glIndexs");
-    if (!glIndexs) {
-        printf("Function glIndexs couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexsv = (Indexsvproc *)wglGetProcAddress("glIndexsv");
-    if (!glIndexsv) {
-        printf("Function glIndexsv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glInitNames = (InitNamesproc *)wglGetProcAddress("glInitNames");
-    if (!glInitNames) {
-        printf("Function glInitNames couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIsEnabled = (IsEnabledproc *)wglGetProcAddress("glIsEnabled");
-    if (!glIsEnabled) {
-        printf("Function glIsEnabled couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIsList = (IsListproc *)wglGetProcAddress("glIsList");
-    if (!glIsList) {
-        printf("Function glIsList couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightModelf = (LightModelfproc *)wglGetProcAddress("glLightModelf");
-    if (!glLightModelf) {
-        printf("Function glLightModelf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightModelfv = (LightModelfvproc *)wglGetProcAddress("glLightModelfv");
-    if (!glLightModelfv) {
-        printf("Function glLightModelfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightModeli = (LightModeliproc *)wglGetProcAddress("glLightModeli");
-    if (!glLightModeli) {
-        printf("Function glLightModeli couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightModeliv = (LightModelivproc *)wglGetProcAddress("glLightModeliv");
-    if (!glLightModeliv) {
-        printf("Function glLightModeliv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightf = (Lightfproc *)wglGetProcAddress("glLightf");
-    if (!glLightf) {
-        printf("Function glLightf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightfv = (Lightfvproc *)wglGetProcAddress("glLightfv");
-    if (!glLightfv) {
-        printf("Function glLightfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLighti = (Lightiproc *)wglGetProcAddress("glLighti");
-    if (!glLighti) {
-        printf("Function glLighti couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLightiv = (Lightivproc *)wglGetProcAddress("glLightiv");
-    if (!glLightiv) {
-        printf("Function glLightiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLineStipple = (LineStippleproc *)wglGetProcAddress("glLineStipple");
-    if (!glLineStipple) {
-        printf("Function glLineStipple couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLineWidth = (LineWidthproc *)wglGetProcAddress("glLineWidth");
-    if (!glLineWidth) {
-        printf("Function glLineWidth couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glListBase = (ListBaseproc *)wglGetProcAddress("glListBase");
-    if (!glListBase) {
-        printf("Function glListBase couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLoadIdentity = (LoadIdentityproc *)wglGetProcAddress("glLoadIdentity");
-    if (!glLoadIdentity) {
-        printf("Function glLoadIdentity couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLoadMatrixd = (LoadMatrixdproc *)wglGetProcAddress("glLoadMatrixd");
-    if (!glLoadMatrixd) {
-        printf("Function glLoadMatrixd couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLoadMatrixf = (LoadMatrixfproc *)wglGetProcAddress("glLoadMatrixf");
-    if (!glLoadMatrixf) {
-        printf("Function glLoadMatrixf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLoadName = (LoadNameproc *)wglGetProcAddress("glLoadName");
-    if (!glLoadName) {
-        printf("Function glLoadName couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glLogicOp = (LogicOpproc *)wglGetProcAddress("glLogicOp");
-    if (!glLogicOp) {
-        printf("Function glLogicOp couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMap1d = (Map1dproc *)wglGetProcAddress("glMap1d");
-    if (!glMap1d) {
-        printf("Function glMap1d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMap1f = (Map1fproc *)wglGetProcAddress("glMap1f");
-    if (!glMap1f) {
-        printf("Function glMap1f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMap2d = (Map2dproc *)wglGetProcAddress("glMap2d");
-    if (!glMap2d) {
-        printf("Function glMap2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMap2f = (Map2fproc *)wglGetProcAddress("glMap2f");
-    if (!glMap2f) {
-        printf("Function glMap2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMapGrid1d = (MapGrid1dproc *)wglGetProcAddress("glMapGrid1d");
-    if (!glMapGrid1d) {
-        printf("Function glMapGrid1d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMapGrid1f = (MapGrid1fproc *)wglGetProcAddress("glMapGrid1f");
-    if (!glMapGrid1f) {
-        printf("Function glMapGrid1f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMapGrid2d = (MapGrid2dproc *)wglGetProcAddress("glMapGrid2d");
-    if (!glMapGrid2d) {
-        printf("Function glMapGrid2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMapGrid2f = (MapGrid2fproc *)wglGetProcAddress("glMapGrid2f");
-    if (!glMapGrid2f) {
-        printf("Function glMapGrid2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMaterialf = (Materialfproc *)wglGetProcAddress("glMaterialf");
-    if (!glMaterialf) {
-        printf("Function glMaterialf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMaterialfv = (Materialfvproc *)wglGetProcAddress("glMaterialfv");
-    if (!glMaterialfv) {
-        printf("Function glMaterialfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMateriali = (Materialiproc *)wglGetProcAddress("glMateriali");
-    if (!glMateriali) {
-        printf("Function glMateriali couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMaterialiv = (Materialivproc *)wglGetProcAddress("glMaterialiv");
-    if (!glMaterialiv) {
-        printf("Function glMaterialiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMatrixMode = (MatrixModeproc *)wglGetProcAddress("glMatrixMode");
-    if (!glMatrixMode) {
-        printf("Function glMatrixMode couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMultMatrixd = (MultMatrixdproc *)wglGetProcAddress("glMultMatrixd");
-    if (!glMultMatrixd) {
-        printf("Function glMultMatrixd couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glMultMatrixf = (MultMatrixfproc *)wglGetProcAddress("glMultMatrixf");
-    if (!glMultMatrixf) {
-        printf("Function glMultMatrixf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNewList = (NewListproc *)wglGetProcAddress("glNewList");
-    if (!glNewList) {
-        printf("Function glNewList couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3b = (Normal3bproc *)wglGetProcAddress("glNormal3b");
-    if (!glNormal3b) {
-        printf("Function glNormal3b couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3bv = (Normal3bvproc *)wglGetProcAddress("glNormal3bv");
-    if (!glNormal3bv) {
-        printf("Function glNormal3bv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3d = (Normal3dproc *)wglGetProcAddress("glNormal3d");
-    if (!glNormal3d) {
-        printf("Function glNormal3d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3dv = (Normal3dvproc *)wglGetProcAddress("glNormal3dv");
-    if (!glNormal3dv) {
-        printf("Function glNormal3dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3f = (Normal3fproc *)wglGetProcAddress("glNormal3f");
-    if (!glNormal3f) {
-        printf("Function glNormal3f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3fv = (Normal3fvproc *)wglGetProcAddress("glNormal3fv");
-    if (!glNormal3fv) {
-        printf("Function glNormal3fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3i = (Normal3iproc *)wglGetProcAddress("glNormal3i");
-    if (!glNormal3i) {
-        printf("Function glNormal3i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3iv = (Normal3ivproc *)wglGetProcAddress("glNormal3iv");
-    if (!glNormal3iv) {
-        printf("Function glNormal3iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3s = (Normal3sproc *)wglGetProcAddress("glNormal3s");
-    if (!glNormal3s) {
-        printf("Function glNormal3s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormal3sv = (Normal3svproc *)wglGetProcAddress("glNormal3sv");
-    if (!glNormal3sv) {
-        printf("Function glNormal3sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glOrtho = (Orthoproc *)wglGetProcAddress("glOrtho");
-    if (!glOrtho) {
-        printf("Function glOrtho couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPassThrough = (PassThroughproc *)wglGetProcAddress("glPassThrough");
-    if (!glPassThrough) {
-        printf("Function glPassThrough couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelMapfv = (PixelMapfvproc *)wglGetProcAddress("glPixelMapfv");
-    if (!glPixelMapfv) {
-        printf("Function glPixelMapfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelMapuiv = (PixelMapuivproc *)wglGetProcAddress("glPixelMapuiv");
-    if (!glPixelMapuiv) {
-        printf("Function glPixelMapuiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelMapusv = (PixelMapusvproc *)wglGetProcAddress("glPixelMapusv");
-    if (!glPixelMapusv) {
-        printf("Function glPixelMapusv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelStoref = (PixelStorefproc *)wglGetProcAddress("glPixelStoref");
-    if (!glPixelStoref) {
-        printf("Function glPixelStoref couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelStorei = (PixelStoreiproc *)wglGetProcAddress("glPixelStorei");
-    if (!glPixelStorei) {
-        printf("Function glPixelStorei couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelTransferf = (PixelTransferfproc *)wglGetProcAddress("glPixelTransferf");
-    if (!glPixelTransferf) {
-        printf("Function glPixelTransferf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelTransferi = (PixelTransferiproc *)wglGetProcAddress("glPixelTransferi");
-    if (!glPixelTransferi) {
-        printf("Function glPixelTransferi couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPixelZoom = (PixelZoomproc *)wglGetProcAddress("glPixelZoom");
-    if (!glPixelZoom) {
-        printf("Function glPixelZoom couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPointSize = (PointSizeproc *)wglGetProcAddress("glPointSize");
-    if (!glPointSize) {
-        printf("Function glPointSize couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPolygonMode = (PolygonModeproc *)wglGetProcAddress("glPolygonMode");
-    if (!glPolygonMode) {
-        printf("Function glPolygonMode couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPolygonStipple = (PolygonStippleproc *)wglGetProcAddress("glPolygonStipple");
-    if (!glPolygonStipple) {
-        printf("Function glPolygonStipple couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPopAttrib = (PopAttribproc *)wglGetProcAddress("glPopAttrib");
-    if (!glPopAttrib) {
-        printf("Function glPopAttrib couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPopMatrix = (PopMatrixproc *)wglGetProcAddress("glPopMatrix");
-    if (!glPopMatrix) {
-        printf("Function glPopMatrix couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPopName = (PopNameproc *)wglGetProcAddress("glPopName");
-    if (!glPopName) {
-        printf("Function glPopName couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPushAttrib = (PushAttribproc *)wglGetProcAddress("glPushAttrib");
-    if (!glPushAttrib) {
-        printf("Function glPushAttrib couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPushMatrix = (PushMatrixproc *)wglGetProcAddress("glPushMatrix");
-    if (!glPushMatrix) {
-        printf("Function glPushMatrix couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPushName = (PushNameproc *)wglGetProcAddress("glPushName");
-    if (!glPushName) {
-        printf("Function glPushName couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2d = (RasterPos2dproc *)wglGetProcAddress("glRasterPos2d");
-    if (!glRasterPos2d) {
-        printf("Function glRasterPos2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2dv = (RasterPos2dvproc *)wglGetProcAddress("glRasterPos2dv");
-    if (!glRasterPos2dv) {
-        printf("Function glRasterPos2dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2f = (RasterPos2fproc *)wglGetProcAddress("glRasterPos2f");
-    if (!glRasterPos2f) {
-        printf("Function glRasterPos2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2fv = (RasterPos2fvproc *)wglGetProcAddress("glRasterPos2fv");
-    if (!glRasterPos2fv) {
-        printf("Function glRasterPos2fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2i = (RasterPos2iproc *)wglGetProcAddress("glRasterPos2i");
-    if (!glRasterPos2i) {
-        printf("Function glRasterPos2i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2iv = (RasterPos2ivproc *)wglGetProcAddress("glRasterPos2iv");
-    if (!glRasterPos2iv) {
-        printf("Function glRasterPos2iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2s = (RasterPos2sproc *)wglGetProcAddress("glRasterPos2s");
-    if (!glRasterPos2s) {
-        printf("Function glRasterPos2s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos2sv = (RasterPos2svproc *)wglGetProcAddress("glRasterPos2sv");
-    if (!glRasterPos2sv) {
-        printf("Function glRasterPos2sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3d = (RasterPos3dproc *)wglGetProcAddress("glRasterPos3d");
-    if (!glRasterPos3d) {
-        printf("Function glRasterPos3d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3dv = (RasterPos3dvproc *)wglGetProcAddress("glRasterPos3dv");
-    if (!glRasterPos3dv) {
-        printf("Function glRasterPos3dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3f = (RasterPos3fproc *)wglGetProcAddress("glRasterPos3f");
-    if (!glRasterPos3f) {
-        printf("Function glRasterPos3f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3fv = (RasterPos3fvproc *)wglGetProcAddress("glRasterPos3fv");
-    if (!glRasterPos3fv) {
-        printf("Function glRasterPos3fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3i = (RasterPos3iproc *)wglGetProcAddress("glRasterPos3i");
-    if (!glRasterPos3i) {
-        printf("Function glRasterPos3i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3iv = (RasterPos3ivproc *)wglGetProcAddress("glRasterPos3iv");
-    if (!glRasterPos3iv) {
-        printf("Function glRasterPos3iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3s = (RasterPos3sproc *)wglGetProcAddress("glRasterPos3s");
-    if (!glRasterPos3s) {
-        printf("Function glRasterPos3s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos3sv = (RasterPos3svproc *)wglGetProcAddress("glRasterPos3sv");
-    if (!glRasterPos3sv) {
-        printf("Function glRasterPos3sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4d = (RasterPos4dproc *)wglGetProcAddress("glRasterPos4d");
-    if (!glRasterPos4d) {
-        printf("Function glRasterPos4d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4dv = (RasterPos4dvproc *)wglGetProcAddress("glRasterPos4dv");
-    if (!glRasterPos4dv) {
-        printf("Function glRasterPos4dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4f = (RasterPos4fproc *)wglGetProcAddress("glRasterPos4f");
-    if (!glRasterPos4f) {
-        printf("Function glRasterPos4f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4fv = (RasterPos4fvproc *)wglGetProcAddress("glRasterPos4fv");
-    if (!glRasterPos4fv) {
-        printf("Function glRasterPos4fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4i = (RasterPos4iproc *)wglGetProcAddress("glRasterPos4i");
-    if (!glRasterPos4i) {
-        printf("Function glRasterPos4i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4iv = (RasterPos4ivproc *)wglGetProcAddress("glRasterPos4iv");
-    if (!glRasterPos4iv) {
-        printf("Function glRasterPos4iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4s = (RasterPos4sproc *)wglGetProcAddress("glRasterPos4s");
-    if (!glRasterPos4s) {
-        printf("Function glRasterPos4s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRasterPos4sv = (RasterPos4svproc *)wglGetProcAddress("glRasterPos4sv");
-    if (!glRasterPos4sv) {
-        printf("Function glRasterPos4sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glReadBuffer = (ReadBufferproc *)wglGetProcAddress("glReadBuffer");
-    if (!glReadBuffer) {
-        printf("Function glReadBuffer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glReadPixels = (ReadPixelsproc *)wglGetProcAddress("glReadPixels");
-    if (!glReadPixels) {
-        printf("Function glReadPixels couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectd = (Rectdproc *)wglGetProcAddress("glRectd");
-    if (!glRectd) {
-        printf("Function glRectd couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectdv = (Rectdvproc *)wglGetProcAddress("glRectdv");
-    if (!glRectdv) {
-        printf("Function glRectdv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectf = (Rectfproc *)wglGetProcAddress("glRectf");
-    if (!glRectf) {
-        printf("Function glRectf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectfv = (Rectfvproc *)wglGetProcAddress("glRectfv");
-    if (!glRectfv) {
-        printf("Function glRectfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRecti = (Rectiproc *)wglGetProcAddress("glRecti");
-    if (!glRecti) {
-        printf("Function glRecti couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectiv = (Rectivproc *)wglGetProcAddress("glRectiv");
-    if (!glRectiv) {
-        printf("Function glRectiv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRects = (Rectsproc *)wglGetProcAddress("glRects");
-    if (!glRects) {
-        printf("Function glRects couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRectsv = (Rectsvproc *)wglGetProcAddress("glRectsv");
-    if (!glRectsv) {
-        printf("Function glRectsv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRenderMode = (RenderModeproc *)wglGetProcAddress("glRenderMode");
-    if (!glRenderMode) {
-        printf("Function glRenderMode couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRotated = (Rotatedproc *)wglGetProcAddress("glRotated");
-    if (!glRotated) {
-        printf("Function glRotated couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glRotatef = (Rotatefproc *)wglGetProcAddress("glRotatef");
-    if (!glRotatef) {
-        printf("Function glRotatef couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glScaled = (Scaledproc *)wglGetProcAddress("glScaled");
-    if (!glScaled) {
-        printf("Function glScaled couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glScalef = (Scalefproc *)wglGetProcAddress("glScalef");
-    if (!glScalef) {
-        printf("Function glScalef couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glScissor = (Scissorproc *)wglGetProcAddress("glScissor");
-    if (!glScissor) {
-        printf("Function glScissor couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glSelectBuffer = (SelectBufferproc *)wglGetProcAddress("glSelectBuffer");
-    if (!glSelectBuffer) {
-        printf("Function glSelectBuffer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glShadeModel = (ShadeModelproc *)wglGetProcAddress("glShadeModel");
-    if (!glShadeModel) {
-        printf("Function glShadeModel couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glStencilFunc = (StencilFuncproc *)wglGetProcAddress("glStencilFunc");
-    if (!glStencilFunc) {
-        printf("Function glStencilFunc couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glStencilMask = (StencilMaskproc *)wglGetProcAddress("glStencilMask");
-    if (!glStencilMask) {
-        printf("Function glStencilMask couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glStencilOp = (StencilOpproc *)wglGetProcAddress("glStencilOp");
-    if (!glStencilOp) {
-        printf("Function glStencilOp couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1d = (TexCoord1dproc *)wglGetProcAddress("glTexCoord1d");
-    if (!glTexCoord1d) {
-        printf("Function glTexCoord1d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1dv = (TexCoord1dvproc *)wglGetProcAddress("glTexCoord1dv");
-    if (!glTexCoord1dv) {
-        printf("Function glTexCoord1dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1f = (TexCoord1fproc *)wglGetProcAddress("glTexCoord1f");
-    if (!glTexCoord1f) {
-        printf("Function glTexCoord1f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1fv = (TexCoord1fvproc *)wglGetProcAddress("glTexCoord1fv");
-    if (!glTexCoord1fv) {
-        printf("Function glTexCoord1fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1i = (TexCoord1iproc *)wglGetProcAddress("glTexCoord1i");
-    if (!glTexCoord1i) {
-        printf("Function glTexCoord1i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1iv = (TexCoord1ivproc *)wglGetProcAddress("glTexCoord1iv");
-    if (!glTexCoord1iv) {
-        printf("Function glTexCoord1iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1s = (TexCoord1sproc *)wglGetProcAddress("glTexCoord1s");
-    if (!glTexCoord1s) {
-        printf("Function glTexCoord1s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord1sv = (TexCoord1svproc *)wglGetProcAddress("glTexCoord1sv");
-    if (!glTexCoord1sv) {
-        printf("Function glTexCoord1sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2d = (TexCoord2dproc *)wglGetProcAddress("glTexCoord2d");
-    if (!glTexCoord2d) {
-        printf("Function glTexCoord2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2dv = (TexCoord2dvproc *)wglGetProcAddress("glTexCoord2dv");
-    if (!glTexCoord2dv) {
-        printf("Function glTexCoord2dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2f = (TexCoord2fproc *)wglGetProcAddress("glTexCoord2f");
-    if (!glTexCoord2f) {
-        printf("Function glTexCoord2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2fv = (TexCoord2fvproc *)wglGetProcAddress("glTexCoord2fv");
-    if (!glTexCoord2fv) {
-        printf("Function glTexCoord2fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2i = (TexCoord2iproc *)wglGetProcAddress("glTexCoord2i");
-    if (!glTexCoord2i) {
-        printf("Function glTexCoord2i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2iv = (TexCoord2ivproc *)wglGetProcAddress("glTexCoord2iv");
-    if (!glTexCoord2iv) {
-        printf("Function glTexCoord2iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2s = (TexCoord2sproc *)wglGetProcAddress("glTexCoord2s");
-    if (!glTexCoord2s) {
-        printf("Function glTexCoord2s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord2sv = (TexCoord2svproc *)wglGetProcAddress("glTexCoord2sv");
-    if (!glTexCoord2sv) {
-        printf("Function glTexCoord2sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3d = (TexCoord3dproc *)wglGetProcAddress("glTexCoord3d");
-    if (!glTexCoord3d) {
-        printf("Function glTexCoord3d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3dv = (TexCoord3dvproc *)wglGetProcAddress("glTexCoord3dv");
-    if (!glTexCoord3dv) {
-        printf("Function glTexCoord3dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3f = (TexCoord3fproc *)wglGetProcAddress("glTexCoord3f");
-    if (!glTexCoord3f) {
-        printf("Function glTexCoord3f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3fv = (TexCoord3fvproc *)wglGetProcAddress("glTexCoord3fv");
-    if (!glTexCoord3fv) {
-        printf("Function glTexCoord3fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3i = (TexCoord3iproc *)wglGetProcAddress("glTexCoord3i");
-    if (!glTexCoord3i) {
-        printf("Function glTexCoord3i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3iv = (TexCoord3ivproc *)wglGetProcAddress("glTexCoord3iv");
-    if (!glTexCoord3iv) {
-        printf("Function glTexCoord3iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3s = (TexCoord3sproc *)wglGetProcAddress("glTexCoord3s");
-    if (!glTexCoord3s) {
-        printf("Function glTexCoord3s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord3sv = (TexCoord3svproc *)wglGetProcAddress("glTexCoord3sv");
-    if (!glTexCoord3sv) {
-        printf("Function glTexCoord3sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4d = (TexCoord4dproc *)wglGetProcAddress("glTexCoord4d");
-    if (!glTexCoord4d) {
-        printf("Function glTexCoord4d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4dv = (TexCoord4dvproc *)wglGetProcAddress("glTexCoord4dv");
-    if (!glTexCoord4dv) {
-        printf("Function glTexCoord4dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4f = (TexCoord4fproc *)wglGetProcAddress("glTexCoord4f");
-    if (!glTexCoord4f) {
-        printf("Function glTexCoord4f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4fv = (TexCoord4fvproc *)wglGetProcAddress("glTexCoord4fv");
-    if (!glTexCoord4fv) {
-        printf("Function glTexCoord4fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4i = (TexCoord4iproc *)wglGetProcAddress("glTexCoord4i");
-    if (!glTexCoord4i) {
-        printf("Function glTexCoord4i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4iv = (TexCoord4ivproc *)wglGetProcAddress("glTexCoord4iv");
-    if (!glTexCoord4iv) {
-        printf("Function glTexCoord4iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4s = (TexCoord4sproc *)wglGetProcAddress("glTexCoord4s");
-    if (!glTexCoord4s) {
-        printf("Function glTexCoord4s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoord4sv = (TexCoord4svproc *)wglGetProcAddress("glTexCoord4sv");
-    if (!glTexCoord4sv) {
-        printf("Function glTexCoord4sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexEnvf = (TexEnvfproc *)wglGetProcAddress("glTexEnvf");
-    if (!glTexEnvf) {
-        printf("Function glTexEnvf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexEnvfv = (TexEnvfvproc *)wglGetProcAddress("glTexEnvfv");
-    if (!glTexEnvfv) {
-        printf("Function glTexEnvfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexEnvi = (TexEnviproc *)wglGetProcAddress("glTexEnvi");
-    if (!glTexEnvi) {
-        printf("Function glTexEnvi couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexEnviv = (TexEnvivproc *)wglGetProcAddress("glTexEnviv");
-    if (!glTexEnviv) {
-        printf("Function glTexEnviv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGend = (TexGendproc *)wglGetProcAddress("glTexGend");
-    if (!glTexGend) {
-        printf("Function glTexGend couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGendv = (TexGendvproc *)wglGetProcAddress("glTexGendv");
-    if (!glTexGendv) {
-        printf("Function glTexGendv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGenf = (TexGenfproc *)wglGetProcAddress("glTexGenf");
-    if (!glTexGenf) {
-        printf("Function glTexGenf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGenfv = (TexGenfvproc *)wglGetProcAddress("glTexGenfv");
-    if (!glTexGenfv) {
-        printf("Function glTexGenfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGeni = (TexGeniproc *)wglGetProcAddress("glTexGeni");
-    if (!glTexGeni) {
-        printf("Function glTexGeni couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexGeniv = (TexGenivproc *)wglGetProcAddress("glTexGeniv");
-    if (!glTexGeniv) {
-        printf("Function glTexGeniv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexImage1D = (TexImage1Dproc *)wglGetProcAddress("glTexImage1D");
-    if (!glTexImage1D) {
-        printf("Function glTexImage1D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexImage2D = (TexImage2Dproc *)wglGetProcAddress("glTexImage2D");
-    if (!glTexImage2D) {
-        printf("Function glTexImage2D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexParameterf = (TexParameterfproc *)wglGetProcAddress("glTexParameterf");
-    if (!glTexParameterf) {
-        printf("Function glTexParameterf couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexParameterfv = (TexParameterfvproc *)wglGetProcAddress("glTexParameterfv");
-    if (!glTexParameterfv) {
-        printf("Function glTexParameterfv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexParameteri = (TexParameteriproc *)wglGetProcAddress("glTexParameteri");
-    if (!glTexParameteri) {
-        printf("Function glTexParameteri couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexParameteriv = (TexParameterivproc *)wglGetProcAddress("glTexParameteriv");
-    if (!glTexParameteriv) {
-        printf("Function glTexParameteriv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTranslated = (Translatedproc *)wglGetProcAddress("glTranslated");
-    if (!glTranslated) {
-        printf("Function glTranslated couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTranslatef = (Translatefproc *)wglGetProcAddress("glTranslatef");
-    if (!glTranslatef) {
-        printf("Function glTranslatef couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2d = (Vertex2dproc *)wglGetProcAddress("glVertex2d");
-    if (!glVertex2d) {
-        printf("Function glVertex2d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2dv = (Vertex2dvproc *)wglGetProcAddress("glVertex2dv");
-    if (!glVertex2dv) {
-        printf("Function glVertex2dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2f = (Vertex2fproc *)wglGetProcAddress("glVertex2f");
-    if (!glVertex2f) {
-        printf("Function glVertex2f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2fv = (Vertex2fvproc *)wglGetProcAddress("glVertex2fv");
-    if (!glVertex2fv) {
-        printf("Function glVertex2fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2i = (Vertex2iproc *)wglGetProcAddress("glVertex2i");
-    if (!glVertex2i) {
-        printf("Function glVertex2i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2iv = (Vertex2ivproc *)wglGetProcAddress("glVertex2iv");
-    if (!glVertex2iv) {
-        printf("Function glVertex2iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2s = (Vertex2sproc *)wglGetProcAddress("glVertex2s");
-    if (!glVertex2s) {
-        printf("Function glVertex2s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex2sv = (Vertex2svproc *)wglGetProcAddress("glVertex2sv");
-    if (!glVertex2sv) {
-        printf("Function glVertex2sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3d = (Vertex3dproc *)wglGetProcAddress("glVertex3d");
-    if (!glVertex3d) {
-        printf("Function glVertex3d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3dv = (Vertex3dvproc *)wglGetProcAddress("glVertex3dv");
-    if (!glVertex3dv) {
-        printf("Function glVertex3dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3f = (Vertex3fproc *)wglGetProcAddress("glVertex3f");
-    if (!glVertex3f) {
-        printf("Function glVertex3f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3fv = (Vertex3fvproc *)wglGetProcAddress("glVertex3fv");
-    if (!glVertex3fv) {
-        printf("Function glVertex3fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3i = (Vertex3iproc *)wglGetProcAddress("glVertex3i");
-    if (!glVertex3i) {
-        printf("Function glVertex3i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3iv = (Vertex3ivproc *)wglGetProcAddress("glVertex3iv");
-    if (!glVertex3iv) {
-        printf("Function glVertex3iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3s = (Vertex3sproc *)wglGetProcAddress("glVertex3s");
-    if (!glVertex3s) {
-        printf("Function glVertex3s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex3sv = (Vertex3svproc *)wglGetProcAddress("glVertex3sv");
-    if (!glVertex3sv) {
-        printf("Function glVertex3sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4d = (Vertex4dproc *)wglGetProcAddress("glVertex4d");
-    if (!glVertex4d) {
-        printf("Function glVertex4d couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4dv = (Vertex4dvproc *)wglGetProcAddress("glVertex4dv");
-    if (!glVertex4dv) {
-        printf("Function glVertex4dv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4f = (Vertex4fproc *)wglGetProcAddress("glVertex4f");
-    if (!glVertex4f) {
-        printf("Function glVertex4f couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4fv = (Vertex4fvproc *)wglGetProcAddress("glVertex4fv");
-    if (!glVertex4fv) {
-        printf("Function glVertex4fv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4i = (Vertex4iproc *)wglGetProcAddress("glVertex4i");
-    if (!glVertex4i) {
-        printf("Function glVertex4i couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4iv = (Vertex4ivproc *)wglGetProcAddress("glVertex4iv");
-    if (!glVertex4iv) {
-        printf("Function glVertex4iv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4s = (Vertex4sproc *)wglGetProcAddress("glVertex4s");
-    if (!glVertex4s) {
-        printf("Function glVertex4s couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertex4sv = (Vertex4svproc *)wglGetProcAddress("glVertex4sv");
-    if (!glVertex4sv) {
-        printf("Function glVertex4sv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glViewport = (Viewportproc *)wglGetProcAddress("glViewport");
-    if (!glViewport) {
-        printf("Function glViewport couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glAreTexturesResident = (AreTexturesResidentproc *)wglGetProcAddress("glAreTexturesResident");
-    if (!glAreTexturesResident) {
-        printf("Function glAreTexturesResident couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glArrayElement = (ArrayElementproc *)wglGetProcAddress("glArrayElement");
-    if (!glArrayElement) {
-        printf("Function glArrayElement couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glBindTexture = (BindTextureproc *)wglGetProcAddress("glBindTexture");
-    if (!glBindTexture) {
-        printf("Function glBindTexture couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glColorPointer = (ColorPointerproc *)wglGetProcAddress("glColorPointer");
-    if (!glColorPointer) {
-        printf("Function glColorPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCopyTexImage1D = (CopyTexImage1Dproc *)wglGetProcAddress("glCopyTexImage1D");
-    if (!glCopyTexImage1D) {
-        printf("Function glCopyTexImage1D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCopyTexImage2D = (CopyTexImage2Dproc *)wglGetProcAddress("glCopyTexImage2D");
-    if (!glCopyTexImage2D) {
-        printf("Function glCopyTexImage2D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCopyTexSubImage1D = (CopyTexSubImage1Dproc *)wglGetProcAddress("glCopyTexSubImage1D");
-    if (!glCopyTexSubImage1D) {
-        printf("Function glCopyTexSubImage1D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glCopyTexSubImage2D = (CopyTexSubImage2Dproc *)wglGetProcAddress("glCopyTexSubImage2D");
-    if (!glCopyTexSubImage2D) {
-        printf("Function glCopyTexSubImage2D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDeleteTextures = (DeleteTexturesproc *)wglGetProcAddress("glDeleteTextures");
-    if (!glDeleteTextures) {
-        printf("Function glDeleteTextures couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDisableClientState = (DisableClientStateproc *)wglGetProcAddress("glDisableClientState");
-    if (!glDisableClientState) {
-        printf("Function glDisableClientState couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDrawArrays = (DrawArraysproc *)wglGetProcAddress("glDrawArrays");
-    if (!glDrawArrays) {
-        printf("Function glDrawArrays couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glDrawElements = (DrawElementsproc *)wglGetProcAddress("glDrawElements");
-    if (!glDrawElements) {
-        printf("Function glDrawElements couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEdgeFlagPointer = (EdgeFlagPointerproc *)wglGetProcAddress("glEdgeFlagPointer");
-    if (!glEdgeFlagPointer) {
-        printf("Function glEdgeFlagPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glEnableClientState = (EnableClientStateproc *)wglGetProcAddress("glEnableClientState");
-    if (!glEnableClientState) {
-        printf("Function glEnableClientState couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGenTextures = (GenTexturesproc *)wglGetProcAddress("glGenTextures");
-    if (!glGenTextures) {
-        printf("Function glGenTextures couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glGetPointerv = (GetPointervproc *)wglGetProcAddress("glGetPointerv");
-    if (!glGetPointerv) {
-        printf("Function glGetPointerv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexPointer = (IndexPointerproc *)wglGetProcAddress("glIndexPointer");
-    if (!glIndexPointer) {
-        printf("Function glIndexPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexub = (Indexubproc *)wglGetProcAddress("glIndexub");
-    if (!glIndexub) {
-        printf("Function glIndexub couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIndexubv = (Indexubvproc *)wglGetProcAddress("glIndexubv");
-    if (!glIndexubv) {
-        printf("Function glIndexubv couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glInterleavedArrays = (InterleavedArraysproc *)wglGetProcAddress("glInterleavedArrays");
-    if (!glInterleavedArrays) {
-        printf("Function glInterleavedArrays couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glIsTexture = (IsTextureproc *)wglGetProcAddress("glIsTexture");
-    if (!glIsTexture) {
-        printf("Function glIsTexture couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glNormalPointer = (NormalPointerproc *)wglGetProcAddress("glNormalPointer");
-    if (!glNormalPointer) {
-        printf("Function glNormalPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPolygonOffset = (PolygonOffsetproc *)wglGetProcAddress("glPolygonOffset");
-    if (!glPolygonOffset) {
-        printf("Function glPolygonOffset couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPopClientAttrib = (PopClientAttribproc *)wglGetProcAddress("glPopClientAttrib");
-    if (!glPopClientAttrib) {
-        printf("Function glPopClientAttrib couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPrioritizeTextures = (PrioritizeTexturesproc *)wglGetProcAddress("glPrioritizeTextures");
-    if (!glPrioritizeTextures) {
-        printf("Function glPrioritizeTextures couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glPushClientAttrib = (PushClientAttribproc *)wglGetProcAddress("glPushClientAttrib");
-    if (!glPushClientAttrib) {
-        printf("Function glPushClientAttrib couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexCoordPointer = (TexCoordPointerproc *)wglGetProcAddress("glTexCoordPointer");
-    if (!glTexCoordPointer) {
-        printf("Function glTexCoordPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexSubImage1D = (TexSubImage1Dproc *)wglGetProcAddress("glTexSubImage1D");
-    if (!glTexSubImage1D) {
-        printf("Function glTexSubImage1D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glTexSubImage2D = (TexSubImage2Dproc *)wglGetProcAddress("glTexSubImage2D");
-    if (!glTexSubImage2D) {
-        printf("Function glTexSubImage2D couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
-
-    glVertexPointer = (VertexPointerproc *)wglGetProcAddress("glVertexPointer");
-    if (!glVertexPointer) {
-        printf("Function glVertexPointer couldn't be loaded from opengl32.dll\n");
-        return false;
-    }
 
     glCopyTexSubImage3D = (CopyTexSubImage3Dproc *)wglGetProcAddress("glCopyTexSubImage3D");
     if (!glCopyTexSubImage3D) {
@@ -8918,6 +6242,12 @@ bool InitGl() {
     return true;
 }
 
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* glutil.h                                                                                                           */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+
 #ifndef GLUTIL_H
 #define GLUTIL_H
 
@@ -9819,898 +7149,898 @@ int GlClearTexImage(lua_State *L);
 int GlClearTexSubImage(lua_State *L);
 
 #define EXPOSED_GL_FUNCTIONS \
-    {"accum"                                            , GlAccum                                      }, \
-    {"alpha_func"                                       , GlAlphaFunc                                  }, \
-    {"begin"                                            , GlBegin                                      }, \
-    {"bitmap"                                           , GlBitmap                                     }, \
-    {"blend_func"                                       , GlBlendFunc                                  }, \
-    {"call_list"                                        , GlCallList                                   }, \
-    {"call_lists"                                       , GlCallLists                                  }, \
-    {"clear"                                            , GlClear                                      }, \
-    {"clear_accum"                                      , GlClearAccum                                 }, \
-    {"clear_color"                                      , GlClearColor                                 }, \
-    {"clear_depth"                                      , GlClearDepth                                 }, \
-    {"clear_index"                                      , GlClearIndex                                 }, \
-    {"clear_stencil"                                    , GlClearStencil                               }, \
-    {"clip_plane"                                       , GlClipPlane                                  }, \
-    {"color_3b"                                         , GlColor3b                                    }, \
-    {"color_3bv"                                        , GlColor3bv                                   }, \
-    {"color_3d"                                         , GlColor3d                                    }, \
-    {"color_3dv"                                        , GlColor3dv                                   }, \
-    {"color_3f"                                         , GlColor3f                                    }, \
-    {"color_3fv"                                        , GlColor3fv                                   }, \
-    {"color_3i"                                         , GlColor3i                                    }, \
-    {"color_3iv"                                        , GlColor3iv                                   }, \
-    {"color_3s"                                         , GlColor3s                                    }, \
-    {"color_3sv"                                        , GlColor3sv                                   }, \
-    {"color_3ub"                                        , GlColor3ub                                   }, \
-    {"color_3ubv"                                       , GlColor3ubv                                  }, \
-    {"color_3ui"                                        , GlColor3ui                                   }, \
-    {"color_3uiv"                                       , GlColor3uiv                                  }, \
-    {"color_3us"                                        , GlColor3us                                   }, \
-    {"color_3usv"                                       , GlColor3usv                                  }, \
-    {"color_4b"                                         , GlColor4b                                    }, \
-    {"color_4bv"                                        , GlColor4bv                                   }, \
-    {"color_4d"                                         , GlColor4d                                    }, \
-    {"color_4dv"                                        , GlColor4dv                                   }, \
-    {"color_4f"                                         , GlColor4f                                    }, \
-    {"color_4fv"                                        , GlColor4fv                                   }, \
-    {"color_4i"                                         , GlColor4i                                    }, \
-    {"color_4iv"                                        , GlColor4iv                                   }, \
-    {"color_4s"                                         , GlColor4s                                    }, \
-    {"color_4sv"                                        , GlColor4sv                                   }, \
-    {"color_4ub"                                        , GlColor4ub                                   }, \
-    {"color_4ubv"                                       , GlColor4ubv                                  }, \
-    {"color_4ui"                                        , GlColor4ui                                   }, \
-    {"color_4uiv"                                       , GlColor4uiv                                  }, \
-    {"color_4us"                                        , GlColor4us                                   }, \
-    {"color_4usv"                                       , GlColor4usv                                  }, \
-    {"color_mask"                                       , GlColorMask                                  }, \
-    {"color_material"                                   , GlColorMaterial                              }, \
-    {"copy_pixels"                                      , GlCopyPixels                                 }, \
-    {"cull_face"                                        , GlCullFace                                   }, \
-    {"delete_lists"                                     , GlDeleteLists                                }, \
-    {"depth_func"                                       , GlDepthFunc                                  }, \
-    {"depth_mask"                                       , GlDepthMask                                  }, \
-    {"depth_range"                                      , GlDepthRange                                 }, \
-    {"disable"                                          , GlDisable                                    }, \
-    {"draw_buffer"                                      , GlDrawBuffer                                 }, \
-    {"draw_pixels"                                      , GlDrawPixels                                 }, \
-    {"edge_flag"                                        , GlEdgeFlag                                   }, \
-    {"edge_flagv"                                       , GlEdgeFlagv                                  }, \
-    {"enable"                                           , GlEnable                                     }, \
-    {"end"                                              , GlEnd                                        }, \
-    {"end_list"                                         , GlEndList                                    }, \
-    {"eval_coord_1d"                                    , GlEvalCoord1d                                }, \
-    {"eval_coord_1dv"                                   , GlEvalCoord1dv                               }, \
-    {"eval_coord_1f"                                    , GlEvalCoord1f                                }, \
-    {"eval_coord_1fv"                                   , GlEvalCoord1fv                               }, \
-    {"eval_coord_2d"                                    , GlEvalCoord2d                                }, \
-    {"eval_coord_2dv"                                   , GlEvalCoord2dv                               }, \
-    {"eval_coord_2f"                                    , GlEvalCoord2f                                }, \
-    {"eval_coord_2fv"                                   , GlEvalCoord2fv                               }, \
-    {"eval_mesh_1"                                      , GlEvalMesh1                                  }, \
-    {"eval_mesh_2"                                      , GlEvalMesh2                                  }, \
-    {"eval_point_1"                                     , GlEvalPoint1                                 }, \
-    {"eval_point_2"                                     , GlEvalPoint2                                 }, \
-    {"feedback_buffer"                                  , GlFeedbackBuffer                             }, \
-    {"finish"                                           , GlFinish                                     }, \
-    {"flush"                                            , GlFlush                                      }, \
-    {"fogf"                                             , GlFogf                                       }, \
-    {"fogfv"                                            , GlFogfv                                      }, \
-    {"fogi"                                             , GlFogi                                       }, \
-    {"fogiv"                                            , GlFogiv                                      }, \
-    {"front_face"                                       , GlFrontFace                                  }, \
-    {"frustum"                                          , GlFrustum                                    }, \
-    {"gen_lists"                                        , GlGenLists                                   }, \
-    {"get_booleanv"                                     , GlGetBooleanv                                }, \
-    {"get_clip_plane"                                   , GlGetClipPlane                               }, \
-    {"get_doublev"                                      , GlGetDoublev                                 }, \
-    {"get_error"                                        , GlGetError                                   }, \
-    {"get_floatv"                                       , GlGetFloatv                                  }, \
-    {"get_integerv"                                     , GlGetIntegerv                                }, \
-    {"get_lightfv"                                      , GlGetLightfv                                 }, \
-    {"get_lightiv"                                      , GlGetLightiv                                 }, \
-    {"get_mapdv"                                        , GlGetMapdv                                   }, \
-    {"get_mapfv"                                        , GlGetMapfv                                   }, \
-    {"get_mapiv"                                        , GlGetMapiv                                   }, \
-    {"get_materialfv"                                   , GlGetMaterialfv                              }, \
-    {"get_materialiv"                                   , GlGetMaterialiv                              }, \
-    {"get_pixel_mapfv"                                  , GlGetPixelMapfv                              }, \
-    {"get_pixel_mapuiv"                                 , GlGetPixelMapuiv                             }, \
-    {"get_pixel_mapusv"                                 , GlGetPixelMapusv                             }, \
-    {"get_polygon_stipple"                              , GlGetPolygonStipple                          }, \
-    {"get_string"                                       , GlGetString                                  }, \
-    {"get_tex_envfv"                                    , GlGetTexEnvfv                                }, \
-    {"get_tex_enviv"                                    , GlGetTexEnviv                                }, \
-    {"get_tex_gendv"                                    , GlGetTexGendv                                }, \
-    {"get_tex_genfv"                                    , GlGetTexGenfv                                }, \
-    {"get_tex_geniv"                                    , GlGetTexGeniv                                }, \
-    {"get_tex_image"                                    , GlGetTexImage                                }, \
-    {"get_tex_level_parameterfv"                        , GlGetTexLevelParameterfv                     }, \
-    {"get_tex_level_parameteriv"                        , GlGetTexLevelParameteriv                     }, \
-    {"get_tex_parameterfv"                              , GlGetTexParameterfv                          }, \
-    {"get_tex_parameteriv"                              , GlGetTexParameteriv                          }, \
-    {"hint"                                             , GlHint                                       }, \
-    {"index_mask"                                       , GlIndexMask                                  }, \
-    {"indexd"                                           , GlIndexd                                     }, \
-    {"indexdv"                                          , GlIndexdv                                    }, \
-    {"indexf"                                           , GlIndexf                                     }, \
-    {"indexfv"                                          , GlIndexfv                                    }, \
-    {"indexi"                                           , GlIndexi                                     }, \
-    {"indexiv"                                          , GlIndexiv                                    }, \
-    {"indexs"                                           , GlIndexs                                     }, \
-    {"indexsv"                                          , GlIndexsv                                    }, \
-    {"init_names"                                       , GlInitNames                                  }, \
-    {"is_enabled"                                       , GlIsEnabled                                  }, \
-    {"is_list"                                          , GlIsList                                     }, \
-    {"light_modelf"                                     , GlLightModelf                                }, \
-    {"light_modelfv"                                    , GlLightModelfv                               }, \
-    {"light_modeli"                                     , GlLightModeli                                }, \
-    {"light_modeliv"                                    , GlLightModeliv                               }, \
-    {"lightf"                                           , GlLightf                                     }, \
-    {"lightfv"                                          , GlLightfv                                    }, \
-    {"lighti"                                           , GlLighti                                     }, \
-    {"lightiv"                                          , GlLightiv                                    }, \
-    {"line_stipple"                                     , GlLineStipple                                }, \
-    {"line_width"                                       , GlLineWidth                                  }, \
-    {"list_base"                                        , GlListBase                                   }, \
-    {"load_identity"                                    , GlLoadIdentity                               }, \
-    {"load_matrixd"                                     , GlLoadMatrixd                                }, \
-    {"load_matrixf"                                     , GlLoadMatrixf                                }, \
-    {"load_name"                                        , GlLoadName                                   }, \
-    {"logic_op"                                         , GlLogicOp                                    }, \
-    {"map_1d"                                           , GlMap1d                                      }, \
-    {"map_1f"                                           , GlMap1f                                      }, \
-    {"map_2d"                                           , GlMap2d                                      }, \
-    {"map_2f"                                           , GlMap2f                                      }, \
-    {"map_grid_1d"                                      , GlMapGrid1d                                  }, \
-    {"map_grid_1f"                                      , GlMapGrid1f                                  }, \
-    {"map_grid_2d"                                      , GlMapGrid2d                                  }, \
-    {"map_grid_2f"                                      , GlMapGrid2f                                  }, \
-    {"materialf"                                        , GlMaterialf                                  }, \
-    {"materialfv"                                       , GlMaterialfv                                 }, \
-    {"materiali"                                        , GlMateriali                                  }, \
-    {"materialiv"                                       , GlMaterialiv                                 }, \
-    {"matrix_mode"                                      , GlMatrixMode                                 }, \
-    {"mult_matrixd"                                     , GlMultMatrixd                                }, \
-    {"mult_matrixf"                                     , GlMultMatrixf                                }, \
-    {"new_list"                                         , GlNewList                                    }, \
-    {"normal_3b"                                        , GlNormal3b                                   }, \
-    {"normal_3bv"                                       , GlNormal3bv                                  }, \
-    {"normal_3d"                                        , GlNormal3d                                   }, \
-    {"normal_3dv"                                       , GlNormal3dv                                  }, \
-    {"normal_3f"                                        , GlNormal3f                                   }, \
-    {"normal_3fv"                                       , GlNormal3fv                                  }, \
-    {"normal_3i"                                        , GlNormal3i                                   }, \
-    {"normal_3iv"                                       , GlNormal3iv                                  }, \
-    {"normal_3s"                                        , GlNormal3s                                   }, \
-    {"normal_3sv"                                       , GlNormal3sv                                  }, \
-    {"ortho"                                            , GlOrtho                                      }, \
-    {"pass_through"                                     , GlPassThrough                                }, \
-    {"pixel_mapfv"                                      , GlPixelMapfv                                 }, \
-    {"pixel_mapuiv"                                     , GlPixelMapuiv                                }, \
-    {"pixel_mapusv"                                     , GlPixelMapusv                                }, \
-    {"pixel_storef"                                     , GlPixelStoref                                }, \
-    {"pixel_storei"                                     , GlPixelStorei                                }, \
-    {"pixel_transferf"                                  , GlPixelTransferf                             }, \
-    {"pixel_transferi"                                  , GlPixelTransferi                             }, \
-    {"pixel_zoom"                                       , GlPixelZoom                                  }, \
-    {"point_size"                                       , GlPointSize                                  }, \
-    {"polygon_mode"                                     , GlPolygonMode                                }, \
-    {"polygon_stipple"                                  , GlPolygonStipple                             }, \
-    {"pop_attrib"                                       , GlPopAttrib                                  }, \
-    {"pop_matrix"                                       , GlPopMatrix                                  }, \
-    {"pop_name"                                         , GlPopName                                    }, \
-    {"push_attrib"                                      , GlPushAttrib                                 }, \
-    {"push_matrix"                                      , GlPushMatrix                                 }, \
-    {"push_name"                                        , GlPushName                                   }, \
-    {"raster_pos_2d"                                    , GlRasterPos2d                                }, \
-    {"raster_pos_2dv"                                   , GlRasterPos2dv                               }, \
-    {"raster_pos_2f"                                    , GlRasterPos2f                                }, \
-    {"raster_pos_2fv"                                   , GlRasterPos2fv                               }, \
-    {"raster_pos_2i"                                    , GlRasterPos2i                                }, \
-    {"raster_pos_2iv"                                   , GlRasterPos2iv                               }, \
-    {"raster_pos_2s"                                    , GlRasterPos2s                                }, \
-    {"raster_pos_2sv"                                   , GlRasterPos2sv                               }, \
-    {"raster_pos_3d"                                    , GlRasterPos3d                                }, \
-    {"raster_pos_3dv"                                   , GlRasterPos3dv                               }, \
-    {"raster_pos_3f"                                    , GlRasterPos3f                                }, \
-    {"raster_pos_3fv"                                   , GlRasterPos3fv                               }, \
-    {"raster_pos_3i"                                    , GlRasterPos3i                                }, \
-    {"raster_pos_3iv"                                   , GlRasterPos3iv                               }, \
-    {"raster_pos_3s"                                    , GlRasterPos3s                                }, \
-    {"raster_pos_3sv"                                   , GlRasterPos3sv                               }, \
-    {"raster_pos_4d"                                    , GlRasterPos4d                                }, \
-    {"raster_pos_4dv"                                   , GlRasterPos4dv                               }, \
-    {"raster_pos_4f"                                    , GlRasterPos4f                                }, \
-    {"raster_pos_4fv"                                   , GlRasterPos4fv                               }, \
-    {"raster_pos_4i"                                    , GlRasterPos4i                                }, \
-    {"raster_pos_4iv"                                   , GlRasterPos4iv                               }, \
-    {"raster_pos_4s"                                    , GlRasterPos4s                                }, \
-    {"raster_pos_4sv"                                   , GlRasterPos4sv                               }, \
-    {"read_buffer"                                      , GlReadBuffer                                 }, \
-    {"read_pixels"                                      , GlReadPixels                                 }, \
-    {"rectd"                                            , GlRectd                                      }, \
-    {"rectdv"                                           , GlRectdv                                     }, \
-    {"rectf"                                            , GlRectf                                      }, \
-    {"rectfv"                                           , GlRectfv                                     }, \
-    {"recti"                                            , GlRecti                                      }, \
-    {"rectiv"                                           , GlRectiv                                     }, \
-    {"rects"                                            , GlRects                                      }, \
-    {"rectsv"                                           , GlRectsv                                     }, \
-    {"render_mode"                                      , GlRenderMode                                 }, \
-    {"rotated"                                          , GlRotated                                    }, \
-    {"rotatef"                                          , GlRotatef                                    }, \
-    {"scaled"                                           , GlScaled                                     }, \
-    {"scalef"                                           , GlScalef                                     }, \
-    {"scissor"                                          , GlScissor                                    }, \
-    {"select_buffer"                                    , GlSelectBuffer                               }, \
-    {"shade_model"                                      , GlShadeModel                                 }, \
-    {"stencil_func"                                     , GlStencilFunc                                }, \
-    {"stencil_mask"                                     , GlStencilMask                                }, \
-    {"stencil_op"                                       , GlStencilOp                                  }, \
-    {"tex_coord_1d"                                     , GlTexCoord1d                                 }, \
-    {"tex_coord_1dv"                                    , GlTexCoord1dv                                }, \
-    {"tex_coord_1f"                                     , GlTexCoord1f                                 }, \
-    {"tex_coord_1fv"                                    , GlTexCoord1fv                                }, \
-    {"tex_coord_1i"                                     , GlTexCoord1i                                 }, \
-    {"tex_coord_1iv"                                    , GlTexCoord1iv                                }, \
-    {"tex_coord_1s"                                     , GlTexCoord1s                                 }, \
-    {"tex_coord_1sv"                                    , GlTexCoord1sv                                }, \
-    {"tex_coord_2d"                                     , GlTexCoord2d                                 }, \
-    {"tex_coord_2dv"                                    , GlTexCoord2dv                                }, \
-    {"tex_coord_2f"                                     , GlTexCoord2f                                 }, \
-    {"tex_coord_2fv"                                    , GlTexCoord2fv                                }, \
-    {"tex_coord_2i"                                     , GlTexCoord2i                                 }, \
-    {"tex_coord_2iv"                                    , GlTexCoord2iv                                }, \
-    {"tex_coord_2s"                                     , GlTexCoord2s                                 }, \
-    {"tex_coord_2sv"                                    , GlTexCoord2sv                                }, \
-    {"tex_coord_3d"                                     , GlTexCoord3d                                 }, \
-    {"tex_coord_3dv"                                    , GlTexCoord3dv                                }, \
-    {"tex_coord_3f"                                     , GlTexCoord3f                                 }, \
-    {"tex_coord_3fv"                                    , GlTexCoord3fv                                }, \
-    {"tex_coord_3i"                                     , GlTexCoord3i                                 }, \
-    {"tex_coord_3iv"                                    , GlTexCoord3iv                                }, \
-    {"tex_coord_3s"                                     , GlTexCoord3s                                 }, \
-    {"tex_coord_3sv"                                    , GlTexCoord3sv                                }, \
-    {"tex_coord_4d"                                     , GlTexCoord4d                                 }, \
-    {"tex_coord_4dv"                                    , GlTexCoord4dv                                }, \
-    {"tex_coord_4f"                                     , GlTexCoord4f                                 }, \
-    {"tex_coord_4fv"                                    , GlTexCoord4fv                                }, \
-    {"tex_coord_4i"                                     , GlTexCoord4i                                 }, \
-    {"tex_coord_4iv"                                    , GlTexCoord4iv                                }, \
-    {"tex_coord_4s"                                     , GlTexCoord4s                                 }, \
-    {"tex_coord_4sv"                                    , GlTexCoord4sv                                }, \
-    {"tex_envf"                                         , GlTexEnvf                                    }, \
-    {"tex_envfv"                                        , GlTexEnvfv                                   }, \
-    {"tex_envi"                                         , GlTexEnvi                                    }, \
-    {"tex_enviv"                                        , GlTexEnviv                                   }, \
-    {"tex_gend"                                         , GlTexGend                                    }, \
-    {"tex_gendv"                                        , GlTexGendv                                   }, \
-    {"tex_genf"                                         , GlTexGenf                                    }, \
-    {"tex_genfv"                                        , GlTexGenfv                                   }, \
-    {"tex_geni"                                         , GlTexGeni                                    }, \
-    {"tex_geniv"                                        , GlTexGeniv                                   }, \
-    {"tex_image_1_d"                                    , GlTexImage1D                                 }, \
-    {"tex_image_2_d"                                    , GlTexImage2D                                 }, \
-    {"tex_parameterf"                                   , GlTexParameterf                              }, \
-    {"tex_parameterfv"                                  , GlTexParameterfv                             }, \
-    {"tex_parameteri"                                   , GlTexParameteri                              }, \
-    {"tex_parameteriv"                                  , GlTexParameteriv                             }, \
-    {"translated"                                       , GlTranslated                                 }, \
-    {"translatef"                                       , GlTranslatef                                 }, \
-    {"vertex_2d"                                        , GlVertex2d                                   }, \
-    {"vertex_2dv"                                       , GlVertex2dv                                  }, \
-    {"vertex_2f"                                        , GlVertex2f                                   }, \
-    {"vertex_2fv"                                       , GlVertex2fv                                  }, \
-    {"vertex_2i"                                        , GlVertex2i                                   }, \
-    {"vertex_2iv"                                       , GlVertex2iv                                  }, \
-    {"vertex_2s"                                        , GlVertex2s                                   }, \
-    {"vertex_2sv"                                       , GlVertex2sv                                  }, \
-    {"vertex_3d"                                        , GlVertex3d                                   }, \
-    {"vertex_3dv"                                       , GlVertex3dv                                  }, \
-    {"vertex_3f"                                        , GlVertex3f                                   }, \
-    {"vertex_3fv"                                       , GlVertex3fv                                  }, \
-    {"vertex_3i"                                        , GlVertex3i                                   }, \
-    {"vertex_3iv"                                       , GlVertex3iv                                  }, \
-    {"vertex_3s"                                        , GlVertex3s                                   }, \
-    {"vertex_3sv"                                       , GlVertex3sv                                  }, \
-    {"vertex_4d"                                        , GlVertex4d                                   }, \
-    {"vertex_4dv"                                       , GlVertex4dv                                  }, \
-    {"vertex_4f"                                        , GlVertex4f                                   }, \
-    {"vertex_4fv"                                       , GlVertex4fv                                  }, \
-    {"vertex_4i"                                        , GlVertex4i                                   }, \
-    {"vertex_4iv"                                       , GlVertex4iv                                  }, \
-    {"vertex_4s"                                        , GlVertex4s                                   }, \
-    {"vertex_4sv"                                       , GlVertex4sv                                  }, \
-    {"viewport"                                         , GlViewport                                   }, \
-    {"are_textures_resident"                            , GlAreTexturesResident                        }, \
-    {"array_element"                                    , GlArrayElement                               }, \
-    {"bind_texture"                                     , GlBindTexture                                }, \
-    {"color_pointer"                                    , GlColorPointer                               }, \
-    {"copy_tex_image_1_d"                               , GlCopyTexImage1D                             }, \
-    {"copy_tex_image_2_d"                               , GlCopyTexImage2D                             }, \
-    {"copy_tex_sub_image_1_d"                           , GlCopyTexSubImage1D                          }, \
-    {"copy_tex_sub_image_2_d"                           , GlCopyTexSubImage2D                          }, \
-    {"delete_textures"                                  , GlDeleteTextures                             }, \
-    {"disable_client_state"                             , GlDisableClientState                         }, \
-    {"draw_arrays"                                      , GlDrawArrays                                 }, \
-    {"draw_elements"                                    , GlDrawElements                               }, \
-    {"edge_flag_pointer"                                , GlEdgeFlagPointer                            }, \
-    {"enable_client_state"                              , GlEnableClientState                          }, \
-    {"gen_textures"                                     , GlGenTextures                                }, \
-    {"get_pointerv"                                     , GlGetPointerv                                }, \
-    {"index_pointer"                                    , GlIndexPointer                               }, \
-    {"indexub"                                          , GlIndexub                                    }, \
-    {"indexubv"                                         , GlIndexubv                                   }, \
-    {"interleaved_arrays"                               , GlInterleavedArrays                          }, \
-    {"is_texture"                                       , GlIsTexture                                  }, \
-    {"normal_pointer"                                   , GlNormalPointer                              }, \
-    {"polygon_offset"                                   , GlPolygonOffset                              }, \
-    {"pop_client_attrib"                                , GlPopClientAttrib                            }, \
-    {"prioritize_textures"                              , GlPrioritizeTextures                         }, \
-    {"push_client_attrib"                               , GlPushClientAttrib                           }, \
-    {"tex_coord_pointer"                                , GlTexCoordPointer                            }, \
-    {"tex_sub_image_1_d"                                , GlTexSubImage1D                              }, \
-    {"tex_sub_image_2_d"                                , GlTexSubImage2D                              }, \
-    {"vertex_pointer"                                   , GlVertexPointer                              }, \
-    {"copy_tex_sub_image_3_d"                           , GlCopyTexSubImage3D                          }, \
-    {"draw_range_elements"                              , GlDrawRangeElements                          }, \
-    {"tex_image_3_d"                                    , GlTexImage3D                                 }, \
-    {"tex_sub_image_3_d"                                , GlTexSubImage3D                              }, \
-    {"active_texture"                                   , GlActiveTexture                              }, \
-    {"client_active_texture"                            , GlClientActiveTexture                        }, \
-    {"compressed_tex_image_1_d"                         , GlCompressedTexImage1D                       }, \
-    {"compressed_tex_image_2_d"                         , GlCompressedTexImage2D                       }, \
-    {"compressed_tex_image_3_d"                         , GlCompressedTexImage3D                       }, \
-    {"compressed_tex_sub_image_1_d"                     , GlCompressedTexSubImage1D                    }, \
-    {"compressed_tex_sub_image_2_d"                     , GlCompressedTexSubImage2D                    }, \
-    {"compressed_tex_sub_image_3_d"                     , GlCompressedTexSubImage3D                    }, \
-    {"get_compressed_tex_image"                         , GlGetCompressedTexImage                      }, \
-    {"load_transpose_matrixd"                           , GlLoadTransposeMatrixd                       }, \
-    {"load_transpose_matrixf"                           , GlLoadTransposeMatrixf                       }, \
-    {"mult_transpose_matrixd"                           , GlMultTransposeMatrixd                       }, \
-    {"mult_transpose_matrixf"                           , GlMultTransposeMatrixf                       }, \
-    {"multi_tex_coord_1d"                               , GlMultiTexCoord1d                            }, \
-    {"multi_tex_coord_1dv"                              , GlMultiTexCoord1dv                           }, \
-    {"multi_tex_coord_1f"                               , GlMultiTexCoord1f                            }, \
-    {"multi_tex_coord_1fv"                              , GlMultiTexCoord1fv                           }, \
-    {"multi_tex_coord_1i"                               , GlMultiTexCoord1i                            }, \
-    {"multi_tex_coord_1iv"                              , GlMultiTexCoord1iv                           }, \
-    {"multi_tex_coord_1s"                               , GlMultiTexCoord1s                            }, \
-    {"multi_tex_coord_1sv"                              , GlMultiTexCoord1sv                           }, \
-    {"multi_tex_coord_2d"                               , GlMultiTexCoord2d                            }, \
-    {"multi_tex_coord_2dv"                              , GlMultiTexCoord2dv                           }, \
-    {"multi_tex_coord_2f"                               , GlMultiTexCoord2f                            }, \
-    {"multi_tex_coord_2fv"                              , GlMultiTexCoord2fv                           }, \
-    {"multi_tex_coord_2i"                               , GlMultiTexCoord2i                            }, \
-    {"multi_tex_coord_2iv"                              , GlMultiTexCoord2iv                           }, \
-    {"multi_tex_coord_2s"                               , GlMultiTexCoord2s                            }, \
-    {"multi_tex_coord_2sv"                              , GlMultiTexCoord2sv                           }, \
-    {"multi_tex_coord_3d"                               , GlMultiTexCoord3d                            }, \
-    {"multi_tex_coord_3dv"                              , GlMultiTexCoord3dv                           }, \
-    {"multi_tex_coord_3f"                               , GlMultiTexCoord3f                            }, \
-    {"multi_tex_coord_3fv"                              , GlMultiTexCoord3fv                           }, \
-    {"multi_tex_coord_3i"                               , GlMultiTexCoord3i                            }, \
-    {"multi_tex_coord_3iv"                              , GlMultiTexCoord3iv                           }, \
-    {"multi_tex_coord_3s"                               , GlMultiTexCoord3s                            }, \
-    {"multi_tex_coord_3sv"                              , GlMultiTexCoord3sv                           }, \
-    {"multi_tex_coord_4d"                               , GlMultiTexCoord4d                            }, \
-    {"multi_tex_coord_4dv"                              , GlMultiTexCoord4dv                           }, \
-    {"multi_tex_coord_4f"                               , GlMultiTexCoord4f                            }, \
-    {"multi_tex_coord_4fv"                              , GlMultiTexCoord4fv                           }, \
-    {"multi_tex_coord_4i"                               , GlMultiTexCoord4i                            }, \
-    {"multi_tex_coord_4iv"                              , GlMultiTexCoord4iv                           }, \
-    {"multi_tex_coord_4s"                               , GlMultiTexCoord4s                            }, \
-    {"multi_tex_coord_4sv"                              , GlMultiTexCoord4sv                           }, \
-    {"sample_coverage"                                  , GlSampleCoverage                             }, \
-    {"blend_color"                                      , GlBlendColor                                 }, \
-    {"blend_equation"                                   , GlBlendEquation                              }, \
-    {"blend_func_separate"                              , GlBlendFuncSeparate                          }, \
-    {"fog_coord_pointer"                                , GlFogCoordPointer                            }, \
-    {"fog_coordd"                                       , GlFogCoordd                                  }, \
-    {"fog_coorddv"                                      , GlFogCoorddv                                 }, \
-    {"fog_coordf"                                       , GlFogCoordf                                  }, \
-    {"fog_coordfv"                                      , GlFogCoordfv                                 }, \
-    {"multi_draw_arrays"                                , GlMultiDrawArrays                            }, \
-    {"multi_draw_elements"                              , GlMultiDrawElements                          }, \
-    {"point_parameterf"                                 , GlPointParameterf                            }, \
-    {"point_parameterfv"                                , GlPointParameterfv                           }, \
-    {"point_parameteri"                                 , GlPointParameteri                            }, \
-    {"point_parameteriv"                                , GlPointParameteriv                           }, \
-    {"secondary_color_3b"                               , GlSecondaryColor3b                           }, \
-    {"secondary_color_3bv"                              , GlSecondaryColor3bv                          }, \
-    {"secondary_color_3d"                               , GlSecondaryColor3d                           }, \
-    {"secondary_color_3dv"                              , GlSecondaryColor3dv                          }, \
-    {"secondary_color_3f"                               , GlSecondaryColor3f                           }, \
-    {"secondary_color_3fv"                              , GlSecondaryColor3fv                          }, \
-    {"secondary_color_3i"                               , GlSecondaryColor3i                           }, \
-    {"secondary_color_3iv"                              , GlSecondaryColor3iv                          }, \
-    {"secondary_color_3s"                               , GlSecondaryColor3s                           }, \
-    {"secondary_color_3sv"                              , GlSecondaryColor3sv                          }, \
-    {"secondary_color_3ub"                              , GlSecondaryColor3ub                          }, \
-    {"secondary_color_3ubv"                             , GlSecondaryColor3ubv                         }, \
-    {"secondary_color_3ui"                              , GlSecondaryColor3ui                          }, \
-    {"secondary_color_3uiv"                             , GlSecondaryColor3uiv                         }, \
-    {"secondary_color_3us"                              , GlSecondaryColor3us                          }, \
-    {"secondary_color_3usv"                             , GlSecondaryColor3usv                         }, \
-    {"secondary_color_pointer"                          , GlSecondaryColorPointer                      }, \
-    {"window_pos_2d"                                    , GlWindowPos2d                                }, \
-    {"window_pos_2dv"                                   , GlWindowPos2dv                               }, \
-    {"window_pos_2f"                                    , GlWindowPos2f                                }, \
-    {"window_pos_2fv"                                   , GlWindowPos2fv                               }, \
-    {"window_pos_2i"                                    , GlWindowPos2i                                }, \
-    {"window_pos_2iv"                                   , GlWindowPos2iv                               }, \
-    {"window_pos_2s"                                    , GlWindowPos2s                                }, \
-    {"window_pos_2sv"                                   , GlWindowPos2sv                               }, \
-    {"window_pos_3d"                                    , GlWindowPos3d                                }, \
-    {"window_pos_3dv"                                   , GlWindowPos3dv                               }, \
-    {"window_pos_3f"                                    , GlWindowPos3f                                }, \
-    {"window_pos_3fv"                                   , GlWindowPos3fv                               }, \
-    {"window_pos_3i"                                    , GlWindowPos3i                                }, \
-    {"window_pos_3iv"                                   , GlWindowPos3iv                               }, \
-    {"window_pos_3s"                                    , GlWindowPos3s                                }, \
-    {"window_pos_3sv"                                   , GlWindowPos3sv                               }, \
-    {"begin_query"                                      , GlBeginQuery                                 }, \
-    {"bind_buffer"                                      , GlBindBuffer                                 }, \
-    {"buffer_data"                                      , GlBufferData                                 }, \
-    {"buffer_sub_data"                                  , GlBufferSubData                              }, \
-    {"delete_buffers"                                   , GlDeleteBuffers                              }, \
-    {"delete_queries"                                   , GlDeleteQueries                              }, \
-    {"end_query"                                        , GlEndQuery                                   }, \
-    {"gen_buffers"                                      , GlGenBuffers                                 }, \
-    {"gen_queries"                                      , GlGenQueries                                 }, \
-    {"get_buffer_parameteriv"                           , GlGetBufferParameteriv                       }, \
-    {"get_buffer_pointerv"                              , GlGetBufferPointerv                          }, \
-    {"get_buffer_sub_data"                              , GlGetBufferSubData                           }, \
-    {"get_query_objectiv"                               , GlGetQueryObjectiv                           }, \
-    {"get_query_objectuiv"                              , GlGetQueryObjectuiv                          }, \
-    {"get_queryiv"                                      , GlGetQueryiv                                 }, \
-    {"is_buffer"                                        , GlIsBuffer                                   }, \
-    {"is_query"                                         , GlIsQuery                                    }, \
-    {"map_buffer"                                       , GlMapBuffer                                  }, \
-    {"unmap_buffer"                                     , GlUnmapBuffer                                }, \
-    {"attach_shader"                                    , GlAttachShader                               }, \
-    {"bind_attrib_location"                             , GlBindAttribLocation                         }, \
-    {"blend_equation_separate"                          , GlBlendEquationSeparate                      }, \
-    {"compile_shader"                                   , GlCompileShader                              }, \
-    {"create_program"                                   , GlCreateProgram                              }, \
-    {"create_shader"                                    , GlCreateShader                               }, \
-    {"delete_program"                                   , GlDeleteProgram                              }, \
-    {"delete_shader"                                    , GlDeleteShader                               }, \
-    {"detach_shader"                                    , GlDetachShader                               }, \
-    {"disable_vertex_attrib_array"                      , GlDisableVertexAttribArray                   }, \
-    {"draw_buffers"                                     , GlDrawBuffers                                }, \
-    {"enable_vertex_attrib_array"                       , GlEnableVertexAttribArray                    }, \
-    {"get_active_attrib"                                , GlGetActiveAttrib                            }, \
-    {"get_active_uniform"                               , GlGetActiveUniform                           }, \
-    {"get_attached_shaders"                             , GlGetAttachedShaders                         }, \
-    {"get_attrib_location"                              , GlGetAttribLocation                          }, \
-    {"get_program_info_log"                             , GlGetProgramInfoLog                          }, \
-    {"get_programiv"                                    , GlGetProgramiv                               }, \
-    {"get_shader_info_log"                              , GlGetShaderInfoLog                           }, \
-    {"get_shader_source"                                , GlGetShaderSource                            }, \
-    {"get_shaderiv"                                     , GlGetShaderiv                                }, \
-    {"get_uniform_location"                             , GlGetUniformLocation                         }, \
-    {"get_uniformfv"                                    , GlGetUniformfv                               }, \
-    {"get_uniformiv"                                    , GlGetUniformiv                               }, \
-    {"get_vertex_attrib_pointerv"                       , GlGetVertexAttribPointerv                    }, \
-    {"get_vertex_attribdv"                              , GlGetVertexAttribdv                          }, \
-    {"get_vertex_attribfv"                              , GlGetVertexAttribfv                          }, \
-    {"get_vertex_attribiv"                              , GlGetVertexAttribiv                          }, \
-    {"is_program"                                       , GlIsProgram                                  }, \
-    {"is_shader"                                        , GlIsShader                                   }, \
-    {"link_program"                                     , GlLinkProgram                                }, \
-    {"shader_source"                                    , GlShaderSource                               }, \
-    {"stencil_func_separate"                            , GlStencilFuncSeparate                        }, \
-    {"stencil_mask_separate"                            , GlStencilMaskSeparate                        }, \
-    {"stencil_op_separate"                              , GlStencilOpSeparate                          }, \
-    {"uniform_1f"                                       , GlUniform1f                                  }, \
-    {"uniform_1fv"                                      , GlUniform1fv                                 }, \
-    {"uniform_1i"                                       , GlUniform1i                                  }, \
-    {"uniform_1iv"                                      , GlUniform1iv                                 }, \
-    {"uniform_2f"                                       , GlUniform2f                                  }, \
-    {"uniform_2fv"                                      , GlUniform2fv                                 }, \
-    {"uniform_2i"                                       , GlUniform2i                                  }, \
-    {"uniform_2iv"                                      , GlUniform2iv                                 }, \
-    {"uniform_3f"                                       , GlUniform3f                                  }, \
-    {"uniform_3fv"                                      , GlUniform3fv                                 }, \
-    {"uniform_3i"                                       , GlUniform3i                                  }, \
-    {"uniform_3iv"                                      , GlUniform3iv                                 }, \
-    {"uniform_4f"                                       , GlUniform4f                                  }, \
-    {"uniform_4fv"                                      , GlUniform4fv                                 }, \
-    {"uniform_4i"                                       , GlUniform4i                                  }, \
-    {"uniform_4iv"                                      , GlUniform4iv                                 }, \
-    {"uniform_matrix_2fv"                               , GlUniformMatrix2fv                           }, \
-    {"uniform_matrix_3fv"                               , GlUniformMatrix3fv                           }, \
-    {"uniform_matrix_4fv"                               , GlUniformMatrix4fv                           }, \
-    {"use_program"                                      , GlUseProgram                                 }, \
-    {"validate_program"                                 , GlValidateProgram                            }, \
-    {"vertex_attrib_1d"                                 , GlVertexAttrib1d                             }, \
-    {"vertex_attrib_1dv"                                , GlVertexAttrib1dv                            }, \
-    {"vertex_attrib_1f"                                 , GlVertexAttrib1f                             }, \
-    {"vertex_attrib_1fv"                                , GlVertexAttrib1fv                            }, \
-    {"vertex_attrib_1s"                                 , GlVertexAttrib1s                             }, \
-    {"vertex_attrib_1sv"                                , GlVertexAttrib1sv                            }, \
-    {"vertex_attrib_2d"                                 , GlVertexAttrib2d                             }, \
-    {"vertex_attrib_2dv"                                , GlVertexAttrib2dv                            }, \
-    {"vertex_attrib_2f"                                 , GlVertexAttrib2f                             }, \
-    {"vertex_attrib_2fv"                                , GlVertexAttrib2fv                            }, \
-    {"vertex_attrib_2s"                                 , GlVertexAttrib2s                             }, \
-    {"vertex_attrib_2sv"                                , GlVertexAttrib2sv                            }, \
-    {"vertex_attrib_3d"                                 , GlVertexAttrib3d                             }, \
-    {"vertex_attrib_3dv"                                , GlVertexAttrib3dv                            }, \
-    {"vertex_attrib_3f"                                 , GlVertexAttrib3f                             }, \
-    {"vertex_attrib_3fv"                                , GlVertexAttrib3fv                            }, \
-    {"vertex_attrib_3s"                                 , GlVertexAttrib3s                             }, \
-    {"vertex_attrib_3sv"                                , GlVertexAttrib3sv                            }, \
-    {"vertex_attrib_4_nbv"                              , GlVertexAttrib4Nbv                           }, \
-    {"vertex_attrib_4_niv"                              , GlVertexAttrib4Niv                           }, \
-    {"vertex_attrib_4_nsv"                              , GlVertexAttrib4Nsv                           }, \
-    {"vertex_attrib_4_nub"                              , GlVertexAttrib4Nub                           }, \
-    {"vertex_attrib_4_nubv"                             , GlVertexAttrib4Nubv                          }, \
-    {"vertex_attrib_4_nuiv"                             , GlVertexAttrib4Nuiv                          }, \
-    {"vertex_attrib_4_nusv"                             , GlVertexAttrib4Nusv                          }, \
-    {"vertex_attrib_4bv"                                , GlVertexAttrib4bv                            }, \
-    {"vertex_attrib_4d"                                 , GlVertexAttrib4d                             }, \
-    {"vertex_attrib_4dv"                                , GlVertexAttrib4dv                            }, \
-    {"vertex_attrib_4f"                                 , GlVertexAttrib4f                             }, \
-    {"vertex_attrib_4fv"                                , GlVertexAttrib4fv                            }, \
-    {"vertex_attrib_4iv"                                , GlVertexAttrib4iv                            }, \
-    {"vertex_attrib_4s"                                 , GlVertexAttrib4s                             }, \
-    {"vertex_attrib_4sv"                                , GlVertexAttrib4sv                            }, \
-    {"vertex_attrib_4ubv"                               , GlVertexAttrib4ubv                           }, \
-    {"vertex_attrib_4uiv"                               , GlVertexAttrib4uiv                           }, \
-    {"vertex_attrib_4usv"                               , GlVertexAttrib4usv                           }, \
-    {"vertex_attrib_pointer"                            , GlVertexAttribPointer                        }, \
-    {"uniform_matrix_2x_3fv"                            , GlUniformMatrix2x3fv                         }, \
-    {"uniform_matrix_2x_4fv"                            , GlUniformMatrix2x4fv                         }, \
-    {"uniform_matrix_3x_2fv"                            , GlUniformMatrix3x2fv                         }, \
-    {"uniform_matrix_3x_4fv"                            , GlUniformMatrix3x4fv                         }, \
-    {"uniform_matrix_4x_2fv"                            , GlUniformMatrix4x2fv                         }, \
-    {"uniform_matrix_4x_3fv"                            , GlUniformMatrix4x3fv                         }, \
-    {"begin_conditional_render"                         , GlBeginConditionalRender                     }, \
-    {"begin_transform_feedback"                         , GlBeginTransformFeedback                     }, \
-    {"bind_buffer_base"                                 , GlBindBufferBase                             }, \
-    {"bind_buffer_range"                                , GlBindBufferRange                            }, \
-    {"bind_frag_data_location"                          , GlBindFragDataLocation                       }, \
-    {"bind_framebuffer"                                 , GlBindFramebuffer                            }, \
-    {"bind_renderbuffer"                                , GlBindRenderbuffer                           }, \
-    {"bind_vertex_array"                                , GlBindVertexArray                            }, \
-    {"blit_framebuffer"                                 , GlBlitFramebuffer                            }, \
-    {"check_framebuffer_status"                         , GlCheckFramebufferStatus                     }, \
-    {"clamp_color"                                      , GlClampColor                                 }, \
-    {"clear_bufferfi"                                   , GlClearBufferfi                              }, \
-    {"clear_bufferfv"                                   , GlClearBufferfv                              }, \
-    {"clear_bufferiv"                                   , GlClearBufferiv                              }, \
-    {"clear_bufferuiv"                                  , GlClearBufferuiv                             }, \
-    {"color_maski"                                      , GlColorMaski                                 }, \
-    {"delete_framebuffers"                              , GlDeleteFramebuffers                         }, \
-    {"delete_renderbuffers"                             , GlDeleteRenderbuffers                        }, \
-    {"delete_vertex_arrays"                             , GlDeleteVertexArrays                         }, \
-    {"disablei"                                         , GlDisablei                                   }, \
-    {"enablei"                                          , GlEnablei                                    }, \
-    {"end_conditional_render"                           , GlEndConditionalRender                       }, \
-    {"end_transform_feedback"                           , GlEndTransformFeedback                       }, \
-    {"flush_mapped_buffer_range"                        , GlFlushMappedBufferRange                     }, \
-    {"framebuffer_renderbuffer"                         , GlFramebufferRenderbuffer                    }, \
-    {"framebuffer_texture_1_d"                          , GlFramebufferTexture1D                       }, \
-    {"framebuffer_texture_2_d"                          , GlFramebufferTexture2D                       }, \
-    {"framebuffer_texture_3_d"                          , GlFramebufferTexture3D                       }, \
-    {"framebuffer_texture_layer"                        , GlFramebufferTextureLayer                    }, \
-    {"gen_framebuffers"                                 , GlGenFramebuffers                            }, \
-    {"gen_renderbuffers"                                , GlGenRenderbuffers                           }, \
-    {"gen_vertex_arrays"                                , GlGenVertexArrays                            }, \
-    {"generate_mipmap"                                  , GlGenerateMipmap                             }, \
-    {"get_booleani__v"                                  , GlGetBooleani_v                              }, \
-    {"get_frag_data_location"                           , GlGetFragDataLocation                        }, \
-    {"get_framebuffer_attachment_parameteriv"           , GlGetFramebufferAttachmentParameteriv        }, \
-    {"get_integeri__v"                                  , GlGetIntegeri_v                              }, \
-    {"get_renderbuffer_parameteriv"                     , GlGetRenderbufferParameteriv                 }, \
-    {"get_stringi"                                      , GlGetStringi                                 }, \
-    {"get_tex_parameter_iiv"                            , GlGetTexParameterIiv                         }, \
-    {"get_tex_parameter_iuiv"                           , GlGetTexParameterIuiv                        }, \
-    {"get_transform_feedback_varying"                   , GlGetTransformFeedbackVarying                }, \
-    {"get_uniformuiv"                                   , GlGetUniformuiv                              }, \
-    {"get_vertex_attrib_iiv"                            , GlGetVertexAttribIiv                         }, \
-    {"get_vertex_attrib_iuiv"                           , GlGetVertexAttribIuiv                        }, \
-    {"is_enabledi"                                      , GlIsEnabledi                                 }, \
-    {"is_framebuffer"                                   , GlIsFramebuffer                              }, \
-    {"is_renderbuffer"                                  , GlIsRenderbuffer                             }, \
-    {"is_vertex_array"                                  , GlIsVertexArray                              }, \
-    {"map_buffer_range"                                 , GlMapBufferRange                             }, \
-    {"renderbuffer_storage"                             , GlRenderbufferStorage                        }, \
-    {"renderbuffer_storage_multisample"                 , GlRenderbufferStorageMultisample             }, \
-    {"tex_parameter_iiv"                                , GlTexParameterIiv                            }, \
-    {"tex_parameter_iuiv"                               , GlTexParameterIuiv                           }, \
-    {"transform_feedback_varyings"                      , GlTransformFeedbackVaryings                  }, \
-    {"uniform_1ui"                                      , GlUniform1ui                                 }, \
-    {"uniform_1uiv"                                     , GlUniform1uiv                                }, \
-    {"uniform_2ui"                                      , GlUniform2ui                                 }, \
-    {"uniform_2uiv"                                     , GlUniform2uiv                                }, \
-    {"uniform_3ui"                                      , GlUniform3ui                                 }, \
-    {"uniform_3uiv"                                     , GlUniform3uiv                                }, \
-    {"uniform_4ui"                                      , GlUniform4ui                                 }, \
-    {"uniform_4uiv"                                     , GlUniform4uiv                                }, \
-    {"vertex_attrib_i_1i"                               , GlVertexAttribI1i                            }, \
-    {"vertex_attrib_i_1iv"                              , GlVertexAttribI1iv                           }, \
-    {"vertex_attrib_i_1ui"                              , GlVertexAttribI1ui                           }, \
-    {"vertex_attrib_i_1uiv"                             , GlVertexAttribI1uiv                          }, \
-    {"vertex_attrib_i_2i"                               , GlVertexAttribI2i                            }, \
-    {"vertex_attrib_i_2iv"                              , GlVertexAttribI2iv                           }, \
-    {"vertex_attrib_i_2ui"                              , GlVertexAttribI2ui                           }, \
-    {"vertex_attrib_i_2uiv"                             , GlVertexAttribI2uiv                          }, \
-    {"vertex_attrib_i_3i"                               , GlVertexAttribI3i                            }, \
-    {"vertex_attrib_i_3iv"                              , GlVertexAttribI3iv                           }, \
-    {"vertex_attrib_i_3ui"                              , GlVertexAttribI3ui                           }, \
-    {"vertex_attrib_i_3uiv"                             , GlVertexAttribI3uiv                          }, \
-    {"vertex_attrib_i_4bv"                              , GlVertexAttribI4bv                           }, \
-    {"vertex_attrib_i_4i"                               , GlVertexAttribI4i                            }, \
-    {"vertex_attrib_i_4iv"                              , GlVertexAttribI4iv                           }, \
-    {"vertex_attrib_i_4sv"                              , GlVertexAttribI4sv                           }, \
-    {"vertex_attrib_i_4ubv"                             , GlVertexAttribI4ubv                          }, \
-    {"vertex_attrib_i_4ui"                              , GlVertexAttribI4ui                           }, \
-    {"vertex_attrib_i_4uiv"                             , GlVertexAttribI4uiv                          }, \
-    {"vertex_attrib_i_4usv"                             , GlVertexAttribI4usv                          }, \
-    {"vertex_attrib_i_pointer"                          , GlVertexAttribIPointer                       }, \
-    {"copy_buffer_sub_data"                             , GlCopyBufferSubData                          }, \
-    {"draw_arrays_instanced"                            , GlDrawArraysInstanced                        }, \
-    {"draw_elements_instanced"                          , GlDrawElementsInstanced                      }, \
-    {"get_active_uniform_block_name"                    , GlGetActiveUniformBlockName                  }, \
-    {"get_active_uniform_blockiv"                       , GlGetActiveUniformBlockiv                    }, \
-    {"get_active_uniform_name"                          , GlGetActiveUniformName                       }, \
-    {"get_active_uniformsiv"                            , GlGetActiveUniformsiv                        }, \
-    {"get_uniform_block_index"                          , GlGetUniformBlockIndex                       }, \
-    {"get_uniform_indices"                              , GlGetUniformIndices                          }, \
-    {"primitive_restart_index"                          , GlPrimitiveRestartIndex                      }, \
-    {"tex_buffer"                                       , GlTexBuffer                                  }, \
-    {"uniform_block_binding"                            , GlUniformBlockBinding                        }, \
-    {"client_wait_sync"                                 , GlClientWaitSync                             }, \
-    {"delete_sync"                                      , GlDeleteSync                                 }, \
-    {"draw_elements_base_vertex"                        , GlDrawElementsBaseVertex                     }, \
-    {"draw_elements_instanced_base_vertex"              , GlDrawElementsInstancedBaseVertex            }, \
-    {"draw_range_elements_base_vertex"                  , GlDrawRangeElementsBaseVertex                }, \
-    {"fence_sync"                                       , GlFenceSync                                  }, \
-    {"framebuffer_texture"                              , GlFramebufferTexture                         }, \
-    {"get_buffer_parameteri_6_4v"                       , GlGetBufferParameteri64v                     }, \
-    {"get_integer_6_4i__v"                              , GlGetInteger64i_v                            }, \
-    {"get_integer_6_4v"                                 , GlGetInteger64v                              }, \
-    {"get_multisamplefv"                                , GlGetMultisamplefv                           }, \
-    {"get_synciv"                                       , GlGetSynciv                                  }, \
-    {"is_sync"                                          , GlIsSync                                     }, \
-    {"multi_draw_elements_base_vertex"                  , GlMultiDrawElementsBaseVertex                }, \
-    {"provoking_vertex"                                 , GlProvokingVertex                            }, \
-    {"sample_maski"                                     , GlSampleMaski                                }, \
-    {"tex_image_2_d_multisample"                        , GlTexImage2DMultisample                      }, \
-    {"tex_image_3_d_multisample"                        , GlTexImage3DMultisample                      }, \
-    {"wait_sync"                                        , GlWaitSync                                   }, \
-    {"bind_frag_data_location_indexed"                  , GlBindFragDataLocationIndexed                }, \
-    {"bind_sampler"                                     , GlBindSampler                                }, \
-    {"delete_samplers"                                  , GlDeleteSamplers                             }, \
-    {"gen_samplers"                                     , GlGenSamplers                                }, \
-    {"get_frag_data_index"                              , GlGetFragDataIndex                           }, \
-    {"get_query_objecti_6_4v"                           , GlGetQueryObjecti64v                         }, \
-    {"get_query_objectui_6_4v"                          , GlGetQueryObjectui64v                        }, \
-    {"get_sampler_parameter_iiv"                        , GlGetSamplerParameterIiv                     }, \
-    {"get_sampler_parameter_iuiv"                       , GlGetSamplerParameterIuiv                    }, \
-    {"get_sampler_parameterfv"                          , GlGetSamplerParameterfv                      }, \
-    {"get_sampler_parameteriv"                          , GlGetSamplerParameteriv                      }, \
-    {"is_sampler"                                       , GlIsSampler                                  }, \
-    {"query_counter"                                    , GlQueryCounter                               }, \
-    {"sampler_parameter_iiv"                            , GlSamplerParameterIiv                        }, \
-    {"sampler_parameter_iuiv"                           , GlSamplerParameterIuiv                       }, \
-    {"sampler_parameterf"                               , GlSamplerParameterf                          }, \
-    {"sampler_parameterfv"                              , GlSamplerParameterfv                         }, \
-    {"sampler_parameteri"                               , GlSamplerParameteri                          }, \
-    {"sampler_parameteriv"                              , GlSamplerParameteriv                         }, \
-    {"vertex_attrib_divisor"                            , GlVertexAttribDivisor                        }, \
-    {"vertex_attrib_p_1ui"                              , GlVertexAttribP1ui                           }, \
-    {"vertex_attrib_p_1uiv"                             , GlVertexAttribP1uiv                          }, \
-    {"vertex_attrib_p_2ui"                              , GlVertexAttribP2ui                           }, \
-    {"vertex_attrib_p_2uiv"                             , GlVertexAttribP2uiv                          }, \
-    {"vertex_attrib_p_3ui"                              , GlVertexAttribP3ui                           }, \
-    {"vertex_attrib_p_3uiv"                             , GlVertexAttribP3uiv                          }, \
-    {"vertex_attrib_p_4ui"                              , GlVertexAttribP4ui                           }, \
-    {"vertex_attrib_p_4uiv"                             , GlVertexAttribP4uiv                          }, \
-    {"begin_query_indexed"                              , GlBeginQueryIndexed                          }, \
-    {"bind_transform_feedback"                          , GlBindTransformFeedback                      }, \
-    {"blend_equation_separatei"                         , GlBlendEquationSeparatei                     }, \
-    {"blend_equationi"                                  , GlBlendEquationi                             }, \
-    {"blend_func_separatei"                             , GlBlendFuncSeparatei                         }, \
-    {"blend_funci"                                      , GlBlendFunci                                 }, \
-    {"delete_transform_feedbacks"                       , GlDeleteTransformFeedbacks                   }, \
-    {"draw_arrays_indirect"                             , GlDrawArraysIndirect                         }, \
-    {"draw_elements_indirect"                           , GlDrawElementsIndirect                       }, \
-    {"draw_transform_feedback"                          , GlDrawTransformFeedback                      }, \
-    {"draw_transform_feedback_stream"                   , GlDrawTransformFeedbackStream                }, \
-    {"end_query_indexed"                                , GlEndQueryIndexed                            }, \
-    {"gen_transform_feedbacks"                          , GlGenTransformFeedbacks                      }, \
-    {"get_active_subroutine_name"                       , GlGetActiveSubroutineName                    }, \
-    {"get_active_subroutine_uniform_name"               , GlGetActiveSubroutineUniformName             }, \
-    {"get_active_subroutine_uniformiv"                  , GlGetActiveSubroutineUniformiv               }, \
-    {"get_program_stageiv"                              , GlGetProgramStageiv                          }, \
-    {"get_query_indexediv"                              , GlGetQueryIndexediv                          }, \
-    {"get_subroutine_index"                             , GlGetSubroutineIndex                         }, \
-    {"get_subroutine_uniform_location"                  , GlGetSubroutineUniformLocation               }, \
-    {"get_uniform_subroutineuiv"                        , GlGetUniformSubroutineuiv                    }, \
-    {"get_uniformdv"                                    , GlGetUniformdv                               }, \
-    {"is_transform_feedback"                            , GlIsTransformFeedback                        }, \
-    {"min_sample_shading"                               , GlMinSampleShading                           }, \
-    {"patch_parameterfv"                                , GlPatchParameterfv                           }, \
-    {"patch_parameteri"                                 , GlPatchParameteri                            }, \
-    {"pause_transform_feedback"                         , GlPauseTransformFeedback                     }, \
-    {"resume_transform_feedback"                        , GlResumeTransformFeedback                    }, \
-    {"uniform_1d"                                       , GlUniform1d                                  }, \
-    {"uniform_1dv"                                      , GlUniform1dv                                 }, \
-    {"uniform_2d"                                       , GlUniform2d                                  }, \
-    {"uniform_2dv"                                      , GlUniform2dv                                 }, \
-    {"uniform_3d"                                       , GlUniform3d                                  }, \
-    {"uniform_3dv"                                      , GlUniform3dv                                 }, \
-    {"uniform_4d"                                       , GlUniform4d                                  }, \
-    {"uniform_4dv"                                      , GlUniform4dv                                 }, \
-    {"uniform_matrix_2dv"                               , GlUniformMatrix2dv                           }, \
-    {"uniform_matrix_2x_3dv"                            , GlUniformMatrix2x3dv                         }, \
-    {"uniform_matrix_2x_4dv"                            , GlUniformMatrix2x4dv                         }, \
-    {"uniform_matrix_3dv"                               , GlUniformMatrix3dv                           }, \
-    {"uniform_matrix_3x_2dv"                            , GlUniformMatrix3x2dv                         }, \
-    {"uniform_matrix_3x_4dv"                            , GlUniformMatrix3x4dv                         }, \
-    {"uniform_matrix_4dv"                               , GlUniformMatrix4dv                           }, \
-    {"uniform_matrix_4x_2dv"                            , GlUniformMatrix4x2dv                         }, \
-    {"uniform_matrix_4x_3dv"                            , GlUniformMatrix4x3dv                         }, \
-    {"uniform_subroutinesuiv"                           , GlUniformSubroutinesuiv                      }, \
-    {"active_shader_program"                            , GlActiveShaderProgram                        }, \
-    {"bind_program_pipeline"                            , GlBindProgramPipeline                        }, \
-    {"clear_depthf"                                     , GlClearDepthf                                }, \
-    {"create_shader_programv"                           , GlCreateShaderProgramv                       }, \
-    {"delete_program_pipelines"                         , GlDeleteProgramPipelines                     }, \
-    {"depth_range_arrayv"                               , GlDepthRangeArrayv                           }, \
-    {"depth_range_indexed"                              , GlDepthRangeIndexed                          }, \
-    {"depth_rangef"                                     , GlDepthRangef                                }, \
-    {"gen_program_pipelines"                            , GlGenProgramPipelines                        }, \
-    {"get_doublei__v"                                   , GlGetDoublei_v                               }, \
-    {"get_floati__v"                                    , GlGetFloati_v                                }, \
-    {"get_program_binary"                               , GlGetProgramBinary                           }, \
-    {"get_program_pipeline_info_log"                    , GlGetProgramPipelineInfoLog                  }, \
-    {"get_program_pipelineiv"                           , GlGetProgramPipelineiv                       }, \
-    {"get_shader_precision_format"                      , GlGetShaderPrecisionFormat                   }, \
-    {"get_vertex_attrib_ldv"                            , GlGetVertexAttribLdv                         }, \
-    {"is_program_pipeline"                              , GlIsProgramPipeline                          }, \
-    {"program_binary"                                   , GlProgramBinary                              }, \
-    {"program_parameteri"                               , GlProgramParameteri                          }, \
-    {"program_uniform_1d"                               , GlProgramUniform1d                           }, \
-    {"program_uniform_1dv"                              , GlProgramUniform1dv                          }, \
-    {"program_uniform_1f"                               , GlProgramUniform1f                           }, \
-    {"program_uniform_1fv"                              , GlProgramUniform1fv                          }, \
-    {"program_uniform_1i"                               , GlProgramUniform1i                           }, \
-    {"program_uniform_1iv"                              , GlProgramUniform1iv                          }, \
-    {"program_uniform_1ui"                              , GlProgramUniform1ui                          }, \
-    {"program_uniform_1uiv"                             , GlProgramUniform1uiv                         }, \
-    {"program_uniform_2d"                               , GlProgramUniform2d                           }, \
-    {"program_uniform_2dv"                              , GlProgramUniform2dv                          }, \
-    {"program_uniform_2f"                               , GlProgramUniform2f                           }, \
-    {"program_uniform_2fv"                              , GlProgramUniform2fv                          }, \
-    {"program_uniform_2i"                               , GlProgramUniform2i                           }, \
-    {"program_uniform_2iv"                              , GlProgramUniform2iv                          }, \
-    {"program_uniform_2ui"                              , GlProgramUniform2ui                          }, \
-    {"program_uniform_2uiv"                             , GlProgramUniform2uiv                         }, \
-    {"program_uniform_3d"                               , GlProgramUniform3d                           }, \
-    {"program_uniform_3dv"                              , GlProgramUniform3dv                          }, \
-    {"program_uniform_3f"                               , GlProgramUniform3f                           }, \
-    {"program_uniform_3fv"                              , GlProgramUniform3fv                          }, \
-    {"program_uniform_3i"                               , GlProgramUniform3i                           }, \
-    {"program_uniform_3iv"                              , GlProgramUniform3iv                          }, \
-    {"program_uniform_3ui"                              , GlProgramUniform3ui                          }, \
-    {"program_uniform_3uiv"                             , GlProgramUniform3uiv                         }, \
-    {"program_uniform_4d"                               , GlProgramUniform4d                           }, \
-    {"program_uniform_4dv"                              , GlProgramUniform4dv                          }, \
-    {"program_uniform_4f"                               , GlProgramUniform4f                           }, \
-    {"program_uniform_4fv"                              , GlProgramUniform4fv                          }, \
-    {"program_uniform_4i"                               , GlProgramUniform4i                           }, \
-    {"program_uniform_4iv"                              , GlProgramUniform4iv                          }, \
-    {"program_uniform_4ui"                              , GlProgramUniform4ui                          }, \
-    {"program_uniform_4uiv"                             , GlProgramUniform4uiv                         }, \
-    {"program_uniform_matrix_2dv"                       , GlProgramUniformMatrix2dv                    }, \
-    {"program_uniform_matrix_2fv"                       , GlProgramUniformMatrix2fv                    }, \
-    {"program_uniform_matrix_2x_3dv"                    , GlProgramUniformMatrix2x3dv                  }, \
-    {"program_uniform_matrix_2x_3fv"                    , GlProgramUniformMatrix2x3fv                  }, \
-    {"program_uniform_matrix_2x_4dv"                    , GlProgramUniformMatrix2x4dv                  }, \
-    {"program_uniform_matrix_2x_4fv"                    , GlProgramUniformMatrix2x4fv                  }, \
-    {"program_uniform_matrix_3dv"                       , GlProgramUniformMatrix3dv                    }, \
-    {"program_uniform_matrix_3fv"                       , GlProgramUniformMatrix3fv                    }, \
-    {"program_uniform_matrix_3x_2dv"                    , GlProgramUniformMatrix3x2dv                  }, \
-    {"program_uniform_matrix_3x_2fv"                    , GlProgramUniformMatrix3x2fv                  }, \
-    {"program_uniform_matrix_3x_4dv"                    , GlProgramUniformMatrix3x4dv                  }, \
-    {"program_uniform_matrix_3x_4fv"                    , GlProgramUniformMatrix3x4fv                  }, \
-    {"program_uniform_matrix_4dv"                       , GlProgramUniformMatrix4dv                    }, \
-    {"program_uniform_matrix_4fv"                       , GlProgramUniformMatrix4fv                    }, \
-    {"program_uniform_matrix_4x_2dv"                    , GlProgramUniformMatrix4x2dv                  }, \
-    {"program_uniform_matrix_4x_2fv"                    , GlProgramUniformMatrix4x2fv                  }, \
-    {"program_uniform_matrix_4x_3dv"                    , GlProgramUniformMatrix4x3dv                  }, \
-    {"program_uniform_matrix_4x_3fv"                    , GlProgramUniformMatrix4x3fv                  }, \
-    {"release_shader_compiler"                          , GlReleaseShaderCompiler                      }, \
-    {"scissor_arrayv"                                   , GlScissorArrayv                              }, \
-    {"scissor_indexed"                                  , GlScissorIndexed                             }, \
-    {"scissor_indexedv"                                 , GlScissorIndexedv                            }, \
-    {"shader_binary"                                    , GlShaderBinary                               }, \
-    {"use_program_stages"                               , GlUseProgramStages                           }, \
-    {"validate_program_pipeline"                        , GlValidateProgramPipeline                    }, \
-    {"vertex_attrib_l_1d"                               , GlVertexAttribL1d                            }, \
-    {"vertex_attrib_l_1dv"                              , GlVertexAttribL1dv                           }, \
-    {"vertex_attrib_l_2d"                               , GlVertexAttribL2d                            }, \
-    {"vertex_attrib_l_2dv"                              , GlVertexAttribL2dv                           }, \
-    {"vertex_attrib_l_3d"                               , GlVertexAttribL3d                            }, \
-    {"vertex_attrib_l_3dv"                              , GlVertexAttribL3dv                           }, \
-    {"vertex_attrib_l_4d"                               , GlVertexAttribL4d                            }, \
-    {"vertex_attrib_l_4dv"                              , GlVertexAttribL4dv                           }, \
-    {"vertex_attrib_l_pointer"                          , GlVertexAttribLPointer                       }, \
-    {"viewport_arrayv"                                  , GlViewportArrayv                             }, \
-    {"viewport_indexedf"                                , GlViewportIndexedf                           }, \
-    {"viewport_indexedfv"                               , GlViewportIndexedfv                          }, \
-    {"bind_image_texture"                               , GlBindImageTexture                           }, \
-    {"draw_arrays_instanced_base_instance"              , GlDrawArraysInstancedBaseInstance            }, \
-    {"draw_elements_instanced_base_instance"            , GlDrawElementsInstancedBaseInstance          }, \
-    {"draw_elements_instanced_base_vertex_base_instance", GlDrawElementsInstancedBaseVertexBaseInstance}, \
-    {"draw_transform_feedback_instanced"                , GlDrawTransformFeedbackInstanced             }, \
-    {"draw_transform_feedback_stream_instanced"         , GlDrawTransformFeedbackStreamInstanced       }, \
-    {"get_active_atomic_counter_bufferiv"               , GlGetActiveAtomicCounterBufferiv             }, \
-    {"get_internalformativ"                             , GlGetInternalformativ                        }, \
-    {"memory_barrier"                                   , GlMemoryBarrier                              }, \
-    {"tex_storage_1_d"                                  , GlTexStorage1D                               }, \
-    {"tex_storage_2_d"                                  , GlTexStorage2D                               }, \
-    {"tex_storage_3_d"                                  , GlTexStorage3D                               }, \
-    {"bind_vertex_buffer"                               , GlBindVertexBuffer                           }, \
-    {"clear_buffer_data"                                , GlClearBufferData                            }, \
-    {"clear_buffer_sub_data"                            , GlClearBufferSubData                         }, \
-    {"copy_image_sub_data"                              , GlCopyImageSubData                           }, \
-    {"debug_message_callback"                           , GlDebugMessageCallback                       }, \
-    {"debug_message_control"                            , GlDebugMessageControl                        }, \
-    {"debug_message_insert"                             , GlDebugMessageInsert                         }, \
-    {"dispatch_compute"                                 , GlDispatchCompute                            }, \
-    {"dispatch_compute_indirect"                        , GlDispatchComputeIndirect                    }, \
-    {"framebuffer_parameteri"                           , GlFramebufferParameteri                      }, \
-    {"get_debug_message_log"                            , GlGetDebugMessageLog                         }, \
-    {"get_framebuffer_parameteriv"                      , GlGetFramebufferParameteriv                  }, \
-    {"get_internalformati_6_4v"                         , GlGetInternalformati64v                      }, \
-    {"get_object_label"                                 , GlGetObjectLabel                             }, \
-    {"get_object_ptr_label"                             , GlGetObjectPtrLabel                          }, \
-    {"get_program_interfaceiv"                          , GlGetProgramInterfaceiv                      }, \
-    {"get_program_resource_index"                       , GlGetProgramResourceIndex                    }, \
-    {"get_program_resource_location"                    , GlGetProgramResourceLocation                 }, \
-    {"get_program_resource_location_index"              , GlGetProgramResourceLocationIndex            }, \
-    {"get_program_resource_name"                        , GlGetProgramResourceName                     }, \
-    {"get_program_resourceiv"                           , GlGetProgramResourceiv                       }, \
-    {"invalidate_buffer_data"                           , GlInvalidateBufferData                       }, \
-    {"invalidate_buffer_sub_data"                       , GlInvalidateBufferSubData                    }, \
-    {"invalidate_framebuffer"                           , GlInvalidateFramebuffer                      }, \
-    {"invalidate_sub_framebuffer"                       , GlInvalidateSubFramebuffer                   }, \
-    {"invalidate_tex_image"                             , GlInvalidateTexImage                         }, \
-    {"invalidate_tex_sub_image"                         , GlInvalidateTexSubImage                      }, \
-    {"multi_draw_arrays_indirect"                       , GlMultiDrawArraysIndirect                    }, \
-    {"multi_draw_elements_indirect"                     , GlMultiDrawElementsIndirect                  }, \
-    {"object_label"                                     , GlObjectLabel                                }, \
-    {"object_ptr_label"                                 , GlObjectPtrLabel                             }, \
-    {"pop_debug_group"                                  , GlPopDebugGroup                              }, \
-    {"push_debug_group"                                 , GlPushDebugGroup                             }, \
-    {"shader_storage_block_binding"                     , GlShaderStorageBlockBinding                  }, \
-    {"tex_buffer_range"                                 , GlTexBufferRange                             }, \
-    {"tex_storage_2_d_multisample"                      , GlTexStorage2DMultisample                    }, \
-    {"tex_storage_3_d_multisample"                      , GlTexStorage3DMultisample                    }, \
-    {"texture_view"                                     , GlTextureView                                }, \
-    {"vertex_attrib_binding"                            , GlVertexAttribBinding                        }, \
-    {"vertex_attrib_format"                             , GlVertexAttribFormat                         }, \
-    {"vertex_attrib_i_format"                           , GlVertexAttribIFormat                        }, \
-    {"vertex_attrib_l_format"                           , GlVertexAttribLFormat                        }, \
-    {"vertex_binding_divisor"                           , GlVertexBindingDivisor                       }, \
-    {"bind_buffers_base"                                , GlBindBuffersBase                            }, \
-    {"bind_buffers_range"                               , GlBindBuffersRange                           }, \
-    {"bind_image_textures"                              , GlBindImageTextures                          }, \
-    {"bind_samplers"                                    , GlBindSamplers                               }, \
-    {"bind_textures"                                    , GlBindTextures                               }, \
-    {"bind_vertex_buffers"                              , GlBindVertexBuffers                          }, \
-    {"buffer_storage"                                   , GlBufferStorage                              }, \
-    {"clear_tex_image"                                  , GlClearTexImage                              }, \
-    {"clear_tex_sub_image"                              , GlClearTexSubImage                           }, \
+    {"gl_accum"                                            , GlAccum                                      }, \
+    {"gl_alpha_func"                                       , GlAlphaFunc                                  }, \
+    {"gl_begin"                                            , GlBegin                                      }, \
+    {"gl_bitmap"                                           , GlBitmap                                     }, \
+    {"gl_blend_func"                                       , GlBlendFunc                                  }, \
+    {"gl_call_list"                                        , GlCallList                                   }, \
+    {"gl_call_lists"                                       , GlCallLists                                  }, \
+    {"gl_clear"                                            , GlClear                                      }, \
+    {"gl_clear_accum"                                      , GlClearAccum                                 }, \
+    {"gl_clear_color"                                      , GlClearColor                                 }, \
+    {"gl_clear_depth"                                      , GlClearDepth                                 }, \
+    {"gl_clear_index"                                      , GlClearIndex                                 }, \
+    {"gl_clear_stencil"                                    , GlClearStencil                               }, \
+    {"gl_clip_plane"                                       , GlClipPlane                                  }, \
+    {"gl_color3b"                                          , GlColor3b                                    }, \
+    {"gl_color3bv"                                         , GlColor3bv                                   }, \
+    {"gl_color3d"                                          , GlColor3d                                    }, \
+    {"gl_color3dv"                                         , GlColor3dv                                   }, \
+    {"gl_color3f"                                          , GlColor3f                                    }, \
+    {"gl_color3fv"                                         , GlColor3fv                                   }, \
+    {"gl_color3i"                                          , GlColor3i                                    }, \
+    {"gl_color3iv"                                         , GlColor3iv                                   }, \
+    {"gl_color3s"                                          , GlColor3s                                    }, \
+    {"gl_color3sv"                                         , GlColor3sv                                   }, \
+    {"gl_color3ub"                                         , GlColor3ub                                   }, \
+    {"gl_color3ubv"                                        , GlColor3ubv                                  }, \
+    {"gl_color3ui"                                         , GlColor3ui                                   }, \
+    {"gl_color3uiv"                                        , GlColor3uiv                                  }, \
+    {"gl_color3us"                                         , GlColor3us                                   }, \
+    {"gl_color3usv"                                        , GlColor3usv                                  }, \
+    {"gl_color4b"                                          , GlColor4b                                    }, \
+    {"gl_color4bv"                                         , GlColor4bv                                   }, \
+    {"gl_color4d"                                          , GlColor4d                                    }, \
+    {"gl_color4dv"                                         , GlColor4dv                                   }, \
+    {"gl_color4f"                                          , GlColor4f                                    }, \
+    {"gl_color4fv"                                         , GlColor4fv                                   }, \
+    {"gl_color4i"                                          , GlColor4i                                    }, \
+    {"gl_color4iv"                                         , GlColor4iv                                   }, \
+    {"gl_color4s"                                          , GlColor4s                                    }, \
+    {"gl_color4sv"                                         , GlColor4sv                                   }, \
+    {"gl_color4ub"                                         , GlColor4ub                                   }, \
+    {"gl_color4ubv"                                        , GlColor4ubv                                  }, \
+    {"gl_color4ui"                                         , GlColor4ui                                   }, \
+    {"gl_color4uiv"                                        , GlColor4uiv                                  }, \
+    {"gl_color4us"                                         , GlColor4us                                   }, \
+    {"gl_color4usv"                                        , GlColor4usv                                  }, \
+    {"gl_color_mask"                                       , GlColorMask                                  }, \
+    {"gl_color_material"                                   , GlColorMaterial                              }, \
+    {"gl_copy_pixels"                                      , GlCopyPixels                                 }, \
+    {"gl_cull_face"                                        , GlCullFace                                   }, \
+    {"gl_delete_lists"                                     , GlDeleteLists                                }, \
+    {"gl_depth_func"                                       , GlDepthFunc                                  }, \
+    {"gl_depth_mask"                                       , GlDepthMask                                  }, \
+    {"gl_depth_range"                                      , GlDepthRange                                 }, \
+    {"gl_disable"                                          , GlDisable                                    }, \
+    {"gl_draw_buffer"                                      , GlDrawBuffer                                 }, \
+    {"gl_draw_pixels"                                      , GlDrawPixels                                 }, \
+    {"gl_edge_flag"                                        , GlEdgeFlag                                   }, \
+    {"gl_edge_flagv"                                       , GlEdgeFlagv                                  }, \
+    {"gl_enable"                                           , GlEnable                                     }, \
+    {"gl_end"                                              , GlEnd                                        }, \
+    {"gl_end_list"                                         , GlEndList                                    }, \
+    {"gl_eval_coord1d"                                     , GlEvalCoord1d                                }, \
+    {"gl_eval_coord1dv"                                    , GlEvalCoord1dv                               }, \
+    {"gl_eval_coord1f"                                     , GlEvalCoord1f                                }, \
+    {"gl_eval_coord1fv"                                    , GlEvalCoord1fv                               }, \
+    {"gl_eval_coord2d"                                     , GlEvalCoord2d                                }, \
+    {"gl_eval_coord2dv"                                    , GlEvalCoord2dv                               }, \
+    {"gl_eval_coord2f"                                     , GlEvalCoord2f                                }, \
+    {"gl_eval_coord2fv"                                    , GlEvalCoord2fv                               }, \
+    {"gl_eval_mesh1"                                       , GlEvalMesh1                                  }, \
+    {"gl_eval_mesh2"                                       , GlEvalMesh2                                  }, \
+    {"gl_eval_point1"                                      , GlEvalPoint1                                 }, \
+    {"gl_eval_point2"                                      , GlEvalPoint2                                 }, \
+    {"gl_feedback_buffer"                                  , GlFeedbackBuffer                             }, \
+    {"gl_finish"                                           , GlFinish                                     }, \
+    {"gl_flush"                                            , GlFlush                                      }, \
+    {"gl_fogf"                                             , GlFogf                                       }, \
+    {"gl_fogfv"                                            , GlFogfv                                      }, \
+    {"gl_fogi"                                             , GlFogi                                       }, \
+    {"gl_fogiv"                                            , GlFogiv                                      }, \
+    {"gl_front_face"                                       , GlFrontFace                                  }, \
+    {"gl_frustum"                                          , GlFrustum                                    }, \
+    {"gl_gen_lists"                                        , GlGenLists                                   }, \
+    {"gl_get_booleanv"                                     , GlGetBooleanv                                }, \
+    {"gl_get_clip_plane"                                   , GlGetClipPlane                               }, \
+    {"gl_get_doublev"                                      , GlGetDoublev                                 }, \
+    {"gl_get_error"                                        , GlGetError                                   }, \
+    {"gl_get_floatv"                                       , GlGetFloatv                                  }, \
+    {"gl_get_integerv"                                     , GlGetIntegerv                                }, \
+    {"gl_get_lightfv"                                      , GlGetLightfv                                 }, \
+    {"gl_get_lightiv"                                      , GlGetLightiv                                 }, \
+    {"gl_get_mapdv"                                        , GlGetMapdv                                   }, \
+    {"gl_get_mapfv"                                        , GlGetMapfv                                   }, \
+    {"gl_get_mapiv"                                        , GlGetMapiv                                   }, \
+    {"gl_get_materialfv"                                   , GlGetMaterialfv                              }, \
+    {"gl_get_materialiv"                                   , GlGetMaterialiv                              }, \
+    {"gl_get_pixel_mapfv"                                  , GlGetPixelMapfv                              }, \
+    {"gl_get_pixel_mapuiv"                                 , GlGetPixelMapuiv                             }, \
+    {"gl_get_pixel_mapusv"                                 , GlGetPixelMapusv                             }, \
+    {"gl_get_polygon_stipple"                              , GlGetPolygonStipple                          }, \
+    {"gl_get_string"                                       , GlGetString                                  }, \
+    {"gl_get_tex_envfv"                                    , GlGetTexEnvfv                                }, \
+    {"gl_get_tex_enviv"                                    , GlGetTexEnviv                                }, \
+    {"gl_get_tex_gendv"                                    , GlGetTexGendv                                }, \
+    {"gl_get_tex_genfv"                                    , GlGetTexGenfv                                }, \
+    {"gl_get_tex_geniv"                                    , GlGetTexGeniv                                }, \
+    {"gl_get_tex_image"                                    , GlGetTexImage                                }, \
+    {"gl_get_tex_level_parameterfv"                        , GlGetTexLevelParameterfv                     }, \
+    {"gl_get_tex_level_parameteriv"                        , GlGetTexLevelParameteriv                     }, \
+    {"gl_get_tex_parameterfv"                              , GlGetTexParameterfv                          }, \
+    {"gl_get_tex_parameteriv"                              , GlGetTexParameteriv                          }, \
+    {"gl_hint"                                             , GlHint                                       }, \
+    {"gl_index_mask"                                       , GlIndexMask                                  }, \
+    {"gl_indexd"                                           , GlIndexd                                     }, \
+    {"gl_indexdv"                                          , GlIndexdv                                    }, \
+    {"gl_indexf"                                           , GlIndexf                                     }, \
+    {"gl_indexfv"                                          , GlIndexfv                                    }, \
+    {"gl_indexi"                                           , GlIndexi                                     }, \
+    {"gl_indexiv"                                          , GlIndexiv                                    }, \
+    {"gl_indexs"                                           , GlIndexs                                     }, \
+    {"gl_indexsv"                                          , GlIndexsv                                    }, \
+    {"gl_init_names"                                       , GlInitNames                                  }, \
+    {"gl_is_enabled"                                       , GlIsEnabled                                  }, \
+    {"gl_is_list"                                          , GlIsList                                     }, \
+    {"gl_light_modelf"                                     , GlLightModelf                                }, \
+    {"gl_light_modelfv"                                    , GlLightModelfv                               }, \
+    {"gl_light_modeli"                                     , GlLightModeli                                }, \
+    {"gl_light_modeliv"                                    , GlLightModeliv                               }, \
+    {"gl_lightf"                                           , GlLightf                                     }, \
+    {"gl_lightfv"                                          , GlLightfv                                    }, \
+    {"gl_lighti"                                           , GlLighti                                     }, \
+    {"gl_lightiv"                                          , GlLightiv                                    }, \
+    {"gl_line_stipple"                                     , GlLineStipple                                }, \
+    {"gl_line_width"                                       , GlLineWidth                                  }, \
+    {"gl_list_base"                                        , GlListBase                                   }, \
+    {"gl_load_identity"                                    , GlLoadIdentity                               }, \
+    {"gl_load_matrixd"                                     , GlLoadMatrixd                                }, \
+    {"gl_load_matrixf"                                     , GlLoadMatrixf                                }, \
+    {"gl_load_name"                                        , GlLoadName                                   }, \
+    {"gl_logic_op"                                         , GlLogicOp                                    }, \
+    {"gl_map1d"                                            , GlMap1d                                      }, \
+    {"gl_map1f"                                            , GlMap1f                                      }, \
+    {"gl_map2d"                                            , GlMap2d                                      }, \
+    {"gl_map2f"                                            , GlMap2f                                      }, \
+    {"gl_map_grid1d"                                       , GlMapGrid1d                                  }, \
+    {"gl_map_grid1f"                                       , GlMapGrid1f                                  }, \
+    {"gl_map_grid2d"                                       , GlMapGrid2d                                  }, \
+    {"gl_map_grid2f"                                       , GlMapGrid2f                                  }, \
+    {"gl_materialf"                                        , GlMaterialf                                  }, \
+    {"gl_materialfv"                                       , GlMaterialfv                                 }, \
+    {"gl_materiali"                                        , GlMateriali                                  }, \
+    {"gl_materialiv"                                       , GlMaterialiv                                 }, \
+    {"gl_matrix_mode"                                      , GlMatrixMode                                 }, \
+    {"gl_mult_matrixd"                                     , GlMultMatrixd                                }, \
+    {"gl_mult_matrixf"                                     , GlMultMatrixf                                }, \
+    {"gl_new_list"                                         , GlNewList                                    }, \
+    {"gl_normal3b"                                         , GlNormal3b                                   }, \
+    {"gl_normal3bv"                                        , GlNormal3bv                                  }, \
+    {"gl_normal3d"                                         , GlNormal3d                                   }, \
+    {"gl_normal3dv"                                        , GlNormal3dv                                  }, \
+    {"gl_normal3f"                                         , GlNormal3f                                   }, \
+    {"gl_normal3fv"                                        , GlNormal3fv                                  }, \
+    {"gl_normal3i"                                         , GlNormal3i                                   }, \
+    {"gl_normal3iv"                                        , GlNormal3iv                                  }, \
+    {"gl_normal3s"                                         , GlNormal3s                                   }, \
+    {"gl_normal3sv"                                        , GlNormal3sv                                  }, \
+    {"gl_ortho"                                            , GlOrtho                                      }, \
+    {"gl_pass_through"                                     , GlPassThrough                                }, \
+    {"gl_pixel_mapfv"                                      , GlPixelMapfv                                 }, \
+    {"gl_pixel_mapuiv"                                     , GlPixelMapuiv                                }, \
+    {"gl_pixel_mapusv"                                     , GlPixelMapusv                                }, \
+    {"gl_pixel_storef"                                     , GlPixelStoref                                }, \
+    {"gl_pixel_storei"                                     , GlPixelStorei                                }, \
+    {"gl_pixel_transferf"                                  , GlPixelTransferf                             }, \
+    {"gl_pixel_transferi"                                  , GlPixelTransferi                             }, \
+    {"gl_pixel_zoom"                                       , GlPixelZoom                                  }, \
+    {"gl_point_size"                                       , GlPointSize                                  }, \
+    {"gl_polygon_mode"                                     , GlPolygonMode                                }, \
+    {"gl_polygon_stipple"                                  , GlPolygonStipple                             }, \
+    {"gl_pop_attrib"                                       , GlPopAttrib                                  }, \
+    {"gl_pop_matrix"                                       , GlPopMatrix                                  }, \
+    {"gl_pop_name"                                         , GlPopName                                    }, \
+    {"gl_push_attrib"                                      , GlPushAttrib                                 }, \
+    {"gl_push_matrix"                                      , GlPushMatrix                                 }, \
+    {"gl_push_name"                                        , GlPushName                                   }, \
+    {"gl_raster_pos2d"                                     , GlRasterPos2d                                }, \
+    {"gl_raster_pos2dv"                                    , GlRasterPos2dv                               }, \
+    {"gl_raster_pos2f"                                     , GlRasterPos2f                                }, \
+    {"gl_raster_pos2fv"                                    , GlRasterPos2fv                               }, \
+    {"gl_raster_pos2i"                                     , GlRasterPos2i                                }, \
+    {"gl_raster_pos2iv"                                    , GlRasterPos2iv                               }, \
+    {"gl_raster_pos2s"                                     , GlRasterPos2s                                }, \
+    {"gl_raster_pos2sv"                                    , GlRasterPos2sv                               }, \
+    {"gl_raster_pos3d"                                     , GlRasterPos3d                                }, \
+    {"gl_raster_pos3dv"                                    , GlRasterPos3dv                               }, \
+    {"gl_raster_pos3f"                                     , GlRasterPos3f                                }, \
+    {"gl_raster_pos3fv"                                    , GlRasterPos3fv                               }, \
+    {"gl_raster_pos3i"                                     , GlRasterPos3i                                }, \
+    {"gl_raster_pos3iv"                                    , GlRasterPos3iv                               }, \
+    {"gl_raster_pos3s"                                     , GlRasterPos3s                                }, \
+    {"gl_raster_pos3sv"                                    , GlRasterPos3sv                               }, \
+    {"gl_raster_pos4d"                                     , GlRasterPos4d                                }, \
+    {"gl_raster_pos4dv"                                    , GlRasterPos4dv                               }, \
+    {"gl_raster_pos4f"                                     , GlRasterPos4f                                }, \
+    {"gl_raster_pos4fv"                                    , GlRasterPos4fv                               }, \
+    {"gl_raster_pos4i"                                     , GlRasterPos4i                                }, \
+    {"gl_raster_pos4iv"                                    , GlRasterPos4iv                               }, \
+    {"gl_raster_pos4s"                                     , GlRasterPos4s                                }, \
+    {"gl_raster_pos4sv"                                    , GlRasterPos4sv                               }, \
+    {"gl_read_buffer"                                      , GlReadBuffer                                 }, \
+    {"gl_read_pixels"                                      , GlReadPixels                                 }, \
+    {"gl_rectd"                                            , GlRectd                                      }, \
+    {"gl_rectdv"                                           , GlRectdv                                     }, \
+    {"gl_rectf"                                            , GlRectf                                      }, \
+    {"gl_rectfv"                                           , GlRectfv                                     }, \
+    {"gl_recti"                                            , GlRecti                                      }, \
+    {"gl_rectiv"                                           , GlRectiv                                     }, \
+    {"gl_rects"                                            , GlRects                                      }, \
+    {"gl_rectsv"                                           , GlRectsv                                     }, \
+    {"gl_render_mode"                                      , GlRenderMode                                 }, \
+    {"gl_rotated"                                          , GlRotated                                    }, \
+    {"gl_rotatef"                                          , GlRotatef                                    }, \
+    {"gl_scaled"                                           , GlScaled                                     }, \
+    {"gl_scalef"                                           , GlScalef                                     }, \
+    {"gl_scissor"                                          , GlScissor                                    }, \
+    {"gl_select_buffer"                                    , GlSelectBuffer                               }, \
+    {"gl_shade_model"                                      , GlShadeModel                                 }, \
+    {"gl_stencil_func"                                     , GlStencilFunc                                }, \
+    {"gl_stencil_mask"                                     , GlStencilMask                                }, \
+    {"gl_stencil_op"                                       , GlStencilOp                                  }, \
+    {"gl_tex_coord1d"                                      , GlTexCoord1d                                 }, \
+    {"gl_tex_coord1dv"                                     , GlTexCoord1dv                                }, \
+    {"gl_tex_coord1f"                                      , GlTexCoord1f                                 }, \
+    {"gl_tex_coord1fv"                                     , GlTexCoord1fv                                }, \
+    {"gl_tex_coord1i"                                      , GlTexCoord1i                                 }, \
+    {"gl_tex_coord1iv"                                     , GlTexCoord1iv                                }, \
+    {"gl_tex_coord1s"                                      , GlTexCoord1s                                 }, \
+    {"gl_tex_coord1sv"                                     , GlTexCoord1sv                                }, \
+    {"gl_tex_coord2d"                                      , GlTexCoord2d                                 }, \
+    {"gl_tex_coord2dv"                                     , GlTexCoord2dv                                }, \
+    {"gl_tex_coord2f"                                      , GlTexCoord2f                                 }, \
+    {"gl_tex_coord2fv"                                     , GlTexCoord2fv                                }, \
+    {"gl_tex_coord2i"                                      , GlTexCoord2i                                 }, \
+    {"gl_tex_coord2iv"                                     , GlTexCoord2iv                                }, \
+    {"gl_tex_coord2s"                                      , GlTexCoord2s                                 }, \
+    {"gl_tex_coord2sv"                                     , GlTexCoord2sv                                }, \
+    {"gl_tex_coord3d"                                      , GlTexCoord3d                                 }, \
+    {"gl_tex_coord3dv"                                     , GlTexCoord3dv                                }, \
+    {"gl_tex_coord3f"                                      , GlTexCoord3f                                 }, \
+    {"gl_tex_coord3fv"                                     , GlTexCoord3fv                                }, \
+    {"gl_tex_coord3i"                                      , GlTexCoord3i                                 }, \
+    {"gl_tex_coord3iv"                                     , GlTexCoord3iv                                }, \
+    {"gl_tex_coord3s"                                      , GlTexCoord3s                                 }, \
+    {"gl_tex_coord3sv"                                     , GlTexCoord3sv                                }, \
+    {"gl_tex_coord4d"                                      , GlTexCoord4d                                 }, \
+    {"gl_tex_coord4dv"                                     , GlTexCoord4dv                                }, \
+    {"gl_tex_coord4f"                                      , GlTexCoord4f                                 }, \
+    {"gl_tex_coord4fv"                                     , GlTexCoord4fv                                }, \
+    {"gl_tex_coord4i"                                      , GlTexCoord4i                                 }, \
+    {"gl_tex_coord4iv"                                     , GlTexCoord4iv                                }, \
+    {"gl_tex_coord4s"                                      , GlTexCoord4s                                 }, \
+    {"gl_tex_coord4sv"                                     , GlTexCoord4sv                                }, \
+    {"gl_tex_envf"                                         , GlTexEnvf                                    }, \
+    {"gl_tex_envfv"                                        , GlTexEnvfv                                   }, \
+    {"gl_tex_envi"                                         , GlTexEnvi                                    }, \
+    {"gl_tex_enviv"                                        , GlTexEnviv                                   }, \
+    {"gl_tex_gend"                                         , GlTexGend                                    }, \
+    {"gl_tex_gendv"                                        , GlTexGendv                                   }, \
+    {"gl_tex_genf"                                         , GlTexGenf                                    }, \
+    {"gl_tex_genfv"                                        , GlTexGenfv                                   }, \
+    {"gl_tex_geni"                                         , GlTexGeni                                    }, \
+    {"gl_tex_geniv"                                        , GlTexGeniv                                   }, \
+    {"gl_tex_image1_d"                                     , GlTexImage1D                                 }, \
+    {"gl_tex_image2_d"                                     , GlTexImage2D                                 }, \
+    {"gl_tex_parameterf"                                   , GlTexParameterf                              }, \
+    {"gl_tex_parameterfv"                                  , GlTexParameterfv                             }, \
+    {"gl_tex_parameteri"                                   , GlTexParameteri                              }, \
+    {"gl_tex_parameteriv"                                  , GlTexParameteriv                             }, \
+    {"gl_translated"                                       , GlTranslated                                 }, \
+    {"gl_translatef"                                       , GlTranslatef                                 }, \
+    {"gl_vertex2d"                                         , GlVertex2d                                   }, \
+    {"gl_vertex2dv"                                        , GlVertex2dv                                  }, \
+    {"gl_vertex2f"                                         , GlVertex2f                                   }, \
+    {"gl_vertex2fv"                                        , GlVertex2fv                                  }, \
+    {"gl_vertex2i"                                         , GlVertex2i                                   }, \
+    {"gl_vertex2iv"                                        , GlVertex2iv                                  }, \
+    {"gl_vertex2s"                                         , GlVertex2s                                   }, \
+    {"gl_vertex2sv"                                        , GlVertex2sv                                  }, \
+    {"gl_vertex3d"                                         , GlVertex3d                                   }, \
+    {"gl_vertex3dv"                                        , GlVertex3dv                                  }, \
+    {"gl_vertex3f"                                         , GlVertex3f                                   }, \
+    {"gl_vertex3fv"                                        , GlVertex3fv                                  }, \
+    {"gl_vertex3i"                                         , GlVertex3i                                   }, \
+    {"gl_vertex3iv"                                        , GlVertex3iv                                  }, \
+    {"gl_vertex3s"                                         , GlVertex3s                                   }, \
+    {"gl_vertex3sv"                                        , GlVertex3sv                                  }, \
+    {"gl_vertex4d"                                         , GlVertex4d                                   }, \
+    {"gl_vertex4dv"                                        , GlVertex4dv                                  }, \
+    {"gl_vertex4f"                                         , GlVertex4f                                   }, \
+    {"gl_vertex4fv"                                        , GlVertex4fv                                  }, \
+    {"gl_vertex4i"                                         , GlVertex4i                                   }, \
+    {"gl_vertex4iv"                                        , GlVertex4iv                                  }, \
+    {"gl_vertex4s"                                         , GlVertex4s                                   }, \
+    {"gl_vertex4sv"                                        , GlVertex4sv                                  }, \
+    {"gl_viewport"                                         , GlViewport                                   }, \
+    {"gl_are_textures_resident"                            , GlAreTexturesResident                        }, \
+    {"gl_array_element"                                    , GlArrayElement                               }, \
+    {"gl_bind_texture"                                     , GlBindTexture                                }, \
+    {"gl_color_pointer"                                    , GlColorPointer                               }, \
+    {"gl_copy_tex_image1_d"                                , GlCopyTexImage1D                             }, \
+    {"gl_copy_tex_image2_d"                                , GlCopyTexImage2D                             }, \
+    {"gl_copy_tex_sub_image1_d"                            , GlCopyTexSubImage1D                          }, \
+    {"gl_copy_tex_sub_image2_d"                            , GlCopyTexSubImage2D                          }, \
+    {"gl_delete_textures"                                  , GlDeleteTextures                             }, \
+    {"gl_disable_client_state"                             , GlDisableClientState                         }, \
+    {"gl_draw_arrays"                                      , GlDrawArrays                                 }, \
+    {"gl_draw_elements"                                    , GlDrawElements                               }, \
+    {"gl_edge_flag_pointer"                                , GlEdgeFlagPointer                            }, \
+    {"gl_enable_client_state"                              , GlEnableClientState                          }, \
+    {"gl_gen_textures"                                     , GlGenTextures                                }, \
+    {"gl_get_pointerv"                                     , GlGetPointerv                                }, \
+    {"gl_index_pointer"                                    , GlIndexPointer                               }, \
+    {"gl_indexub"                                          , GlIndexub                                    }, \
+    {"gl_indexubv"                                         , GlIndexubv                                   }, \
+    {"gl_interleaved_arrays"                               , GlInterleavedArrays                          }, \
+    {"gl_is_texture"                                       , GlIsTexture                                  }, \
+    {"gl_normal_pointer"                                   , GlNormalPointer                              }, \
+    {"gl_polygon_offset"                                   , GlPolygonOffset                              }, \
+    {"gl_pop_client_attrib"                                , GlPopClientAttrib                            }, \
+    {"gl_prioritize_textures"                              , GlPrioritizeTextures                         }, \
+    {"gl_push_client_attrib"                               , GlPushClientAttrib                           }, \
+    {"gl_tex_coord_pointer"                                , GlTexCoordPointer                            }, \
+    {"gl_tex_sub_image1_d"                                 , GlTexSubImage1D                              }, \
+    {"gl_tex_sub_image2_d"                                 , GlTexSubImage2D                              }, \
+    {"gl_vertex_pointer"                                   , GlVertexPointer                              }, \
+    {"gl_copy_tex_sub_image3_d"                            , GlCopyTexSubImage3D                          }, \
+    {"gl_draw_range_elements"                              , GlDrawRangeElements                          }, \
+    {"gl_tex_image3_d"                                     , GlTexImage3D                                 }, \
+    {"gl_tex_sub_image3_d"                                 , GlTexSubImage3D                              }, \
+    {"gl_active_texture"                                   , GlActiveTexture                              }, \
+    {"gl_client_active_texture"                            , GlClientActiveTexture                        }, \
+    {"gl_compressed_tex_image1_d"                          , GlCompressedTexImage1D                       }, \
+    {"gl_compressed_tex_image2_d"                          , GlCompressedTexImage2D                       }, \
+    {"gl_compressed_tex_image3_d"                          , GlCompressedTexImage3D                       }, \
+    {"gl_compressed_tex_sub_image1_d"                      , GlCompressedTexSubImage1D                    }, \
+    {"gl_compressed_tex_sub_image2_d"                      , GlCompressedTexSubImage2D                    }, \
+    {"gl_compressed_tex_sub_image3_d"                      , GlCompressedTexSubImage3D                    }, \
+    {"gl_get_compressed_tex_image"                         , GlGetCompressedTexImage                      }, \
+    {"gl_load_transpose_matrixd"                           , GlLoadTransposeMatrixd                       }, \
+    {"gl_load_transpose_matrixf"                           , GlLoadTransposeMatrixf                       }, \
+    {"gl_mult_transpose_matrixd"                           , GlMultTransposeMatrixd                       }, \
+    {"gl_mult_transpose_matrixf"                           , GlMultTransposeMatrixf                       }, \
+    {"gl_multi_tex_coord1d"                                , GlMultiTexCoord1d                            }, \
+    {"gl_multi_tex_coord1dv"                               , GlMultiTexCoord1dv                           }, \
+    {"gl_multi_tex_coord1f"                                , GlMultiTexCoord1f                            }, \
+    {"gl_multi_tex_coord1fv"                               , GlMultiTexCoord1fv                           }, \
+    {"gl_multi_tex_coord1i"                                , GlMultiTexCoord1i                            }, \
+    {"gl_multi_tex_coord1iv"                               , GlMultiTexCoord1iv                           }, \
+    {"gl_multi_tex_coord1s"                                , GlMultiTexCoord1s                            }, \
+    {"gl_multi_tex_coord1sv"                               , GlMultiTexCoord1sv                           }, \
+    {"gl_multi_tex_coord2d"                                , GlMultiTexCoord2d                            }, \
+    {"gl_multi_tex_coord2dv"                               , GlMultiTexCoord2dv                           }, \
+    {"gl_multi_tex_coord2f"                                , GlMultiTexCoord2f                            }, \
+    {"gl_multi_tex_coord2fv"                               , GlMultiTexCoord2fv                           }, \
+    {"gl_multi_tex_coord2i"                                , GlMultiTexCoord2i                            }, \
+    {"gl_multi_tex_coord2iv"                               , GlMultiTexCoord2iv                           }, \
+    {"gl_multi_tex_coord2s"                                , GlMultiTexCoord2s                            }, \
+    {"gl_multi_tex_coord2sv"                               , GlMultiTexCoord2sv                           }, \
+    {"gl_multi_tex_coord3d"                                , GlMultiTexCoord3d                            }, \
+    {"gl_multi_tex_coord3dv"                               , GlMultiTexCoord3dv                           }, \
+    {"gl_multi_tex_coord3f"                                , GlMultiTexCoord3f                            }, \
+    {"gl_multi_tex_coord3fv"                               , GlMultiTexCoord3fv                           }, \
+    {"gl_multi_tex_coord3i"                                , GlMultiTexCoord3i                            }, \
+    {"gl_multi_tex_coord3iv"                               , GlMultiTexCoord3iv                           }, \
+    {"gl_multi_tex_coord3s"                                , GlMultiTexCoord3s                            }, \
+    {"gl_multi_tex_coord3sv"                               , GlMultiTexCoord3sv                           }, \
+    {"gl_multi_tex_coord4d"                                , GlMultiTexCoord4d                            }, \
+    {"gl_multi_tex_coord4dv"                               , GlMultiTexCoord4dv                           }, \
+    {"gl_multi_tex_coord4f"                                , GlMultiTexCoord4f                            }, \
+    {"gl_multi_tex_coord4fv"                               , GlMultiTexCoord4fv                           }, \
+    {"gl_multi_tex_coord4i"                                , GlMultiTexCoord4i                            }, \
+    {"gl_multi_tex_coord4iv"                               , GlMultiTexCoord4iv                           }, \
+    {"gl_multi_tex_coord4s"                                , GlMultiTexCoord4s                            }, \
+    {"gl_multi_tex_coord4sv"                               , GlMultiTexCoord4sv                           }, \
+    {"gl_sample_coverage"                                  , GlSampleCoverage                             }, \
+    {"gl_blend_color"                                      , GlBlendColor                                 }, \
+    {"gl_blend_equation"                                   , GlBlendEquation                              }, \
+    {"gl_blend_func_separate"                              , GlBlendFuncSeparate                          }, \
+    {"gl_fog_coord_pointer"                                , GlFogCoordPointer                            }, \
+    {"gl_fog_coordd"                                       , GlFogCoordd                                  }, \
+    {"gl_fog_coorddv"                                      , GlFogCoorddv                                 }, \
+    {"gl_fog_coordf"                                       , GlFogCoordf                                  }, \
+    {"gl_fog_coordfv"                                      , GlFogCoordfv                                 }, \
+    {"gl_multi_draw_arrays"                                , GlMultiDrawArrays                            }, \
+    {"gl_multi_draw_elements"                              , GlMultiDrawElements                          }, \
+    {"gl_point_parameterf"                                 , GlPointParameterf                            }, \
+    {"gl_point_parameterfv"                                , GlPointParameterfv                           }, \
+    {"gl_point_parameteri"                                 , GlPointParameteri                            }, \
+    {"gl_point_parameteriv"                                , GlPointParameteriv                           }, \
+    {"gl_secondary_color3b"                                , GlSecondaryColor3b                           }, \
+    {"gl_secondary_color3bv"                               , GlSecondaryColor3bv                          }, \
+    {"gl_secondary_color3d"                                , GlSecondaryColor3d                           }, \
+    {"gl_secondary_color3dv"                               , GlSecondaryColor3dv                          }, \
+    {"gl_secondary_color3f"                                , GlSecondaryColor3f                           }, \
+    {"gl_secondary_color3fv"                               , GlSecondaryColor3fv                          }, \
+    {"gl_secondary_color3i"                                , GlSecondaryColor3i                           }, \
+    {"gl_secondary_color3iv"                               , GlSecondaryColor3iv                          }, \
+    {"gl_secondary_color3s"                                , GlSecondaryColor3s                           }, \
+    {"gl_secondary_color3sv"                               , GlSecondaryColor3sv                          }, \
+    {"gl_secondary_color3ub"                               , GlSecondaryColor3ub                          }, \
+    {"gl_secondary_color3ubv"                              , GlSecondaryColor3ubv                         }, \
+    {"gl_secondary_color3ui"                               , GlSecondaryColor3ui                          }, \
+    {"gl_secondary_color3uiv"                              , GlSecondaryColor3uiv                         }, \
+    {"gl_secondary_color3us"                               , GlSecondaryColor3us                          }, \
+    {"gl_secondary_color3usv"                              , GlSecondaryColor3usv                         }, \
+    {"gl_secondary_color_pointer"                          , GlSecondaryColorPointer                      }, \
+    {"gl_window_pos2d"                                     , GlWindowPos2d                                }, \
+    {"gl_window_pos2dv"                                    , GlWindowPos2dv                               }, \
+    {"gl_window_pos2f"                                     , GlWindowPos2f                                }, \
+    {"gl_window_pos2fv"                                    , GlWindowPos2fv                               }, \
+    {"gl_window_pos2i"                                     , GlWindowPos2i                                }, \
+    {"gl_window_pos2iv"                                    , GlWindowPos2iv                               }, \
+    {"gl_window_pos2s"                                     , GlWindowPos2s                                }, \
+    {"gl_window_pos2sv"                                    , GlWindowPos2sv                               }, \
+    {"gl_window_pos3d"                                     , GlWindowPos3d                                }, \
+    {"gl_window_pos3dv"                                    , GlWindowPos3dv                               }, \
+    {"gl_window_pos3f"                                     , GlWindowPos3f                                }, \
+    {"gl_window_pos3fv"                                    , GlWindowPos3fv                               }, \
+    {"gl_window_pos3i"                                     , GlWindowPos3i                                }, \
+    {"gl_window_pos3iv"                                    , GlWindowPos3iv                               }, \
+    {"gl_window_pos3s"                                     , GlWindowPos3s                                }, \
+    {"gl_window_pos3sv"                                    , GlWindowPos3sv                               }, \
+    {"gl_begin_query"                                      , GlBeginQuery                                 }, \
+    {"gl_bind_buffer"                                      , GlBindBuffer                                 }, \
+    {"gl_buffer_data"                                      , GlBufferData                                 }, \
+    {"gl_buffer_sub_data"                                  , GlBufferSubData                              }, \
+    {"gl_delete_buffers"                                   , GlDeleteBuffers                              }, \
+    {"gl_delete_queries"                                   , GlDeleteQueries                              }, \
+    {"gl_end_query"                                        , GlEndQuery                                   }, \
+    {"gl_gen_buffers"                                      , GlGenBuffers                                 }, \
+    {"gl_gen_queries"                                      , GlGenQueries                                 }, \
+    {"gl_get_buffer_parameteriv"                           , GlGetBufferParameteriv                       }, \
+    {"gl_get_buffer_pointerv"                              , GlGetBufferPointerv                          }, \
+    {"gl_get_buffer_sub_data"                              , GlGetBufferSubData                           }, \
+    {"gl_get_query_objectiv"                               , GlGetQueryObjectiv                           }, \
+    {"gl_get_query_objectuiv"                              , GlGetQueryObjectuiv                          }, \
+    {"gl_get_queryiv"                                      , GlGetQueryiv                                 }, \
+    {"gl_is_buffer"                                        , GlIsBuffer                                   }, \
+    {"gl_is_query"                                         , GlIsQuery                                    }, \
+    {"gl_map_buffer"                                       , GlMapBuffer                                  }, \
+    {"gl_unmap_buffer"                                     , GlUnmapBuffer                                }, \
+    {"gl_attach_shader"                                    , GlAttachShader                               }, \
+    {"gl_bind_attrib_location"                             , GlBindAttribLocation                         }, \
+    {"gl_blend_equation_separate"                          , GlBlendEquationSeparate                      }, \
+    {"gl_compile_shader"                                   , GlCompileShader                              }, \
+    {"gl_create_program"                                   , GlCreateProgram                              }, \
+    {"gl_create_shader"                                    , GlCreateShader                               }, \
+    {"gl_delete_program"                                   , GlDeleteProgram                              }, \
+    {"gl_delete_shader"                                    , GlDeleteShader                               }, \
+    {"gl_detach_shader"                                    , GlDetachShader                               }, \
+    {"gl_disable_vertex_attrib_array"                      , GlDisableVertexAttribArray                   }, \
+    {"gl_draw_buffers"                                     , GlDrawBuffers                                }, \
+    {"gl_enable_vertex_attrib_array"                       , GlEnableVertexAttribArray                    }, \
+    {"gl_get_active_attrib"                                , GlGetActiveAttrib                            }, \
+    {"gl_get_active_uniform"                               , GlGetActiveUniform                           }, \
+    {"gl_get_attached_shaders"                             , GlGetAttachedShaders                         }, \
+    {"gl_get_attrib_location"                              , GlGetAttribLocation                          }, \
+    {"gl_get_program_info_log"                             , GlGetProgramInfoLog                          }, \
+    {"gl_get_programiv"                                    , GlGetProgramiv                               }, \
+    {"gl_get_shader_info_log"                              , GlGetShaderInfoLog                           }, \
+    {"gl_get_shader_source"                                , GlGetShaderSource                            }, \
+    {"gl_get_shaderiv"                                     , GlGetShaderiv                                }, \
+    {"gl_get_uniform_location"                             , GlGetUniformLocation                         }, \
+    {"gl_get_uniformfv"                                    , GlGetUniformfv                               }, \
+    {"gl_get_uniformiv"                                    , GlGetUniformiv                               }, \
+    {"gl_get_vertex_attrib_pointerv"                       , GlGetVertexAttribPointerv                    }, \
+    {"gl_get_vertex_attribdv"                              , GlGetVertexAttribdv                          }, \
+    {"gl_get_vertex_attribfv"                              , GlGetVertexAttribfv                          }, \
+    {"gl_get_vertex_attribiv"                              , GlGetVertexAttribiv                          }, \
+    {"gl_is_program"                                       , GlIsProgram                                  }, \
+    {"gl_is_shader"                                        , GlIsShader                                   }, \
+    {"gl_link_program"                                     , GlLinkProgram                                }, \
+    {"gl_shader_source"                                    , GlShaderSource                               }, \
+    {"gl_stencil_func_separate"                            , GlStencilFuncSeparate                        }, \
+    {"gl_stencil_mask_separate"                            , GlStencilMaskSeparate                        }, \
+    {"gl_stencil_op_separate"                              , GlStencilOpSeparate                          }, \
+    {"gl_uniform1f"                                        , GlUniform1f                                  }, \
+    {"gl_uniform1fv"                                       , GlUniform1fv                                 }, \
+    {"gl_uniform1i"                                        , GlUniform1i                                  }, \
+    {"gl_uniform1iv"                                       , GlUniform1iv                                 }, \
+    {"gl_uniform2f"                                        , GlUniform2f                                  }, \
+    {"gl_uniform2fv"                                       , GlUniform2fv                                 }, \
+    {"gl_uniform2i"                                        , GlUniform2i                                  }, \
+    {"gl_uniform2iv"                                       , GlUniform2iv                                 }, \
+    {"gl_uniform3f"                                        , GlUniform3f                                  }, \
+    {"gl_uniform3fv"                                       , GlUniform3fv                                 }, \
+    {"gl_uniform3i"                                        , GlUniform3i                                  }, \
+    {"gl_uniform3iv"                                       , GlUniform3iv                                 }, \
+    {"gl_uniform4f"                                        , GlUniform4f                                  }, \
+    {"gl_uniform4fv"                                       , GlUniform4fv                                 }, \
+    {"gl_uniform4i"                                        , GlUniform4i                                  }, \
+    {"gl_uniform4iv"                                       , GlUniform4iv                                 }, \
+    {"gl_uniform_matrix2fv"                                , GlUniformMatrix2fv                           }, \
+    {"gl_uniform_matrix3fv"                                , GlUniformMatrix3fv                           }, \
+    {"gl_uniform_matrix4fv"                                , GlUniformMatrix4fv                           }, \
+    {"gl_use_program"                                      , GlUseProgram                                 }, \
+    {"gl_validate_program"                                 , GlValidateProgram                            }, \
+    {"gl_vertex_attrib1d"                                  , GlVertexAttrib1d                             }, \
+    {"gl_vertex_attrib1dv"                                 , GlVertexAttrib1dv                            }, \
+    {"gl_vertex_attrib1f"                                  , GlVertexAttrib1f                             }, \
+    {"gl_vertex_attrib1fv"                                 , GlVertexAttrib1fv                            }, \
+    {"gl_vertex_attrib1s"                                  , GlVertexAttrib1s                             }, \
+    {"gl_vertex_attrib1sv"                                 , GlVertexAttrib1sv                            }, \
+    {"gl_vertex_attrib2d"                                  , GlVertexAttrib2d                             }, \
+    {"gl_vertex_attrib2dv"                                 , GlVertexAttrib2dv                            }, \
+    {"gl_vertex_attrib2f"                                  , GlVertexAttrib2f                             }, \
+    {"gl_vertex_attrib2fv"                                 , GlVertexAttrib2fv                            }, \
+    {"gl_vertex_attrib2s"                                  , GlVertexAttrib2s                             }, \
+    {"gl_vertex_attrib2sv"                                 , GlVertexAttrib2sv                            }, \
+    {"gl_vertex_attrib3d"                                  , GlVertexAttrib3d                             }, \
+    {"gl_vertex_attrib3dv"                                 , GlVertexAttrib3dv                            }, \
+    {"gl_vertex_attrib3f"                                  , GlVertexAttrib3f                             }, \
+    {"gl_vertex_attrib3fv"                                 , GlVertexAttrib3fv                            }, \
+    {"gl_vertex_attrib3s"                                  , GlVertexAttrib3s                             }, \
+    {"gl_vertex_attrib3sv"                                 , GlVertexAttrib3sv                            }, \
+    {"gl_vertex_attrib4_nbv"                               , GlVertexAttrib4Nbv                           }, \
+    {"gl_vertex_attrib4_niv"                               , GlVertexAttrib4Niv                           }, \
+    {"gl_vertex_attrib4_nsv"                               , GlVertexAttrib4Nsv                           }, \
+    {"gl_vertex_attrib4_nub"                               , GlVertexAttrib4Nub                           }, \
+    {"gl_vertex_attrib4_nubv"                              , GlVertexAttrib4Nubv                          }, \
+    {"gl_vertex_attrib4_nuiv"                              , GlVertexAttrib4Nuiv                          }, \
+    {"gl_vertex_attrib4_nusv"                              , GlVertexAttrib4Nusv                          }, \
+    {"gl_vertex_attrib4bv"                                 , GlVertexAttrib4bv                            }, \
+    {"gl_vertex_attrib4d"                                  , GlVertexAttrib4d                             }, \
+    {"gl_vertex_attrib4dv"                                 , GlVertexAttrib4dv                            }, \
+    {"gl_vertex_attrib4f"                                  , GlVertexAttrib4f                             }, \
+    {"gl_vertex_attrib4fv"                                 , GlVertexAttrib4fv                            }, \
+    {"gl_vertex_attrib4iv"                                 , GlVertexAttrib4iv                            }, \
+    {"gl_vertex_attrib4s"                                  , GlVertexAttrib4s                             }, \
+    {"gl_vertex_attrib4sv"                                 , GlVertexAttrib4sv                            }, \
+    {"gl_vertex_attrib4ubv"                                , GlVertexAttrib4ubv                           }, \
+    {"gl_vertex_attrib4uiv"                                , GlVertexAttrib4uiv                           }, \
+    {"gl_vertex_attrib4usv"                                , GlVertexAttrib4usv                           }, \
+    {"gl_vertex_attrib_pointer"                            , GlVertexAttribPointer                        }, \
+    {"gl_uniform_matrix2x3fv"                              , GlUniformMatrix2x3fv                         }, \
+    {"gl_uniform_matrix2x4fv"                              , GlUniformMatrix2x4fv                         }, \
+    {"gl_uniform_matrix3x2fv"                              , GlUniformMatrix3x2fv                         }, \
+    {"gl_uniform_matrix3x4fv"                              , GlUniformMatrix3x4fv                         }, \
+    {"gl_uniform_matrix4x2fv"                              , GlUniformMatrix4x2fv                         }, \
+    {"gl_uniform_matrix4x3fv"                              , GlUniformMatrix4x3fv                         }, \
+    {"gl_begin_conditional_render"                         , GlBeginConditionalRender                     }, \
+    {"gl_begin_transform_feedback"                         , GlBeginTransformFeedback                     }, \
+    {"gl_bind_buffer_base"                                 , GlBindBufferBase                             }, \
+    {"gl_bind_buffer_range"                                , GlBindBufferRange                            }, \
+    {"gl_bind_frag_data_location"                          , GlBindFragDataLocation                       }, \
+    {"gl_bind_framebuffer"                                 , GlBindFramebuffer                            }, \
+    {"gl_bind_renderbuffer"                                , GlBindRenderbuffer                           }, \
+    {"gl_bind_vertex_array"                                , GlBindVertexArray                            }, \
+    {"gl_blit_framebuffer"                                 , GlBlitFramebuffer                            }, \
+    {"gl_check_framebuffer_status"                         , GlCheckFramebufferStatus                     }, \
+    {"gl_clamp_color"                                      , GlClampColor                                 }, \
+    {"gl_clear_bufferfi"                                   , GlClearBufferfi                              }, \
+    {"gl_clear_bufferfv"                                   , GlClearBufferfv                              }, \
+    {"gl_clear_bufferiv"                                   , GlClearBufferiv                              }, \
+    {"gl_clear_bufferuiv"                                  , GlClearBufferuiv                             }, \
+    {"gl_color_maski"                                      , GlColorMaski                                 }, \
+    {"gl_delete_framebuffers"                              , GlDeleteFramebuffers                         }, \
+    {"gl_delete_renderbuffers"                             , GlDeleteRenderbuffers                        }, \
+    {"gl_delete_vertex_arrays"                             , GlDeleteVertexArrays                         }, \
+    {"gl_disablei"                                         , GlDisablei                                   }, \
+    {"gl_enablei"                                          , GlEnablei                                    }, \
+    {"gl_end_conditional_render"                           , GlEndConditionalRender                       }, \
+    {"gl_end_transform_feedback"                           , GlEndTransformFeedback                       }, \
+    {"gl_flush_mapped_buffer_range"                        , GlFlushMappedBufferRange                     }, \
+    {"gl_framebuffer_renderbuffer"                         , GlFramebufferRenderbuffer                    }, \
+    {"gl_framebuffer_texture1_d"                           , GlFramebufferTexture1D                       }, \
+    {"gl_framebuffer_texture2_d"                           , GlFramebufferTexture2D                       }, \
+    {"gl_framebuffer_texture3_d"                           , GlFramebufferTexture3D                       }, \
+    {"gl_framebuffer_texture_layer"                        , GlFramebufferTextureLayer                    }, \
+    {"gl_gen_framebuffers"                                 , GlGenFramebuffers                            }, \
+    {"gl_gen_renderbuffers"                                , GlGenRenderbuffers                           }, \
+    {"gl_gen_vertex_arrays"                                , GlGenVertexArrays                            }, \
+    {"gl_generate_mipmap"                                  , GlGenerateMipmap                             }, \
+    {"gl_get_booleani__v"                                  , GlGetBooleani_v                              }, \
+    {"gl_get_frag_data_location"                           , GlGetFragDataLocation                        }, \
+    {"gl_get_framebuffer_attachment_parameteriv"           , GlGetFramebufferAttachmentParameteriv        }, \
+    {"gl_get_integeri__v"                                  , GlGetIntegeri_v                              }, \
+    {"gl_get_renderbuffer_parameteriv"                     , GlGetRenderbufferParameteriv                 }, \
+    {"gl_get_stringi"                                      , GlGetStringi                                 }, \
+    {"gl_get_tex_parameter_iiv"                            , GlGetTexParameterIiv                         }, \
+    {"gl_get_tex_parameter_iuiv"                           , GlGetTexParameterIuiv                        }, \
+    {"gl_get_transform_feedback_varying"                   , GlGetTransformFeedbackVarying                }, \
+    {"gl_get_uniformuiv"                                   , GlGetUniformuiv                              }, \
+    {"gl_get_vertex_attrib_iiv"                            , GlGetVertexAttribIiv                         }, \
+    {"gl_get_vertex_attrib_iuiv"                           , GlGetVertexAttribIuiv                        }, \
+    {"gl_is_enabledi"                                      , GlIsEnabledi                                 }, \
+    {"gl_is_framebuffer"                                   , GlIsFramebuffer                              }, \
+    {"gl_is_renderbuffer"                                  , GlIsRenderbuffer                             }, \
+    {"gl_is_vertex_array"                                  , GlIsVertexArray                              }, \
+    {"gl_map_buffer_range"                                 , GlMapBufferRange                             }, \
+    {"gl_renderbuffer_storage"                             , GlRenderbufferStorage                        }, \
+    {"gl_renderbuffer_storage_multisample"                 , GlRenderbufferStorageMultisample             }, \
+    {"gl_tex_parameter_iiv"                                , GlTexParameterIiv                            }, \
+    {"gl_tex_parameter_iuiv"                               , GlTexParameterIuiv                           }, \
+    {"gl_transform_feedback_varyings"                      , GlTransformFeedbackVaryings                  }, \
+    {"gl_uniform1ui"                                       , GlUniform1ui                                 }, \
+    {"gl_uniform1uiv"                                      , GlUniform1uiv                                }, \
+    {"gl_uniform2ui"                                       , GlUniform2ui                                 }, \
+    {"gl_uniform2uiv"                                      , GlUniform2uiv                                }, \
+    {"gl_uniform3ui"                                       , GlUniform3ui                                 }, \
+    {"gl_uniform3uiv"                                      , GlUniform3uiv                                }, \
+    {"gl_uniform4ui"                                       , GlUniform4ui                                 }, \
+    {"gl_uniform4uiv"                                      , GlUniform4uiv                                }, \
+    {"gl_vertex_attrib_i1i"                                , GlVertexAttribI1i                            }, \
+    {"gl_vertex_attrib_i1iv"                               , GlVertexAttribI1iv                           }, \
+    {"gl_vertex_attrib_i1ui"                               , GlVertexAttribI1ui                           }, \
+    {"gl_vertex_attrib_i1uiv"                              , GlVertexAttribI1uiv                          }, \
+    {"gl_vertex_attrib_i2i"                                , GlVertexAttribI2i                            }, \
+    {"gl_vertex_attrib_i2iv"                               , GlVertexAttribI2iv                           }, \
+    {"gl_vertex_attrib_i2ui"                               , GlVertexAttribI2ui                           }, \
+    {"gl_vertex_attrib_i2uiv"                              , GlVertexAttribI2uiv                          }, \
+    {"gl_vertex_attrib_i3i"                                , GlVertexAttribI3i                            }, \
+    {"gl_vertex_attrib_i3iv"                               , GlVertexAttribI3iv                           }, \
+    {"gl_vertex_attrib_i3ui"                               , GlVertexAttribI3ui                           }, \
+    {"gl_vertex_attrib_i3uiv"                              , GlVertexAttribI3uiv                          }, \
+    {"gl_vertex_attrib_i4bv"                               , GlVertexAttribI4bv                           }, \
+    {"gl_vertex_attrib_i4i"                                , GlVertexAttribI4i                            }, \
+    {"gl_vertex_attrib_i4iv"                               , GlVertexAttribI4iv                           }, \
+    {"gl_vertex_attrib_i4sv"                               , GlVertexAttribI4sv                           }, \
+    {"gl_vertex_attrib_i4ubv"                              , GlVertexAttribI4ubv                          }, \
+    {"gl_vertex_attrib_i4ui"                               , GlVertexAttribI4ui                           }, \
+    {"gl_vertex_attrib_i4uiv"                              , GlVertexAttribI4uiv                          }, \
+    {"gl_vertex_attrib_i4usv"                              , GlVertexAttribI4usv                          }, \
+    {"gl_vertex_attrib_i_pointer"                          , GlVertexAttribIPointer                       }, \
+    {"gl_copy_buffer_sub_data"                             , GlCopyBufferSubData                          }, \
+    {"gl_draw_arrays_instanced"                            , GlDrawArraysInstanced                        }, \
+    {"gl_draw_elements_instanced"                          , GlDrawElementsInstanced                      }, \
+    {"gl_get_active_uniform_block_name"                    , GlGetActiveUniformBlockName                  }, \
+    {"gl_get_active_uniform_blockiv"                       , GlGetActiveUniformBlockiv                    }, \
+    {"gl_get_active_uniform_name"                          , GlGetActiveUniformName                       }, \
+    {"gl_get_active_uniformsiv"                            , GlGetActiveUniformsiv                        }, \
+    {"gl_get_uniform_block_index"                          , GlGetUniformBlockIndex                       }, \
+    {"gl_get_uniform_indices"                              , GlGetUniformIndices                          }, \
+    {"gl_primitive_restart_index"                          , GlPrimitiveRestartIndex                      }, \
+    {"gl_tex_buffer"                                       , GlTexBuffer                                  }, \
+    {"gl_uniform_block_binding"                            , GlUniformBlockBinding                        }, \
+    {"gl_client_wait_sync"                                 , GlClientWaitSync                             }, \
+    {"gl_delete_sync"                                      , GlDeleteSync                                 }, \
+    {"gl_draw_elements_base_vertex"                        , GlDrawElementsBaseVertex                     }, \
+    {"gl_draw_elements_instanced_base_vertex"              , GlDrawElementsInstancedBaseVertex            }, \
+    {"gl_draw_range_elements_base_vertex"                  , GlDrawRangeElementsBaseVertex                }, \
+    {"gl_fence_sync"                                       , GlFenceSync                                  }, \
+    {"gl_framebuffer_texture"                              , GlFramebufferTexture                         }, \
+    {"gl_get_buffer_parameteri64v"                         , GlGetBufferParameteri64v                     }, \
+    {"gl_get_integer64i__v"                                , GlGetInteger64i_v                            }, \
+    {"gl_get_integer64v"                                   , GlGetInteger64v                              }, \
+    {"gl_get_multisamplefv"                                , GlGetMultisamplefv                           }, \
+    {"gl_get_synciv"                                       , GlGetSynciv                                  }, \
+    {"gl_is_sync"                                          , GlIsSync                                     }, \
+    {"gl_multi_draw_elements_base_vertex"                  , GlMultiDrawElementsBaseVertex                }, \
+    {"gl_provoking_vertex"                                 , GlProvokingVertex                            }, \
+    {"gl_sample_maski"                                     , GlSampleMaski                                }, \
+    {"gl_tex_image2_d_multisample"                         , GlTexImage2DMultisample                      }, \
+    {"gl_tex_image3_d_multisample"                         , GlTexImage3DMultisample                      }, \
+    {"gl_wait_sync"                                        , GlWaitSync                                   }, \
+    {"gl_bind_frag_data_location_indexed"                  , GlBindFragDataLocationIndexed                }, \
+    {"gl_bind_sampler"                                     , GlBindSampler                                }, \
+    {"gl_delete_samplers"                                  , GlDeleteSamplers                             }, \
+    {"gl_gen_samplers"                                     , GlGenSamplers                                }, \
+    {"gl_get_frag_data_index"                              , GlGetFragDataIndex                           }, \
+    {"gl_get_query_objecti64v"                             , GlGetQueryObjecti64v                         }, \
+    {"gl_get_query_objectui64v"                            , GlGetQueryObjectui64v                        }, \
+    {"gl_get_sampler_parameter_iiv"                        , GlGetSamplerParameterIiv                     }, \
+    {"gl_get_sampler_parameter_iuiv"                       , GlGetSamplerParameterIuiv                    }, \
+    {"gl_get_sampler_parameterfv"                          , GlGetSamplerParameterfv                      }, \
+    {"gl_get_sampler_parameteriv"                          , GlGetSamplerParameteriv                      }, \
+    {"gl_is_sampler"                                       , GlIsSampler                                  }, \
+    {"gl_query_counter"                                    , GlQueryCounter                               }, \
+    {"gl_sampler_parameter_iiv"                            , GlSamplerParameterIiv                        }, \
+    {"gl_sampler_parameter_iuiv"                           , GlSamplerParameterIuiv                       }, \
+    {"gl_sampler_parameterf"                               , GlSamplerParameterf                          }, \
+    {"gl_sampler_parameterfv"                              , GlSamplerParameterfv                         }, \
+    {"gl_sampler_parameteri"                               , GlSamplerParameteri                          }, \
+    {"gl_sampler_parameteriv"                              , GlSamplerParameteriv                         }, \
+    {"gl_vertex_attrib_divisor"                            , GlVertexAttribDivisor                        }, \
+    {"gl_vertex_attrib_p1ui"                               , GlVertexAttribP1ui                           }, \
+    {"gl_vertex_attrib_p1uiv"                              , GlVertexAttribP1uiv                          }, \
+    {"gl_vertex_attrib_p2ui"                               , GlVertexAttribP2ui                           }, \
+    {"gl_vertex_attrib_p2uiv"                              , GlVertexAttribP2uiv                          }, \
+    {"gl_vertex_attrib_p3ui"                               , GlVertexAttribP3ui                           }, \
+    {"gl_vertex_attrib_p3uiv"                              , GlVertexAttribP3uiv                          }, \
+    {"gl_vertex_attrib_p4ui"                               , GlVertexAttribP4ui                           }, \
+    {"gl_vertex_attrib_p4uiv"                              , GlVertexAttribP4uiv                          }, \
+    {"gl_begin_query_indexed"                              , GlBeginQueryIndexed                          }, \
+    {"gl_bind_transform_feedback"                          , GlBindTransformFeedback                      }, \
+    {"gl_blend_equation_separatei"                         , GlBlendEquationSeparatei                     }, \
+    {"gl_blend_equationi"                                  , GlBlendEquationi                             }, \
+    {"gl_blend_func_separatei"                             , GlBlendFuncSeparatei                         }, \
+    {"gl_blend_funci"                                      , GlBlendFunci                                 }, \
+    {"gl_delete_transform_feedbacks"                       , GlDeleteTransformFeedbacks                   }, \
+    {"gl_draw_arrays_indirect"                             , GlDrawArraysIndirect                         }, \
+    {"gl_draw_elements_indirect"                           , GlDrawElementsIndirect                       }, \
+    {"gl_draw_transform_feedback"                          , GlDrawTransformFeedback                      }, \
+    {"gl_draw_transform_feedback_stream"                   , GlDrawTransformFeedbackStream                }, \
+    {"gl_end_query_indexed"                                , GlEndQueryIndexed                            }, \
+    {"gl_gen_transform_feedbacks"                          , GlGenTransformFeedbacks                      }, \
+    {"gl_get_active_subroutine_name"                       , GlGetActiveSubroutineName                    }, \
+    {"gl_get_active_subroutine_uniform_name"               , GlGetActiveSubroutineUniformName             }, \
+    {"gl_get_active_subroutine_uniformiv"                  , GlGetActiveSubroutineUniformiv               }, \
+    {"gl_get_program_stageiv"                              , GlGetProgramStageiv                          }, \
+    {"gl_get_query_indexediv"                              , GlGetQueryIndexediv                          }, \
+    {"gl_get_subroutine_index"                             , GlGetSubroutineIndex                         }, \
+    {"gl_get_subroutine_uniform_location"                  , GlGetSubroutineUniformLocation               }, \
+    {"gl_get_uniform_subroutineuiv"                        , GlGetUniformSubroutineuiv                    }, \
+    {"gl_get_uniformdv"                                    , GlGetUniformdv                               }, \
+    {"gl_is_transform_feedback"                            , GlIsTransformFeedback                        }, \
+    {"gl_min_sample_shading"                               , GlMinSampleShading                           }, \
+    {"gl_patch_parameterfv"                                , GlPatchParameterfv                           }, \
+    {"gl_patch_parameteri"                                 , GlPatchParameteri                            }, \
+    {"gl_pause_transform_feedback"                         , GlPauseTransformFeedback                     }, \
+    {"gl_resume_transform_feedback"                        , GlResumeTransformFeedback                    }, \
+    {"gl_uniform1d"                                        , GlUniform1d                                  }, \
+    {"gl_uniform1dv"                                       , GlUniform1dv                                 }, \
+    {"gl_uniform2d"                                        , GlUniform2d                                  }, \
+    {"gl_uniform2dv"                                       , GlUniform2dv                                 }, \
+    {"gl_uniform3d"                                        , GlUniform3d                                  }, \
+    {"gl_uniform3dv"                                       , GlUniform3dv                                 }, \
+    {"gl_uniform4d"                                        , GlUniform4d                                  }, \
+    {"gl_uniform4dv"                                       , GlUniform4dv                                 }, \
+    {"gl_uniform_matrix2dv"                                , GlUniformMatrix2dv                           }, \
+    {"gl_uniform_matrix2x3dv"                              , GlUniformMatrix2x3dv                         }, \
+    {"gl_uniform_matrix2x4dv"                              , GlUniformMatrix2x4dv                         }, \
+    {"gl_uniform_matrix3dv"                                , GlUniformMatrix3dv                           }, \
+    {"gl_uniform_matrix3x2dv"                              , GlUniformMatrix3x2dv                         }, \
+    {"gl_uniform_matrix3x4dv"                              , GlUniformMatrix3x4dv                         }, \
+    {"gl_uniform_matrix4dv"                                , GlUniformMatrix4dv                           }, \
+    {"gl_uniform_matrix4x2dv"                              , GlUniformMatrix4x2dv                         }, \
+    {"gl_uniform_matrix4x3dv"                              , GlUniformMatrix4x3dv                         }, \
+    {"gl_uniform_subroutinesuiv"                           , GlUniformSubroutinesuiv                      }, \
+    {"gl_active_shader_program"                            , GlActiveShaderProgram                        }, \
+    {"gl_bind_program_pipeline"                            , GlBindProgramPipeline                        }, \
+    {"gl_clear_depthf"                                     , GlClearDepthf                                }, \
+    {"gl_create_shader_programv"                           , GlCreateShaderProgramv                       }, \
+    {"gl_delete_program_pipelines"                         , GlDeleteProgramPipelines                     }, \
+    {"gl_depth_range_arrayv"                               , GlDepthRangeArrayv                           }, \
+    {"gl_depth_range_indexed"                              , GlDepthRangeIndexed                          }, \
+    {"gl_depth_rangef"                                     , GlDepthRangef                                }, \
+    {"gl_gen_program_pipelines"                            , GlGenProgramPipelines                        }, \
+    {"gl_get_doublei__v"                                   , GlGetDoublei_v                               }, \
+    {"gl_get_floati__v"                                    , GlGetFloati_v                                }, \
+    {"gl_get_program_binary"                               , GlGetProgramBinary                           }, \
+    {"gl_get_program_pipeline_info_log"                    , GlGetProgramPipelineInfoLog                  }, \
+    {"gl_get_program_pipelineiv"                           , GlGetProgramPipelineiv                       }, \
+    {"gl_get_shader_precision_format"                      , GlGetShaderPrecisionFormat                   }, \
+    {"gl_get_vertex_attrib_ldv"                            , GlGetVertexAttribLdv                         }, \
+    {"gl_is_program_pipeline"                              , GlIsProgramPipeline                          }, \
+    {"gl_program_binary"                                   , GlProgramBinary                              }, \
+    {"gl_program_parameteri"                               , GlProgramParameteri                          }, \
+    {"gl_program_uniform1d"                                , GlProgramUniform1d                           }, \
+    {"gl_program_uniform1dv"                               , GlProgramUniform1dv                          }, \
+    {"gl_program_uniform1f"                                , GlProgramUniform1f                           }, \
+    {"gl_program_uniform1fv"                               , GlProgramUniform1fv                          }, \
+    {"gl_program_uniform1i"                                , GlProgramUniform1i                           }, \
+    {"gl_program_uniform1iv"                               , GlProgramUniform1iv                          }, \
+    {"gl_program_uniform1ui"                               , GlProgramUniform1ui                          }, \
+    {"gl_program_uniform1uiv"                              , GlProgramUniform1uiv                         }, \
+    {"gl_program_uniform2d"                                , GlProgramUniform2d                           }, \
+    {"gl_program_uniform2dv"                               , GlProgramUniform2dv                          }, \
+    {"gl_program_uniform2f"                                , GlProgramUniform2f                           }, \
+    {"gl_program_uniform2fv"                               , GlProgramUniform2fv                          }, \
+    {"gl_program_uniform2i"                                , GlProgramUniform2i                           }, \
+    {"gl_program_uniform2iv"                               , GlProgramUniform2iv                          }, \
+    {"gl_program_uniform2ui"                               , GlProgramUniform2ui                          }, \
+    {"gl_program_uniform2uiv"                              , GlProgramUniform2uiv                         }, \
+    {"gl_program_uniform3d"                                , GlProgramUniform3d                           }, \
+    {"gl_program_uniform3dv"                               , GlProgramUniform3dv                          }, \
+    {"gl_program_uniform3f"                                , GlProgramUniform3f                           }, \
+    {"gl_program_uniform3fv"                               , GlProgramUniform3fv                          }, \
+    {"gl_program_uniform3i"                                , GlProgramUniform3i                           }, \
+    {"gl_program_uniform3iv"                               , GlProgramUniform3iv                          }, \
+    {"gl_program_uniform3ui"                               , GlProgramUniform3ui                          }, \
+    {"gl_program_uniform3uiv"                              , GlProgramUniform3uiv                         }, \
+    {"gl_program_uniform4d"                                , GlProgramUniform4d                           }, \
+    {"gl_program_uniform4dv"                               , GlProgramUniform4dv                          }, \
+    {"gl_program_uniform4f"                                , GlProgramUniform4f                           }, \
+    {"gl_program_uniform4fv"                               , GlProgramUniform4fv                          }, \
+    {"gl_program_uniform4i"                                , GlProgramUniform4i                           }, \
+    {"gl_program_uniform4iv"                               , GlProgramUniform4iv                          }, \
+    {"gl_program_uniform4ui"                               , GlProgramUniform4ui                          }, \
+    {"gl_program_uniform4uiv"                              , GlProgramUniform4uiv                         }, \
+    {"gl_program_uniform_matrix2dv"                        , GlProgramUniformMatrix2dv                    }, \
+    {"gl_program_uniform_matrix2fv"                        , GlProgramUniformMatrix2fv                    }, \
+    {"gl_program_uniform_matrix2x3dv"                      , GlProgramUniformMatrix2x3dv                  }, \
+    {"gl_program_uniform_matrix2x3fv"                      , GlProgramUniformMatrix2x3fv                  }, \
+    {"gl_program_uniform_matrix2x4dv"                      , GlProgramUniformMatrix2x4dv                  }, \
+    {"gl_program_uniform_matrix2x4fv"                      , GlProgramUniformMatrix2x4fv                  }, \
+    {"gl_program_uniform_matrix3dv"                        , GlProgramUniformMatrix3dv                    }, \
+    {"gl_program_uniform_matrix3fv"                        , GlProgramUniformMatrix3fv                    }, \
+    {"gl_program_uniform_matrix3x2dv"                      , GlProgramUniformMatrix3x2dv                  }, \
+    {"gl_program_uniform_matrix3x2fv"                      , GlProgramUniformMatrix3x2fv                  }, \
+    {"gl_program_uniform_matrix3x4dv"                      , GlProgramUniformMatrix3x4dv                  }, \
+    {"gl_program_uniform_matrix3x4fv"                      , GlProgramUniformMatrix3x4fv                  }, \
+    {"gl_program_uniform_matrix4dv"                        , GlProgramUniformMatrix4dv                    }, \
+    {"gl_program_uniform_matrix4fv"                        , GlProgramUniformMatrix4fv                    }, \
+    {"gl_program_uniform_matrix4x2dv"                      , GlProgramUniformMatrix4x2dv                  }, \
+    {"gl_program_uniform_matrix4x2fv"                      , GlProgramUniformMatrix4x2fv                  }, \
+    {"gl_program_uniform_matrix4x3dv"                      , GlProgramUniformMatrix4x3dv                  }, \
+    {"gl_program_uniform_matrix4x3fv"                      , GlProgramUniformMatrix4x3fv                  }, \
+    {"gl_release_shader_compiler"                          , GlReleaseShaderCompiler                      }, \
+    {"gl_scissor_arrayv"                                   , GlScissorArrayv                              }, \
+    {"gl_scissor_indexed"                                  , GlScissorIndexed                             }, \
+    {"gl_scissor_indexedv"                                 , GlScissorIndexedv                            }, \
+    {"gl_shader_binary"                                    , GlShaderBinary                               }, \
+    {"gl_use_program_stages"                               , GlUseProgramStages                           }, \
+    {"gl_validate_program_pipeline"                        , GlValidateProgramPipeline                    }, \
+    {"gl_vertex_attrib_l1d"                                , GlVertexAttribL1d                            }, \
+    {"gl_vertex_attrib_l1dv"                               , GlVertexAttribL1dv                           }, \
+    {"gl_vertex_attrib_l2d"                                , GlVertexAttribL2d                            }, \
+    {"gl_vertex_attrib_l2dv"                               , GlVertexAttribL2dv                           }, \
+    {"gl_vertex_attrib_l3d"                                , GlVertexAttribL3d                            }, \
+    {"gl_vertex_attrib_l3dv"                               , GlVertexAttribL3dv                           }, \
+    {"gl_vertex_attrib_l4d"                                , GlVertexAttribL4d                            }, \
+    {"gl_vertex_attrib_l4dv"                               , GlVertexAttribL4dv                           }, \
+    {"gl_vertex_attrib_l_pointer"                          , GlVertexAttribLPointer                       }, \
+    {"gl_viewport_arrayv"                                  , GlViewportArrayv                             }, \
+    {"gl_viewport_indexedf"                                , GlViewportIndexedf                           }, \
+    {"gl_viewport_indexedfv"                               , GlViewportIndexedfv                          }, \
+    {"gl_bind_image_texture"                               , GlBindImageTexture                           }, \
+    {"gl_draw_arrays_instanced_base_instance"              , GlDrawArraysInstancedBaseInstance            }, \
+    {"gl_draw_elements_instanced_base_instance"            , GlDrawElementsInstancedBaseInstance          }, \
+    {"gl_draw_elements_instanced_base_vertex_base_instance", GlDrawElementsInstancedBaseVertexBaseInstance}, \
+    {"gl_draw_transform_feedback_instanced"                , GlDrawTransformFeedbackInstanced             }, \
+    {"gl_draw_transform_feedback_stream_instanced"         , GlDrawTransformFeedbackStreamInstanced       }, \
+    {"gl_get_active_atomic_counter_bufferiv"               , GlGetActiveAtomicCounterBufferiv             }, \
+    {"gl_get_internalformativ"                             , GlGetInternalformativ                        }, \
+    {"gl_memory_barrier"                                   , GlMemoryBarrier                              }, \
+    {"gl_tex_storage1_d"                                   , GlTexStorage1D                               }, \
+    {"gl_tex_storage2_d"                                   , GlTexStorage2D                               }, \
+    {"gl_tex_storage3_d"                                   , GlTexStorage3D                               }, \
+    {"gl_bind_vertex_buffer"                               , GlBindVertexBuffer                           }, \
+    {"gl_clear_buffer_data"                                , GlClearBufferData                            }, \
+    {"gl_clear_buffer_sub_data"                            , GlClearBufferSubData                         }, \
+    {"gl_copy_image_sub_data"                              , GlCopyImageSubData                           }, \
+    {"gl_debug_message_callback"                           , GlDebugMessageCallback                       }, \
+    {"gl_debug_message_control"                            , GlDebugMessageControl                        }, \
+    {"gl_debug_message_insert"                             , GlDebugMessageInsert                         }, \
+    {"gl_dispatch_compute"                                 , GlDispatchCompute                            }, \
+    {"gl_dispatch_compute_indirect"                        , GlDispatchComputeIndirect                    }, \
+    {"gl_framebuffer_parameteri"                           , GlFramebufferParameteri                      }, \
+    {"gl_get_debug_message_log"                            , GlGetDebugMessageLog                         }, \
+    {"gl_get_framebuffer_parameteriv"                      , GlGetFramebufferParameteriv                  }, \
+    {"gl_get_internalformati64v"                           , GlGetInternalformati64v                      }, \
+    {"gl_get_object_label"                                 , GlGetObjectLabel                             }, \
+    {"gl_get_object_ptr_label"                             , GlGetObjectPtrLabel                          }, \
+    {"gl_get_program_interfaceiv"                          , GlGetProgramInterfaceiv                      }, \
+    {"gl_get_program_resource_index"                       , GlGetProgramResourceIndex                    }, \
+    {"gl_get_program_resource_location"                    , GlGetProgramResourceLocation                 }, \
+    {"gl_get_program_resource_location_index"              , GlGetProgramResourceLocationIndex            }, \
+    {"gl_get_program_resource_name"                        , GlGetProgramResourceName                     }, \
+    {"gl_get_program_resourceiv"                           , GlGetProgramResourceiv                       }, \
+    {"gl_invalidate_buffer_data"                           , GlInvalidateBufferData                       }, \
+    {"gl_invalidate_buffer_sub_data"                       , GlInvalidateBufferSubData                    }, \
+    {"gl_invalidate_framebuffer"                           , GlInvalidateFramebuffer                      }, \
+    {"gl_invalidate_sub_framebuffer"                       , GlInvalidateSubFramebuffer                   }, \
+    {"gl_invalidate_tex_image"                             , GlInvalidateTexImage                         }, \
+    {"gl_invalidate_tex_sub_image"                         , GlInvalidateTexSubImage                      }, \
+    {"gl_multi_draw_arrays_indirect"                       , GlMultiDrawArraysIndirect                    }, \
+    {"gl_multi_draw_elements_indirect"                     , GlMultiDrawElementsIndirect                  }, \
+    {"gl_object_label"                                     , GlObjectLabel                                }, \
+    {"gl_object_ptr_label"                                 , GlObjectPtrLabel                             }, \
+    {"gl_pop_debug_group"                                  , GlPopDebugGroup                              }, \
+    {"gl_push_debug_group"                                 , GlPushDebugGroup                             }, \
+    {"gl_shader_storage_block_binding"                     , GlShaderStorageBlockBinding                  }, \
+    {"gl_tex_buffer_range"                                 , GlTexBufferRange                             }, \
+    {"gl_tex_storage2_d_multisample"                       , GlTexStorage2DMultisample                    }, \
+    {"gl_tex_storage3_d_multisample"                       , GlTexStorage3DMultisample                    }, \
+    {"gl_texture_view"                                     , GlTextureView                                }, \
+    {"gl_vertex_attrib_binding"                            , GlVertexAttribBinding                        }, \
+    {"gl_vertex_attrib_format"                             , GlVertexAttribFormat                         }, \
+    {"gl_vertex_attrib_i_format"                           , GlVertexAttribIFormat                        }, \
+    {"gl_vertex_attrib_l_format"                           , GlVertexAttribLFormat                        }, \
+    {"gl_vertex_binding_divisor"                           , GlVertexBindingDivisor                       }, \
+    {"gl_bind_buffers_base"                                , GlBindBuffersBase                            }, \
+    {"gl_bind_buffers_range"                               , GlBindBuffersRange                           }, \
+    {"gl_bind_image_textures"                              , GlBindImageTextures                          }, \
+    {"gl_bind_samplers"                                    , GlBindSamplers                               }, \
+    {"gl_bind_textures"                                    , GlBindTextures                               }, \
+    {"gl_bind_vertex_buffers"                              , GlBindVertexBuffers                          }, \
+    {"gl_buffer_storage"                                   , GlBufferStorage                              }, \
+    {"gl_clear_tex_image"                                  , GlClearTexImage                              }, \
+    {"gl_clear_tex_sub_image"                              , GlClearTexSubImage                           }, \
     /* end */
 
 #define EXPOSED_GL_CONSTANTS \
@@ -14212,2806 +11542,11 @@ int GlClearTexSubImage(lua_State *L);
 
 #endif//GLUTIL_H
 
-int GlAccum(lua_State *L) {
-    GLenum  op    = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat value = (GLfloat)luaL_checknumber(L, 2);
-
-    glAccum(op, value);
-    return 0;
-}
-
-int GlAlphaFunc(lua_State *L) {
-    GLenum  func = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat ref  = (GLfloat)luaL_checknumber(L, 2);
-
-    glAlphaFunc(func, ref);
-    return 0;
-}
-
-int GlBegin(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glBegin(mode);
-    return 0;
-}
-
-int GlBitmap(lua_State *L) {
-    GLsizei         width  = (GLsizei        )luaL_checkinteger(L, 1);
-    GLsizei         height = (GLsizei        )luaL_checkinteger(L, 2);
-    GLfloat         xorig  = (GLfloat        )luaL_checknumber(L, 3);
-    GLfloat         yorig  = (GLfloat        )luaL_checknumber(L, 4);
-    GLfloat         xmove  = (GLfloat        )luaL_checknumber(L, 5);
-    GLfloat         ymove  = (GLfloat        )luaL_checknumber(L, 6);
-    const GLubyte * bitmap = (const GLubyte *)luaL_checkudata(L, 7, "const GLubyte *");
-
-    glBitmap(width, height, xorig, yorig, xmove, ymove, bitmap);
-    return 0;
-}
-
-int GlBlendFunc(lua_State *L) {
-    GLenum sfactor = (GLenum)luaL_checkinteger(L, 1);
-    GLenum dfactor = (GLenum)luaL_checkinteger(L, 2);
-
-    glBlendFunc(sfactor, dfactor);
-    return 0;
-}
-
-int GlCallList(lua_State *L) {
-    GLuint list = (GLuint)luaL_checkinteger(L, 1);
-
-    glCallList(list);
-    return 0;
-}
-
-int GlCallLists(lua_State *L) {
-    GLsizei      n     = (GLsizei     )luaL_checkinteger(L, 1);
-    GLenum       type  = (GLenum      )luaL_checkinteger(L, 2);
-    const void * lists = (const void *)luaL_checkudata(L, 3, "const void *");
-
-    glCallLists(n, type, lists);
-    return 0;
-}
-
-int GlClear(lua_State *L) {
-    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
-
-    glClear(mask);
-    return 0;
-}
-
-int GlClearAccum(lua_State *L) {
-    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
-
-    glClearAccum(red, green, blue, alpha);
-    return 0;
-}
-
-int GlClearColor(lua_State *L) {
-    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
-
-    glClearColor(red, green, blue, alpha);
-    return 0;
-}
-
-int GlClearDepth(lua_State *L) {
-    GLdouble depth = (GLdouble)luaL_checknumber(L, 1);
-
-    glClearDepth(depth);
-    return 0;
-}
-
-int GlClearIndex(lua_State *L) {
-    GLfloat c = (GLfloat)luaL_checknumber(L, 1);
-
-    glClearIndex(c);
-    return 0;
-}
-
-int GlClearStencil(lua_State *L) {
-    GLint s = (GLint)luaL_checkinteger(L, 1);
-
-    glClearStencil(s);
-    return 0;
-}
-
-int GlClipPlane(lua_State *L) {
-    GLenum           plane    = (GLenum          )luaL_checkinteger(L, 1);
-    const GLdouble * equation = (const GLdouble *)luaL_checkudata(L, 2, "const GLdouble *");
-
-    glClipPlane(plane, equation);
-    return 0;
-}
-
-int GlColor3b(lua_State *L) {
-    GLbyte red   = (GLbyte)luaL_checkinteger(L, 1);
-    GLbyte green = (GLbyte)luaL_checkinteger(L, 2);
-    GLbyte blue  = (GLbyte)luaL_checkinteger(L, 3);
-
-    glColor3b(red, green, blue);
-    return 0;
-}
-
-int GlColor3bv(lua_State *L) {
-    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
-
-    glColor3bv(v);
-    return 0;
-}
-
-int GlColor3d(lua_State *L) {
-    GLdouble red   = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble green = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble blue  = (GLdouble)luaL_checknumber(L, 3);
-
-    glColor3d(red, green, blue);
-    return 0;
-}
-
-int GlColor3dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glColor3dv(v);
-    return 0;
-}
-
-int GlColor3f(lua_State *L) {
-    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
-
-    glColor3f(red, green, blue);
-    return 0;
-}
-
-int GlColor3fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glColor3fv(v);
-    return 0;
-}
-
-int GlColor3i(lua_State *L) {
-    GLint red   = (GLint)luaL_checkinteger(L, 1);
-    GLint green = (GLint)luaL_checkinteger(L, 2);
-    GLint blue  = (GLint)luaL_checkinteger(L, 3);
-
-    glColor3i(red, green, blue);
-    return 0;
-}
-
-int GlColor3iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glColor3iv(v);
-    return 0;
-}
-
-int GlColor3s(lua_State *L) {
-    GLshort red   = (GLshort)luaL_checkinteger(L, 1);
-    GLshort green = (GLshort)luaL_checkinteger(L, 2);
-    GLshort blue  = (GLshort)luaL_checkinteger(L, 3);
-
-    glColor3s(red, green, blue);
-    return 0;
-}
-
-int GlColor3sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glColor3sv(v);
-    return 0;
-}
-
-int GlColor3ub(lua_State *L) {
-    GLubyte red   = (GLubyte)luaL_checkinteger(L, 1);
-    GLubyte green = (GLubyte)luaL_checkinteger(L, 2);
-    GLubyte blue  = (GLubyte)luaL_checkinteger(L, 3);
-
-    glColor3ub(red, green, blue);
-    return 0;
-}
-
-int GlColor3ubv(lua_State *L) {
-    const GLubyte * v = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
-
-    glColor3ubv(v);
-    return 0;
-}
-
-int GlColor3ui(lua_State *L) {
-    GLuint red   = (GLuint)luaL_checkinteger(L, 1);
-    GLuint green = (GLuint)luaL_checkinteger(L, 2);
-    GLuint blue  = (GLuint)luaL_checkinteger(L, 3);
-
-    glColor3ui(red, green, blue);
-    return 0;
-}
-
-int GlColor3uiv(lua_State *L) {
-    const GLuint * v = (const GLuint *)luaL_checkudata(L, 1, "const GLuint *");
-
-    glColor3uiv(v);
-    return 0;
-}
-
-int GlColor3us(lua_State *L) {
-    GLushort red   = (GLushort)luaL_checkinteger(L, 1);
-    GLushort green = (GLushort)luaL_checkinteger(L, 2);
-    GLushort blue  = (GLushort)luaL_checkinteger(L, 3);
-
-    glColor3us(red, green, blue);
-    return 0;
-}
-
-int GlColor3usv(lua_State *L) {
-    const GLushort * v = (const GLushort *)luaL_checkudata(L, 1, "const GLushort *");
-
-    glColor3usv(v);
-    return 0;
-}
-
-int GlColor4b(lua_State *L) {
-    GLbyte red   = (GLbyte)luaL_checkinteger(L, 1);
-    GLbyte green = (GLbyte)luaL_checkinteger(L, 2);
-    GLbyte blue  = (GLbyte)luaL_checkinteger(L, 3);
-    GLbyte alpha = (GLbyte)luaL_checkinteger(L, 4);
-
-    glColor4b(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4bv(lua_State *L) {
-    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
-
-    glColor4bv(v);
-    return 0;
-}
-
-int GlColor4d(lua_State *L) {
-    GLdouble red   = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble green = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble blue  = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble alpha = (GLdouble)luaL_checknumber(L, 4);
-
-    glColor4d(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glColor4dv(v);
-    return 0;
-}
-
-int GlColor4f(lua_State *L) {
-    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
-
-    glColor4f(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glColor4fv(v);
-    return 0;
-}
-
-int GlColor4i(lua_State *L) {
-    GLint red   = (GLint)luaL_checkinteger(L, 1);
-    GLint green = (GLint)luaL_checkinteger(L, 2);
-    GLint blue  = (GLint)luaL_checkinteger(L, 3);
-    GLint alpha = (GLint)luaL_checkinteger(L, 4);
-
-    glColor4i(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glColor4iv(v);
-    return 0;
-}
-
-int GlColor4s(lua_State *L) {
-    GLshort red   = (GLshort)luaL_checkinteger(L, 1);
-    GLshort green = (GLshort)luaL_checkinteger(L, 2);
-    GLshort blue  = (GLshort)luaL_checkinteger(L, 3);
-    GLshort alpha = (GLshort)luaL_checkinteger(L, 4);
-
-    glColor4s(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glColor4sv(v);
-    return 0;
-}
-
-int GlColor4ub(lua_State *L) {
-    GLubyte red   = (GLubyte)luaL_checkinteger(L, 1);
-    GLubyte green = (GLubyte)luaL_checkinteger(L, 2);
-    GLubyte blue  = (GLubyte)luaL_checkinteger(L, 3);
-    GLubyte alpha = (GLubyte)luaL_checkinteger(L, 4);
-
-    glColor4ub(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4ubv(lua_State *L) {
-    const GLubyte * v = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
-
-    glColor4ubv(v);
-    return 0;
-}
-
-int GlColor4ui(lua_State *L) {
-    GLuint red   = (GLuint)luaL_checkinteger(L, 1);
-    GLuint green = (GLuint)luaL_checkinteger(L, 2);
-    GLuint blue  = (GLuint)luaL_checkinteger(L, 3);
-    GLuint alpha = (GLuint)luaL_checkinteger(L, 4);
-
-    glColor4ui(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4uiv(lua_State *L) {
-    const GLuint * v = (const GLuint *)luaL_checkudata(L, 1, "const GLuint *");
-
-    glColor4uiv(v);
-    return 0;
-}
-
-int GlColor4us(lua_State *L) {
-    GLushort red   = (GLushort)luaL_checkinteger(L, 1);
-    GLushort green = (GLushort)luaL_checkinteger(L, 2);
-    GLushort blue  = (GLushort)luaL_checkinteger(L, 3);
-    GLushort alpha = (GLushort)luaL_checkinteger(L, 4);
-
-    glColor4us(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColor4usv(lua_State *L) {
-    const GLushort * v = (const GLushort *)luaL_checkudata(L, 1, "const GLushort *");
-
-    glColor4usv(v);
-    return 0;
-}
-
-int GlColorMask(lua_State *L) {
-    GLboolean red   = (GLboolean)luaL_checkinteger(L, 1);
-    GLboolean green = (GLboolean)luaL_checkinteger(L, 2);
-    GLboolean blue  = (GLboolean)luaL_checkinteger(L, 3);
-    GLboolean alpha = (GLboolean)luaL_checkinteger(L, 4);
-
-    glColorMask(red, green, blue, alpha);
-    return 0;
-}
-
-int GlColorMaterial(lua_State *L) {
-    GLenum face = (GLenum)luaL_checkinteger(L, 1);
-    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
-
-    glColorMaterial(face, mode);
-    return 0;
-}
-
-int GlCopyPixels(lua_State *L) {
-    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
-    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
-    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
-    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
-    GLenum  type   = (GLenum )luaL_checkinteger(L, 5);
-
-    glCopyPixels(x, y, width, height, type);
-    return 0;
-}
-
-int GlCullFace(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glCullFace(mode);
-    return 0;
-}
-
-int GlDeleteLists(lua_State *L) {
-    GLuint  list  = (GLuint )luaL_checkinteger(L, 1);
-    GLsizei range = (GLsizei)luaL_checkinteger(L, 2);
-
-    glDeleteLists(list, range);
-    return 0;
-}
-
-int GlDepthFunc(lua_State *L) {
-    GLenum func = (GLenum)luaL_checkinteger(L, 1);
-
-    glDepthFunc(func);
-    return 0;
-}
-
-int GlDepthMask(lua_State *L) {
-    GLboolean flag = (GLboolean)luaL_checkinteger(L, 1);
-
-    glDepthMask(flag);
-    return 0;
-}
-
-int GlDepthRange(lua_State *L) {
-    GLdouble ren_near = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble ren_far  = (GLdouble)luaL_checknumber(L, 2);
-
-    glDepthRange(ren_near, ren_far);
-    return 0;
-}
-
-int GlDisable(lua_State *L) {
-    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
-
-    glDisable(cap);
-    return 0;
-}
-
-int GlDrawBuffer(lua_State *L) {
-    GLenum buf = (GLenum)luaL_checkinteger(L, 1);
-
-    glDrawBuffer(buf);
-    return 0;
-}
-
-int GlDrawPixels(lua_State *L) {
-    GLsizei      width  = (GLsizei     )luaL_checkinteger(L, 1);
-    GLsizei      height = (GLsizei     )luaL_checkinteger(L, 2);
-    GLenum       format = (GLenum      )luaL_checkinteger(L, 3);
-    GLenum       type   = (GLenum      )luaL_checkinteger(L, 4);
-    const void * pixels = (const void *)luaL_checkudata(L, 5, "const void *");
-
-    glDrawPixels(width, height, format, type, pixels);
-    return 0;
-}
-
-int GlEdgeFlag(lua_State *L) {
-    GLboolean flag = (GLboolean)luaL_checkinteger(L, 1);
-
-    glEdgeFlag(flag);
-    return 0;
-}
-
-int GlEdgeFlagv(lua_State *L) {
-    const GLboolean * flag = (const GLboolean *)luaL_checkudata(L, 1, "const GLboolean *");
-
-    glEdgeFlagv(flag);
-    return 0;
-}
-
-int GlEnable(lua_State *L) {
-    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
-
-    glEnable(cap);
-    return 0;
-}
-
-int GlEnd(lua_State *L) {
-
-    glEnd();
-    return 0;
-}
-
-int GlEndList(lua_State *L) {
-
-    glEndList();
-    return 0;
-}
-
-int GlEvalCoord1d(lua_State *L) {
-    GLdouble u = (GLdouble)luaL_checknumber(L, 1);
-
-    glEvalCoord1d(u);
-    return 0;
-}
-
-int GlEvalCoord1dv(lua_State *L) {
-    const GLdouble * u = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glEvalCoord1dv(u);
-    return 0;
-}
-
-int GlEvalCoord1f(lua_State *L) {
-    GLfloat u = (GLfloat)luaL_checknumber(L, 1);
-
-    glEvalCoord1f(u);
-    return 0;
-}
-
-int GlEvalCoord1fv(lua_State *L) {
-    const GLfloat * u = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glEvalCoord1fv(u);
-    return 0;
-}
-
-int GlEvalCoord2d(lua_State *L) {
-    GLdouble u = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble v = (GLdouble)luaL_checknumber(L, 2);
-
-    glEvalCoord2d(u, v);
-    return 0;
-}
-
-int GlEvalCoord2dv(lua_State *L) {
-    const GLdouble * u = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glEvalCoord2dv(u);
-    return 0;
-}
-
-int GlEvalCoord2f(lua_State *L) {
-    GLfloat u = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat v = (GLfloat)luaL_checknumber(L, 2);
-
-    glEvalCoord2f(u, v);
-    return 0;
-}
-
-int GlEvalCoord2fv(lua_State *L) {
-    const GLfloat * u = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glEvalCoord2fv(u);
-    return 0;
-}
-
-int GlEvalMesh1(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-    GLint  i1   = (GLint )luaL_checkinteger(L, 2);
-    GLint  i2   = (GLint )luaL_checkinteger(L, 3);
-
-    glEvalMesh1(mode, i1, i2);
-    return 0;
-}
-
-int GlEvalMesh2(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-    GLint  i1   = (GLint )luaL_checkinteger(L, 2);
-    GLint  i2   = (GLint )luaL_checkinteger(L, 3);
-    GLint  j1   = (GLint )luaL_checkinteger(L, 4);
-    GLint  j2   = (GLint )luaL_checkinteger(L, 5);
-
-    glEvalMesh2(mode, i1, i2, j1, j2);
-    return 0;
-}
-
-int GlEvalPoint1(lua_State *L) {
-    GLint i = (GLint)luaL_checkinteger(L, 1);
-
-    glEvalPoint1(i);
-    return 0;
-}
-
-int GlEvalPoint2(lua_State *L) {
-    GLint i = (GLint)luaL_checkinteger(L, 1);
-    GLint j = (GLint)luaL_checkinteger(L, 2);
-
-    glEvalPoint2(i, j);
-    return 0;
-}
-
-int GlFeedbackBuffer(lua_State *L) {
-    GLsizei   size   = (GLsizei  )luaL_checkinteger(L, 1);
-    GLenum    type   = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * buffer = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glFeedbackBuffer(size, type, buffer);
-    return 0;
-}
-
-int GlFinish(lua_State *L) {
-
-    glFinish();
-    return 0;
-}
-
-int GlFlush(lua_State *L) {
-
-    glFlush();
-    return 0;
-}
-
-int GlFogf(lua_State *L) {
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
-
-    glFogf(pname, param);
-    return 0;
-}
-
-int GlFogfv(lua_State *L) {
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 1);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
-
-    glFogfv(pname, params);
-    return 0;
-}
-
-int GlFogi(lua_State *L) {
-    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
-    GLint  param = (GLint )luaL_checkinteger(L, 2);
-
-    glFogi(pname, param);
-    return 0;
-}
-
-int GlFogiv(lua_State *L) {
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 1);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
-
-    glFogiv(pname, params);
-    return 0;
-}
-
-int GlFrontFace(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glFrontFace(mode);
-    return 0;
-}
-
-int GlFrustum(lua_State *L) {
-    GLdouble left   = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble right  = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble bottom = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble top    = (GLdouble)luaL_checknumber(L, 4);
-    GLdouble zNear  = (GLdouble)luaL_checknumber(L, 5);
-    GLdouble zFar   = (GLdouble)luaL_checknumber(L, 6);
-
-    glFrustum(left, right, bottom, top, zNear, zFar);
-    return 0;
-}
-
-int GlGenLists(lua_State *L) {
-    GLsizei range = (GLsizei)luaL_checkinteger(L, 1);
-
-    glGenLists(range);
-    return 0;
-}
-
-int GlGetBooleanv(lua_State *L) {
-    GLenum      pname = (GLenum     )luaL_checkinteger(L, 1);
-    GLboolean * data  = (GLboolean *)luaL_checkudata(L, 2, "GLboolean *");
-
-    glGetBooleanv(pname, data);
-    return 0;
-}
-
-int GlGetClipPlane(lua_State *L) {
-    GLenum     plane    = (GLenum    )luaL_checkinteger(L, 1);
-    GLdouble * equation = (GLdouble *)luaL_checkudata(L, 2, "GLdouble *");
-
-    glGetClipPlane(plane, equation);
-    return 0;
-}
-
-int GlGetDoublev(lua_State *L) {
-    GLenum     pname = (GLenum    )luaL_checkinteger(L, 1);
-    GLdouble * data  = (GLdouble *)luaL_checkudata(L, 2, "GLdouble *");
-
-    glGetDoublev(pname, data);
-    return 0;
-}
-
-int GlGetError(lua_State *L) {
-
-    glGetError();
-    return 0;
-}
-
-int GlGetFloatv(lua_State *L) {
-    GLenum    pname = (GLenum   )luaL_checkinteger(L, 1);
-    GLfloat * data  = (GLfloat *)luaL_checkudata(L, 2, "GLfloat *");
-
-    glGetFloatv(pname, data);
-    return 0;
-}
-
-int GlGetIntegerv(lua_State *L) {
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
-    GLint * data  = (GLint *)luaL_checkudata(L, 2, "GLint *");
-
-    glGetIntegerv(pname, data);
-    return 0;
-}
-
-int GlGetLightfv(lua_State *L) {
-    GLenum    light  = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetLightfv(light, pname, params);
-    return 0;
-}
-
-int GlGetLightiv(lua_State *L) {
-    GLenum  light  = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetLightiv(light, pname, params);
-    return 0;
-}
-
-int GlGetMapdv(lua_State *L) {
-    GLenum     target = (GLenum    )luaL_checkinteger(L, 1);
-    GLenum     query  = (GLenum    )luaL_checkinteger(L, 2);
-    GLdouble * v      = (GLdouble *)luaL_checkudata(L, 3, "GLdouble *");
-
-    glGetMapdv(target, query, v);
-    return 0;
-}
-
-int GlGetMapfv(lua_State *L) {
-    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    query  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * v      = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetMapfv(target, query, v);
-    return 0;
-}
-
-int GlGetMapiv(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  query  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * v      = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetMapiv(target, query, v);
-    return 0;
-}
-
-int GlGetMaterialfv(lua_State *L) {
-    GLenum    face   = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetMaterialfv(face, pname, params);
-    return 0;
-}
-
-int GlGetMaterialiv(lua_State *L) {
-    GLenum  face   = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetMaterialiv(face, pname, params);
-    return 0;
-}
-
-int GlGetPixelMapfv(lua_State *L) {
-    GLenum    map    = (GLenum   )luaL_checkinteger(L, 1);
-    GLfloat * values = (GLfloat *)luaL_checkudata(L, 2, "GLfloat *");
-
-    glGetPixelMapfv(map, values);
-    return 0;
-}
-
-int GlGetPixelMapuiv(lua_State *L) {
-    GLenum   map    = (GLenum  )luaL_checkinteger(L, 1);
-    GLuint * values = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
-
-    glGetPixelMapuiv(map, values);
-    return 0;
-}
-
-int GlGetPixelMapusv(lua_State *L) {
-    GLenum     map    = (GLenum    )luaL_checkinteger(L, 1);
-    GLushort * values = (GLushort *)luaL_checkudata(L, 2, "GLushort *");
-
-    glGetPixelMapusv(map, values);
-    return 0;
-}
-
-int GlGetPolygonStipple(lua_State *L) {
-    GLubyte * mask = (GLubyte *)luaL_checkudata(L, 1, "GLubyte *");
-
-    glGetPolygonStipple(mask);
-    return 0;
-}
-
-int GlGetString(lua_State *L) {
-    GLenum name = (GLenum)luaL_checkinteger(L, 1);
-
-    glGetString(name);
-    return 0;
-}
-
-int GlGetTexEnvfv(lua_State *L) {
-    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetTexEnvfv(target, pname, params);
-    return 0;
-}
-
-int GlGetTexEnviv(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetTexEnviv(target, pname, params);
-    return 0;
-}
-
-int GlGetTexGendv(lua_State *L) {
-    GLenum     coord  = (GLenum    )luaL_checkinteger(L, 1);
-    GLenum     pname  = (GLenum    )luaL_checkinteger(L, 2);
-    GLdouble * params = (GLdouble *)luaL_checkudata(L, 3, "GLdouble *");
-
-    glGetTexGendv(coord, pname, params);
-    return 0;
-}
-
-int GlGetTexGenfv(lua_State *L) {
-    GLenum    coord  = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetTexGenfv(coord, pname, params);
-    return 0;
-}
-
-int GlGetTexGeniv(lua_State *L) {
-    GLenum  coord  = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetTexGeniv(coord, pname, params);
-    return 0;
-}
-
-int GlGetTexImage(lua_State *L) {
-    GLenum target = (GLenum)luaL_checkinteger(L, 1);
-    GLint  level  = (GLint )luaL_checkinteger(L, 2);
-    GLenum format = (GLenum)luaL_checkinteger(L, 3);
-    GLenum type   = (GLenum)luaL_checkinteger(L, 4);
-    void * pixels = (void *)luaL_checkudata(L, 5, "void *");
-
-    glGetTexImage(target, level, format, type, pixels);
-    return 0;
-}
-
-int GlGetTexLevelParameterfv(lua_State *L) {
-    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
-    GLint     level  = (GLint    )luaL_checkinteger(L, 2);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 3);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 4, "GLfloat *");
-
-    glGetTexLevelParameterfv(target, level, pname, params);
-    return 0;
-}
-
-int GlGetTexLevelParameteriv(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLint   level  = (GLint  )luaL_checkinteger(L, 2);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 3);
-    GLint * params = (GLint *)luaL_checkudata(L, 4, "GLint *");
-
-    glGetTexLevelParameteriv(target, level, pname, params);
-    return 0;
-}
-
-int GlGetTexParameterfv(lua_State *L) {
-    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
-    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
-    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
-
-    glGetTexParameterfv(target, pname, params);
-    return 0;
-}
-
-int GlGetTexParameteriv(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
-
-    glGetTexParameteriv(target, pname, params);
-    return 0;
-}
-
-int GlHint(lua_State *L) {
-    GLenum target = (GLenum)luaL_checkinteger(L, 1);
-    GLenum mode   = (GLenum)luaL_checkinteger(L, 2);
-
-    glHint(target, mode);
-    return 0;
-}
-
-int GlIndexMask(lua_State *L) {
-    GLuint mask = (GLuint)luaL_checkinteger(L, 1);
-
-    glIndexMask(mask);
-    return 0;
-}
-
-int GlIndexd(lua_State *L) {
-    GLdouble c = (GLdouble)luaL_checknumber(L, 1);
-
-    glIndexd(c);
-    return 0;
-}
-
-int GlIndexdv(lua_State *L) {
-    const GLdouble * c = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glIndexdv(c);
-    return 0;
-}
-
-int GlIndexf(lua_State *L) {
-    GLfloat c = (GLfloat)luaL_checknumber(L, 1);
-
-    glIndexf(c);
-    return 0;
-}
-
-int GlIndexfv(lua_State *L) {
-    const GLfloat * c = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glIndexfv(c);
-    return 0;
-}
-
-int GlIndexi(lua_State *L) {
-    GLint c = (GLint)luaL_checkinteger(L, 1);
-
-    glIndexi(c);
-    return 0;
-}
-
-int GlIndexiv(lua_State *L) {
-    const GLint * c = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glIndexiv(c);
-    return 0;
-}
-
-int GlIndexs(lua_State *L) {
-    GLshort c = (GLshort)luaL_checkinteger(L, 1);
-
-    glIndexs(c);
-    return 0;
-}
-
-int GlIndexsv(lua_State *L) {
-    const GLshort * c = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glIndexsv(c);
-    return 0;
-}
-
-int GlInitNames(lua_State *L) {
-
-    glInitNames();
-    return 0;
-}
-
-int GlIsEnabled(lua_State *L) {
-    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
-
-    glIsEnabled(cap);
-    return 0;
-}
-
-int GlIsList(lua_State *L) {
-    GLuint list = (GLuint)luaL_checkinteger(L, 1);
-
-    glIsList(list);
-    return 0;
-}
-
-int GlLightModelf(lua_State *L) {
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
-
-    glLightModelf(pname, param);
-    return 0;
-}
-
-int GlLightModelfv(lua_State *L) {
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 1);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
-
-    glLightModelfv(pname, params);
-    return 0;
-}
-
-int GlLightModeli(lua_State *L) {
-    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
-    GLint  param = (GLint )luaL_checkinteger(L, 2);
-
-    glLightModeli(pname, param);
-    return 0;
-}
-
-int GlLightModeliv(lua_State *L) {
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 1);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
-
-    glLightModeliv(pname, params);
-    return 0;
-}
-
-int GlLightf(lua_State *L) {
-    GLenum  light = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
-
-    glLightf(light, pname, param);
-    return 0;
-}
-
-int GlLightfv(lua_State *L) {
-    GLenum          light  = (GLenum         )luaL_checkinteger(L, 1);
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glLightfv(light, pname, params);
-    return 0;
-}
-
-int GlLighti(lua_State *L) {
-    GLenum light = (GLenum)luaL_checkinteger(L, 1);
-    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
-    GLint  param = (GLint )luaL_checkinteger(L, 3);
-
-    glLighti(light, pname, param);
-    return 0;
-}
-
-int GlLightiv(lua_State *L) {
-    GLenum        light  = (GLenum       )luaL_checkinteger(L, 1);
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
-
-    glLightiv(light, pname, params);
-    return 0;
-}
-
-int GlLineStipple(lua_State *L) {
-    GLint    factor  = (GLint   )luaL_checkinteger(L, 1);
-    GLushort pattern = (GLushort)luaL_checkinteger(L, 2);
-
-    glLineStipple(factor, pattern);
-    return 0;
-}
-
-int GlLineWidth(lua_State *L) {
-    GLfloat width = (GLfloat)luaL_checknumber(L, 1);
-
-    glLineWidth(width);
-    return 0;
-}
-
-int GlListBase(lua_State *L) {
-    GLuint base = (GLuint)luaL_checkinteger(L, 1);
-
-    glListBase(base);
-    return 0;
-}
-
-int GlLoadIdentity(lua_State *L) {
-
-    glLoadIdentity();
-    return 0;
-}
-
-int GlLoadMatrixd(lua_State *L) {
-    const GLdouble * m = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glLoadMatrixd(m);
-    return 0;
-}
-
-int GlLoadMatrixf(lua_State *L) {
-    const GLfloat * m = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glLoadMatrixf(m);
-    return 0;
-}
-
-int GlLoadName(lua_State *L) {
-    GLuint name = (GLuint)luaL_checkinteger(L, 1);
-
-    glLoadName(name);
-    return 0;
-}
-
-int GlLogicOp(lua_State *L) {
-    GLenum opcode = (GLenum)luaL_checkinteger(L, 1);
-
-    glLogicOp(opcode);
-    return 0;
-}
-
-int GlMap1d(lua_State *L) {
-    GLenum           target = (GLenum          )luaL_checkinteger(L, 1);
-    GLdouble         u1     = (GLdouble        )luaL_checknumber(L, 2);
-    GLdouble         u2     = (GLdouble        )luaL_checknumber(L, 3);
-    GLint            stride = (GLint           )luaL_checkinteger(L, 4);
-    GLint            order  = (GLint           )luaL_checkinteger(L, 5);
-    const GLdouble * points = (const GLdouble *)luaL_checkudata(L, 6, "const GLdouble *");
-
-    glMap1d(target, u1, u2, stride, order, points);
-    return 0;
-}
-
-int GlMap1f(lua_State *L) {
-    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
-    GLfloat         u1     = (GLfloat        )luaL_checknumber(L, 2);
-    GLfloat         u2     = (GLfloat        )luaL_checknumber(L, 3);
-    GLint           stride = (GLint          )luaL_checkinteger(L, 4);
-    GLint           order  = (GLint          )luaL_checkinteger(L, 5);
-    const GLfloat * points = (const GLfloat *)luaL_checkudata(L, 6, "const GLfloat *");
-
-    glMap1f(target, u1, u2, stride, order, points);
-    return 0;
-}
-
-int GlMap2d(lua_State *L) {
-    GLenum           target  = (GLenum          )luaL_checkinteger(L, 1);
-    GLdouble         u1      = (GLdouble        )luaL_checknumber(L, 2);
-    GLdouble         u2      = (GLdouble        )luaL_checknumber(L, 3);
-    GLint            ustride = (GLint           )luaL_checkinteger(L, 4);
-    GLint            uorder  = (GLint           )luaL_checkinteger(L, 5);
-    GLdouble         v1      = (GLdouble        )luaL_checknumber(L, 6);
-    GLdouble         v2      = (GLdouble        )luaL_checknumber(L, 7);
-    GLint            vstride = (GLint           )luaL_checkinteger(L, 8);
-    GLint            vorder  = (GLint           )luaL_checkinteger(L, 9);
-    const GLdouble * points  = (const GLdouble *)luaL_checkudata(L, 10, "const GLdouble *");
-
-    glMap2d(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
-    return 0;
-}
-
-int GlMap2f(lua_State *L) {
-    GLenum          target  = (GLenum         )luaL_checkinteger(L, 1);
-    GLfloat         u1      = (GLfloat        )luaL_checknumber(L, 2);
-    GLfloat         u2      = (GLfloat        )luaL_checknumber(L, 3);
-    GLint           ustride = (GLint          )luaL_checkinteger(L, 4);
-    GLint           uorder  = (GLint          )luaL_checkinteger(L, 5);
-    GLfloat         v1      = (GLfloat        )luaL_checknumber(L, 6);
-    GLfloat         v2      = (GLfloat        )luaL_checknumber(L, 7);
-    GLint           vstride = (GLint          )luaL_checkinteger(L, 8);
-    GLint           vorder  = (GLint          )luaL_checkinteger(L, 9);
-    const GLfloat * points  = (const GLfloat *)luaL_checkudata(L, 10, "const GLfloat *");
-
-    glMap2f(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
-    return 0;
-}
-
-int GlMapGrid1d(lua_State *L) {
-    GLint    un = (GLint   )luaL_checkinteger(L, 1);
-    GLdouble u1 = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble u2 = (GLdouble)luaL_checknumber(L, 3);
-
-    glMapGrid1d(un, u1, u2);
-    return 0;
-}
-
-int GlMapGrid1f(lua_State *L) {
-    GLint   un = (GLint  )luaL_checkinteger(L, 1);
-    GLfloat u1 = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat u2 = (GLfloat)luaL_checknumber(L, 3);
-
-    glMapGrid1f(un, u1, u2);
-    return 0;
-}
-
-int GlMapGrid2d(lua_State *L) {
-    GLint    un = (GLint   )luaL_checkinteger(L, 1);
-    GLdouble u1 = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble u2 = (GLdouble)luaL_checknumber(L, 3);
-    GLint    vn = (GLint   )luaL_checkinteger(L, 4);
-    GLdouble v1 = (GLdouble)luaL_checknumber(L, 5);
-    GLdouble v2 = (GLdouble)luaL_checknumber(L, 6);
-
-    glMapGrid2d(un, u1, u2, vn, v1, v2);
-    return 0;
-}
-
-int GlMapGrid2f(lua_State *L) {
-    GLint   un = (GLint  )luaL_checkinteger(L, 1);
-    GLfloat u1 = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat u2 = (GLfloat)luaL_checknumber(L, 3);
-    GLint   vn = (GLint  )luaL_checkinteger(L, 4);
-    GLfloat v1 = (GLfloat)luaL_checknumber(L, 5);
-    GLfloat v2 = (GLfloat)luaL_checknumber(L, 6);
-
-    glMapGrid2f(un, u1, u2, vn, v1, v2);
-    return 0;
-}
-
-int GlMaterialf(lua_State *L) {
-    GLenum  face  = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
-
-    glMaterialf(face, pname, param);
-    return 0;
-}
-
-int GlMaterialfv(lua_State *L) {
-    GLenum          face   = (GLenum         )luaL_checkinteger(L, 1);
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glMaterialfv(face, pname, params);
-    return 0;
-}
-
-int GlMateriali(lua_State *L) {
-    GLenum face  = (GLenum)luaL_checkinteger(L, 1);
-    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
-    GLint  param = (GLint )luaL_checkinteger(L, 3);
-
-    glMateriali(face, pname, param);
-    return 0;
-}
-
-int GlMaterialiv(lua_State *L) {
-    GLenum        face   = (GLenum       )luaL_checkinteger(L, 1);
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
-
-    glMaterialiv(face, pname, params);
-    return 0;
-}
-
-int GlMatrixMode(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glMatrixMode(mode);
-    return 0;
-}
-
-int GlMultMatrixd(lua_State *L) {
-    const GLdouble * m = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glMultMatrixd(m);
-    return 0;
-}
-
-int GlMultMatrixf(lua_State *L) {
-    const GLfloat * m = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glMultMatrixf(m);
-    return 0;
-}
-
-int GlNewList(lua_State *L) {
-    GLuint list = (GLuint)luaL_checkinteger(L, 1);
-    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
-
-    glNewList(list, mode);
-    return 0;
-}
-
-int GlNormal3b(lua_State *L) {
-    GLbyte nx = (GLbyte)luaL_checkinteger(L, 1);
-    GLbyte ny = (GLbyte)luaL_checkinteger(L, 2);
-    GLbyte nz = (GLbyte)luaL_checkinteger(L, 3);
-
-    glNormal3b(nx, ny, nz);
-    return 0;
-}
-
-int GlNormal3bv(lua_State *L) {
-    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
-
-    glNormal3bv(v);
-    return 0;
-}
-
-int GlNormal3d(lua_State *L) {
-    GLdouble nx = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble ny = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble nz = (GLdouble)luaL_checknumber(L, 3);
-
-    glNormal3d(nx, ny, nz);
-    return 0;
-}
-
-int GlNormal3dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glNormal3dv(v);
-    return 0;
-}
-
-int GlNormal3f(lua_State *L) {
-    GLfloat nx = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat ny = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat nz = (GLfloat)luaL_checknumber(L, 3);
-
-    glNormal3f(nx, ny, nz);
-    return 0;
-}
-
-int GlNormal3fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glNormal3fv(v);
-    return 0;
-}
-
-int GlNormal3i(lua_State *L) {
-    GLint nx = (GLint)luaL_checkinteger(L, 1);
-    GLint ny = (GLint)luaL_checkinteger(L, 2);
-    GLint nz = (GLint)luaL_checkinteger(L, 3);
-
-    glNormal3i(nx, ny, nz);
-    return 0;
-}
-
-int GlNormal3iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glNormal3iv(v);
-    return 0;
-}
-
-int GlNormal3s(lua_State *L) {
-    GLshort nx = (GLshort)luaL_checkinteger(L, 1);
-    GLshort ny = (GLshort)luaL_checkinteger(L, 2);
-    GLshort nz = (GLshort)luaL_checkinteger(L, 3);
-
-    glNormal3s(nx, ny, nz);
-    return 0;
-}
-
-int GlNormal3sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glNormal3sv(v);
-    return 0;
-}
-
-int GlOrtho(lua_State *L) {
-    GLdouble left   = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble right  = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble bottom = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble top    = (GLdouble)luaL_checknumber(L, 4);
-    GLdouble zNear  = (GLdouble)luaL_checknumber(L, 5);
-    GLdouble zFar   = (GLdouble)luaL_checknumber(L, 6);
-
-    glOrtho(left, right, bottom, top, zNear, zFar);
-    return 0;
-}
-
-int GlPassThrough(lua_State *L) {
-    GLfloat token = (GLfloat)luaL_checknumber(L, 1);
-
-    glPassThrough(token);
-    return 0;
-}
-
-int GlPixelMapfv(lua_State *L) {
-    GLenum          map     = (GLenum         )luaL_checkinteger(L, 1);
-    GLsizei         mapsize = (GLsizei        )luaL_checkinteger(L, 2);
-    const GLfloat * values  = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glPixelMapfv(map, mapsize, values);
-    return 0;
-}
-
-int GlPixelMapuiv(lua_State *L) {
-    GLenum         map     = (GLenum        )luaL_checkinteger(L, 1);
-    GLsizei        mapsize = (GLsizei       )luaL_checkinteger(L, 2);
-    const GLuint * values  = (const GLuint *)luaL_checkudata(L, 3, "const GLuint *");
-
-    glPixelMapuiv(map, mapsize, values);
-    return 0;
-}
-
-int GlPixelMapusv(lua_State *L) {
-    GLenum           map     = (GLenum          )luaL_checkinteger(L, 1);
-    GLsizei          mapsize = (GLsizei         )luaL_checkinteger(L, 2);
-    const GLushort * values  = (const GLushort *)luaL_checkudata(L, 3, "const GLushort *");
-
-    glPixelMapusv(map, mapsize, values);
-    return 0;
-}
-
-int GlPixelStoref(lua_State *L) {
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
-
-    glPixelStoref(pname, param);
-    return 0;
-}
-
-int GlPixelStorei(lua_State *L) {
-    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
-    GLint  param = (GLint )luaL_checkinteger(L, 2);
-
-    glPixelStorei(pname, param);
-    return 0;
-}
-
-int GlPixelTransferf(lua_State *L) {
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
-
-    glPixelTransferf(pname, param);
-    return 0;
-}
-
-int GlPixelTransferi(lua_State *L) {
-    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
-    GLint  param = (GLint )luaL_checkinteger(L, 2);
-
-    glPixelTransferi(pname, param);
-    return 0;
-}
-
-int GlPixelZoom(lua_State *L) {
-    GLfloat xfactor = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat yfactor = (GLfloat)luaL_checknumber(L, 2);
-
-    glPixelZoom(xfactor, yfactor);
-    return 0;
-}
-
-int GlPointSize(lua_State *L) {
-    GLfloat size = (GLfloat)luaL_checknumber(L, 1);
-
-    glPointSize(size);
-    return 0;
-}
-
-int GlPolygonMode(lua_State *L) {
-    GLenum face = (GLenum)luaL_checkinteger(L, 1);
-    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
-
-    glPolygonMode(face, mode);
-    return 0;
-}
-
-int GlPolygonStipple(lua_State *L) {
-    const GLubyte * mask = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
-
-    glPolygonStipple(mask);
-    return 0;
-}
-
-int GlPopAttrib(lua_State *L) {
-
-    glPopAttrib();
-    return 0;
-}
-
-int GlPopMatrix(lua_State *L) {
-
-    glPopMatrix();
-    return 0;
-}
-
-int GlPopName(lua_State *L) {
-
-    glPopName();
-    return 0;
-}
-
-int GlPushAttrib(lua_State *L) {
-    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
-
-    glPushAttrib(mask);
-    return 0;
-}
-
-int GlPushMatrix(lua_State *L) {
-
-    glPushMatrix();
-    return 0;
-}
-
-int GlPushName(lua_State *L) {
-    GLuint name = (GLuint)luaL_checkinteger(L, 1);
-
-    glPushName(name);
-    return 0;
-}
-
-int GlRasterPos2d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-
-    glRasterPos2d(x, y);
-    return 0;
-}
-
-int GlRasterPos2dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glRasterPos2dv(v);
-    return 0;
-}
-
-int GlRasterPos2f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-
-    glRasterPos2f(x, y);
-    return 0;
-}
-
-int GlRasterPos2fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glRasterPos2fv(v);
-    return 0;
-}
-
-int GlRasterPos2i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-
-    glRasterPos2i(x, y);
-    return 0;
-}
-
-int GlRasterPos2iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glRasterPos2iv(v);
-    return 0;
-}
-
-int GlRasterPos2s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-
-    glRasterPos2s(x, y);
-    return 0;
-}
-
-int GlRasterPos2sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glRasterPos2sv(v);
-    return 0;
-}
-
-int GlRasterPos3d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-
-    glRasterPos3d(x, y, z);
-    return 0;
-}
-
-int GlRasterPos3dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glRasterPos3dv(v);
-    return 0;
-}
-
-int GlRasterPos3f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-
-    glRasterPos3f(x, y, z);
-    return 0;
-}
-
-int GlRasterPos3fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glRasterPos3fv(v);
-    return 0;
-}
-
-int GlRasterPos3i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-    GLint z = (GLint)luaL_checkinteger(L, 3);
-
-    glRasterPos3i(x, y, z);
-    return 0;
-}
-
-int GlRasterPos3iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glRasterPos3iv(v);
-    return 0;
-}
-
-int GlRasterPos3s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-    GLshort z = (GLshort)luaL_checkinteger(L, 3);
-
-    glRasterPos3s(x, y, z);
-    return 0;
-}
-
-int GlRasterPos3sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glRasterPos3sv(v);
-    return 0;
-}
-
-int GlRasterPos4d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble w = (GLdouble)luaL_checknumber(L, 4);
-
-    glRasterPos4d(x, y, z, w);
-    return 0;
-}
-
-int GlRasterPos4dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glRasterPos4dv(v);
-    return 0;
-}
-
-int GlRasterPos4f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat w = (GLfloat)luaL_checknumber(L, 4);
-
-    glRasterPos4f(x, y, z, w);
-    return 0;
-}
-
-int GlRasterPos4fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glRasterPos4fv(v);
-    return 0;
-}
-
-int GlRasterPos4i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-    GLint z = (GLint)luaL_checkinteger(L, 3);
-    GLint w = (GLint)luaL_checkinteger(L, 4);
-
-    glRasterPos4i(x, y, z, w);
-    return 0;
-}
-
-int GlRasterPos4iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glRasterPos4iv(v);
-    return 0;
-}
-
-int GlRasterPos4s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-    GLshort z = (GLshort)luaL_checkinteger(L, 3);
-    GLshort w = (GLshort)luaL_checkinteger(L, 4);
-
-    glRasterPos4s(x, y, z, w);
-    return 0;
-}
-
-int GlRasterPos4sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glRasterPos4sv(v);
-    return 0;
-}
-
-int GlReadBuffer(lua_State *L) {
-    GLenum src = (GLenum)luaL_checkinteger(L, 1);
-
-    glReadBuffer(src);
-    return 0;
-}
-
-int GlReadPixels(lua_State *L) {
-    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
-    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
-    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
-    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
-    GLenum  format = (GLenum )luaL_checkinteger(L, 5);
-    GLenum  type   = (GLenum )luaL_checkinteger(L, 6);
-    void *  pixels = (void * )luaL_checkudata(L, 7, "void *");
-
-    glReadPixels(x, y, width, height, format, type, pixels);
-    return 0;
-}
-
-int GlRectd(lua_State *L) {
-    GLdouble x1 = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y1 = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble x2 = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble y2 = (GLdouble)luaL_checknumber(L, 4);
-
-    glRectd(x1, y1, x2, y2);
-    return 0;
-}
-
-int GlRectdv(lua_State *L) {
-    const GLdouble * v1 = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-    const GLdouble * v2 = (const GLdouble *)luaL_checkudata(L, 2, "const GLdouble *");
-
-    glRectdv(v1, v2);
-    return 0;
-}
-
-int GlRectf(lua_State *L) {
-    GLfloat x1 = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y1 = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat x2 = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat y2 = (GLfloat)luaL_checknumber(L, 4);
-
-    glRectf(x1, y1, x2, y2);
-    return 0;
-}
-
-int GlRectfv(lua_State *L) {
-    const GLfloat * v1 = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-    const GLfloat * v2 = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
-
-    glRectfv(v1, v2);
-    return 0;
-}
-
-int GlRecti(lua_State *L) {
-    GLint x1 = (GLint)luaL_checkinteger(L, 1);
-    GLint y1 = (GLint)luaL_checkinteger(L, 2);
-    GLint x2 = (GLint)luaL_checkinteger(L, 3);
-    GLint y2 = (GLint)luaL_checkinteger(L, 4);
-
-    glRecti(x1, y1, x2, y2);
-    return 0;
-}
-
-int GlRectiv(lua_State *L) {
-    const GLint * v1 = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-    const GLint * v2 = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
-
-    glRectiv(v1, v2);
-    return 0;
-}
-
-int GlRects(lua_State *L) {
-    GLshort x1 = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y1 = (GLshort)luaL_checkinteger(L, 2);
-    GLshort x2 = (GLshort)luaL_checkinteger(L, 3);
-    GLshort y2 = (GLshort)luaL_checkinteger(L, 4);
-
-    glRects(x1, y1, x2, y2);
-    return 0;
-}
-
-int GlRectsv(lua_State *L) {
-    const GLshort * v1 = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-    const GLshort * v2 = (const GLshort *)luaL_checkudata(L, 2, "const GLshort *");
-
-    glRectsv(v1, v2);
-    return 0;
-}
-
-int GlRenderMode(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glRenderMode(mode);
-    return 0;
-}
-
-int GlRotated(lua_State *L) {
-    GLdouble angle = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble x     = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble y     = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble z     = (GLdouble)luaL_checknumber(L, 4);
-
-    glRotated(angle, x, y, z);
-    return 0;
-}
-
-int GlRotatef(lua_State *L) {
-    GLfloat angle = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat x     = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat y     = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat z     = (GLfloat)luaL_checknumber(L, 4);
-
-    glRotatef(angle, x, y, z);
-    return 0;
-}
-
-int GlScaled(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-
-    glScaled(x, y, z);
-    return 0;
-}
-
-int GlScalef(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-
-    glScalef(x, y, z);
-    return 0;
-}
-
-int GlScissor(lua_State *L) {
-    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
-    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
-    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
-    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
-
-    glScissor(x, y, width, height);
-    return 0;
-}
-
-int GlSelectBuffer(lua_State *L) {
-    GLsizei  size   = (GLsizei )luaL_checkinteger(L, 1);
-    GLuint * buffer = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
-
-    glSelectBuffer(size, buffer);
-    return 0;
-}
-
-int GlShadeModel(lua_State *L) {
-    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
-
-    glShadeModel(mode);
-    return 0;
-}
-
-int GlStencilFunc(lua_State *L) {
-    GLenum func = (GLenum)luaL_checkinteger(L, 1);
-    GLint  ref  = (GLint )luaL_checkinteger(L, 2);
-    GLuint mask = (GLuint)luaL_checkinteger(L, 3);
-
-    glStencilFunc(func, ref, mask);
-    return 0;
-}
-
-int GlStencilMask(lua_State *L) {
-    GLuint mask = (GLuint)luaL_checkinteger(L, 1);
-
-    glStencilMask(mask);
-    return 0;
-}
-
-int GlStencilOp(lua_State *L) {
-    GLenum fail  = (GLenum)luaL_checkinteger(L, 1);
-    GLenum zfail = (GLenum)luaL_checkinteger(L, 2);
-    GLenum zpass = (GLenum)luaL_checkinteger(L, 3);
-
-    glStencilOp(fail, zfail, zpass);
-    return 0;
-}
-
-int GlTexCoord1d(lua_State *L) {
-    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
-
-    glTexCoord1d(s);
-    return 0;
-}
-
-int GlTexCoord1dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glTexCoord1dv(v);
-    return 0;
-}
-
-int GlTexCoord1f(lua_State *L) {
-    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
-
-    glTexCoord1f(s);
-    return 0;
-}
-
-int GlTexCoord1fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glTexCoord1fv(v);
-    return 0;
-}
-
-int GlTexCoord1i(lua_State *L) {
-    GLint s = (GLint)luaL_checkinteger(L, 1);
-
-    glTexCoord1i(s);
-    return 0;
-}
-
-int GlTexCoord1iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glTexCoord1iv(v);
-    return 0;
-}
-
-int GlTexCoord1s(lua_State *L) {
-    GLshort s = (GLshort)luaL_checkinteger(L, 1);
-
-    glTexCoord1s(s);
-    return 0;
-}
-
-int GlTexCoord1sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glTexCoord1sv(v);
-    return 0;
-}
-
-int GlTexCoord2d(lua_State *L) {
-    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
-
-    glTexCoord2d(s, t);
-    return 0;
-}
-
-int GlTexCoord2dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glTexCoord2dv(v);
-    return 0;
-}
-
-int GlTexCoord2f(lua_State *L) {
-    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
-
-    glTexCoord2f(s, t);
-    return 0;
-}
-
-int GlTexCoord2fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glTexCoord2fv(v);
-    return 0;
-}
-
-int GlTexCoord2i(lua_State *L) {
-    GLint s = (GLint)luaL_checkinteger(L, 1);
-    GLint t = (GLint)luaL_checkinteger(L, 2);
-
-    glTexCoord2i(s, t);
-    return 0;
-}
-
-int GlTexCoord2iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glTexCoord2iv(v);
-    return 0;
-}
-
-int GlTexCoord2s(lua_State *L) {
-    GLshort s = (GLshort)luaL_checkinteger(L, 1);
-    GLshort t = (GLshort)luaL_checkinteger(L, 2);
-
-    glTexCoord2s(s, t);
-    return 0;
-}
-
-int GlTexCoord2sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glTexCoord2sv(v);
-    return 0;
-}
-
-int GlTexCoord3d(lua_State *L) {
-    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble r = (GLdouble)luaL_checknumber(L, 3);
-
-    glTexCoord3d(s, t, r);
-    return 0;
-}
-
-int GlTexCoord3dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glTexCoord3dv(v);
-    return 0;
-}
-
-int GlTexCoord3f(lua_State *L) {
-    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat r = (GLfloat)luaL_checknumber(L, 3);
-
-    glTexCoord3f(s, t, r);
-    return 0;
-}
-
-int GlTexCoord3fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glTexCoord3fv(v);
-    return 0;
-}
-
-int GlTexCoord3i(lua_State *L) {
-    GLint s = (GLint)luaL_checkinteger(L, 1);
-    GLint t = (GLint)luaL_checkinteger(L, 2);
-    GLint r = (GLint)luaL_checkinteger(L, 3);
-
-    glTexCoord3i(s, t, r);
-    return 0;
-}
-
-int GlTexCoord3iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glTexCoord3iv(v);
-    return 0;
-}
-
-int GlTexCoord3s(lua_State *L) {
-    GLshort s = (GLshort)luaL_checkinteger(L, 1);
-    GLshort t = (GLshort)luaL_checkinteger(L, 2);
-    GLshort r = (GLshort)luaL_checkinteger(L, 3);
-
-    glTexCoord3s(s, t, r);
-    return 0;
-}
-
-int GlTexCoord3sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glTexCoord3sv(v);
-    return 0;
-}
-
-int GlTexCoord4d(lua_State *L) {
-    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble r = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble q = (GLdouble)luaL_checknumber(L, 4);
-
-    glTexCoord4d(s, t, r, q);
-    return 0;
-}
-
-int GlTexCoord4dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glTexCoord4dv(v);
-    return 0;
-}
-
-int GlTexCoord4f(lua_State *L) {
-    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat r = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat q = (GLfloat)luaL_checknumber(L, 4);
-
-    glTexCoord4f(s, t, r, q);
-    return 0;
-}
-
-int GlTexCoord4fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glTexCoord4fv(v);
-    return 0;
-}
-
-int GlTexCoord4i(lua_State *L) {
-    GLint s = (GLint)luaL_checkinteger(L, 1);
-    GLint t = (GLint)luaL_checkinteger(L, 2);
-    GLint r = (GLint)luaL_checkinteger(L, 3);
-    GLint q = (GLint)luaL_checkinteger(L, 4);
-
-    glTexCoord4i(s, t, r, q);
-    return 0;
-}
-
-int GlTexCoord4iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glTexCoord4iv(v);
-    return 0;
-}
-
-int GlTexCoord4s(lua_State *L) {
-    GLshort s = (GLshort)luaL_checkinteger(L, 1);
-    GLshort t = (GLshort)luaL_checkinteger(L, 2);
-    GLshort r = (GLshort)luaL_checkinteger(L, 3);
-    GLshort q = (GLshort)luaL_checkinteger(L, 4);
-
-    glTexCoord4s(s, t, r, q);
-    return 0;
-}
-
-int GlTexCoord4sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glTexCoord4sv(v);
-    return 0;
-}
-
-int GlTexEnvf(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLfloat param  = (GLfloat)luaL_checknumber(L, 3);
-
-    glTexEnvf(target, pname, param);
-    return 0;
-}
-
-int GlTexEnvfv(lua_State *L) {
-    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glTexEnvfv(target, pname, params);
-    return 0;
-}
-
-int GlTexEnvi(lua_State *L) {
-    GLenum target = (GLenum)luaL_checkinteger(L, 1);
-    GLenum pname  = (GLenum)luaL_checkinteger(L, 2);
-    GLint  param  = (GLint )luaL_checkinteger(L, 3);
-
-    glTexEnvi(target, pname, param);
-    return 0;
-}
-
-int GlTexEnviv(lua_State *L) {
-    GLenum        target = (GLenum       )luaL_checkinteger(L, 1);
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
-
-    glTexEnviv(target, pname, params);
-    return 0;
-}
-
-int GlTexGend(lua_State *L) {
-    GLenum   coord = (GLenum  )luaL_checkinteger(L, 1);
-    GLenum   pname = (GLenum  )luaL_checkinteger(L, 2);
-    GLdouble param = (GLdouble)luaL_checknumber(L, 3);
-
-    glTexGend(coord, pname, param);
-    return 0;
-}
-
-int GlTexGendv(lua_State *L) {
-    GLenum           coord  = (GLenum          )luaL_checkinteger(L, 1);
-    GLenum           pname  = (GLenum          )luaL_checkinteger(L, 2);
-    const GLdouble * params = (const GLdouble *)luaL_checkudata(L, 3, "const GLdouble *");
-
-    glTexGendv(coord, pname, params);
-    return 0;
-}
-
-int GlTexGenf(lua_State *L) {
-    GLenum  coord = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
-    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
-
-    glTexGenf(coord, pname, param);
-    return 0;
-}
-
-int GlTexGenfv(lua_State *L) {
-    GLenum          coord  = (GLenum         )luaL_checkinteger(L, 1);
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glTexGenfv(coord, pname, params);
-    return 0;
-}
-
-int GlTexGeni(lua_State *L) {
-    GLenum coord = (GLenum)luaL_checkinteger(L, 1);
-    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
-    GLint  param = (GLint )luaL_checkinteger(L, 3);
-
-    glTexGeni(coord, pname, param);
-    return 0;
-}
-
-int GlTexGeniv(lua_State *L) {
-    GLenum        coord  = (GLenum       )luaL_checkinteger(L, 1);
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
-
-    glTexGeniv(coord, pname, params);
-    return 0;
-}
-
-int GlTexImage1D(lua_State *L) {
-    GLenum       target         = (GLenum      )luaL_checkinteger(L, 1);
-    GLint        level          = (GLint       )luaL_checkinteger(L, 2);
-    GLint        internalformat = (GLint       )luaL_checkinteger(L, 3);
-    GLsizei      width          = (GLsizei     )luaL_checkinteger(L, 4);
-    GLint        border         = (GLint       )luaL_checkinteger(L, 5);
-    GLenum       format         = (GLenum      )luaL_checkinteger(L, 6);
-    GLenum       type           = (GLenum      )luaL_checkinteger(L, 7);
-    const void * pixels         = (const void *)luaL_checkudata(L, 8, "const void *");
-
-    glTexImage1D(target, level, internalformat, width, border, format, type, pixels);
-    return 0;
-}
-
-int GlTexImage2D(lua_State *L) {
-    GLenum       target         = (GLenum      )luaL_checkinteger(L, 1);
-    GLint        level          = (GLint       )luaL_checkinteger(L, 2);
-    GLint        internalformat = (GLint       )luaL_checkinteger(L, 3);
-    GLsizei      width          = (GLsizei     )luaL_checkinteger(L, 4);
-    GLsizei      height         = (GLsizei     )luaL_checkinteger(L, 5);
-    GLint        border         = (GLint       )luaL_checkinteger(L, 6);
-    GLenum       format         = (GLenum      )luaL_checkinteger(L, 7);
-    GLenum       type           = (GLenum      )luaL_checkinteger(L, 8);
-    const void * pixels         = (const void *)luaL_checkudata(L, 9, "const void *");
-
-    glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
-    return 0;
-}
-
-int GlTexParameterf(lua_State *L) {
-    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
-    GLfloat param  = (GLfloat)luaL_checknumber(L, 3);
-
-    glTexParameterf(target, pname, param);
-    return 0;
-}
-
-int GlTexParameterfv(lua_State *L) {
-    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
-    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
-    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glTexParameterfv(target, pname, params);
-    return 0;
-}
-
-int GlTexParameteri(lua_State *L) {
-    GLenum target = (GLenum)luaL_checkinteger(L, 1);
-    GLenum pname  = (GLenum)luaL_checkinteger(L, 2);
-    GLint  param  = (GLint )luaL_checkinteger(L, 3);
-
-    glTexParameteri(target, pname, param);
-    return 0;
-}
-
-int GlTexParameteriv(lua_State *L) {
-    GLenum        target = (GLenum       )luaL_checkinteger(L, 1);
-    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
-    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
-
-    glTexParameteriv(target, pname, params);
-    return 0;
-}
-
-int GlTranslated(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-
-    glTranslated(x, y, z);
-    return 0;
-}
-
-int GlTranslatef(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-
-    glTranslatef(x, y, z);
-    return 0;
-}
-
-int GlVertex2d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-
-    glVertex2d(x, y);
-    return 0;
-}
-
-int GlVertex2dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glVertex2dv(v);
-    return 0;
-}
-
-int GlVertex2f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-
-    glVertex2f(x, y);
-    return 0;
-}
-
-int GlVertex2fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glVertex2fv(v);
-    return 0;
-}
-
-int GlVertex2i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-
-    glVertex2i(x, y);
-    return 0;
-}
-
-int GlVertex2iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glVertex2iv(v);
-    return 0;
-}
-
-int GlVertex2s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-
-    glVertex2s(x, y);
-    return 0;
-}
-
-int GlVertex2sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glVertex2sv(v);
-    return 0;
-}
-
-int GlVertex3d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-
-    glVertex3d(x, y, z);
-    return 0;
-}
-
-int GlVertex3dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glVertex3dv(v);
-    return 0;
-}
-
-int GlVertex3f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-
-    glVertex3f(x, y, z);
-    return 0;
-}
-
-int GlVertex3fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glVertex3fv(v);
-    return 0;
-}
-
-int GlVertex3i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-    GLint z = (GLint)luaL_checkinteger(L, 3);
-
-    glVertex3i(x, y, z);
-    return 0;
-}
-
-int GlVertex3iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glVertex3iv(v);
-    return 0;
-}
-
-int GlVertex3s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-    GLshort z = (GLshort)luaL_checkinteger(L, 3);
-
-    glVertex3s(x, y, z);
-    return 0;
-}
-
-int GlVertex3sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glVertex3sv(v);
-    return 0;
-}
-
-int GlVertex4d(lua_State *L) {
-    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
-    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
-    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
-    GLdouble w = (GLdouble)luaL_checknumber(L, 4);
-
-    glVertex4d(x, y, z, w);
-    return 0;
-}
-
-int GlVertex4dv(lua_State *L) {
-    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
-
-    glVertex4dv(v);
-    return 0;
-}
-
-int GlVertex4f(lua_State *L) {
-    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
-    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
-    GLfloat w = (GLfloat)luaL_checknumber(L, 4);
-
-    glVertex4f(x, y, z, w);
-    return 0;
-}
-
-int GlVertex4fv(lua_State *L) {
-    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
-
-    glVertex4fv(v);
-    return 0;
-}
-
-int GlVertex4i(lua_State *L) {
-    GLint x = (GLint)luaL_checkinteger(L, 1);
-    GLint y = (GLint)luaL_checkinteger(L, 2);
-    GLint z = (GLint)luaL_checkinteger(L, 3);
-    GLint w = (GLint)luaL_checkinteger(L, 4);
-
-    glVertex4i(x, y, z, w);
-    return 0;
-}
-
-int GlVertex4iv(lua_State *L) {
-    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
-
-    glVertex4iv(v);
-    return 0;
-}
-
-int GlVertex4s(lua_State *L) {
-    GLshort x = (GLshort)luaL_checkinteger(L, 1);
-    GLshort y = (GLshort)luaL_checkinteger(L, 2);
-    GLshort z = (GLshort)luaL_checkinteger(L, 3);
-    GLshort w = (GLshort)luaL_checkinteger(L, 4);
-
-    glVertex4s(x, y, z, w);
-    return 0;
-}
-
-int GlVertex4sv(lua_State *L) {
-    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
-
-    glVertex4sv(v);
-    return 0;
-}
-
-int GlViewport(lua_State *L) {
-    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
-    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
-    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
-    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
-
-    glViewport(x, y, width, height);
-    return 0;
-}
-
-int GlAreTexturesResident(lua_State *L) {
-    GLsizei        n          = (GLsizei       )luaL_checkinteger(L, 1);
-    const GLuint * textures   = (const GLuint *)luaL_checkudata(L, 2, "const GLuint *");
-    GLboolean *    residences = (GLboolean *   )luaL_checkudata(L, 3, "GLboolean *");
-
-    glAreTexturesResident(n, textures, residences);
-    return 0;
-}
-
-int GlArrayElement(lua_State *L) {
-    GLint i = (GLint)luaL_checkinteger(L, 1);
-
-    glArrayElement(i);
-    return 0;
-}
-
-int GlBindTexture(lua_State *L) {
-    GLenum target  = (GLenum)luaL_checkinteger(L, 1);
-    GLuint texture = (GLuint)luaL_checkinteger(L, 2);
-
-    glBindTexture(target, texture);
-    return 0;
-}
-
-int GlColorPointer(lua_State *L) {
-    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
-    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
-
-    glColorPointer(size, type, stride, pointer);
-    return 0;
-}
-
-int GlCopyTexImage1D(lua_State *L) {
-    GLenum  target         = (GLenum )luaL_checkinteger(L, 1);
-    GLint   level          = (GLint  )luaL_checkinteger(L, 2);
-    GLenum  internalformat = (GLenum )luaL_checkinteger(L, 3);
-    GLint   x              = (GLint  )luaL_checkinteger(L, 4);
-    GLint   y              = (GLint  )luaL_checkinteger(L, 5);
-    GLsizei width          = (GLsizei)luaL_checkinteger(L, 6);
-    GLint   border         = (GLint  )luaL_checkinteger(L, 7);
-
-    glCopyTexImage1D(target, level, internalformat, x, y, width, border);
-    return 0;
-}
-
-int GlCopyTexImage2D(lua_State *L) {
-    GLenum  target         = (GLenum )luaL_checkinteger(L, 1);
-    GLint   level          = (GLint  )luaL_checkinteger(L, 2);
-    GLenum  internalformat = (GLenum )luaL_checkinteger(L, 3);
-    GLint   x              = (GLint  )luaL_checkinteger(L, 4);
-    GLint   y              = (GLint  )luaL_checkinteger(L, 5);
-    GLsizei width          = (GLsizei)luaL_checkinteger(L, 6);
-    GLsizei height         = (GLsizei)luaL_checkinteger(L, 7);
-    GLint   border         = (GLint  )luaL_checkinteger(L, 8);
-
-    glCopyTexImage2D(target, level, internalformat, x, y, width, height, border);
-    return 0;
-}
-
-int GlCopyTexSubImage1D(lua_State *L) {
-    GLenum  target  = (GLenum )luaL_checkinteger(L, 1);
-    GLint   level   = (GLint  )luaL_checkinteger(L, 2);
-    GLint   xoffset = (GLint  )luaL_checkinteger(L, 3);
-    GLint   x       = (GLint  )luaL_checkinteger(L, 4);
-    GLint   y       = (GLint  )luaL_checkinteger(L, 5);
-    GLsizei width   = (GLsizei)luaL_checkinteger(L, 6);
-
-    glCopyTexSubImage1D(target, level, xoffset, x, y, width);
-    return 0;
-}
-
-int GlCopyTexSubImage2D(lua_State *L) {
-    GLenum  target  = (GLenum )luaL_checkinteger(L, 1);
-    GLint   level   = (GLint  )luaL_checkinteger(L, 2);
-    GLint   xoffset = (GLint  )luaL_checkinteger(L, 3);
-    GLint   yoffset = (GLint  )luaL_checkinteger(L, 4);
-    GLint   x       = (GLint  )luaL_checkinteger(L, 5);
-    GLint   y       = (GLint  )luaL_checkinteger(L, 6);
-    GLsizei width   = (GLsizei)luaL_checkinteger(L, 7);
-    GLsizei height  = (GLsizei)luaL_checkinteger(L, 8);
-
-    glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
-    return 0;
-}
-
-int GlDeleteTextures(lua_State *L) {
-    GLsizei        n        = (GLsizei       )luaL_checkinteger(L, 1);
-    const GLuint * textures = (const GLuint *)luaL_checkudata(L, 2, "const GLuint *");
-
-    glDeleteTextures(n, textures);
-    return 0;
-}
-
-int GlDisableClientState(lua_State *L) {
-    GLenum ren_array = (GLenum)luaL_checkinteger(L, 1);
-
-    glDisableClientState(ren_array);
-    return 0;
-}
-
-int GlDrawArrays(lua_State *L) {
-    GLenum  mode  = (GLenum )luaL_checkinteger(L, 1);
-    GLint   first = (GLint  )luaL_checkinteger(L, 2);
-    GLsizei count = (GLsizei)luaL_checkinteger(L, 3);
-
-    glDrawArrays(mode, first, count);
-    return 0;
-}
-
-int GlDrawElements(lua_State *L) {
-    GLenum       mode    = (GLenum      )luaL_checkinteger(L, 1);
-    GLsizei      count   = (GLsizei     )luaL_checkinteger(L, 2);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 3);
-    const void * indices = (const void *)luaL_checkudata(L, 4, "const void *");
-
-    glDrawElements(mode, count, type, indices);
-    return 0;
-}
-
-int GlEdgeFlagPointer(lua_State *L) {
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 1);
-    const void * pointer = (const void *)luaL_checkudata(L, 2, "const void *");
-
-    glEdgeFlagPointer(stride, pointer);
-    return 0;
-}
-
-int GlEnableClientState(lua_State *L) {
-    GLenum ren_array = (GLenum)luaL_checkinteger(L, 1);
-
-    glEnableClientState(ren_array);
-    return 0;
-}
-
-int GlGenTextures(lua_State *L) {
-    GLsizei  n        = (GLsizei )luaL_checkinteger(L, 1);
-    GLuint * textures = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
-
-    glGenTextures(n, textures);
-    return 0;
-}
-
-int GlGetPointerv(lua_State *L) {
-    GLenum  pname  = (GLenum )luaL_checkinteger(L, 1);
-    void ** params = (void **)luaL_checkudata(L, 2, "void **");
-
-    glGetPointerv(pname, params);
-    return 0;
-}
-
-int GlIndexPointer(lua_State *L) {
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 1);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
-    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
-
-    glIndexPointer(type, stride, pointer);
-    return 0;
-}
-
-int GlIndexub(lua_State *L) {
-    GLubyte c = (GLubyte)luaL_checkinteger(L, 1);
-
-    glIndexub(c);
-    return 0;
-}
-
-int GlIndexubv(lua_State *L) {
-    const GLubyte * c = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
-
-    glIndexubv(c);
-    return 0;
-}
-
-int GlInterleavedArrays(lua_State *L) {
-    GLenum       format  = (GLenum      )luaL_checkinteger(L, 1);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
-    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
-
-    glInterleavedArrays(format, stride, pointer);
-    return 0;
-}
-
-int GlIsTexture(lua_State *L) {
-    GLuint texture = (GLuint)luaL_checkinteger(L, 1);
-
-    glIsTexture(texture);
-    return 0;
-}
-
-int GlNormalPointer(lua_State *L) {
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 1);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
-    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
-
-    glNormalPointer(type, stride, pointer);
-    return 0;
-}
-
-int GlPolygonOffset(lua_State *L) {
-    GLfloat factor = (GLfloat)luaL_checknumber(L, 1);
-    GLfloat units  = (GLfloat)luaL_checknumber(L, 2);
-
-    glPolygonOffset(factor, units);
-    return 0;
-}
-
-int GlPopClientAttrib(lua_State *L) {
-
-    glPopClientAttrib();
-    return 0;
-}
-
-int GlPrioritizeTextures(lua_State *L) {
-    GLsizei         n          = (GLsizei        )luaL_checkinteger(L, 1);
-    const GLuint *  textures   = (const GLuint * )luaL_checkudata(L, 2, "const GLuint *");
-    const GLfloat * priorities = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
-
-    glPrioritizeTextures(n, textures, priorities);
-    return 0;
-}
-
-int GlPushClientAttrib(lua_State *L) {
-    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
-
-    glPushClientAttrib(mask);
-    return 0;
-}
-
-int GlTexCoordPointer(lua_State *L) {
-    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
-    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
-
-    glTexCoordPointer(size, type, stride, pointer);
-    return 0;
-}
-
-int GlTexSubImage1D(lua_State *L) {
-    GLenum       target  = (GLenum      )luaL_checkinteger(L, 1);
-    GLint        level   = (GLint       )luaL_checkinteger(L, 2);
-    GLint        xoffset = (GLint       )luaL_checkinteger(L, 3);
-    GLsizei      width   = (GLsizei     )luaL_checkinteger(L, 4);
-    GLenum       format  = (GLenum      )luaL_checkinteger(L, 5);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 6);
-    const void * pixels  = (const void *)luaL_checkudata(L, 7, "const void *");
-
-    glTexSubImage1D(target, level, xoffset, width, format, type, pixels);
-    return 0;
-}
-
-int GlTexSubImage2D(lua_State *L) {
-    GLenum       target  = (GLenum      )luaL_checkinteger(L, 1);
-    GLint        level   = (GLint       )luaL_checkinteger(L, 2);
-    GLint        xoffset = (GLint       )luaL_checkinteger(L, 3);
-    GLint        yoffset = (GLint       )luaL_checkinteger(L, 4);
-    GLsizei      width   = (GLsizei     )luaL_checkinteger(L, 5);
-    GLsizei      height  = (GLsizei     )luaL_checkinteger(L, 6);
-    GLenum       format  = (GLenum      )luaL_checkinteger(L, 7);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 8);
-    const void * pixels  = (const void *)luaL_checkudata(L, 9, "const void *");
-
-    glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
-    return 0;
-}
-
-int GlVertexPointer(lua_State *L) {
-    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
-    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
-    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
-    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
-
-    glVertexPointer(size, type, stride, pointer);
-    return 0;
-}
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* glutil.c                                                                                                           */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
 
 int GlCopyTexSubImage3D(lua_State *L) {
     GLenum  target  = (GLenum )luaL_checkinteger(L, 1);
@@ -22172,6 +16707,2807 @@ int GlClearTexSubImage(lua_State *L) {
     const void * data    = (const void *)luaL_checkudata(L, 11, "const void *");
 
     glClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
+    return 0;
+}
+
+int GlAccum(lua_State *L) {
+    GLenum  op    = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat value = (GLfloat)luaL_checknumber(L, 2);
+
+    glAccum(op, value);
+    return 0;
+}
+
+int GlAlphaFunc(lua_State *L) {
+    GLenum  func = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat ref  = (GLfloat)luaL_checknumber(L, 2);
+
+    glAlphaFunc(func, ref);
+    return 0;
+}
+
+int GlBegin(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glBegin(mode);
+    return 0;
+}
+
+int GlBitmap(lua_State *L) {
+    GLsizei         width  = (GLsizei        )luaL_checkinteger(L, 1);
+    GLsizei         height = (GLsizei        )luaL_checkinteger(L, 2);
+    GLfloat         xorig  = (GLfloat        )luaL_checknumber(L, 3);
+    GLfloat         yorig  = (GLfloat        )luaL_checknumber(L, 4);
+    GLfloat         xmove  = (GLfloat        )luaL_checknumber(L, 5);
+    GLfloat         ymove  = (GLfloat        )luaL_checknumber(L, 6);
+    const GLubyte * bitmap = (const GLubyte *)luaL_checkudata(L, 7, "const GLubyte *");
+
+    glBitmap(width, height, xorig, yorig, xmove, ymove, bitmap);
+    return 0;
+}
+
+int GlBlendFunc(lua_State *L) {
+    GLenum sfactor = (GLenum)luaL_checkinteger(L, 1);
+    GLenum dfactor = (GLenum)luaL_checkinteger(L, 2);
+
+    glBlendFunc(sfactor, dfactor);
+    return 0;
+}
+
+int GlCallList(lua_State *L) {
+    GLuint list = (GLuint)luaL_checkinteger(L, 1);
+
+    glCallList(list);
+    return 0;
+}
+
+int GlCallLists(lua_State *L) {
+    GLsizei      n     = (GLsizei     )luaL_checkinteger(L, 1);
+    GLenum       type  = (GLenum      )luaL_checkinteger(L, 2);
+    const void * lists = (const void *)luaL_checkudata(L, 3, "const void *");
+
+    glCallLists(n, type, lists);
+    return 0;
+}
+
+int GlClear(lua_State *L) {
+    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
+
+    glClear(mask);
+    return 0;
+}
+
+int GlClearAccum(lua_State *L) {
+    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
+
+    glClearAccum(red, green, blue, alpha);
+    return 0;
+}
+
+int GlClearColor(lua_State *L) {
+    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
+
+    glClearColor(red, green, blue, alpha);
+    return 0;
+}
+
+int GlClearDepth(lua_State *L) {
+    GLdouble depth = (GLdouble)luaL_checknumber(L, 1);
+
+    glClearDepth(depth);
+    return 0;
+}
+
+int GlClearIndex(lua_State *L) {
+    GLfloat c = (GLfloat)luaL_checknumber(L, 1);
+
+    glClearIndex(c);
+    return 0;
+}
+
+int GlClearStencil(lua_State *L) {
+    GLint s = (GLint)luaL_checkinteger(L, 1);
+
+    glClearStencil(s);
+    return 0;
+}
+
+int GlClipPlane(lua_State *L) {
+    GLenum           plane    = (GLenum          )luaL_checkinteger(L, 1);
+    const GLdouble * equation = (const GLdouble *)luaL_checkudata(L, 2, "const GLdouble *");
+
+    glClipPlane(plane, equation);
+    return 0;
+}
+
+int GlColor3b(lua_State *L) {
+    GLbyte red   = (GLbyte)luaL_checkinteger(L, 1);
+    GLbyte green = (GLbyte)luaL_checkinteger(L, 2);
+    GLbyte blue  = (GLbyte)luaL_checkinteger(L, 3);
+
+    glColor3b(red, green, blue);
+    return 0;
+}
+
+int GlColor3bv(lua_State *L) {
+    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
+
+    glColor3bv(v);
+    return 0;
+}
+
+int GlColor3d(lua_State *L) {
+    GLdouble red   = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble green = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble blue  = (GLdouble)luaL_checknumber(L, 3);
+
+    glColor3d(red, green, blue);
+    return 0;
+}
+
+int GlColor3dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glColor3dv(v);
+    return 0;
+}
+
+int GlColor3f(lua_State *L) {
+    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
+
+    glColor3f(red, green, blue);
+    return 0;
+}
+
+int GlColor3fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glColor3fv(v);
+    return 0;
+}
+
+int GlColor3i(lua_State *L) {
+    GLint red   = (GLint)luaL_checkinteger(L, 1);
+    GLint green = (GLint)luaL_checkinteger(L, 2);
+    GLint blue  = (GLint)luaL_checkinteger(L, 3);
+
+    glColor3i(red, green, blue);
+    return 0;
+}
+
+int GlColor3iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glColor3iv(v);
+    return 0;
+}
+
+int GlColor3s(lua_State *L) {
+    GLshort red   = (GLshort)luaL_checkinteger(L, 1);
+    GLshort green = (GLshort)luaL_checkinteger(L, 2);
+    GLshort blue  = (GLshort)luaL_checkinteger(L, 3);
+
+    glColor3s(red, green, blue);
+    return 0;
+}
+
+int GlColor3sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glColor3sv(v);
+    return 0;
+}
+
+int GlColor3ub(lua_State *L) {
+    GLubyte red   = (GLubyte)luaL_checkinteger(L, 1);
+    GLubyte green = (GLubyte)luaL_checkinteger(L, 2);
+    GLubyte blue  = (GLubyte)luaL_checkinteger(L, 3);
+
+    glColor3ub(red, green, blue);
+    return 0;
+}
+
+int GlColor3ubv(lua_State *L) {
+    const GLubyte * v = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
+
+    glColor3ubv(v);
+    return 0;
+}
+
+int GlColor3ui(lua_State *L) {
+    GLuint red   = (GLuint)luaL_checkinteger(L, 1);
+    GLuint green = (GLuint)luaL_checkinteger(L, 2);
+    GLuint blue  = (GLuint)luaL_checkinteger(L, 3);
+
+    glColor3ui(red, green, blue);
+    return 0;
+}
+
+int GlColor3uiv(lua_State *L) {
+    const GLuint * v = (const GLuint *)luaL_checkudata(L, 1, "const GLuint *");
+
+    glColor3uiv(v);
+    return 0;
+}
+
+int GlColor3us(lua_State *L) {
+    GLushort red   = (GLushort)luaL_checkinteger(L, 1);
+    GLushort green = (GLushort)luaL_checkinteger(L, 2);
+    GLushort blue  = (GLushort)luaL_checkinteger(L, 3);
+
+    glColor3us(red, green, blue);
+    return 0;
+}
+
+int GlColor3usv(lua_State *L) {
+    const GLushort * v = (const GLushort *)luaL_checkudata(L, 1, "const GLushort *");
+
+    glColor3usv(v);
+    return 0;
+}
+
+int GlColor4b(lua_State *L) {
+    GLbyte red   = (GLbyte)luaL_checkinteger(L, 1);
+    GLbyte green = (GLbyte)luaL_checkinteger(L, 2);
+    GLbyte blue  = (GLbyte)luaL_checkinteger(L, 3);
+    GLbyte alpha = (GLbyte)luaL_checkinteger(L, 4);
+
+    glColor4b(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4bv(lua_State *L) {
+    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
+
+    glColor4bv(v);
+    return 0;
+}
+
+int GlColor4d(lua_State *L) {
+    GLdouble red   = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble green = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble blue  = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble alpha = (GLdouble)luaL_checknumber(L, 4);
+
+    glColor4d(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glColor4dv(v);
+    return 0;
+}
+
+int GlColor4f(lua_State *L) {
+    GLfloat red   = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat green = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat blue  = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat alpha = (GLfloat)luaL_checknumber(L, 4);
+
+    glColor4f(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glColor4fv(v);
+    return 0;
+}
+
+int GlColor4i(lua_State *L) {
+    GLint red   = (GLint)luaL_checkinteger(L, 1);
+    GLint green = (GLint)luaL_checkinteger(L, 2);
+    GLint blue  = (GLint)luaL_checkinteger(L, 3);
+    GLint alpha = (GLint)luaL_checkinteger(L, 4);
+
+    glColor4i(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glColor4iv(v);
+    return 0;
+}
+
+int GlColor4s(lua_State *L) {
+    GLshort red   = (GLshort)luaL_checkinteger(L, 1);
+    GLshort green = (GLshort)luaL_checkinteger(L, 2);
+    GLshort blue  = (GLshort)luaL_checkinteger(L, 3);
+    GLshort alpha = (GLshort)luaL_checkinteger(L, 4);
+
+    glColor4s(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glColor4sv(v);
+    return 0;
+}
+
+int GlColor4ub(lua_State *L) {
+    GLubyte red   = (GLubyte)luaL_checkinteger(L, 1);
+    GLubyte green = (GLubyte)luaL_checkinteger(L, 2);
+    GLubyte blue  = (GLubyte)luaL_checkinteger(L, 3);
+    GLubyte alpha = (GLubyte)luaL_checkinteger(L, 4);
+
+    glColor4ub(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4ubv(lua_State *L) {
+    const GLubyte * v = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
+
+    glColor4ubv(v);
+    return 0;
+}
+
+int GlColor4ui(lua_State *L) {
+    GLuint red   = (GLuint)luaL_checkinteger(L, 1);
+    GLuint green = (GLuint)luaL_checkinteger(L, 2);
+    GLuint blue  = (GLuint)luaL_checkinteger(L, 3);
+    GLuint alpha = (GLuint)luaL_checkinteger(L, 4);
+
+    glColor4ui(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4uiv(lua_State *L) {
+    const GLuint * v = (const GLuint *)luaL_checkudata(L, 1, "const GLuint *");
+
+    glColor4uiv(v);
+    return 0;
+}
+
+int GlColor4us(lua_State *L) {
+    GLushort red   = (GLushort)luaL_checkinteger(L, 1);
+    GLushort green = (GLushort)luaL_checkinteger(L, 2);
+    GLushort blue  = (GLushort)luaL_checkinteger(L, 3);
+    GLushort alpha = (GLushort)luaL_checkinteger(L, 4);
+
+    glColor4us(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColor4usv(lua_State *L) {
+    const GLushort * v = (const GLushort *)luaL_checkudata(L, 1, "const GLushort *");
+
+    glColor4usv(v);
+    return 0;
+}
+
+int GlColorMask(lua_State *L) {
+    GLboolean red   = (GLboolean)luaL_checkinteger(L, 1);
+    GLboolean green = (GLboolean)luaL_checkinteger(L, 2);
+    GLboolean blue  = (GLboolean)luaL_checkinteger(L, 3);
+    GLboolean alpha = (GLboolean)luaL_checkinteger(L, 4);
+
+    glColorMask(red, green, blue, alpha);
+    return 0;
+}
+
+int GlColorMaterial(lua_State *L) {
+    GLenum face = (GLenum)luaL_checkinteger(L, 1);
+    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
+
+    glColorMaterial(face, mode);
+    return 0;
+}
+
+int GlCopyPixels(lua_State *L) {
+    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
+    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
+    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
+    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
+    GLenum  type   = (GLenum )luaL_checkinteger(L, 5);
+
+    glCopyPixels(x, y, width, height, type);
+    return 0;
+}
+
+int GlCullFace(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glCullFace(mode);
+    return 0;
+}
+
+int GlDeleteLists(lua_State *L) {
+    GLuint  list  = (GLuint )luaL_checkinteger(L, 1);
+    GLsizei range = (GLsizei)luaL_checkinteger(L, 2);
+
+    glDeleteLists(list, range);
+    return 0;
+}
+
+int GlDepthFunc(lua_State *L) {
+    GLenum func = (GLenum)luaL_checkinteger(L, 1);
+
+    glDepthFunc(func);
+    return 0;
+}
+
+int GlDepthMask(lua_State *L) {
+    GLboolean flag = (GLboolean)luaL_checkinteger(L, 1);
+
+    glDepthMask(flag);
+    return 0;
+}
+
+int GlDepthRange(lua_State *L) {
+    GLdouble ren_near = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble ren_far  = (GLdouble)luaL_checknumber(L, 2);
+
+    glDepthRange(ren_near, ren_far);
+    return 0;
+}
+
+int GlDisable(lua_State *L) {
+    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
+
+    glDisable(cap);
+    return 0;
+}
+
+int GlDrawBuffer(lua_State *L) {
+    GLenum buf = (GLenum)luaL_checkinteger(L, 1);
+
+    glDrawBuffer(buf);
+    return 0;
+}
+
+int GlDrawPixels(lua_State *L) {
+    GLsizei      width  = (GLsizei     )luaL_checkinteger(L, 1);
+    GLsizei      height = (GLsizei     )luaL_checkinteger(L, 2);
+    GLenum       format = (GLenum      )luaL_checkinteger(L, 3);
+    GLenum       type   = (GLenum      )luaL_checkinteger(L, 4);
+    const void * pixels = (const void *)luaL_checkudata(L, 5, "const void *");
+
+    glDrawPixels(width, height, format, type, pixels);
+    return 0;
+}
+
+int GlEdgeFlag(lua_State *L) {
+    GLboolean flag = (GLboolean)luaL_checkinteger(L, 1);
+
+    glEdgeFlag(flag);
+    return 0;
+}
+
+int GlEdgeFlagv(lua_State *L) {
+    const GLboolean * flag = (const GLboolean *)luaL_checkudata(L, 1, "const GLboolean *");
+
+    glEdgeFlagv(flag);
+    return 0;
+}
+
+int GlEnable(lua_State *L) {
+    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
+
+    glEnable(cap);
+    return 0;
+}
+
+int GlEnd(lua_State *L) {
+
+    glEnd();
+    return 0;
+}
+
+int GlEndList(lua_State *L) {
+
+    glEndList();
+    return 0;
+}
+
+int GlEvalCoord1d(lua_State *L) {
+    GLdouble u = (GLdouble)luaL_checknumber(L, 1);
+
+    glEvalCoord1d(u);
+    return 0;
+}
+
+int GlEvalCoord1dv(lua_State *L) {
+    const GLdouble * u = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glEvalCoord1dv(u);
+    return 0;
+}
+
+int GlEvalCoord1f(lua_State *L) {
+    GLfloat u = (GLfloat)luaL_checknumber(L, 1);
+
+    glEvalCoord1f(u);
+    return 0;
+}
+
+int GlEvalCoord1fv(lua_State *L) {
+    const GLfloat * u = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glEvalCoord1fv(u);
+    return 0;
+}
+
+int GlEvalCoord2d(lua_State *L) {
+    GLdouble u = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble v = (GLdouble)luaL_checknumber(L, 2);
+
+    glEvalCoord2d(u, v);
+    return 0;
+}
+
+int GlEvalCoord2dv(lua_State *L) {
+    const GLdouble * u = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glEvalCoord2dv(u);
+    return 0;
+}
+
+int GlEvalCoord2f(lua_State *L) {
+    GLfloat u = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat v = (GLfloat)luaL_checknumber(L, 2);
+
+    glEvalCoord2f(u, v);
+    return 0;
+}
+
+int GlEvalCoord2fv(lua_State *L) {
+    const GLfloat * u = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glEvalCoord2fv(u);
+    return 0;
+}
+
+int GlEvalMesh1(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+    GLint  i1   = (GLint )luaL_checkinteger(L, 2);
+    GLint  i2   = (GLint )luaL_checkinteger(L, 3);
+
+    glEvalMesh1(mode, i1, i2);
+    return 0;
+}
+
+int GlEvalMesh2(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+    GLint  i1   = (GLint )luaL_checkinteger(L, 2);
+    GLint  i2   = (GLint )luaL_checkinteger(L, 3);
+    GLint  j1   = (GLint )luaL_checkinteger(L, 4);
+    GLint  j2   = (GLint )luaL_checkinteger(L, 5);
+
+    glEvalMesh2(mode, i1, i2, j1, j2);
+    return 0;
+}
+
+int GlEvalPoint1(lua_State *L) {
+    GLint i = (GLint)luaL_checkinteger(L, 1);
+
+    glEvalPoint1(i);
+    return 0;
+}
+
+int GlEvalPoint2(lua_State *L) {
+    GLint i = (GLint)luaL_checkinteger(L, 1);
+    GLint j = (GLint)luaL_checkinteger(L, 2);
+
+    glEvalPoint2(i, j);
+    return 0;
+}
+
+int GlFeedbackBuffer(lua_State *L) {
+    GLsizei   size   = (GLsizei  )luaL_checkinteger(L, 1);
+    GLenum    type   = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * buffer = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glFeedbackBuffer(size, type, buffer);
+    return 0;
+}
+
+int GlFinish(lua_State *L) {
+
+    glFinish();
+    return 0;
+}
+
+int GlFlush(lua_State *L) {
+
+    glFlush();
+    return 0;
+}
+
+int GlFogf(lua_State *L) {
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
+
+    glFogf(pname, param);
+    return 0;
+}
+
+int GlFogfv(lua_State *L) {
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 1);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
+
+    glFogfv(pname, params);
+    return 0;
+}
+
+int GlFogi(lua_State *L) {
+    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
+    GLint  param = (GLint )luaL_checkinteger(L, 2);
+
+    glFogi(pname, param);
+    return 0;
+}
+
+int GlFogiv(lua_State *L) {
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 1);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
+
+    glFogiv(pname, params);
+    return 0;
+}
+
+int GlFrontFace(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glFrontFace(mode);
+    return 0;
+}
+
+int GlFrustum(lua_State *L) {
+    GLdouble left   = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble right  = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble bottom = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble top    = (GLdouble)luaL_checknumber(L, 4);
+    GLdouble zNear  = (GLdouble)luaL_checknumber(L, 5);
+    GLdouble zFar   = (GLdouble)luaL_checknumber(L, 6);
+
+    glFrustum(left, right, bottom, top, zNear, zFar);
+    return 0;
+}
+
+int GlGenLists(lua_State *L) {
+    GLsizei range = (GLsizei)luaL_checkinteger(L, 1);
+
+    glGenLists(range);
+    return 0;
+}
+
+int GlGetBooleanv(lua_State *L) {
+    GLenum      pname = (GLenum     )luaL_checkinteger(L, 1);
+    GLboolean * data  = (GLboolean *)luaL_checkudata(L, 2, "GLboolean *");
+
+    glGetBooleanv(pname, data);
+    return 0;
+}
+
+int GlGetClipPlane(lua_State *L) {
+    GLenum     plane    = (GLenum    )luaL_checkinteger(L, 1);
+    GLdouble * equation = (GLdouble *)luaL_checkudata(L, 2, "GLdouble *");
+
+    glGetClipPlane(plane, equation);
+    return 0;
+}
+
+int GlGetDoublev(lua_State *L) {
+    GLenum     pname = (GLenum    )luaL_checkinteger(L, 1);
+    GLdouble * data  = (GLdouble *)luaL_checkudata(L, 2, "GLdouble *");
+
+    glGetDoublev(pname, data);
+    return 0;
+}
+
+int GlGetError(lua_State *L) {
+
+    glGetError();
+    return 0;
+}
+
+int GlGetFloatv(lua_State *L) {
+    GLenum    pname = (GLenum   )luaL_checkinteger(L, 1);
+    GLfloat * data  = (GLfloat *)luaL_checkudata(L, 2, "GLfloat *");
+
+    glGetFloatv(pname, data);
+    return 0;
+}
+
+int GlGetIntegerv(lua_State *L) {
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
+    GLint * data  = (GLint *)luaL_checkudata(L, 2, "GLint *");
+
+    glGetIntegerv(pname, data);
+    return 0;
+}
+
+int GlGetLightfv(lua_State *L) {
+    GLenum    light  = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetLightfv(light, pname, params);
+    return 0;
+}
+
+int GlGetLightiv(lua_State *L) {
+    GLenum  light  = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetLightiv(light, pname, params);
+    return 0;
+}
+
+int GlGetMapdv(lua_State *L) {
+    GLenum     target = (GLenum    )luaL_checkinteger(L, 1);
+    GLenum     query  = (GLenum    )luaL_checkinteger(L, 2);
+    GLdouble * v      = (GLdouble *)luaL_checkudata(L, 3, "GLdouble *");
+
+    glGetMapdv(target, query, v);
+    return 0;
+}
+
+int GlGetMapfv(lua_State *L) {
+    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    query  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * v      = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetMapfv(target, query, v);
+    return 0;
+}
+
+int GlGetMapiv(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  query  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * v      = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetMapiv(target, query, v);
+    return 0;
+}
+
+int GlGetMaterialfv(lua_State *L) {
+    GLenum    face   = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetMaterialfv(face, pname, params);
+    return 0;
+}
+
+int GlGetMaterialiv(lua_State *L) {
+    GLenum  face   = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetMaterialiv(face, pname, params);
+    return 0;
+}
+
+int GlGetPixelMapfv(lua_State *L) {
+    GLenum    map    = (GLenum   )luaL_checkinteger(L, 1);
+    GLfloat * values = (GLfloat *)luaL_checkudata(L, 2, "GLfloat *");
+
+    glGetPixelMapfv(map, values);
+    return 0;
+}
+
+int GlGetPixelMapuiv(lua_State *L) {
+    GLenum   map    = (GLenum  )luaL_checkinteger(L, 1);
+    GLuint * values = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
+
+    glGetPixelMapuiv(map, values);
+    return 0;
+}
+
+int GlGetPixelMapusv(lua_State *L) {
+    GLenum     map    = (GLenum    )luaL_checkinteger(L, 1);
+    GLushort * values = (GLushort *)luaL_checkudata(L, 2, "GLushort *");
+
+    glGetPixelMapusv(map, values);
+    return 0;
+}
+
+int GlGetPolygonStipple(lua_State *L) {
+    GLubyte * mask = (GLubyte *)luaL_checkudata(L, 1, "GLubyte *");
+
+    glGetPolygonStipple(mask);
+    return 0;
+}
+
+int GlGetString(lua_State *L) {
+    GLenum name = (GLenum)luaL_checkinteger(L, 1);
+
+    glGetString(name);
+    return 0;
+}
+
+int GlGetTexEnvfv(lua_State *L) {
+    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetTexEnvfv(target, pname, params);
+    return 0;
+}
+
+int GlGetTexEnviv(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetTexEnviv(target, pname, params);
+    return 0;
+}
+
+int GlGetTexGendv(lua_State *L) {
+    GLenum     coord  = (GLenum    )luaL_checkinteger(L, 1);
+    GLenum     pname  = (GLenum    )luaL_checkinteger(L, 2);
+    GLdouble * params = (GLdouble *)luaL_checkudata(L, 3, "GLdouble *");
+
+    glGetTexGendv(coord, pname, params);
+    return 0;
+}
+
+int GlGetTexGenfv(lua_State *L) {
+    GLenum    coord  = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetTexGenfv(coord, pname, params);
+    return 0;
+}
+
+int GlGetTexGeniv(lua_State *L) {
+    GLenum  coord  = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetTexGeniv(coord, pname, params);
+    return 0;
+}
+
+int GlGetTexImage(lua_State *L) {
+    GLenum target = (GLenum)luaL_checkinteger(L, 1);
+    GLint  level  = (GLint )luaL_checkinteger(L, 2);
+    GLenum format = (GLenum)luaL_checkinteger(L, 3);
+    GLenum type   = (GLenum)luaL_checkinteger(L, 4);
+    void * pixels = (void *)luaL_checkudata(L, 5, "void *");
+
+    glGetTexImage(target, level, format, type, pixels);
+    return 0;
+}
+
+int GlGetTexLevelParameterfv(lua_State *L) {
+    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
+    GLint     level  = (GLint    )luaL_checkinteger(L, 2);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 3);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 4, "GLfloat *");
+
+    glGetTexLevelParameterfv(target, level, pname, params);
+    return 0;
+}
+
+int GlGetTexLevelParameteriv(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLint   level  = (GLint  )luaL_checkinteger(L, 2);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 3);
+    GLint * params = (GLint *)luaL_checkudata(L, 4, "GLint *");
+
+    glGetTexLevelParameteriv(target, level, pname, params);
+    return 0;
+}
+
+int GlGetTexParameterfv(lua_State *L) {
+    GLenum    target = (GLenum   )luaL_checkinteger(L, 1);
+    GLenum    pname  = (GLenum   )luaL_checkinteger(L, 2);
+    GLfloat * params = (GLfloat *)luaL_checkudata(L, 3, "GLfloat *");
+
+    glGetTexParameterfv(target, pname, params);
+    return 0;
+}
+
+int GlGetTexParameteriv(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLint * params = (GLint *)luaL_checkudata(L, 3, "GLint *");
+
+    glGetTexParameteriv(target, pname, params);
+    return 0;
+}
+
+int GlHint(lua_State *L) {
+    GLenum target = (GLenum)luaL_checkinteger(L, 1);
+    GLenum mode   = (GLenum)luaL_checkinteger(L, 2);
+
+    glHint(target, mode);
+    return 0;
+}
+
+int GlIndexMask(lua_State *L) {
+    GLuint mask = (GLuint)luaL_checkinteger(L, 1);
+
+    glIndexMask(mask);
+    return 0;
+}
+
+int GlIndexd(lua_State *L) {
+    GLdouble c = (GLdouble)luaL_checknumber(L, 1);
+
+    glIndexd(c);
+    return 0;
+}
+
+int GlIndexdv(lua_State *L) {
+    const GLdouble * c = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glIndexdv(c);
+    return 0;
+}
+
+int GlIndexf(lua_State *L) {
+    GLfloat c = (GLfloat)luaL_checknumber(L, 1);
+
+    glIndexf(c);
+    return 0;
+}
+
+int GlIndexfv(lua_State *L) {
+    const GLfloat * c = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glIndexfv(c);
+    return 0;
+}
+
+int GlIndexi(lua_State *L) {
+    GLint c = (GLint)luaL_checkinteger(L, 1);
+
+    glIndexi(c);
+    return 0;
+}
+
+int GlIndexiv(lua_State *L) {
+    const GLint * c = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glIndexiv(c);
+    return 0;
+}
+
+int GlIndexs(lua_State *L) {
+    GLshort c = (GLshort)luaL_checkinteger(L, 1);
+
+    glIndexs(c);
+    return 0;
+}
+
+int GlIndexsv(lua_State *L) {
+    const GLshort * c = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glIndexsv(c);
+    return 0;
+}
+
+int GlInitNames(lua_State *L) {
+
+    glInitNames();
+    return 0;
+}
+
+int GlIsEnabled(lua_State *L) {
+    GLenum cap = (GLenum)luaL_checkinteger(L, 1);
+
+    glIsEnabled(cap);
+    return 0;
+}
+
+int GlIsList(lua_State *L) {
+    GLuint list = (GLuint)luaL_checkinteger(L, 1);
+
+    glIsList(list);
+    return 0;
+}
+
+int GlLightModelf(lua_State *L) {
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
+
+    glLightModelf(pname, param);
+    return 0;
+}
+
+int GlLightModelfv(lua_State *L) {
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 1);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
+
+    glLightModelfv(pname, params);
+    return 0;
+}
+
+int GlLightModeli(lua_State *L) {
+    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
+    GLint  param = (GLint )luaL_checkinteger(L, 2);
+
+    glLightModeli(pname, param);
+    return 0;
+}
+
+int GlLightModeliv(lua_State *L) {
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 1);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
+
+    glLightModeliv(pname, params);
+    return 0;
+}
+
+int GlLightf(lua_State *L) {
+    GLenum  light = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
+
+    glLightf(light, pname, param);
+    return 0;
+}
+
+int GlLightfv(lua_State *L) {
+    GLenum          light  = (GLenum         )luaL_checkinteger(L, 1);
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glLightfv(light, pname, params);
+    return 0;
+}
+
+int GlLighti(lua_State *L) {
+    GLenum light = (GLenum)luaL_checkinteger(L, 1);
+    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
+    GLint  param = (GLint )luaL_checkinteger(L, 3);
+
+    glLighti(light, pname, param);
+    return 0;
+}
+
+int GlLightiv(lua_State *L) {
+    GLenum        light  = (GLenum       )luaL_checkinteger(L, 1);
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
+
+    glLightiv(light, pname, params);
+    return 0;
+}
+
+int GlLineStipple(lua_State *L) {
+    GLint    factor  = (GLint   )luaL_checkinteger(L, 1);
+    GLushort pattern = (GLushort)luaL_checkinteger(L, 2);
+
+    glLineStipple(factor, pattern);
+    return 0;
+}
+
+int GlLineWidth(lua_State *L) {
+    GLfloat width = (GLfloat)luaL_checknumber(L, 1);
+
+    glLineWidth(width);
+    return 0;
+}
+
+int GlListBase(lua_State *L) {
+    GLuint base = (GLuint)luaL_checkinteger(L, 1);
+
+    glListBase(base);
+    return 0;
+}
+
+int GlLoadIdentity(lua_State *L) {
+
+    glLoadIdentity();
+    return 0;
+}
+
+int GlLoadMatrixd(lua_State *L) {
+    const GLdouble * m = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glLoadMatrixd(m);
+    return 0;
+}
+
+int GlLoadMatrixf(lua_State *L) {
+    const GLfloat * m = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glLoadMatrixf(m);
+    return 0;
+}
+
+int GlLoadName(lua_State *L) {
+    GLuint name = (GLuint)luaL_checkinteger(L, 1);
+
+    glLoadName(name);
+    return 0;
+}
+
+int GlLogicOp(lua_State *L) {
+    GLenum opcode = (GLenum)luaL_checkinteger(L, 1);
+
+    glLogicOp(opcode);
+    return 0;
+}
+
+int GlMap1d(lua_State *L) {
+    GLenum           target = (GLenum          )luaL_checkinteger(L, 1);
+    GLdouble         u1     = (GLdouble        )luaL_checknumber(L, 2);
+    GLdouble         u2     = (GLdouble        )luaL_checknumber(L, 3);
+    GLint            stride = (GLint           )luaL_checkinteger(L, 4);
+    GLint            order  = (GLint           )luaL_checkinteger(L, 5);
+    const GLdouble * points = (const GLdouble *)luaL_checkudata(L, 6, "const GLdouble *");
+
+    glMap1d(target, u1, u2, stride, order, points);
+    return 0;
+}
+
+int GlMap1f(lua_State *L) {
+    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
+    GLfloat         u1     = (GLfloat        )luaL_checknumber(L, 2);
+    GLfloat         u2     = (GLfloat        )luaL_checknumber(L, 3);
+    GLint           stride = (GLint          )luaL_checkinteger(L, 4);
+    GLint           order  = (GLint          )luaL_checkinteger(L, 5);
+    const GLfloat * points = (const GLfloat *)luaL_checkudata(L, 6, "const GLfloat *");
+
+    glMap1f(target, u1, u2, stride, order, points);
+    return 0;
+}
+
+int GlMap2d(lua_State *L) {
+    GLenum           target  = (GLenum          )luaL_checkinteger(L, 1);
+    GLdouble         u1      = (GLdouble        )luaL_checknumber(L, 2);
+    GLdouble         u2      = (GLdouble        )luaL_checknumber(L, 3);
+    GLint            ustride = (GLint           )luaL_checkinteger(L, 4);
+    GLint            uorder  = (GLint           )luaL_checkinteger(L, 5);
+    GLdouble         v1      = (GLdouble        )luaL_checknumber(L, 6);
+    GLdouble         v2      = (GLdouble        )luaL_checknumber(L, 7);
+    GLint            vstride = (GLint           )luaL_checkinteger(L, 8);
+    GLint            vorder  = (GLint           )luaL_checkinteger(L, 9);
+    const GLdouble * points  = (const GLdouble *)luaL_checkudata(L, 10, "const GLdouble *");
+
+    glMap2d(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
+    return 0;
+}
+
+int GlMap2f(lua_State *L) {
+    GLenum          target  = (GLenum         )luaL_checkinteger(L, 1);
+    GLfloat         u1      = (GLfloat        )luaL_checknumber(L, 2);
+    GLfloat         u2      = (GLfloat        )luaL_checknumber(L, 3);
+    GLint           ustride = (GLint          )luaL_checkinteger(L, 4);
+    GLint           uorder  = (GLint          )luaL_checkinteger(L, 5);
+    GLfloat         v1      = (GLfloat        )luaL_checknumber(L, 6);
+    GLfloat         v2      = (GLfloat        )luaL_checknumber(L, 7);
+    GLint           vstride = (GLint          )luaL_checkinteger(L, 8);
+    GLint           vorder  = (GLint          )luaL_checkinteger(L, 9);
+    const GLfloat * points  = (const GLfloat *)luaL_checkudata(L, 10, "const GLfloat *");
+
+    glMap2f(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
+    return 0;
+}
+
+int GlMapGrid1d(lua_State *L) {
+    GLint    un = (GLint   )luaL_checkinteger(L, 1);
+    GLdouble u1 = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble u2 = (GLdouble)luaL_checknumber(L, 3);
+
+    glMapGrid1d(un, u1, u2);
+    return 0;
+}
+
+int GlMapGrid1f(lua_State *L) {
+    GLint   un = (GLint  )luaL_checkinteger(L, 1);
+    GLfloat u1 = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat u2 = (GLfloat)luaL_checknumber(L, 3);
+
+    glMapGrid1f(un, u1, u2);
+    return 0;
+}
+
+int GlMapGrid2d(lua_State *L) {
+    GLint    un = (GLint   )luaL_checkinteger(L, 1);
+    GLdouble u1 = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble u2 = (GLdouble)luaL_checknumber(L, 3);
+    GLint    vn = (GLint   )luaL_checkinteger(L, 4);
+    GLdouble v1 = (GLdouble)luaL_checknumber(L, 5);
+    GLdouble v2 = (GLdouble)luaL_checknumber(L, 6);
+
+    glMapGrid2d(un, u1, u2, vn, v1, v2);
+    return 0;
+}
+
+int GlMapGrid2f(lua_State *L) {
+    GLint   un = (GLint  )luaL_checkinteger(L, 1);
+    GLfloat u1 = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat u2 = (GLfloat)luaL_checknumber(L, 3);
+    GLint   vn = (GLint  )luaL_checkinteger(L, 4);
+    GLfloat v1 = (GLfloat)luaL_checknumber(L, 5);
+    GLfloat v2 = (GLfloat)luaL_checknumber(L, 6);
+
+    glMapGrid2f(un, u1, u2, vn, v1, v2);
+    return 0;
+}
+
+int GlMaterialf(lua_State *L) {
+    GLenum  face  = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
+
+    glMaterialf(face, pname, param);
+    return 0;
+}
+
+int GlMaterialfv(lua_State *L) {
+    GLenum          face   = (GLenum         )luaL_checkinteger(L, 1);
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glMaterialfv(face, pname, params);
+    return 0;
+}
+
+int GlMateriali(lua_State *L) {
+    GLenum face  = (GLenum)luaL_checkinteger(L, 1);
+    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
+    GLint  param = (GLint )luaL_checkinteger(L, 3);
+
+    glMateriali(face, pname, param);
+    return 0;
+}
+
+int GlMaterialiv(lua_State *L) {
+    GLenum        face   = (GLenum       )luaL_checkinteger(L, 1);
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
+
+    glMaterialiv(face, pname, params);
+    return 0;
+}
+
+int GlMatrixMode(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glMatrixMode(mode);
+    return 0;
+}
+
+int GlMultMatrixd(lua_State *L) {
+    const GLdouble * m = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glMultMatrixd(m);
+    return 0;
+}
+
+int GlMultMatrixf(lua_State *L) {
+    const GLfloat * m = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glMultMatrixf(m);
+    return 0;
+}
+
+int GlNewList(lua_State *L) {
+    GLuint list = (GLuint)luaL_checkinteger(L, 1);
+    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
+
+    glNewList(list, mode);
+    return 0;
+}
+
+int GlNormal3b(lua_State *L) {
+    GLbyte nx = (GLbyte)luaL_checkinteger(L, 1);
+    GLbyte ny = (GLbyte)luaL_checkinteger(L, 2);
+    GLbyte nz = (GLbyte)luaL_checkinteger(L, 3);
+
+    glNormal3b(nx, ny, nz);
+    return 0;
+}
+
+int GlNormal3bv(lua_State *L) {
+    const GLbyte * v = (const GLbyte *)luaL_checkudata(L, 1, "const GLbyte *");
+
+    glNormal3bv(v);
+    return 0;
+}
+
+int GlNormal3d(lua_State *L) {
+    GLdouble nx = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble ny = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble nz = (GLdouble)luaL_checknumber(L, 3);
+
+    glNormal3d(nx, ny, nz);
+    return 0;
+}
+
+int GlNormal3dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glNormal3dv(v);
+    return 0;
+}
+
+int GlNormal3f(lua_State *L) {
+    GLfloat nx = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat ny = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat nz = (GLfloat)luaL_checknumber(L, 3);
+
+    glNormal3f(nx, ny, nz);
+    return 0;
+}
+
+int GlNormal3fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glNormal3fv(v);
+    return 0;
+}
+
+int GlNormal3i(lua_State *L) {
+    GLint nx = (GLint)luaL_checkinteger(L, 1);
+    GLint ny = (GLint)luaL_checkinteger(L, 2);
+    GLint nz = (GLint)luaL_checkinteger(L, 3);
+
+    glNormal3i(nx, ny, nz);
+    return 0;
+}
+
+int GlNormal3iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glNormal3iv(v);
+    return 0;
+}
+
+int GlNormal3s(lua_State *L) {
+    GLshort nx = (GLshort)luaL_checkinteger(L, 1);
+    GLshort ny = (GLshort)luaL_checkinteger(L, 2);
+    GLshort nz = (GLshort)luaL_checkinteger(L, 3);
+
+    glNormal3s(nx, ny, nz);
+    return 0;
+}
+
+int GlNormal3sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glNormal3sv(v);
+    return 0;
+}
+
+int GlOrtho(lua_State *L) {
+    GLdouble left   = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble right  = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble bottom = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble top    = (GLdouble)luaL_checknumber(L, 4);
+    GLdouble zNear  = (GLdouble)luaL_checknumber(L, 5);
+    GLdouble zFar   = (GLdouble)luaL_checknumber(L, 6);
+
+    glOrtho(left, right, bottom, top, zNear, zFar);
+    return 0;
+}
+
+int GlPassThrough(lua_State *L) {
+    GLfloat token = (GLfloat)luaL_checknumber(L, 1);
+
+    glPassThrough(token);
+    return 0;
+}
+
+int GlPixelMapfv(lua_State *L) {
+    GLenum          map     = (GLenum         )luaL_checkinteger(L, 1);
+    GLsizei         mapsize = (GLsizei        )luaL_checkinteger(L, 2);
+    const GLfloat * values  = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glPixelMapfv(map, mapsize, values);
+    return 0;
+}
+
+int GlPixelMapuiv(lua_State *L) {
+    GLenum         map     = (GLenum        )luaL_checkinteger(L, 1);
+    GLsizei        mapsize = (GLsizei       )luaL_checkinteger(L, 2);
+    const GLuint * values  = (const GLuint *)luaL_checkudata(L, 3, "const GLuint *");
+
+    glPixelMapuiv(map, mapsize, values);
+    return 0;
+}
+
+int GlPixelMapusv(lua_State *L) {
+    GLenum           map     = (GLenum          )luaL_checkinteger(L, 1);
+    GLsizei          mapsize = (GLsizei         )luaL_checkinteger(L, 2);
+    const GLushort * values  = (const GLushort *)luaL_checkudata(L, 3, "const GLushort *");
+
+    glPixelMapusv(map, mapsize, values);
+    return 0;
+}
+
+int GlPixelStoref(lua_State *L) {
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
+
+    glPixelStoref(pname, param);
+    return 0;
+}
+
+int GlPixelStorei(lua_State *L) {
+    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
+    GLint  param = (GLint )luaL_checkinteger(L, 2);
+
+    glPixelStorei(pname, param);
+    return 0;
+}
+
+int GlPixelTransferf(lua_State *L) {
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 1);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 2);
+
+    glPixelTransferf(pname, param);
+    return 0;
+}
+
+int GlPixelTransferi(lua_State *L) {
+    GLenum pname = (GLenum)luaL_checkinteger(L, 1);
+    GLint  param = (GLint )luaL_checkinteger(L, 2);
+
+    glPixelTransferi(pname, param);
+    return 0;
+}
+
+int GlPixelZoom(lua_State *L) {
+    GLfloat xfactor = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat yfactor = (GLfloat)luaL_checknumber(L, 2);
+
+    glPixelZoom(xfactor, yfactor);
+    return 0;
+}
+
+int GlPointSize(lua_State *L) {
+    GLfloat size = (GLfloat)luaL_checknumber(L, 1);
+
+    glPointSize(size);
+    return 0;
+}
+
+int GlPolygonMode(lua_State *L) {
+    GLenum face = (GLenum)luaL_checkinteger(L, 1);
+    GLenum mode = (GLenum)luaL_checkinteger(L, 2);
+
+    glPolygonMode(face, mode);
+    return 0;
+}
+
+int GlPolygonStipple(lua_State *L) {
+    const GLubyte * mask = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
+
+    glPolygonStipple(mask);
+    return 0;
+}
+
+int GlPopAttrib(lua_State *L) {
+
+    glPopAttrib();
+    return 0;
+}
+
+int GlPopMatrix(lua_State *L) {
+
+    glPopMatrix();
+    return 0;
+}
+
+int GlPopName(lua_State *L) {
+
+    glPopName();
+    return 0;
+}
+
+int GlPushAttrib(lua_State *L) {
+    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
+
+    glPushAttrib(mask);
+    return 0;
+}
+
+int GlPushMatrix(lua_State *L) {
+
+    glPushMatrix();
+    return 0;
+}
+
+int GlPushName(lua_State *L) {
+    GLuint name = (GLuint)luaL_checkinteger(L, 1);
+
+    glPushName(name);
+    return 0;
+}
+
+int GlRasterPos2d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+
+    glRasterPos2d(x, y);
+    return 0;
+}
+
+int GlRasterPos2dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glRasterPos2dv(v);
+    return 0;
+}
+
+int GlRasterPos2f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+
+    glRasterPos2f(x, y);
+    return 0;
+}
+
+int GlRasterPos2fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glRasterPos2fv(v);
+    return 0;
+}
+
+int GlRasterPos2i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+
+    glRasterPos2i(x, y);
+    return 0;
+}
+
+int GlRasterPos2iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glRasterPos2iv(v);
+    return 0;
+}
+
+int GlRasterPos2s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+
+    glRasterPos2s(x, y);
+    return 0;
+}
+
+int GlRasterPos2sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glRasterPos2sv(v);
+    return 0;
+}
+
+int GlRasterPos3d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+
+    glRasterPos3d(x, y, z);
+    return 0;
+}
+
+int GlRasterPos3dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glRasterPos3dv(v);
+    return 0;
+}
+
+int GlRasterPos3f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+
+    glRasterPos3f(x, y, z);
+    return 0;
+}
+
+int GlRasterPos3fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glRasterPos3fv(v);
+    return 0;
+}
+
+int GlRasterPos3i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+    GLint z = (GLint)luaL_checkinteger(L, 3);
+
+    glRasterPos3i(x, y, z);
+    return 0;
+}
+
+int GlRasterPos3iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glRasterPos3iv(v);
+    return 0;
+}
+
+int GlRasterPos3s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+    GLshort z = (GLshort)luaL_checkinteger(L, 3);
+
+    glRasterPos3s(x, y, z);
+    return 0;
+}
+
+int GlRasterPos3sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glRasterPos3sv(v);
+    return 0;
+}
+
+int GlRasterPos4d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble w = (GLdouble)luaL_checknumber(L, 4);
+
+    glRasterPos4d(x, y, z, w);
+    return 0;
+}
+
+int GlRasterPos4dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glRasterPos4dv(v);
+    return 0;
+}
+
+int GlRasterPos4f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat w = (GLfloat)luaL_checknumber(L, 4);
+
+    glRasterPos4f(x, y, z, w);
+    return 0;
+}
+
+int GlRasterPos4fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glRasterPos4fv(v);
+    return 0;
+}
+
+int GlRasterPos4i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+    GLint z = (GLint)luaL_checkinteger(L, 3);
+    GLint w = (GLint)luaL_checkinteger(L, 4);
+
+    glRasterPos4i(x, y, z, w);
+    return 0;
+}
+
+int GlRasterPos4iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glRasterPos4iv(v);
+    return 0;
+}
+
+int GlRasterPos4s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+    GLshort z = (GLshort)luaL_checkinteger(L, 3);
+    GLshort w = (GLshort)luaL_checkinteger(L, 4);
+
+    glRasterPos4s(x, y, z, w);
+    return 0;
+}
+
+int GlRasterPos4sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glRasterPos4sv(v);
+    return 0;
+}
+
+int GlReadBuffer(lua_State *L) {
+    GLenum src = (GLenum)luaL_checkinteger(L, 1);
+
+    glReadBuffer(src);
+    return 0;
+}
+
+int GlReadPixels(lua_State *L) {
+    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
+    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
+    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
+    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
+    GLenum  format = (GLenum )luaL_checkinteger(L, 5);
+    GLenum  type   = (GLenum )luaL_checkinteger(L, 6);
+    void *  pixels = (void * )luaL_checkudata(L, 7, "void *");
+
+    glReadPixels(x, y, width, height, format, type, pixels);
+    return 0;
+}
+
+int GlRectd(lua_State *L) {
+    GLdouble x1 = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y1 = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble x2 = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble y2 = (GLdouble)luaL_checknumber(L, 4);
+
+    glRectd(x1, y1, x2, y2);
+    return 0;
+}
+
+int GlRectdv(lua_State *L) {
+    const GLdouble * v1 = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+    const GLdouble * v2 = (const GLdouble *)luaL_checkudata(L, 2, "const GLdouble *");
+
+    glRectdv(v1, v2);
+    return 0;
+}
+
+int GlRectf(lua_State *L) {
+    GLfloat x1 = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y1 = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat x2 = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat y2 = (GLfloat)luaL_checknumber(L, 4);
+
+    glRectf(x1, y1, x2, y2);
+    return 0;
+}
+
+int GlRectfv(lua_State *L) {
+    const GLfloat * v1 = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+    const GLfloat * v2 = (const GLfloat *)luaL_checkudata(L, 2, "const GLfloat *");
+
+    glRectfv(v1, v2);
+    return 0;
+}
+
+int GlRecti(lua_State *L) {
+    GLint x1 = (GLint)luaL_checkinteger(L, 1);
+    GLint y1 = (GLint)luaL_checkinteger(L, 2);
+    GLint x2 = (GLint)luaL_checkinteger(L, 3);
+    GLint y2 = (GLint)luaL_checkinteger(L, 4);
+
+    glRecti(x1, y1, x2, y2);
+    return 0;
+}
+
+int GlRectiv(lua_State *L) {
+    const GLint * v1 = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+    const GLint * v2 = (const GLint *)luaL_checkudata(L, 2, "const GLint *");
+
+    glRectiv(v1, v2);
+    return 0;
+}
+
+int GlRects(lua_State *L) {
+    GLshort x1 = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y1 = (GLshort)luaL_checkinteger(L, 2);
+    GLshort x2 = (GLshort)luaL_checkinteger(L, 3);
+    GLshort y2 = (GLshort)luaL_checkinteger(L, 4);
+
+    glRects(x1, y1, x2, y2);
+    return 0;
+}
+
+int GlRectsv(lua_State *L) {
+    const GLshort * v1 = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+    const GLshort * v2 = (const GLshort *)luaL_checkudata(L, 2, "const GLshort *");
+
+    glRectsv(v1, v2);
+    return 0;
+}
+
+int GlRenderMode(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glRenderMode(mode);
+    return 0;
+}
+
+int GlRotated(lua_State *L) {
+    GLdouble angle = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble x     = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble y     = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble z     = (GLdouble)luaL_checknumber(L, 4);
+
+    glRotated(angle, x, y, z);
+    return 0;
+}
+
+int GlRotatef(lua_State *L) {
+    GLfloat angle = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat x     = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat y     = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat z     = (GLfloat)luaL_checknumber(L, 4);
+
+    glRotatef(angle, x, y, z);
+    return 0;
+}
+
+int GlScaled(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+
+    glScaled(x, y, z);
+    return 0;
+}
+
+int GlScalef(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+
+    glScalef(x, y, z);
+    return 0;
+}
+
+int GlScissor(lua_State *L) {
+    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
+    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
+    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
+    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
+
+    glScissor(x, y, width, height);
+    return 0;
+}
+
+int GlSelectBuffer(lua_State *L) {
+    GLsizei  size   = (GLsizei )luaL_checkinteger(L, 1);
+    GLuint * buffer = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
+
+    glSelectBuffer(size, buffer);
+    return 0;
+}
+
+int GlShadeModel(lua_State *L) {
+    GLenum mode = (GLenum)luaL_checkinteger(L, 1);
+
+    glShadeModel(mode);
+    return 0;
+}
+
+int GlStencilFunc(lua_State *L) {
+    GLenum func = (GLenum)luaL_checkinteger(L, 1);
+    GLint  ref  = (GLint )luaL_checkinteger(L, 2);
+    GLuint mask = (GLuint)luaL_checkinteger(L, 3);
+
+    glStencilFunc(func, ref, mask);
+    return 0;
+}
+
+int GlStencilMask(lua_State *L) {
+    GLuint mask = (GLuint)luaL_checkinteger(L, 1);
+
+    glStencilMask(mask);
+    return 0;
+}
+
+int GlStencilOp(lua_State *L) {
+    GLenum fail  = (GLenum)luaL_checkinteger(L, 1);
+    GLenum zfail = (GLenum)luaL_checkinteger(L, 2);
+    GLenum zpass = (GLenum)luaL_checkinteger(L, 3);
+
+    glStencilOp(fail, zfail, zpass);
+    return 0;
+}
+
+int GlTexCoord1d(lua_State *L) {
+    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
+
+    glTexCoord1d(s);
+    return 0;
+}
+
+int GlTexCoord1dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glTexCoord1dv(v);
+    return 0;
+}
+
+int GlTexCoord1f(lua_State *L) {
+    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
+
+    glTexCoord1f(s);
+    return 0;
+}
+
+int GlTexCoord1fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glTexCoord1fv(v);
+    return 0;
+}
+
+int GlTexCoord1i(lua_State *L) {
+    GLint s = (GLint)luaL_checkinteger(L, 1);
+
+    glTexCoord1i(s);
+    return 0;
+}
+
+int GlTexCoord1iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glTexCoord1iv(v);
+    return 0;
+}
+
+int GlTexCoord1s(lua_State *L) {
+    GLshort s = (GLshort)luaL_checkinteger(L, 1);
+
+    glTexCoord1s(s);
+    return 0;
+}
+
+int GlTexCoord1sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glTexCoord1sv(v);
+    return 0;
+}
+
+int GlTexCoord2d(lua_State *L) {
+    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
+
+    glTexCoord2d(s, t);
+    return 0;
+}
+
+int GlTexCoord2dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glTexCoord2dv(v);
+    return 0;
+}
+
+int GlTexCoord2f(lua_State *L) {
+    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
+
+    glTexCoord2f(s, t);
+    return 0;
+}
+
+int GlTexCoord2fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glTexCoord2fv(v);
+    return 0;
+}
+
+int GlTexCoord2i(lua_State *L) {
+    GLint s = (GLint)luaL_checkinteger(L, 1);
+    GLint t = (GLint)luaL_checkinteger(L, 2);
+
+    glTexCoord2i(s, t);
+    return 0;
+}
+
+int GlTexCoord2iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glTexCoord2iv(v);
+    return 0;
+}
+
+int GlTexCoord2s(lua_State *L) {
+    GLshort s = (GLshort)luaL_checkinteger(L, 1);
+    GLshort t = (GLshort)luaL_checkinteger(L, 2);
+
+    glTexCoord2s(s, t);
+    return 0;
+}
+
+int GlTexCoord2sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glTexCoord2sv(v);
+    return 0;
+}
+
+int GlTexCoord3d(lua_State *L) {
+    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble r = (GLdouble)luaL_checknumber(L, 3);
+
+    glTexCoord3d(s, t, r);
+    return 0;
+}
+
+int GlTexCoord3dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glTexCoord3dv(v);
+    return 0;
+}
+
+int GlTexCoord3f(lua_State *L) {
+    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat r = (GLfloat)luaL_checknumber(L, 3);
+
+    glTexCoord3f(s, t, r);
+    return 0;
+}
+
+int GlTexCoord3fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glTexCoord3fv(v);
+    return 0;
+}
+
+int GlTexCoord3i(lua_State *L) {
+    GLint s = (GLint)luaL_checkinteger(L, 1);
+    GLint t = (GLint)luaL_checkinteger(L, 2);
+    GLint r = (GLint)luaL_checkinteger(L, 3);
+
+    glTexCoord3i(s, t, r);
+    return 0;
+}
+
+int GlTexCoord3iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glTexCoord3iv(v);
+    return 0;
+}
+
+int GlTexCoord3s(lua_State *L) {
+    GLshort s = (GLshort)luaL_checkinteger(L, 1);
+    GLshort t = (GLshort)luaL_checkinteger(L, 2);
+    GLshort r = (GLshort)luaL_checkinteger(L, 3);
+
+    glTexCoord3s(s, t, r);
+    return 0;
+}
+
+int GlTexCoord3sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glTexCoord3sv(v);
+    return 0;
+}
+
+int GlTexCoord4d(lua_State *L) {
+    GLdouble s = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble t = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble r = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble q = (GLdouble)luaL_checknumber(L, 4);
+
+    glTexCoord4d(s, t, r, q);
+    return 0;
+}
+
+int GlTexCoord4dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glTexCoord4dv(v);
+    return 0;
+}
+
+int GlTexCoord4f(lua_State *L) {
+    GLfloat s = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat t = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat r = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat q = (GLfloat)luaL_checknumber(L, 4);
+
+    glTexCoord4f(s, t, r, q);
+    return 0;
+}
+
+int GlTexCoord4fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glTexCoord4fv(v);
+    return 0;
+}
+
+int GlTexCoord4i(lua_State *L) {
+    GLint s = (GLint)luaL_checkinteger(L, 1);
+    GLint t = (GLint)luaL_checkinteger(L, 2);
+    GLint r = (GLint)luaL_checkinteger(L, 3);
+    GLint q = (GLint)luaL_checkinteger(L, 4);
+
+    glTexCoord4i(s, t, r, q);
+    return 0;
+}
+
+int GlTexCoord4iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glTexCoord4iv(v);
+    return 0;
+}
+
+int GlTexCoord4s(lua_State *L) {
+    GLshort s = (GLshort)luaL_checkinteger(L, 1);
+    GLshort t = (GLshort)luaL_checkinteger(L, 2);
+    GLshort r = (GLshort)luaL_checkinteger(L, 3);
+    GLshort q = (GLshort)luaL_checkinteger(L, 4);
+
+    glTexCoord4s(s, t, r, q);
+    return 0;
+}
+
+int GlTexCoord4sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glTexCoord4sv(v);
+    return 0;
+}
+
+int GlTexEnvf(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLfloat param  = (GLfloat)luaL_checknumber(L, 3);
+
+    glTexEnvf(target, pname, param);
+    return 0;
+}
+
+int GlTexEnvfv(lua_State *L) {
+    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glTexEnvfv(target, pname, params);
+    return 0;
+}
+
+int GlTexEnvi(lua_State *L) {
+    GLenum target = (GLenum)luaL_checkinteger(L, 1);
+    GLenum pname  = (GLenum)luaL_checkinteger(L, 2);
+    GLint  param  = (GLint )luaL_checkinteger(L, 3);
+
+    glTexEnvi(target, pname, param);
+    return 0;
+}
+
+int GlTexEnviv(lua_State *L) {
+    GLenum        target = (GLenum       )luaL_checkinteger(L, 1);
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
+
+    glTexEnviv(target, pname, params);
+    return 0;
+}
+
+int GlTexGend(lua_State *L) {
+    GLenum   coord = (GLenum  )luaL_checkinteger(L, 1);
+    GLenum   pname = (GLenum  )luaL_checkinteger(L, 2);
+    GLdouble param = (GLdouble)luaL_checknumber(L, 3);
+
+    glTexGend(coord, pname, param);
+    return 0;
+}
+
+int GlTexGendv(lua_State *L) {
+    GLenum           coord  = (GLenum          )luaL_checkinteger(L, 1);
+    GLenum           pname  = (GLenum          )luaL_checkinteger(L, 2);
+    const GLdouble * params = (const GLdouble *)luaL_checkudata(L, 3, "const GLdouble *");
+
+    glTexGendv(coord, pname, params);
+    return 0;
+}
+
+int GlTexGenf(lua_State *L) {
+    GLenum  coord = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname = (GLenum )luaL_checkinteger(L, 2);
+    GLfloat param = (GLfloat)luaL_checknumber(L, 3);
+
+    glTexGenf(coord, pname, param);
+    return 0;
+}
+
+int GlTexGenfv(lua_State *L) {
+    GLenum          coord  = (GLenum         )luaL_checkinteger(L, 1);
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glTexGenfv(coord, pname, params);
+    return 0;
+}
+
+int GlTexGeni(lua_State *L) {
+    GLenum coord = (GLenum)luaL_checkinteger(L, 1);
+    GLenum pname = (GLenum)luaL_checkinteger(L, 2);
+    GLint  param = (GLint )luaL_checkinteger(L, 3);
+
+    glTexGeni(coord, pname, param);
+    return 0;
+}
+
+int GlTexGeniv(lua_State *L) {
+    GLenum        coord  = (GLenum       )luaL_checkinteger(L, 1);
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
+
+    glTexGeniv(coord, pname, params);
+    return 0;
+}
+
+int GlTexImage1D(lua_State *L) {
+    GLenum       target         = (GLenum      )luaL_checkinteger(L, 1);
+    GLint        level          = (GLint       )luaL_checkinteger(L, 2);
+    GLint        internalformat = (GLint       )luaL_checkinteger(L, 3);
+    GLsizei      width          = (GLsizei     )luaL_checkinteger(L, 4);
+    GLint        border         = (GLint       )luaL_checkinteger(L, 5);
+    GLenum       format         = (GLenum      )luaL_checkinteger(L, 6);
+    GLenum       type           = (GLenum      )luaL_checkinteger(L, 7);
+    const void * pixels         = (const void *)luaL_checkudata(L, 8, "const void *");
+
+    glTexImage1D(target, level, internalformat, width, border, format, type, pixels);
+    return 0;
+}
+
+int GlTexImage2D(lua_State *L) {
+    GLenum       target         = (GLenum      )luaL_checkinteger(L, 1);
+    GLint        level          = (GLint       )luaL_checkinteger(L, 2);
+    GLint        internalformat = (GLint       )luaL_checkinteger(L, 3);
+    GLsizei      width          = (GLsizei     )luaL_checkinteger(L, 4);
+    GLsizei      height         = (GLsizei     )luaL_checkinteger(L, 5);
+    GLint        border         = (GLint       )luaL_checkinteger(L, 6);
+    GLenum       format         = (GLenum      )luaL_checkinteger(L, 7);
+    GLenum       type           = (GLenum      )luaL_checkinteger(L, 8);
+    const void * pixels         = (const void *)luaL_checkudata(L, 9, "const void *");
+
+    glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+    return 0;
+}
+
+int GlTexParameterf(lua_State *L) {
+    GLenum  target = (GLenum )luaL_checkinteger(L, 1);
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 2);
+    GLfloat param  = (GLfloat)luaL_checknumber(L, 3);
+
+    glTexParameterf(target, pname, param);
+    return 0;
+}
+
+int GlTexParameterfv(lua_State *L) {
+    GLenum          target = (GLenum         )luaL_checkinteger(L, 1);
+    GLenum          pname  = (GLenum         )luaL_checkinteger(L, 2);
+    const GLfloat * params = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glTexParameterfv(target, pname, params);
+    return 0;
+}
+
+int GlTexParameteri(lua_State *L) {
+    GLenum target = (GLenum)luaL_checkinteger(L, 1);
+    GLenum pname  = (GLenum)luaL_checkinteger(L, 2);
+    GLint  param  = (GLint )luaL_checkinteger(L, 3);
+
+    glTexParameteri(target, pname, param);
+    return 0;
+}
+
+int GlTexParameteriv(lua_State *L) {
+    GLenum        target = (GLenum       )luaL_checkinteger(L, 1);
+    GLenum        pname  = (GLenum       )luaL_checkinteger(L, 2);
+    const GLint * params = (const GLint *)luaL_checkudata(L, 3, "const GLint *");
+
+    glTexParameteriv(target, pname, params);
+    return 0;
+}
+
+int GlTranslated(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+
+    glTranslated(x, y, z);
+    return 0;
+}
+
+int GlTranslatef(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+
+    glTranslatef(x, y, z);
+    return 0;
+}
+
+int GlVertex2d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+
+    glVertex2d(x, y);
+    return 0;
+}
+
+int GlVertex2dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glVertex2dv(v);
+    return 0;
+}
+
+int GlVertex2f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+
+    glVertex2f(x, y);
+    return 0;
+}
+
+int GlVertex2fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glVertex2fv(v);
+    return 0;
+}
+
+int GlVertex2i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+
+    glVertex2i(x, y);
+    return 0;
+}
+
+int GlVertex2iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glVertex2iv(v);
+    return 0;
+}
+
+int GlVertex2s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+
+    glVertex2s(x, y);
+    return 0;
+}
+
+int GlVertex2sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glVertex2sv(v);
+    return 0;
+}
+
+int GlVertex3d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+
+    glVertex3d(x, y, z);
+    return 0;
+}
+
+int GlVertex3dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glVertex3dv(v);
+    return 0;
+}
+
+int GlVertex3f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+
+    glVertex3f(x, y, z);
+    return 0;
+}
+
+int GlVertex3fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glVertex3fv(v);
+    return 0;
+}
+
+int GlVertex3i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+    GLint z = (GLint)luaL_checkinteger(L, 3);
+
+    glVertex3i(x, y, z);
+    return 0;
+}
+
+int GlVertex3iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glVertex3iv(v);
+    return 0;
+}
+
+int GlVertex3s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+    GLshort z = (GLshort)luaL_checkinteger(L, 3);
+
+    glVertex3s(x, y, z);
+    return 0;
+}
+
+int GlVertex3sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glVertex3sv(v);
+    return 0;
+}
+
+int GlVertex4d(lua_State *L) {
+    GLdouble x = (GLdouble)luaL_checknumber(L, 1);
+    GLdouble y = (GLdouble)luaL_checknumber(L, 2);
+    GLdouble z = (GLdouble)luaL_checknumber(L, 3);
+    GLdouble w = (GLdouble)luaL_checknumber(L, 4);
+
+    glVertex4d(x, y, z, w);
+    return 0;
+}
+
+int GlVertex4dv(lua_State *L) {
+    const GLdouble * v = (const GLdouble *)luaL_checkudata(L, 1, "const GLdouble *");
+
+    glVertex4dv(v);
+    return 0;
+}
+
+int GlVertex4f(lua_State *L) {
+    GLfloat x = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat y = (GLfloat)luaL_checknumber(L, 2);
+    GLfloat z = (GLfloat)luaL_checknumber(L, 3);
+    GLfloat w = (GLfloat)luaL_checknumber(L, 4);
+
+    glVertex4f(x, y, z, w);
+    return 0;
+}
+
+int GlVertex4fv(lua_State *L) {
+    const GLfloat * v = (const GLfloat *)luaL_checkudata(L, 1, "const GLfloat *");
+
+    glVertex4fv(v);
+    return 0;
+}
+
+int GlVertex4i(lua_State *L) {
+    GLint x = (GLint)luaL_checkinteger(L, 1);
+    GLint y = (GLint)luaL_checkinteger(L, 2);
+    GLint z = (GLint)luaL_checkinteger(L, 3);
+    GLint w = (GLint)luaL_checkinteger(L, 4);
+
+    glVertex4i(x, y, z, w);
+    return 0;
+}
+
+int GlVertex4iv(lua_State *L) {
+    const GLint * v = (const GLint *)luaL_checkudata(L, 1, "const GLint *");
+
+    glVertex4iv(v);
+    return 0;
+}
+
+int GlVertex4s(lua_State *L) {
+    GLshort x = (GLshort)luaL_checkinteger(L, 1);
+    GLshort y = (GLshort)luaL_checkinteger(L, 2);
+    GLshort z = (GLshort)luaL_checkinteger(L, 3);
+    GLshort w = (GLshort)luaL_checkinteger(L, 4);
+
+    glVertex4s(x, y, z, w);
+    return 0;
+}
+
+int GlVertex4sv(lua_State *L) {
+    const GLshort * v = (const GLshort *)luaL_checkudata(L, 1, "const GLshort *");
+
+    glVertex4sv(v);
+    return 0;
+}
+
+int GlViewport(lua_State *L) {
+    GLint   x      = (GLint  )luaL_checkinteger(L, 1);
+    GLint   y      = (GLint  )luaL_checkinteger(L, 2);
+    GLsizei width  = (GLsizei)luaL_checkinteger(L, 3);
+    GLsizei height = (GLsizei)luaL_checkinteger(L, 4);
+
+    glViewport(x, y, width, height);
+    return 0;
+}
+
+int GlAreTexturesResident(lua_State *L) {
+    GLsizei        n          = (GLsizei       )luaL_checkinteger(L, 1);
+    const GLuint * textures   = (const GLuint *)luaL_checkudata(L, 2, "const GLuint *");
+    GLboolean *    residences = (GLboolean *   )luaL_checkudata(L, 3, "GLboolean *");
+
+    glAreTexturesResident(n, textures, residences);
+    return 0;
+}
+
+int GlArrayElement(lua_State *L) {
+    GLint i = (GLint)luaL_checkinteger(L, 1);
+
+    glArrayElement(i);
+    return 0;
+}
+
+int GlBindTexture(lua_State *L) {
+    GLenum target  = (GLenum)luaL_checkinteger(L, 1);
+    GLuint texture = (GLuint)luaL_checkinteger(L, 2);
+
+    glBindTexture(target, texture);
+    return 0;
+}
+
+int GlColorPointer(lua_State *L) {
+    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
+    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
+
+    glColorPointer(size, type, stride, pointer);
+    return 0;
+}
+
+int GlCopyTexImage1D(lua_State *L) {
+    GLenum  target         = (GLenum )luaL_checkinteger(L, 1);
+    GLint   level          = (GLint  )luaL_checkinteger(L, 2);
+    GLenum  internalformat = (GLenum )luaL_checkinteger(L, 3);
+    GLint   x              = (GLint  )luaL_checkinteger(L, 4);
+    GLint   y              = (GLint  )luaL_checkinteger(L, 5);
+    GLsizei width          = (GLsizei)luaL_checkinteger(L, 6);
+    GLint   border         = (GLint  )luaL_checkinteger(L, 7);
+
+    glCopyTexImage1D(target, level, internalformat, x, y, width, border);
+    return 0;
+}
+
+int GlCopyTexImage2D(lua_State *L) {
+    GLenum  target         = (GLenum )luaL_checkinteger(L, 1);
+    GLint   level          = (GLint  )luaL_checkinteger(L, 2);
+    GLenum  internalformat = (GLenum )luaL_checkinteger(L, 3);
+    GLint   x              = (GLint  )luaL_checkinteger(L, 4);
+    GLint   y              = (GLint  )luaL_checkinteger(L, 5);
+    GLsizei width          = (GLsizei)luaL_checkinteger(L, 6);
+    GLsizei height         = (GLsizei)luaL_checkinteger(L, 7);
+    GLint   border         = (GLint  )luaL_checkinteger(L, 8);
+
+    glCopyTexImage2D(target, level, internalformat, x, y, width, height, border);
+    return 0;
+}
+
+int GlCopyTexSubImage1D(lua_State *L) {
+    GLenum  target  = (GLenum )luaL_checkinteger(L, 1);
+    GLint   level   = (GLint  )luaL_checkinteger(L, 2);
+    GLint   xoffset = (GLint  )luaL_checkinteger(L, 3);
+    GLint   x       = (GLint  )luaL_checkinteger(L, 4);
+    GLint   y       = (GLint  )luaL_checkinteger(L, 5);
+    GLsizei width   = (GLsizei)luaL_checkinteger(L, 6);
+
+    glCopyTexSubImage1D(target, level, xoffset, x, y, width);
+    return 0;
+}
+
+int GlCopyTexSubImage2D(lua_State *L) {
+    GLenum  target  = (GLenum )luaL_checkinteger(L, 1);
+    GLint   level   = (GLint  )luaL_checkinteger(L, 2);
+    GLint   xoffset = (GLint  )luaL_checkinteger(L, 3);
+    GLint   yoffset = (GLint  )luaL_checkinteger(L, 4);
+    GLint   x       = (GLint  )luaL_checkinteger(L, 5);
+    GLint   y       = (GLint  )luaL_checkinteger(L, 6);
+    GLsizei width   = (GLsizei)luaL_checkinteger(L, 7);
+    GLsizei height  = (GLsizei)luaL_checkinteger(L, 8);
+
+    glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
+    return 0;
+}
+
+int GlDeleteTextures(lua_State *L) {
+    GLsizei        n        = (GLsizei       )luaL_checkinteger(L, 1);
+    const GLuint * textures = (const GLuint *)luaL_checkudata(L, 2, "const GLuint *");
+
+    glDeleteTextures(n, textures);
+    return 0;
+}
+
+int GlDisableClientState(lua_State *L) {
+    GLenum ren_array = (GLenum)luaL_checkinteger(L, 1);
+
+    glDisableClientState(ren_array);
+    return 0;
+}
+
+int GlDrawArrays(lua_State *L) {
+    GLenum  mode  = (GLenum )luaL_checkinteger(L, 1);
+    GLint   first = (GLint  )luaL_checkinteger(L, 2);
+    GLsizei count = (GLsizei)luaL_checkinteger(L, 3);
+
+    glDrawArrays(mode, first, count);
+    return 0;
+}
+
+int GlDrawElements(lua_State *L) {
+    GLenum       mode    = (GLenum      )luaL_checkinteger(L, 1);
+    GLsizei      count   = (GLsizei     )luaL_checkinteger(L, 2);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 3);
+    const void * indices = (const void *)luaL_checkudata(L, 4, "const void *");
+
+    glDrawElements(mode, count, type, indices);
+    return 0;
+}
+
+int GlEdgeFlagPointer(lua_State *L) {
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 1);
+    const void * pointer = (const void *)luaL_checkudata(L, 2, "const void *");
+
+    glEdgeFlagPointer(stride, pointer);
+    return 0;
+}
+
+int GlEnableClientState(lua_State *L) {
+    GLenum ren_array = (GLenum)luaL_checkinteger(L, 1);
+
+    glEnableClientState(ren_array);
+    return 0;
+}
+
+int GlGenTextures(lua_State *L) {
+    GLsizei  n        = (GLsizei )luaL_checkinteger(L, 1);
+    GLuint * textures = (GLuint *)luaL_checkudata(L, 2, "GLuint *");
+
+    glGenTextures(n, textures);
+    return 0;
+}
+
+int GlGetPointerv(lua_State *L) {
+    GLenum  pname  = (GLenum )luaL_checkinteger(L, 1);
+    void ** params = (void **)luaL_checkudata(L, 2, "void **");
+
+    glGetPointerv(pname, params);
+    return 0;
+}
+
+int GlIndexPointer(lua_State *L) {
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 1);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
+    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
+
+    glIndexPointer(type, stride, pointer);
+    return 0;
+}
+
+int GlIndexub(lua_State *L) {
+    GLubyte c = (GLubyte)luaL_checkinteger(L, 1);
+
+    glIndexub(c);
+    return 0;
+}
+
+int GlIndexubv(lua_State *L) {
+    const GLubyte * c = (const GLubyte *)luaL_checkudata(L, 1, "const GLubyte *");
+
+    glIndexubv(c);
+    return 0;
+}
+
+int GlInterleavedArrays(lua_State *L) {
+    GLenum       format  = (GLenum      )luaL_checkinteger(L, 1);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
+    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
+
+    glInterleavedArrays(format, stride, pointer);
+    return 0;
+}
+
+int GlIsTexture(lua_State *L) {
+    GLuint texture = (GLuint)luaL_checkinteger(L, 1);
+
+    glIsTexture(texture);
+    return 0;
+}
+
+int GlNormalPointer(lua_State *L) {
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 1);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 2);
+    const void * pointer = (const void *)luaL_checkudata(L, 3, "const void *");
+
+    glNormalPointer(type, stride, pointer);
+    return 0;
+}
+
+int GlPolygonOffset(lua_State *L) {
+    GLfloat factor = (GLfloat)luaL_checknumber(L, 1);
+    GLfloat units  = (GLfloat)luaL_checknumber(L, 2);
+
+    glPolygonOffset(factor, units);
+    return 0;
+}
+
+int GlPopClientAttrib(lua_State *L) {
+
+    glPopClientAttrib();
+    return 0;
+}
+
+int GlPrioritizeTextures(lua_State *L) {
+    GLsizei         n          = (GLsizei        )luaL_checkinteger(L, 1);
+    const GLuint *  textures   = (const GLuint * )luaL_checkudata(L, 2, "const GLuint *");
+    const GLfloat * priorities = (const GLfloat *)luaL_checkudata(L, 3, "const GLfloat *");
+
+    glPrioritizeTextures(n, textures, priorities);
+    return 0;
+}
+
+int GlPushClientAttrib(lua_State *L) {
+    GLbitfield mask = (GLbitfield)luaL_checkinteger(L, 1);
+
+    glPushClientAttrib(mask);
+    return 0;
+}
+
+int GlTexCoordPointer(lua_State *L) {
+    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
+    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
+
+    glTexCoordPointer(size, type, stride, pointer);
+    return 0;
+}
+
+int GlTexSubImage1D(lua_State *L) {
+    GLenum       target  = (GLenum      )luaL_checkinteger(L, 1);
+    GLint        level   = (GLint       )luaL_checkinteger(L, 2);
+    GLint        xoffset = (GLint       )luaL_checkinteger(L, 3);
+    GLsizei      width   = (GLsizei     )luaL_checkinteger(L, 4);
+    GLenum       format  = (GLenum      )luaL_checkinteger(L, 5);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 6);
+    const void * pixels  = (const void *)luaL_checkudata(L, 7, "const void *");
+
+    glTexSubImage1D(target, level, xoffset, width, format, type, pixels);
+    return 0;
+}
+
+int GlTexSubImage2D(lua_State *L) {
+    GLenum       target  = (GLenum      )luaL_checkinteger(L, 1);
+    GLint        level   = (GLint       )luaL_checkinteger(L, 2);
+    GLint        xoffset = (GLint       )luaL_checkinteger(L, 3);
+    GLint        yoffset = (GLint       )luaL_checkinteger(L, 4);
+    GLsizei      width   = (GLsizei     )luaL_checkinteger(L, 5);
+    GLsizei      height  = (GLsizei     )luaL_checkinteger(L, 6);
+    GLenum       format  = (GLenum      )luaL_checkinteger(L, 7);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 8);
+    const void * pixels  = (const void *)luaL_checkudata(L, 9, "const void *");
+
+    glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
+    return 0;
+}
+
+int GlVertexPointer(lua_State *L) {
+    GLint        size    = (GLint       )luaL_checkinteger(L, 1);
+    GLenum       type    = (GLenum      )luaL_checkinteger(L, 2);
+    GLsizei      stride  = (GLsizei     )luaL_checkinteger(L, 3);
+    const void * pointer = (const void *)luaL_checkudata(L, 4, "const void *");
+
+    glVertexPointer(size, type, stride, pointer);
     return 0;
 }
 
